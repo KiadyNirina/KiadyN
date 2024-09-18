@@ -769,7 +769,7 @@
     }
 
     .info p{
-        font-size: 12px;
+        font-size: 15px;
         white-space: normal; /* Pour conserver les espaces dans le texte */
         text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.75), 
                     0px 0px 20px rgba(0, 255, 0, 0.5),
@@ -785,8 +785,8 @@
     .info span{
         display: flex;
         align-items: center;
-        font-size: 12px;
-        margin-top: 5px;
+        font-size: 15px;
+        margin-top: 10px;
     }
 
     .info .seeMore{
@@ -820,6 +820,18 @@
         padding: 5px;
         border-radius: 5px;
         margin: 2px;
+    }
+
+    .project-freelance{
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1200px;
+    }
+
+    .project-freelance .sect1{
+        color: #00FF00;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
     }
 
     @media screen and (max-width: 1200px) {
