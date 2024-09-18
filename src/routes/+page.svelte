@@ -1,9 +1,6 @@
 <script>
     import { onMount } from "svelte";
 
-    let title_page = "Kiady Nirina";
-
-     // Texte à afficher
     let message = "Welcome to my world🌐! Discover how my expertise and passion transform ideas🧠 into innovative solutions💡. Explore my projects and let’s meet to realize your ambitions together.🚀";
     
     // Variable qui stockera le texte affiché progressivement
@@ -26,7 +23,6 @@
         }, 50); // Délai entre chaque caractère (en millisecondes)
     }
 
-    // Appeler la fonction dès que le composant est monté
     onMount(() => {
         typeText();
     });
@@ -115,6 +111,29 @@
 
     let images = [
         {
+            title: 'Mycore',
+            text: 'Real Talk is a real-time chat platform 💬 that allows users to communicate seamlessly and instantly, by connecting with friends or joining thematic chat groups.',
+            url: '/mycore.PNG',
+            link: 'https://test-tc.rf.gd/mycore',
+            repo: '',
+            techno: [
+                'wordpress',
+            ]
+        },
+        {
+            title: 'Beyond',
+            text: 'eBoss is a comprehensive school management platform 🏫, designed to automate and simplify school administrative and academic processes. It offers a centralized digital solution that allows administrators, teachers, students and parents to collaborate effectively.',
+            url: '/beyond.PNG',
+            link: 'https://test-tc.rf.gd/beyond/',
+            repo: '',
+            techno: [
+                'wordpress',
+            ],
+        },
+    ];
+
+    let images1 = [
+        {
             title: 'Real_talk',
             text: 'Real Talk is a real-time chat platform 💬 that allows users to communicate seamlessly and instantly, by connecting with friends or joining thematic chat groups.',
             url: '/giphy (11).webp',
@@ -129,7 +148,7 @@
         {
             title: 'eBoss',
             text: 'eBoss is a comprehensive school management platform 🏫, designed to automate and simplify school administrative and academic processes. It offers a centralized digital solution that allows administrators, teachers, students and parents to collaborate effectively.',
-            url: '/giphy (10).webp',
+            url: '/eboss.jpg',
             link: '',
             repo: 'https://github.com/KiadyNirina/eBoss',
             techno: [
@@ -144,7 +163,7 @@
         {
             title: 'Create_CV',
             text: 'Texte pour image 1',
-            url: '/giphy (3).webp',
+            url: '/createcv.PNG',
             link: '',
             repo: 'https://github.com/KiadyNirina/Create_CV',
             techno: [
@@ -154,7 +173,7 @@
         {
             title: 'E_Stock',
             text: 'Texte pour image 1',
-            url: '/giphy (4).webp',
+            url: '/e_stock.jpg',
             link: '',
             repo: 'https://github.com/KiadyNirina/E_Stock',
             techno: [
@@ -310,8 +329,8 @@
 
         <div class="project">
             <div class="text">
-                <h1>🚀 My Personal Projects 💻</h1>
-                <p>In this section, you will discover innovative projects 🌟 that I have carried out, combining creativity 🎨 and technical expertise 🔧. Each project reflects my commitment to finding effective solutions 💡 and taking on stimulating challenges 🎯, while remaining at the forefront of modern technologies 🖥️.</p>
+                <h1>🚀 Projects & Achievements 💡</h1>
+                <p>In this section, you will find a selection of my most notable projects 💻, where I was able to combine passion and technical expertise 🔧 to respond to complex challenges 🎯.</p>
             </div>
             <div class="card-project">
                 <div class="row">
@@ -337,9 +356,43 @@
                                     {/each}
                                 </span>
                                 {#if img.link != ""}
-                                    <span>🔗 : </span>
+                                    <span>🔗 : <a href="{img.link}">{img.title}</a></span>
                                 {/if}
-                                <span><img src="/github.png" alt=""> : <a href="{img.repo}">{img.title}</a></span>
+                                {#if img.repo != ""}
+                                    <span><img src="/github.png" alt=""> : <a href="{img.repo}">{img.title}</a></span>
+                                {/if}
+                            </div>
+                        </div>
+                    {/each}
+                </div>
+                <div class="row">
+                    {#each images1 as img}
+                        <div class="card-1">
+                            <img src="{img.url}" alt="">
+                            <div class="info">
+                                <h2>{img.title}</h2>
+                                {#if desc}
+                                    <p>{img.text}</p>
+                                {/if}
+                                {#if !desc}
+                                    <span class="seeMore" on:click={handleSeeMore}>See more ➡️</span>
+                                {:else}
+                                    <span class="seeMore" on:click={handleSeeMore}>See less ⬅️</span>
+                                {/if}
+                                <span>
+                                    {#each img.techno as tech}
+                                        <div class="lang">
+                                            <img src="/{tech}.png" alt="">
+                                            {tech}
+                                        </div> 
+                                    {/each}
+                                </span>
+                                {#if img.link != ""}
+                                    <span>🔗 : <a href="{img.link}">{img.title}</a></span>
+                                {/if}
+                                {#if img.repo != ""}
+                                    <span><img src="/github.png" alt=""> : <a href="{img.repo}">{img.title}</a></span>
+                                {/if}
                             </div>
                         </div>
                     {/each}
@@ -367,9 +420,11 @@
                                     {/each}
                                 </span>
                                 {#if img.link != ""}
-                                    <span>🔗 : {img.link}</span>
+                                    <span>🔗 : <a href="{img.link}">{img.title}</a></span>
                                 {/if}
-                                <span><img src="/github.png" alt=""> : <a href="{img.repo}">{img.title}</a></span>
+                                {#if img.repo != ""}
+                                    <span><img src="/github.png" alt=""> : <a href="{img.repo}">{img.title}</a></span>
+                                {/if}
                             </div>
                         </div>
                     {/each}
@@ -379,8 +434,8 @@
 
         <div class="project-freelance">
             <div class="sect1">
-                <h2>🛠️ Projects Made on Demand 📋</h2>
-                <p>Découvrez ici des projets passionnants que j'ai réalisés sur demande 💼, répondant à des besoins spécifiques 🎯 et apportant des solutions sur mesure 🧩. Ces projets m'ont permis de collaborer étroitement avec des clients 🤝 et de relever des défis techniques stimulants 🚀, tout en respectant des exigences précises et des délais serrés ⏳.</p>
+                <h1></h1>
+                <p></p>
             </div>
             <div class="sect2">
 
@@ -611,7 +666,9 @@
         animation: flicker 1.5s infinite alternate;
     }
 
-    .image{
+    .about .image img{
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px #00ff002c;
     }
 
     .techno{
@@ -680,7 +737,7 @@
     .img img{
         margin-left: auto;
         margin-right: auto;
-        height: 60px;
+        height: 50px;
         padding: 10px;
         border-radius: 100%;
         transform-style: preserve-3d; /* Préserve l'effet 3D */
@@ -741,22 +798,16 @@
         width: 50%;
         display: flex;
         padding: 5px;
-        border: 1px solid #00ff0061;
+        border: 1px solid #00ff003e;
         border-radius: 10px;
         transition: opacity 0.3s ease; /* Transition douce pour l'affichage */
         margin: 5px;
     }
 
-    .card-1:hover .overlay-project {
-        opacity: 1; /* Le texte ou bouton devient visible */
-        display: block;
-        cursor: pointer;
-        border: 1px solid #00ff0022;
-    }
-
     .card-1 img{
         width: 200px;
         height: auto;
+        border-radius: 5px;
     }
 
     .info{
@@ -816,10 +867,11 @@
     .lang{
         display: flex;
         align-items: center;
-        border: 1px solid #008300;
+        background: #0083003a;
         padding: 5px;
         border-radius: 5px;
         margin: 2px;
+        font-size: 11px;
     }
 
     .project-freelance{
@@ -832,6 +884,16 @@
         color: #00FF00;
         text-align: center;
         font-family: 'Courier New', Courier, monospace;
+    }
+
+    .project-freelance .sect1 p{
+        margin-top: 20px;
+        font-size: 15px;
+        white-space: normal;
+        text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.75), 
+                    0px 0px 20px rgba(0, 255, 0, 0.5),
+                    0px 0px 30px rgba(0, 255, 0, 0.25);
+        animation: flicker 1.5s infinite alternate;
     }
 
     @media screen and (max-width: 1200px) {
