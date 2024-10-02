@@ -112,6 +112,7 @@
     let images = [
         {
             title: 'Mycore',
+            freelance: true,
             text: 'Real Talk is a real-time chat platform 💬 that allows users to communicate seamlessly and instantly, by connecting with friends or joining thematic chat groups.',
             url: '/mycore.PNG',
             link: 'https://test-tc.rf.gd/mycore',
@@ -122,6 +123,7 @@
         },
         {
             title: 'Beyond',
+            freelance: true,
             text: 'eBoss is a comprehensive school management platform 🏫, designed to automate and simplify school administrative and academic processes. It offers a centralized digital solution that allows administrators, teachers, students and parents to collaborate effectively.',
             url: '/beyond.PNG',
             link: 'https://test-tc.rf.gd/beyond/',
@@ -135,6 +137,7 @@
     let images1 = [
         {
             title: 'Real_talk',
+            freelance: false,
             text: 'Real Talk is a real-time chat platform 💬 that allows users to communicate seamlessly and instantly, by connecting with friends or joining thematic chat groups.',
             url: '/giphy (11).webp',
             link: '',
@@ -147,6 +150,7 @@
         },
         {
             title: 'eBoss',
+            freelance: false,
             text: 'eBoss is a comprehensive school management platform 🏫, designed to automate and simplify school administrative and academic processes. It offers a centralized digital solution that allows administrators, teachers, students and parents to collaborate effectively.',
             url: '/eboss.jpg',
             link: '',
@@ -162,6 +166,7 @@
     let images2 = [
         {
             title: 'Create_CV',
+            freelance: false,
             text: 'Texte pour image 1',
             url: '/createcv.PNG',
             link: '',
@@ -172,6 +177,7 @@
         },
         {
             title: 'E_Stock',
+            freelance: false,
             text: 'Texte pour image 1',
             url: '/e_stock.jpg',
             link: '',
@@ -190,7 +196,7 @@
     <div class="head-body">
         <div class="navbar">
             <div class="logo">
-                <img src="logo.jpg" alt="Logo">
+                <img src="logo.png" alt="Logo">
             </div>
             <div class="menu">
                 <a href="#about">ℹ️ About me</a>
@@ -338,7 +344,9 @@
                         <div class="card-1">
                             <img src="{img.url}" alt="">
                             <div class="info">
-                                <h2>{img.title}</h2>
+                                <h2>{img.title}| {#if img.freelance == true}
+                                    <i>(freelance)</i>
+                                {/if}</h2>
                                 {#if desc}
                                     <p>{img.text}</p>
                                 {/if}
@@ -578,10 +586,7 @@
 
     .logo img{
         height: 50px;
-        border-radius: 100%;
         margin-left: 20px;
-        border: 1px solid #00FF00;
-        box-shadow: 0px 0px 15px #00ff00c8;
     }
 
     .menu{
@@ -790,6 +795,11 @@
         padding: 10px;
     }
 
+    i{
+        font-size: 12px;
+        font-style: normal;
+    }
+
     .row{
         display: flex;
     }
@@ -805,7 +815,7 @@
     }
 
     .card-1 img{
-        width: 200px;
+        width: 50%;
         height: auto;
         border-radius: 5px;
     }
@@ -934,6 +944,12 @@
     }
 
     @media screen and (max-width: 600px){
+        .head-body {
+            background: none;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         .content {
             padding: 20px;
             height: 700px;
