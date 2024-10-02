@@ -101,11 +101,11 @@
     <p class:active={front == "front"} on:click={() => handleTechno1("front")}>🌐 Front-End Development</p>
     {#if techno1}
         <div class="img">
-            <img src="/html.png" alt="">
-            <img src="/css.png" alt="">
-            <img src="/js.png" alt="">
-            <img src="/svelte.png" alt="">
-            <img src="/vuejs.png" alt="">
+            <img src="html.png" alt="">
+            <img src="css.png" alt="">
+            <img src="js.png" alt="">
+            <img src="svelte.png" alt="">
+            <img src="vuejs.png" alt="">
         </div>
     {/if}
     <p class:active={back == "back"} on:click={() => handleTechno2("back")}>💻 Back-End Development</p>
@@ -118,11 +118,46 @@
         </div>
     {/if}
     <p class:active={ manage == "manage" } on:click={() => handleTechno3("manage")}>🖥️ Content Management & E-Commerce</p>
+    {#if techno3}
+        <div class="img">
+            <img src="wordpress.png" alt="">
+            <img src="shopify.png" alt="">
+        </div>
+    {/if}
     <p class:active={ bdd == "bdd" } on:click={() => handleTechno4("bdd")}>🗄️ Databases</p>
+    {#if techno4}
+        <div class="img">
+            <img src="sqlite.png" alt="">
+            <img src="mysql.png" alt="">
+            <img src="postgresql.png" alt="">
+        </div>
+    {/if}
     <p class:active={ api == "api" } on:click={() => handleTechno5("api")}>🧪 API & Testing</p>
+    {#if techno5}
+        <div class="img">
+            <img src="postman.png" alt="">
+        </div>
+    {/if}
     <p class:active={control == "control"} on:click={() => handleTechno6("control")}>📂 Version Control</p>
+    {#if techno6}
+        <div class="img">
+            <img src="git.png" alt="">
+        </div>
+    {/if}
     <p class:active={design == "design"} on:click={() => handleTechno7("design")}>🎨 Design Tools</p>
+    {#if techno7}
+        <div class="img">
+            <img src="photoshop.png" alt="">
+            <img src="figma.png" alt="">
+        </div>
+    {/if}
     <p class:active={deploy == "deploy"} on:click={() => handleTechno8("deploy")}>☁️ Hosting & Deployment</p>
+    {#if techno8}
+        <div class="img">
+            <img src="docker.png" alt="">
+            <img src="heroku.png" alt="">
+        </div>
+    {/if}
 </div>
 
 <style>
