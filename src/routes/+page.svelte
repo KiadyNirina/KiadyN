@@ -2,6 +2,16 @@
     import About from "../lib/About.svelte";
     import Projects from "../lib/Projects.svelte";
     import Techno from "../lib/Techno.svelte";
+    import { onMount } from "svelte";
+
+    let viewCount = 0;
+    onMount(() => {
+        const storedCount = localStorage.getItem('viewCount');
+        viewCount = storedCount ? parseInt(storedCount, 10) : 0;
+
+        viewCount++;
+        localStorage.setItem('viewCount', viewCount);
+    });
 
     let about = true;
     let techno = false;
@@ -46,6 +56,7 @@
     </div>
     <div class="body">
         <div class="sect1">
+            <span id="view">Views: {viewCount}</span>
             <p><span>"Code is like humor. When you have to explain it, it's bad."</span> __Cory House</p>
             <div class="info">
                 <span><img src="adresse-white.png" alt=""> Antananarivo, Madagascar</span>
@@ -176,6 +187,15 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         cursor: not-allowed;
     }
+    #view{
+        background-color: rgba(255, 255, 255, 0.137);
+        border-radius: 20px;
+        padding: 10px;
+        color: rgb(190, 190, 190);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+    }
     @media screen and (max-width : 700px) {
         .body{
             display: block;
@@ -185,7 +205,7 @@
         }
         .sect1{
             width: auto;
-            padding: 10px;
+            padding: 20px;
             margin: 0;
         }
         .sect1 p{
