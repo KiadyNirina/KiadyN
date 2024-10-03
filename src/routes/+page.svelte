@@ -1,5 +1,6 @@
 <script>
     import About from "../lib/About.svelte";
+    import Projects from "../lib/Projects.svelte";
     import Techno from "../lib/Techno.svelte";
 
     let about = true;
@@ -27,11 +28,21 @@
         exp = false;
         comp = false;
     }
+
+    const handleClickProjects = (id) => {
+        active = id;
+        about = false;
+        techno = false;
+        projects = true;
+        exp = false;
+        comp = false;
+    }
 </script>
 
 <div class="content">
     <div class="head">
-        <img src="header.png" alt="">
+        <img id="pdc" src="giphy (7).webp" alt="">
+        <img id="pdp" src="pdp.jpg" alt="">
     </div>
     <div class="body">
         <div class="sect1">
@@ -49,7 +60,7 @@
             <div class="nav">
                 <span class:active={active == 'about'} on:click={() => handleClickAbout('about')}>About me</span>
                 <span class:active={active == 'techno'} on:click={() => handleClickTechno('techno')}>Techno</span>
-                <span id={active}>Projects</span>
+                <span class:active={active == 'projects'} on:click={() => handleClickProjects('projects')}>Projects</span>
                 <span id={active}>Exp.</span>
                 <span id={active}>Comp</span>
             </div>
@@ -57,6 +68,8 @@
                 <About/>
             {:else if techno}
                 <Techno/>
+            {:else if projects}
+                <Projects/>
             {/if}
         </div>
     </div>
@@ -69,8 +82,31 @@
         max-width: 900px;
         color: rgba(255, 255, 255, 0.386);
     }
-    .head img{
+    #pdc{
         width: 100%;
+        height: 200px;
+    }
+    #pdp{
+        height: 170px;
+        border-radius: 100%;
+        position: relative;
+        top: -50px;
+        left: 10%;
+        border: 5px solid rgb(16, 36, 49);
+        transform-style: preserve-3d; /* Préserve l'effet 3D */
+    }
+    #pdp:hover{
+        cursor: pointer;
+        box-shadow: 0px 0px 5px #ffffffee;
+        animation: rotate3D 5s linear infinite;
+    }
+    @keyframes rotate3D {
+        from {
+            transform: rotateY(0deg); /* Commence à 0 degrés */
+        }
+        to {
+            transform: rotateY(360deg); /* Fait une rotation complète de 360 degrés */
+        }
     }
     .body{
         display: flex;
@@ -143,13 +179,14 @@
     @media screen and (max-width : 700px) {
         .body{
             display: block;
-            width: 85%;
+            width: 95%;
             margin-left: auto;
             margin-right: auto;
         }
         .sect1{
-            width: 100%;
+            width: auto;
             padding: 10px;
+            margin: 0;
         }
         .sect1 p{
             text-align: center;
@@ -163,7 +200,7 @@
         }
         .sect2{
             margin-top: 10px;
-            width: 100%;
+            width: auto;
             padding: 10px;
         }
     }
