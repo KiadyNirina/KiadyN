@@ -60,7 +60,7 @@
             <p><span>"Code is like humor. When you have to explain it, it's bad."</span> __Cory House</p>
             <div class="info">
                 <span><img src="adresse-white.png" alt=""> Antananarivo, Madagascar</span>
-                <span><img src="tel-white.png" alt=""> +261 34 10 394 90</span>
+                <span><img src="tel-white.png" alt=""> +261341039490</span>
                 <span><img src="email-white.png" alt=""> kiady142ram@gmail.com</span>
                 <span><img src="linkedin-white.png" alt=""> <a href="">Kiady Ram</a></span>
                 <span><img src="facebook-white.png" alt=""> <a href="">Kiady Rambeloson</a></span>

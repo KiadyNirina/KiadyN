@@ -1,5 +1,98 @@
+<script>
+    import Beyond from "./project info/Beyond.svelte";
+import Mycore from "./project info/Mycore.svelte";
+
+    let mycore = false;
+    let beyond = false;
+    let eboss = false;
+    let estock = false;
+
+    const handleClickMycore = () => {
+        mycore = true;
+    }
+
+    const handleClickBeyond = () => {
+        beyond = true;
+    }
+
+    const handleClickReturn = () => {
+        mycore = false;
+        beyond = false;
+        eboss = false;
+        estock = false;
+    }
+</script>
+
 <div class="">
+    {#if mycore || beyond || eboss || estock}
+        <p id="return" on:click={handleClickReturn}> Return to all</p>
+        {#if mycore}
+            <Mycore/>
+        {:else if beyond}
+            <Beyond/>
+        {/if}
+    {:else}
     <div class="projects">
+        <div class="card2">
+            <img src="profile.png" alt="">
+            <div class="info">
+                <h3>FinTrack <span id="date">2024</span></h3>
+                <div class="techno">
+                    <div class="techno2">
+                        <img src="vuejs.png" alt="">
+                        <span>Vuejs</span>
+                    </div>
+                    <div class="techno2">
+                        <img src="laravel.png" alt="">
+                        <span>Laravel</span>
+                    </div>
+                    <div class="techno2">
+                        <img src="mysql.png" alt="">
+                        <span>MySQL</span>
+                    </div>
+                </div>
+                <p>Lorem, ipsum dolor... <span>See more</span></p>
+            </div>
+        </div>
+
+        <div class="card1">
+            <img src="profile.png" alt="">
+            <div class="info">
+                <h3>DataLens <span id="date">2024</span></h3>
+                <div class="techno">
+                    <div class="techno2">
+                        <img src="python.png" alt="">
+                        <span>Python</span>
+                    </div>
+                </div>
+                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickBeyond}>See more</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects">
+        <div class="card2">
+            <img src="createcv.PNG" alt="">
+            <div class="info">
+                <h3>Real_Talk <span id="date">2024</span></h3>
+                <div class="techno">
+                    <div class="techno2">
+                        <img src="svelte.png" alt="">
+                        <span>Svelte</span>
+                    </div>
+                    <div class="techno2">
+                        <img src="laravel.png" alt="">
+                        <span>Laravel</span>
+                    </div>
+                    <div class="techno2">
+                        <img src="mysql.png" alt="">
+                        <span>MySQL</span>
+                    </div>
+                </div>
+                <p>Lorem, ipsum dolor... <span>See more</span></p>
+            </div>
+        </div>
+
         <div class="card1">
             <img src="beyond.PNG" alt="">
             <div class="info">
@@ -10,10 +103,12 @@
                         <span>WordPress</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span>See more</span></p>
+                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickBeyond}>See more</span></p>
             </div>
         </div>
-    
+    </div>
+
+    <div class="projects">
         <div class="card2">
             <img src="mycore.PNG" alt="">
             <div class="info">
@@ -22,6 +117,20 @@
                     <div class="techno2">
                         <img src="wordpress.png" alt="">
                         <span>WordPress</span>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, enim.... <span id="seeMore" on:click={handleClickMycore}>See more</span></p>
+            </div>
+        </div>
+    
+        <div class="card2">
+            <img src="createcv.PNG" alt="">
+            <div class="info">
+                <h3>Create_CV <span id="date">2024</span></h3>
+                <div class="techno">
+                    <div class="techno2">
+                        <img src="svelte.png" alt="">
+                        <span>Svelte</span>
                     </div>
                 </div>
                 <p>Lorem, ipsum dolor... <span>See more</span></p>
@@ -55,7 +164,7 @@
         <div class="card2">
             <img src="e_stock.jpg" alt="">
             <div class="info">
-                <h3>E_Stock <span id="date">2024</span></h3>
+                <h3>E_Stock <span id="date">2023</span></h3>
                 <div class="techno">
                     <div class="techno2">
                         <img src="html.png" alt="">
@@ -78,6 +187,7 @@
             </div>
         </div>
     </div>
+    {/if}
 </div>
 
 <style>
@@ -109,7 +219,10 @@
     }
     .info p{
         color: rgb(165, 165, 165);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-block-start: 5px;
+        margin-block-end: 5px;
+        font-size: 12px;
     }
     #date{
         margin-left: auto;
@@ -133,6 +246,21 @@
     .techno .techno2 span{
         font-size: 11px;
     }
+    #seeMore{
+        color: rgb(0, 85, 255);
+        cursor: pointer;
+    }
+    #return{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: rgba(255, 255, 255, 0.739);
+        font-weight: bold;
+        transition: 0.5s;
+    }
+    #return:hover{
+        cursor: pointer;
+        color: rgb(150, 150, 150);
+        letter-spacing: 1px;
+    }
     @media screen and (max-width: 800px) {
         .projects{
             display: block;
@@ -145,7 +273,7 @@
         }
         .card1 img, .card2 img{
             width: 100%;
-            height: 200px;
+            height: 160px;
             border-radius: 5px 5px 0px 0px;
         }
     }
