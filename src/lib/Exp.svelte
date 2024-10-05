@@ -11,6 +11,14 @@
             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur harum corporis voluptatibus quidem dolor delectus fuga labore in, deleniti praesentium.</li>
         </ul>
     </div>
+
+    <h2>2023</h2>
+    <div class="content">
+        <h4>Freelance <i>(TeamCread)</i> <span>2023</span></h4>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur harum corporis voluptatibus quidem dolor delectus fuga labore in, deleniti praesentium.</li>
+        </ul>
+    </div>
 </div>
 
 <style>
@@ -24,6 +32,7 @@
         padding-left: 20px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         color: rgb(142, 142, 142);
+        margin-bottom: 50px;
     }
     h4{
         display: flex;
