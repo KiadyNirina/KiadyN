@@ -1,5 +1,6 @@
 <script>
     import About from "../lib/About.svelte";
+    import Comp from "../lib/Comp.svelte";
     import Exp from "../lib/Exp.svelte";
     import Projects from "../lib/Projects.svelte";
     import Techno from "../lib/Techno.svelte";
@@ -57,6 +58,15 @@
         exp = true;
         comp = false;
     }
+
+    const handleClickComp = (id) => {
+        active = id;
+        about = false;
+        techno = false;
+        projects = false;
+        exp = false;
+        comp = true;
+    }
 </script>
 
 <div class="content">
@@ -83,7 +93,7 @@
                 <span class:active={active == 'techno'} on:click={() => handleClickTechno('techno')}>Techno</span>
                 <span class:active={active == 'projects'} on:click={() => handleClickProjects('projects')}>Projects</span>
                 <span class:active={active == 'exp'} on:click={() => handleClickExp('exp')}>Exp.</span>
-                <span id={active}>Comp</span>
+                <span class:active={active == 'comp'} on:click={() => handleClickComp('comp')}>Comp</span>
             </div>
             {#if about}
                 <About/>
@@ -93,6 +103,8 @@
                 <Projects/>
             {:else if exp}
                 <Exp/>
+            {:else if comp}
+                <Comp/>
             {/if}
         </div>
     </div>
