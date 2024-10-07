@@ -97,9 +97,9 @@
                 <span><img src="adresse-white.png" alt=""> Antananarivo, Madagascar</span>
                 <span><img src="tel-white.png" alt=""> +261341039490</span>
                 <span><img src="email-white.png" alt=""> kiady142ram@gmail.com</span>
-                <span><img src="linkedin-white.png" alt=""> <a href="">Kiady Ram</a></span>
-                <span><img src="facebook-white.png" alt=""> <a href="">Kiady Rambeloson</a></span>
-                <span><img src="github-white.png" alt=""> <a href="">KiadyNirina</a></span>
+                <span><img src="linkedin-white.png" alt=""> <a href="linkedin.com/in/kiady-ram-5216592a9/">Kiady Ram</a></span>
+                <span><img src="facebook-white.png" alt=""> <a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
+                <span><img src="github-white.png" alt=""> <a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
             </div>
             <button on:click={download} disabled={loading}><img src="download.png" alt="">{loading ? 'loading...' : 'Download my CV'}</button>
         </div>
