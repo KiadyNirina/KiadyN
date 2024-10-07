@@ -15,6 +15,21 @@
         localStorage.setItem('viewCount', viewCount);
     });
 
+    let loading = false;
+
+    const download = () => {
+        loading = true;
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.href = 'CV_Kiady.pdf';
+            link.download = "CV_Kiady.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            loading = false;
+        }, 5000);
+    }
+
     let about = true;
     let techno = false;
     let projects = false;
@@ -86,6 +101,7 @@
                 <span><img src="facebook-white.png" alt=""> <a href="">Kiady Rambeloson</a></span>
                 <span><img src="github-white.png" alt=""> <a href="">KiadyNirina</a></span>
             </div>
+            <button on:click={download} disabled={loading}><img src="download.png" alt="">{loading ? 'loading...' : 'Download my CV'}</button>
         </div>
         <div class="sect2">
             <div class="nav">
@@ -185,6 +201,32 @@
         height: 20px;
         margin-right: 10px;
     }
+    .sect1 button{
+        background-color: rgba(255, 255, 255, 0.055);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.889);
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+        margin-top: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+    .sect1 button img{
+        height: 20px;
+        margin-right: 10px;
+    }
+    .sect1 button:hover{
+        cursor: pointer;
+        background-color: rgba(32, 162, 255, 0.055);
+    }
+    .sect1 button:disabled:hover{
+        cursor: not-allowed;
+        color: grey;
+    }
     .sect2{
         padding: 20px;
         border: 1px solid rgba(255, 255, 255, 0.089);
@@ -235,7 +277,7 @@
         .sect1 p{
             text-align: center;
         }
-        .sect1 .info span{
+        .sect1 .info span, .sect1 button{
             font-size: 15px;
             line-height: 30px;
         }

@@ -1,11 +1,31 @@
 <script>
     import Beyond from "./project info/Beyond.svelte";
-import Mycore from "./project info/Mycore.svelte";
+    import Createcv from "./project info/Createcv.svelte";
+    import Datalens from "./project info/Datalens.svelte";
+    import Fintrack from "./project info/Fintrack.svelte"; 
+    import Mycore from "./project info/Mycore.svelte";
+    import Realtalk from "./project info/Realtalk.svelte";
 
+    let fintrack = false;
+    let datalens = false;
+    let realtalk = false;
     let mycore = false;
     let beyond = false;
+    let createcv = false;
     let eboss = false;
     let estock = false;
+
+    const handleClickFintrack = () => {
+        fintrack = true;
+    }
+
+    const handleClickDatalens = () => {
+        datalens = true;
+    }
+
+    const handleClickRealtalk = () => {
+        realtalk = true;
+    }
 
     const handleClickMycore = () => {
         mycore = true;
@@ -15,26 +35,54 @@ import Mycore from "./project info/Mycore.svelte";
         beyond = true;
     }
 
+    const handleClickCV = () => {
+        createcv = true;
+    }
+
+    const handleClickEboss = () => {
+        eboss = true;
+    }
+
+    const handleClickEstock = () => {
+        estock = true;
+    }
+
     const handleClickReturn = () => {
+        fintrack = false;
+        datalens = false;
+        realtalk = false;
         mycore = false;
         beyond = false;
+        createcv = false;
         eboss = false;
         estock = false;
     }
 </script>
 
 <div class="">
-    {#if mycore || beyond || eboss || estock}
+    {#if fintrack || datalens || realtalk || mycore || beyond || createcv || eboss || estock}
         <p id="return" on:click={handleClickReturn}> Return to all</p>
         {#if mycore}
             <Mycore/>
         {:else if beyond}
             <Beyond/>
+        {:else if fintrack}
+            <Fintrack/>
+        {:else if datalens}
+            <Datalens/>
+        {:else if realtalk}
+            <Realtalk/>
+        {:else if createcv}
+            <Createcv/>
+        {:else if eboss}
+        <Beyond/>
+        {:else if estock}
+        <Beyond/>
         {/if}
     {:else}
     <div class="projects">
         <div class="card2">
-            <img src="profile.png" alt="">
+            <img src="image.png" alt="">
             <div class="info">
                 <h3>FinTrack <span id="date">2024</span></h3>
                 <div class="techno">
@@ -51,12 +99,12 @@ import Mycore from "./project info/Mycore.svelte";
                         <span>MySQL</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span>See more</span></p>
+                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickFintrack}>See more</span></p>
             </div>
         </div>
 
         <div class="card1">
-            <img src="profile.png" alt="">
+            <img src="image.png" alt="">
             <div class="info">
                 <h3>DataLens <span id="date">2024</span></h3>
                 <div class="techno">
@@ -65,7 +113,7 @@ import Mycore from "./project info/Mycore.svelte";
                         <span>Python</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickBeyond}>See more</span></p>
+                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickDatalens}>See more</span></p>
             </div>
         </div>
     </div>
@@ -89,7 +137,7 @@ import Mycore from "./project info/Mycore.svelte";
                         <span>MySQL</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span>See more</span></p>
+                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickRealtalk}>See more</span></p>
             </div>
         </div>
 
@@ -133,7 +181,7 @@ import Mycore from "./project info/Mycore.svelte";
                         <span>Svelte</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span>See more</span></p>
+                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickCV}>See more</span></p>
             </div>
         </div>
     </div>
@@ -157,7 +205,7 @@ import Mycore from "./project info/Mycore.svelte";
                         <span>Postgresql</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span>See more</span></p>
+                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickEboss}>See more</span></p>
             </div>
         </div>
     
@@ -183,7 +231,7 @@ import Mycore from "./project info/Mycore.svelte";
                         <span>Mysql</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span>See more</span></p>
+                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickEstock}>See more</span></p>
             </div>
         </div>
     </div>
