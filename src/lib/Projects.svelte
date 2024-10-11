@@ -5,6 +5,7 @@
     import Fintrack from "./project info/Fintrack.svelte"; 
     import Mycore from "./project info/Mycore.svelte";
     import Realtalk from "./project info/Realtalk.svelte";
+    import EStock from "./project info/EStock.svelte";
 
     let fintrack = false;
     let datalens = false;
@@ -77,7 +78,7 @@
         {:else if eboss}
         <Beyond/>
         {:else if estock}
-        <Beyond/>
+            <EStock/>
         {/if}
     {:else}
     <div class="projects">

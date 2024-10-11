@@ -124,6 +124,10 @@
             {/if}
         </div>
     </div>
+    <div class="footer">
+        <p><span>Copyright 2024</span><br>
+            <span>By <img src="logo.png" alt=""></span></p>
+    </div>
 </div>
 
 <style>
@@ -177,7 +181,7 @@
         font-weight: lighter;
     }
     .sect1 .info{
-        background-color: rgba(255, 255, 255, 0.055);
+        background-color: rgba(255, 255, 255, 0.049);
         padding: 20px;
         border-radius: 10px;
         margin-top: 50px;
@@ -202,7 +206,7 @@
         margin-right: 10px;
     }
     .sect1 button{
-        background-color: rgba(255, 255, 255, 0.055);
+        background-color: rgba(255, 255, 255, 0.049);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -254,13 +258,15 @@
         cursor: not-allowed;
     }
     #view{
-        background-color: rgba(255, 255, 255, 0.137);
+        background-color: rgba(255, 255, 255, 0.049);
         border-radius: 20px;
         padding: 10px;
         color: rgb(190, 190, 190);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-weight: bold;
         font-size: 15px;
+        display: flex;
+        justify-content: center;
     }
     @media screen and (max-width : 700px) {
         .body{
@@ -278,8 +284,8 @@
             text-align: center;
         }
         .sect1 .info span, .sect1 button{
-            font-size: 15px;
-            line-height: 30px;
+            font-size: 12px;
+            line-height: 25px;
         }
         .nav{
             padding: 10px;
@@ -289,5 +295,19 @@
             width: auto;
             padding: 10px;
         }
+    }
+    .footer{
+        padding: 15px;
+        font-size: 12px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .footer img{
+        height: 25px;
+        margin-left: 5px;
+    }
+    .footer span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
