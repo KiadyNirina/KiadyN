@@ -161,6 +161,9 @@
 </div>
 
 <style>
+    .techno{
+        padding: 15px;
+    }
     .techno p {
         color: rgba(255, 255, 255, 0.797);
     }

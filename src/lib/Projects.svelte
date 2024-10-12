@@ -6,6 +6,7 @@
     import Mycore from "./project info/Mycore.svelte";
     import Realtalk from "./project info/Realtalk.svelte";
     import EStock from "./project info/EStock.svelte";
+    import Eboss from "./project info/Eboss.svelte";
 
     let fintrack = false;
     let datalens = false;
@@ -76,7 +77,7 @@
         {:else if createcv}
             <Createcv/>
         {:else if eboss}
-        <Beyond/>
+            <Eboss/>
         {:else if estock}
             <EStock/>
         {/if}
@@ -121,7 +122,7 @@
 
     <div class="projects">
         <div class="card2">
-            <img src="createcv.PNG" alt="">
+            <img src="real_talk.jpg" alt="">
             <div class="info">
                 <h3>Real_Talk <span id="date">2024</span></h3>
                 <div class="techno">
