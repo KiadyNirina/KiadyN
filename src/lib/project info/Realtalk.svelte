@@ -19,9 +19,16 @@
                         <span>MySQL</span>
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nobis sint amet tempore maiores ab pariatur iusto tempora incidunt eum.</p>
+                <p>Real_Talk is a real-time chat platform, designed to facilitate instant communication between users. Developed with modern architecture, it offers a fluid and interactive experience. Key features include:</p>
+                <ul>
+                    <li><b>Instant Messaging</b> : Allows users to chat in real time through an intuitive interface.</li>
+                    <li><b>Real-time notifications</b> : Notification system for new messages and interactions with other users.</li>
+                    <li><b>User management</b> : Registration, login and profile management, with the ability to see who is online and add contacts.</li>
+                    <li><b>Status and Presence</b> : Indication of users' online status for a more interactive experience.</li>
+                    <li><b>Système sécurisé</b> : Authentification et protection des données personnelles assurées.</li>
+                </ul>
             </div>
-            <a href="" class="repo">
+            <a href="https://github.com/KiadyNirina/Real_talk" class="repo">
                 <img src="github-white.png" alt="">
                 Repo github
             </a>

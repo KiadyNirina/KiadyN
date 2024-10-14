@@ -8,7 +8,7 @@
                 <span>WordPress</span>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia optio ad magni reiciendis rerum ullam libero maiores nihil. Distinctio, ex?</p>
+        <p>The Mycore company showcase site was developed as part of a freelance project. This site highlights the company's visual identity and services, with a clean and professional design, reflecting Mycore's values. It has been designed to provide intuitive navigation, allowing visitors to easily discover key information about the company's activities and products. The emphasis was placed on aesthetics, ergonomics and user experience, while integrating modern and efficient architecture.</p>
     </div>
 </div>
 
@@ -32,9 +32,11 @@
     }
     .info p{
         color: rgb(165, 165, 165);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-block-start: 5px;
         margin-block-end: 5px;
+        line-height: 25px;
+        font-size: 13px;
     }
     #date{
         margin-left: auto;

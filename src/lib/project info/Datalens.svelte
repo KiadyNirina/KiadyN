@@ -8,7 +8,16 @@
                         <span>Python</span>
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum sequi obcaecati sed veniam dolorum. Nemo aspernatur consequuntur pariatur, quo natus, labore iusto laudantium quia cupiditate voluptas id eius minima exercitationem optio. Obcaecati repellat quia dicta impedit rem deserunt explicabo animi exercitationem, quisquam eaque, esse dolorum? Aut maxime maiores explicabo ex? Molestias explicabo ipsam, nisi iste hic tempore saepe facilis, quidem dolorem eaque quaerat, deserunt rerum. Blanditiis quos dolores placeat quod amet. Eaque suscipit in quam odio minus! Ullam tempore, similique sequi officiis, in qui dolorum necessitatibus labore tempora nesciunt eius nisi hic fugiat eum aliquam ab totam quasi? Ex, iste.</p>
+                <p>DataLens is a data visualization tool designed to provide clear analysis through interactive graphics. DataLens offers the following features: </p>
+                <ul>
+                    <li><b>Data import</b> : Easy loading and integration of datasets in CSV, JSON format.</li>
+                    <li><b>Interactive visualization</b> : Creating dynamic charts to explore trends and insights.</li>
+                </ul>
+
+                <a href="https://github.com/KiadyNirina/DataLens" class="repo">
+                    <img src="github-white.png" alt="">
+                    Repo github
+                </a>
             </div>
 </div>
 
@@ -30,11 +39,17 @@
         color: rgb(157, 157, 157);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    .info p{
+    .info p, .info li{
         color: rgb(165, 165, 165);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-block-start: 5px;
         margin-block-end: 5px;
+        line-height: 25px;
+        font-size: 13px;
+    }
+    .info li b{
+        font-style: normal;
+        font-size: 15px;
     }
     #date{
         margin-left: auto;
@@ -57,5 +72,27 @@
     }
     .techno .techno2 span{
         font-size: 11px;
+    }
+    .repo {
+        background-color: rgba(255, 255, 255, 0.049);
+        border-radius: 10px;
+        width: auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 13px;
+    }
+    .repo:hover{
+        background-color: rgba(32, 162, 255, 0.055);
+    }
+    .repo img{
+        height: 25px;
+        width: auto;
+        margin-right: 5px;
     }
 </style>

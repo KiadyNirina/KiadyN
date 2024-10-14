@@ -101,7 +101,7 @@
                         <span>MySQL</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickFintrack}>See more</span></p>
+                <p>... <span id="seeMore" on:click={handleClickFintrack}>See more</span></p>
             </div>
         </div>
 
@@ -115,7 +115,7 @@
                         <span>Python</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickDatalens}>See more</span></p>
+                <p>DataLens is a data visualization ... <span id="seeMore" on:click={handleClickDatalens}>See more</span></p>
             </div>
         </div>
     </div>
@@ -139,7 +139,7 @@
                         <span>MySQL</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickRealtalk}>See more</span></p>
+                <p>Real_Talk is a real-time chat platform,... <span id="seeMore" on:click={handleClickRealtalk}>See more</span></p>
             </div>
         </div>
 
@@ -153,7 +153,7 @@
                         <span>WordPress</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickBeyond}>See more</span></p>
+                <p>The Beyond company showcase site... <span id="seeMore" on:click={handleClickBeyond}>See more</span></p>
             </div>
         </div>
     </div>
@@ -169,7 +169,7 @@
                         <span>WordPress</span>
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum, enim.... <span id="seeMore" on:click={handleClickMycore}>See more</span></p>
+                <p>The Mycore company showcase site... <span id="seeMore" on:click={handleClickMycore}>See more</span></p>
             </div>
         </div>
     

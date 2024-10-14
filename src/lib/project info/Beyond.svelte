@@ -8,7 +8,7 @@
                 <span>WordPress</span>
             </div>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia optio ad magni reiciendis rerum ullam libero maiores nihil. Distinctio, ex?</p>
+        <p>The Beyond company showcase site was created to highlight the company's services and values. Developed with a modern design and smooth navigation, the site reflects Beyond's commitment to offering innovative and high-quality solutions. Designed with a user-focused approach, it provides a pleasant browsing experience while enhancing visual and textual content in a consistent and engaging manner. This project made it possible to create a professional interface, combining performance and aesthetics.</p>
     </div>
 </div>
 
@@ -32,9 +32,11 @@
     }
     .info p{
         color: rgb(165, 165, 165);
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-block-start: 5px;
         margin-block-end: 5px;
+        line-height: 25px;
+        font-size: 13px;
     }
     #date{
         margin-left: auto;

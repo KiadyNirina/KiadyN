@@ -16,7 +16,11 @@
                     <span>MySQL</span>
                 </div>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi repudiandae beatae voluptate asperiores. Quos labore iste soluta magnam ab, temporibus repellat expedita tempore, molestias a perferendis facere doloribus, hic blanditiis. Ratione sed molestiae nam animi nihil quisquam optio id facilis? Magni, corrupti. Aliquid adipisci vero eius maiores dolore quam atque.</p>
+            <p>...</p>
+            <a href="https://github.com/KiadyNirina/FinTrack" class="repo">
+                <img src="github-white.png" alt="">
+                Repo github
+            </a>
     </div>
 </div>
 
@@ -65,5 +69,27 @@
     }
     .techno .techno2 span{
         font-size: 11px;
+    }
+    .repo {
+        background-color: rgba(255, 255, 255, 0.049);
+        border-radius: 10px;
+        width: auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 13px;
+    }
+    .repo:hover{
+        background-color: rgba(32, 162, 255, 0.055);
+    }
+    .repo img{
+        height: 25px;
+        width: auto;
+        margin-right: 5px;
     }
 </style>
