@@ -3,12 +3,14 @@
     <div class="content">
         <h4>Freelance <i>(Mycore)</i> <span>2024</span></h4>
         <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur harum corporis voluptatibus quidem dolor delectus fuga labore in, deleniti praesentium.</li>
+            <li>Design and development of showcase site with particular attention to visual identity, user experience and ergonomics.</li>
+            <li><b>Techno</b> : WordPress</li>
         </ul>
 
         <h4>Freelance <i>(Beyond)</i> <span>2024</span></h4>
         <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur harum corporis voluptatibus quidem dolor delectus fuga labore in, deleniti praesentium.</li>
+            <li>Design and development of showcase site with particular attention to visual identity, user experience and ergonomics.</li>
+            <li><b>Techno</b> : WordPress</li>
         </ul>
     </div>
 
@@ -16,7 +18,8 @@
     <div class="content">
         <h4>Freelance <i>(TeamCread)</i> <span>2023</span></h4>
         <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur harum corporis voluptatibus quidem dolor delectus fuga labore in, deleniti praesentium.</li>
+            <li>Design and development of showcase site with particular attention to visual identity, user experience and ergonomics.</li>
+            <li><b>Techno</b> : WordPress</li>
         </ul>
     </div>
 </div>
