@@ -1,5 +1,8 @@
 <div class="cardOne">
-    <img src="image.png" alt="">
+    <div class="img">
+        <img src="datalens.jpg" alt="">
+        <img src="datalens 2.jpg" alt="">
+    </div>
             <div class="info">
                 <h3>DataLens <span id="date">2024</span></h3>
                 <div class="techno">
@@ -26,9 +29,14 @@
         width: auto;
         padding: 10px;
     }
-    .cardOne img{
+    .img{
+        display: flex;
         width: 100%;
-        border-radius: 10px 10px 0px 0px;
+    }
+    .img img{
+        width: 49%;
+        border-radius: 5px;
+        margin: auto;
     }
     .info{
         padding: 5px;

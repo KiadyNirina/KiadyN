@@ -106,7 +106,7 @@
         </div>
 
         <div class="card1">
-            <img src="image.png" alt="">
+            <img src="datalens.jpg" alt="">
             <div class="info">
                 <h3>DataLens <span id="date">2024</span></h3>
                 <div class="techno">
