@@ -302,12 +302,13 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     .footer img{
-        height: 25px;
+        height: 20px;
         margin-left: 5px;
     }
     .footer span{
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 10px;
     }
 </style>
