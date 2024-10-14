@@ -20,16 +20,16 @@
                 <span>Mysql</span>
             </div>
         </div>
-        <p>E_Stock est une plateforme complète de gestion d'entreprise, conçue pour centraliser et automatiser la gestion des ressources internes. Parmi ses principales fonctionnalités :</p>
+        <p>E_Stock is a comprehensive business management platform, designed to centralize and automate the management of internal resources. Among its main features:</p>
         <ul>
-            <li><b>Gestion des équipements : </b>Suivi de l'inventaire, état des équipements, planification de la maintenance et gestion des renouvellements.</li>
-            <li><b>Gestion des fournisseurs : </b>Suivi des commandes, contrats, et historique des transactions, avec la possibilité de gérer facilement les relations avec différents fournisseurs.</li>
-            <li><b>Gestion des employés : </b>Gestion des profils d'employés, des rôles et responsabilités, ainsi que le suivi des présences et performances.</li>
-            <li><b>Gestion des commandes et approvisionnements : </b>Planification automatisée des besoins, suivi des niveaux de stock, et génération automatique des commandes auprès des fournisseurs.</li>
-            <li><b>Rapports et statistiques : </b>Génération de rapports détaillés sur l'utilisation des ressources, les performances des fournisseurs, les coûts d'approvisionnement, et l'efficacité des employés.</li>
+            <li><b>Equipment management : </b>Inventory monitoring, equipment status, maintenance planning and renewal management.</li>
+            <li><b>Supplier management : </b> Track orders, contracts, and transaction history, with the ability to easily manage relationships with different suppliers.</li>
+            <li><b>Employee management : </b> Management of employee profiles, roles and responsibilities, as well as attendance and performance tracking.</li>
+            <li><b>Order and supply management : </b> Automated planning of needs, monitoring of stock levels, and automatic generation of orders from suppliers.</li>
+            <li><b>Reporting and Statistics : </b>Generate detailed reports on resource utilization, supplier performance, procurement costs, and employee efficiency.</li>
         </ul>
 
-        <a href="" class="repo">
+        <a href="https://github.com/KiadyNirina/E_Stock" class="repo">
             <img src="github-white.png" alt="">
             Repo github
         </a>

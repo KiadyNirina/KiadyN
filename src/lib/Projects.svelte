@@ -183,7 +183,7 @@
                         <span>Svelte</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickCV}>See more</span></p>
+                <p>CreateCV is a simple and intuitive ... <span id="seeMore" on:click={handleClickCV}>See more</span></p>
             </div>
         </div>
     </div>
@@ -207,7 +207,7 @@
                         <span>Postgresql</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickEboss}>See more</span></p>
+                <p>eBoss is a comprehensive school ... <span id="seeMore" on:click={handleClickEboss}>See more</span></p>
             </div>
         </div>
     
@@ -233,7 +233,7 @@
                         <span>Mysql</span>
                     </div>
                 </div>
-                <p>Lorem, ipsum dolor... <span id="seeMore" on:click={handleClickEstock}>See more</span></p>
+                <p>E_Stock is a comprehensive business ... <span id="seeMore" on:click={handleClickEstock}>See more</span></p>
             </div>
         </div>
     </div>

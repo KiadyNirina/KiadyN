@@ -1,8 +1,12 @@
 <div class="cardOne">
-    <img src="eboss.jpg" alt="">
-    <img src="eboss 4.jpg" alt="">
-    <img src="eboss 5.jpg" alt="">
-    <img src="eboss 6.jpg" alt="">
+    <div class="img">
+        <img src="eboss.jpg" alt="">
+        <img src="eboss 4.jpg" alt="">
+    </div>
+    <div class="img">
+        <img src="eboss 5.jpg" alt="">
+        <img src="eboss 6.jpg" alt="">
+    </div>
     <div class="info">
         <h3>eBoss <span id="date">2024</span></h3>
         <div class="techno">
@@ -19,16 +23,17 @@
                 <span>postgresql</span>
             </div>
         </div>
-        <p>E_Stock est une plateforme complète de gestion d'entreprise, conçue pour centraliser et automatiser la gestion des ressources internes. Parmi ses principales fonctionnalités :</p>
+        <p>eBoss is a comprehensive school management platform, designed to meet the needs of educational establishments by automating and centralizing the management of students, teachers, parents and administrative staff. Main features include:</p>
         <ul>
-            <li><b>Gestion des équipements : </b>Suivi de l'inventaire, état des équipements, planification de la maintenance et gestion des renouvellements.</li>
-            <li><b>Gestion des fournisseurs : </b>Suivi des commandes, contrats, et historique des transactions, avec la possibilité de gérer facilement les relations avec différents fournisseurs.</li>
-            <li><b>Gestion des employés : </b>Gestion des profils d'employés, des rôles et responsabilités, ainsi que le suivi des présences et performances.</li>
-            <li><b>Gestion des commandes et approvisionnements : </b>Planification automatisée des besoins, suivi des niveaux de stock, et génération automatique des commandes auprès des fournisseurs.</li>
-            <li><b>Rapports et statistiques : </b>Génération de rapports détaillés sur l'utilisation des ressources, les performances des fournisseurs, les coûts d'approvisionnement, et l'efficacité des employés.</li>
+            <li><b>Registration management</b> : Registration of establishments, students, teachers and parents, with centralized monitoring of information.</li>
+            <li><b>Communication</b> : Messaging system allowing fluid interaction between the establishment, students, teachers and parents.</li>
+            <li><b>Timetable management</b> : Automated planning of lessons and activities, with the possibility of personalizing according to the needs of each class and teacher.</li>
+            <li><b>Grade Tracking and Reporting</b> : Track student academic performance, report card generation and performance reporting.</li>
+            <li><b>Tuition fee management</b> : Track payments, manage fees and scholarships, send automated payment reminders.</li>
+            <li><b>Salary Management</b> : Automate teacher and staff payments, track contracts and salary increases.</li>
         </ul>
 
-        <a href="" class="repo">
+        <a href="https://github.com/KiadyNirina/eBoss" class="repo">
             <img src="github-white.png" alt="">
             Repo github
         </a>
@@ -40,9 +45,14 @@
         width: auto;
         padding: 10px;
     }
-    .cardOne img{
+    .img{
+        display: flex;
         width: 100%;
-        border-radius: 10px 10px 0px 0px;
+    }
+    .img img{
+        width: 49%;
+        border-radius: 5px;
+        margin: auto;
     }
     .info{
         padding: 5px;

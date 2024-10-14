@@ -1,6 +1,8 @@
 <div class="cardOne">
-    <img src="real_talk.jpg" alt="">
-    <img src="real_talk 2.jpg" alt="">
+    <div class="img">
+        <img src="real_talk.jpg" alt="">
+        <img src="real_talk 2.jpg" alt="">
+    </div>
             <div class="info">
                 <h3>Real_Talk <span id="date">2024</span></h3>
                 <div class="techno">
@@ -30,9 +32,14 @@
         width: auto;
         padding: 10px;
     }
-    .cardOne img{
+    .img{
+        display: flex;
         width: 100%;
-        border-radius: 10px 10px 0px 0px;
+    }
+    .img img{
+        border-radius: 5px;
+        width: 49%;
+        margin: auto;
     }
     .info{
         padding: 5px;

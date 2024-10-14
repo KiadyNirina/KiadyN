@@ -125,7 +125,7 @@
         </div>
     </div>
     <div class="footer">
-        <p><span>Copyright 2024</span><br>
+        <p><span>© Copyright 2024</span><br>
             <span>By <img src="logo.png" alt=""></span></p>
     </div>
 </div>
@@ -187,7 +187,7 @@
         margin-top: 50px;
     }
     .sect1 .info span{
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         display: flex;
         align-items: center;
         font-size: 13px;
