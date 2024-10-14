@@ -166,11 +166,13 @@
     }
     .techno p {
         color: rgba(255, 255, 255, 0.797);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 13px;
+        font-weight: bold;
     }
     .techno p:hover{
         cursor: pointer;
-        color: rgb(84, 84, 255);
-        text-decoration: line-through;
+        background-color: rgba(0, 98, 255, 0.307);
     }
     .active{
         background-color: rgba(0, 98, 255, 0.307);

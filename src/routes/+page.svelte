@@ -256,6 +256,7 @@
         border-bottom: 1px solid white;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         cursor: not-allowed;
+        font-weight: bold;
     }
     #view{
         background-color: rgba(255, 255, 255, 0.049);
