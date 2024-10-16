@@ -147,7 +147,7 @@
         position: relative;
         top: -50px;
         left: 10%;
-        border: 5px solid rgb(16, 36, 49);
+        border: 5px solid rgb(1, 16, 36);
         transform-style: preserve-3d; /* Préserve l'effet 3D */
     }
     #pdp:hover{
@@ -169,7 +169,7 @@
     .sect1{
         color: white;
         padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.089);
+        border: 1px solid rgba(255, 255, 255, 0.061);
         border-radius: 15px;
         width: 30%;
         margin-right: 10px;
@@ -233,7 +233,7 @@
     }
     .sect2{
         padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.089);
+        border: 1px solid rgba(255, 255, 255, 0.061);
         border-radius: 15px;
         width: 70%;
     }

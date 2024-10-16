@@ -205,4 +205,9 @@
             transform: rotateY(360deg); /* Fait une rotation complète de 360 degrés */
         }
     }
+    @media screen and (max-width: 800px) {
+        .techno p {
+            font-size: 13px;
+        }
+    }
 </style>

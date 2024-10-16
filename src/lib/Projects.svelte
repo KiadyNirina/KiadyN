@@ -323,7 +323,7 @@
         }
         .card1 img, .card2 img{
             width: 100%;
-            height: 160px;
+            height: 150px;
             border-radius: 5px 5px 0px 0px;
         }
     }
