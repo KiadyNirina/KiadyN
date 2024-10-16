@@ -191,7 +191,7 @@
         display: flex;
         align-items: center;
         font-size: 13px;
-        line-height: 25px;
+        line-height: 28px;
         color: rgba(255, 255, 255, 0.889);
     }
     .sect1 .info span a{
@@ -202,7 +202,7 @@
         text-decoration: underline;
     }
     .sect1 .info img{
-        height: 20px;
+        height: 15px;
         margin-right: 10px;
     }
     .sect1 button{
@@ -220,7 +220,7 @@
         font-weight: bold;
     }
     .sect1 button img{
-        height: 20px;
+        height: 15px;
         margin-right: 10px;
     }
     .sect1 button:hover{
@@ -244,6 +244,8 @@
         margin-right: auto;
         margin-left: auto;
         font-size: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
     }
     .nav span:hover{
         padding-bottom: 10px;
@@ -254,9 +256,6 @@
         color: white;
         padding-bottom: 10px;
         border-bottom: 1px solid white;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        cursor: not-allowed;
-        font-weight: bold;
     }
     #view{
         background-color: rgba(255, 255, 255, 0.049);
@@ -285,8 +284,7 @@
             text-align: center;
         }
         .sect1 .info span, .sect1 button{
-            font-size: 12px;
-            line-height: 25px;
+            font-size: 13px;
         }
         .nav{
             padding: 10px;

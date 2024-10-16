@@ -25,7 +25,7 @@
                     <li><b>Real-time notifications</b> : Notification system for new messages and interactions with other users.</li>
                     <li><b>User management</b> : Registration, login and profile management, with the ability to see who is online and add contacts.</li>
                     <li><b>Status and Presence</b> : Indication of users' online status for a more interactive experience.</li>
-                    <li><b>Système sécurisé</b> : Authentification et protection des données personnelles assurées.</li>
+                    <li><b>Secure system</b> : Authentication and protection of personal data guaranteed.</li>
                 </ul>
             </div>
             <a href="https://github.com/KiadyNirina/Real_talk" class="repo">

@@ -272,7 +272,7 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-block-start: 5px;
         margin-block-end: 5px;
-        font-size: 12px;
+        font-size: 13px;
     }
     #date{
         margin-left: auto;

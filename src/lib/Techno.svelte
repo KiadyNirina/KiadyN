@@ -167,18 +167,20 @@
     .techno p {
         color: rgba(255, 255, 255, 0.797);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 13px;
+        font-size: 15px;
         font-weight: bold;
+        margin: 0;
+        padding: 10px;
     }
     .techno p:hover{
         cursor: pointer;
-        background-color: rgba(0, 98, 255, 0.307);
+        background-color: rgba(0, 98, 255, 0.13);
     }
     .active{
-        background-color: rgba(0, 98, 255, 0.307);
+        background-color: rgba(0, 98, 255, 0.13);
     }
     .img{
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         justify-content: center;
         perspective: 1000px;
     }

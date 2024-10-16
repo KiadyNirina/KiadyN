@@ -30,7 +30,7 @@
         padding: 10px;
     }
     .cardOne img{
-        width: 100%;
+        width: auto;
         border-radius: 10px 10px 0px 0px;
     }
     .info{
