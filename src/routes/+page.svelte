@@ -21,8 +21,8 @@
         loading = true;
         setTimeout(() => {
             const link = document.createElement('a');
-            link.href = 'CV_Kiady.pdf';
-            link.download = "CV_Kiady.pdf";
+            link.href = 'CV_RAMBELOSON_Kiady_Nirina.pdf';
+            link.download = "CV_RAMBELOSON_Kiady_Nirina.pdf";
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
