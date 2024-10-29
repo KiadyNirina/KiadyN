@@ -275,6 +275,9 @@
             margin-left: auto;
             margin-right: auto;
         }
+        #pdp{
+            height: 100px;
+        }
         .sect1{
             width: auto;
             padding: 20px;
