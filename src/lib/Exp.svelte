@@ -73,7 +73,8 @@
             font-size: 15px;
         }
         ul{
-            font-size: 12px;
+            font-size: 13px;
+            line-height: 20px;
         }
     }
 </style>
