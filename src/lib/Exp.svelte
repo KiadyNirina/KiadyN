@@ -5,12 +5,14 @@
         <ul>
             <li>Design and development of showcase site with particular attention to visual identity, user experience and ergonomics.</li>
             <li><b>Techno</b> : WordPress</li>
+            <li><b>Link</b> : <a href="https://test-tc.rf.gd/mycore/">Mycore</a></li>
         </ul>
 
         <h4>Freelance <i>(Beyond)</i> <span>2024</span></h4>
         <ul>
             <li>Design and development of showcase site with particular attention to visual identity, user experience and ergonomics.</li>
             <li><b>Techno</b> : WordPress</li>
+            <li><b>Link</b> : <a href="https://test-tc.rf.gd/beyond/">Beyond</a></li>
         </ul>
     </div>
 
@@ -20,6 +22,16 @@
         <ul>
             <li>Design and development of showcase site with particular attention to visual identity, user experience and ergonomics.</li>
             <li><b>Techno</b> : WordPress</li>
+        </ul>
+    </div>
+
+    <h2>2022</h2>
+    <div class="content">
+        <h4>Freelance <i>(Mon Comparateur Immo - MCI)</i> <span>2022</span></h4>
+        <ul>
+            <li>Design and development of showcase site with particular attention to visual identity, user experience and ergonomics.</li>
+            <li><b>Techno</b> : WordPress</li>
+            <li><b>Link</b> : <a href="https://www.moncomparateur-immo.com/">moncomparateur-immo</a></li>
         </ul>
     </div>
 </div>
@@ -48,5 +60,12 @@
     }
     h4 span{
         margin-left: auto;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(0, 132, 255);
+    }
+    a:hover{
+        text-decoration: underline;
     }
 </style>

@@ -7,6 +7,7 @@
     import Realtalk from "./project info/Realtalk.svelte";
     import EStock from "./project info/EStock.svelte";
     import Eboss from "./project info/Eboss.svelte";
+    import Mci from "./project info/MCI.svelte";
 
     let fintrack = false;
     let datalens = false;
@@ -16,6 +17,7 @@
     let createcv = false;
     let eboss = false;
     let estock = false;
+    let mci = false;
 
     const handleClickFintrack = () => {
         fintrack = true;
@@ -49,6 +51,10 @@
         estock = true;
     }
 
+    const handleClickMCI = () => {
+        mci = true;
+    }
+
     const handleClickReturn = () => {
         fintrack = false;
         datalens = false;
@@ -58,11 +64,12 @@
         createcv = false;
         eboss = false;
         estock = false;
+        mci = false;
     }
 </script>
 
 <div class="">
-    {#if fintrack || datalens || realtalk || mycore || beyond || createcv || eboss || estock}
+    {#if fintrack || datalens || realtalk || mycore || beyond || createcv || eboss || estock || mci}
         <p id="return" on:click={handleClickReturn}> Return to all</p>
         {#if mycore}
             <Mycore/>
@@ -80,6 +87,8 @@
             <Eboss/>
         {:else if estock}
             <EStock/>
+        {:else if mci}
+            <Mci/>
         {/if}
     {:else}
     <div class="projects">
@@ -234,6 +243,22 @@
                     </div>
                 </div>
                 <p>E_Stock is a comprehensive business ... <span id="seeMore" on:click={handleClickEstock}>See more</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="projects">
+        <div class="card2">
+            <img src="moncomparateurimmo.PNG" alt="">
+            <div class="info">
+                <h3>MCI <span id="date">2022</span></h3>
+                <div class="techno">
+                    <div class="techno2">
+                        <img src="wordpress.png" alt="">
+                        <span>WordPress</span>
+                    </div>
+                </div>
+                <p>The Mon Comparateur Immo - MCI ... <span id="seeMore" on:click={handleClickMCI}>See more</span></p>
             </div>
         </div>
     </div>

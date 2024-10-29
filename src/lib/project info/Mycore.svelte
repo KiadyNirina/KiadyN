@@ -9,6 +9,10 @@
             </div>
         </div>
         <p>The Mycore company showcase site was developed as part of a freelance project. This site highlights the company's visual identity and services, with a clean and professional design, reflecting Mycore's values. It has been designed to provide intuitive navigation, allowing visitors to easily discover key information about the company's activities and products. The emphasis was placed on aesthetics, ergonomics and user experience, while integrating modern and efficient architecture.</p>
+        <a href="https://test-tc.rf.gd/mycore/" class="repo">
+            <img src="lien.png" alt="">
+            Link
+        </a>
     </div>
 </div>
 
@@ -59,5 +63,27 @@
     }
     .techno .techno2 span{
         font-size: 11px;
+    }
+    .repo {
+                background-color: rgba(255, 255, 255, 0.049);
+                border-radius: 10px;
+                width: auto;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                font-size: 13px;
+    }
+    .repo:hover{
+                background-color: rgba(32, 162, 255, 0.055);
+    }
+    .repo img{
+                height: 25px;
+                width: auto;
+                margin-right: 5px;
     }
 </style>

@@ -1,16 +1,15 @@
 <div class="cardOne">
-    <img src="beyond.PNG" alt="">
+    <img src="moncomparateurimmo.PNG" alt="">
     <div class="info">
-        <h3>Beyond | <span>freelance</span> <span id="date">2024</span></h3>
+        <h3>MCI | <span>freelance</span> <span id="date">2022</span></h3>
         <div class="techno">
             <div class="techno2">
                 <img src="wordpress.png" alt="">
                 <span>WordPress</span>
             </div>
         </div>
-        <p>The Beyond company showcase site was created to highlight the company's services and values. Developed with a modern design and smooth navigation, the site reflects Beyond's commitment to offering innovative and high-quality solutions. Designed with a user-focused approach, it provides a pleasant browsing experience while enhancing visual and textual content in a consistent and engaging manner. This project made it possible to create a professional interface, combining performance and aesthetics.</p>
-
-        <a href="https://test-tc.rf.gd/beyond/" class="repo">
+        <p>The Mon Comparateur Immo - MCI company showcase site was developed as part of a freelance project. This site highlights the company's visual identity and services, with a clean and professional design, reflecting Mycore's values. It has been designed to provide intuitive navigation, allowing visitors to easily discover key information about the company's activities and products. The emphasis was placed on aesthetics, ergonomics and user experience, while integrating modern and efficient architecture.</p>
+        <a href="https://www.moncomparateur-immo.com/" class="repo">
             <img src="lien.png" alt="">
             Link
         </a>
