@@ -68,4 +68,12 @@
     a:hover{
         text-decoration: underline;
     }
+    @media screen and (max-width : 700px) {
+        h4{
+            font-size: 15px;
+        }
+        ul{
+            font-size: 12px;
+        }
+    }
 </style>

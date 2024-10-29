@@ -292,6 +292,9 @@
         .nav{
             padding: 10px;
         }
+        .nav span{
+            font-size: 12px;
+        }
         .sect2{
             margin-top: 10px;
             width: auto;
