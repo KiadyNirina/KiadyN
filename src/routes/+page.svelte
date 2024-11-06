@@ -86,7 +86,7 @@
 
 <div class="content">
     <div class="head">
-        <img id="pdc" src="giphy (7).webp" alt="">
+        <img id="pdc" src="giphy (12).webp" alt="">
         <img id="pdp" src="pdp.jpg" alt="">
     </div>
     <div class="body">
@@ -140,9 +140,10 @@
     #pdc{
         width: 100%;
         height: 200px;
+        object-fit: cover;
     }
     #pdp{
-        height: 170px;
+        height: 120px;
         border-radius: 100%;
         position: relative;
         top: -50px;

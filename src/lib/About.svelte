@@ -26,7 +26,7 @@
 
 <div class="about">
     <p class="typed-text">{displayText}<span class="cursor">_</span></p>
-    <img src="giphy (11).webp" alt="">
+    <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/2IudUHdI075HL02Pkk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 </div>
 
 <style>
