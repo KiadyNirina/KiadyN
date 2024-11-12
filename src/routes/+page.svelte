@@ -86,13 +86,13 @@
 
 <div class="content">
     <div class="head">
-        <img id="pdc" src="giphy (12).webp" alt="">
+        <img id="pdc" src="pdc2.jpg" alt="">
         <img id="pdp" src="pdp.jpg" alt="">
     </div>
     <div class="body">
         <div class="sect1">
             <span id="view">Views: {viewCount}</span>
-            <p><span>"Code is like humor. When you have to explain it, it's bad."</span> __Cory House</p>
+            <p><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
             <div class="info">
                 <span><img src="adresse-white.png" alt=""> Antananarivo, Madagascar</span>
                 <span><img src="tel-white.png" alt=""> +261341039490</span>
@@ -141,6 +141,7 @@
         width: 100%;
         height: 200px;
         object-fit: cover;
+        border-radius: 15px;
     }
     #pdp{
         height: 120px;
@@ -149,7 +150,7 @@
         top: -50px;
         left: 10%;
         border: 5px solid rgb(1, 16, 36);
-        transform-style: preserve-3d; /* Préserve l'effet 3D */
+        transform-style: preserve-3d;
     }
     #pdp:hover{
         cursor: pointer;

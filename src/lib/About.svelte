@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
-    let message = ' My name is RAMBELOSON Kiady Nirina, I am from MADAGASCAR , I am a young full-stack developer. Passionate about technology🌐 and innovation💡, I am dedicated to acquiring solid technical skills and creating successful digital solutions⚙️. In addition to my technical skills👨‍💻, I enjoy collaborating with other developers🤝 and participating in team projects. I am always looking for new challenges🌱 and opportunities🚪 to practice my skills and learn new technologies📚. Do not hesitate to contact me📧 for any questions, collaborations or professional opportunities🙏. '
+    let message = ' My name is RAMBELOSON Kiady Nirina, I am from MADAGASCAR , I am a young full-stack developer. Passionate about technology🌐 and innovation💡, I am dedicated to acquiring solid technical skills and creating successful digital solutions⚙️. I am always looking for new challenges🌱 and opportunities🚪 to practice my skills and learn new technologies📚. Do not hesitate to contact me📧 for any questions, collaborations or professional opportunities🙏. '
 
     let displayText = "";
     
@@ -16,7 +16,7 @@
             if (index === message.length) {
                 clearInterval(typingInterval);
             }
-        }, 50);
+        }, 70);
     }
 
     onMount(() => {
