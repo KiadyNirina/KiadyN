@@ -87,7 +87,13 @@
 <div class="content">
     <div class="head">
         <img id="pdc" src="pdc2.jpg" alt="">
-        <img id="pdp" src="pdp.jpg" alt="">
+        <div id="pdp">
+            <img src="pdp.jpg" alt="">
+            <div class="">
+                <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
+                <p>Developer Full-Stack</p>
+            </div>
+        </div>
     </div>
     <div class="body">
         <div class="sect1">
@@ -144,18 +150,46 @@
         border-radius: 15px;
     }
     #pdp{
-        height: 120px;
-        border-radius: 100%;
         position: relative;
         top: -50px;
         left: 10%;
+        display: flex;
+        align-items: center;
+        width: 60%;
+    }
+    #pdp img{
+        height: 120px;
+        border-radius: 100%;
         border: 5px solid rgb(1, 16, 36);
         transform-style: preserve-3d;
     }
-    #pdp:hover{
+    #pdp img:hover{
         cursor: pointer;
         box-shadow: 0px 0px 5px #ffffffee;
         animation: rotate3D 5s linear infinite;
+    }
+    #pdp h1{
+        color: rgba(255, 255, 255, 0.7);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 17px;
+        margin: 0px 0px 0px 10px;
+        display: flex;
+        align-items: end;
+    }
+    #pdp h1 img{
+        height: 15px;
+        border: none;
+        margin-left: 2px;
+    }
+    #pdp h1 img:hover{
+        cursor: default;
+        box-shadow: none;
+        animation: none;
+    }
+    #pdp p{
+        color: rgba(255, 255, 255, 0.505);
+        font-size: 13px;
+        margin: 0px 0px 0px 10px;
     }
     @keyframes rotate3D {
         from {
@@ -277,8 +311,11 @@
             margin-left: auto;
             margin-right: auto;
         }
-        #pdp{
+        #pdp img{
             height: 100px;
+        }
+        #pdp{
+            width: 50%;
         }
         .sect1{
             width: auto;
