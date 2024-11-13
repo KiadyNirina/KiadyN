@@ -10,7 +10,7 @@
 
     async function fetchViews() {
         try {
-            const response = await fetch('https://kiadyn.onrender.com/api/views/');
+            const response = await fetch('https://kiadyn.onrender.com/api/views');
             const data = await response.json();
             views = data.views;
         } catch (error) {
