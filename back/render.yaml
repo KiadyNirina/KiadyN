@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: Back
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn Back.wsgi" 
+    plan: free

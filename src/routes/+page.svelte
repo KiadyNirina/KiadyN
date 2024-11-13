@@ -6,13 +6,26 @@
     import Techno from "../lib/Techno.svelte";
     import { onMount } from "svelte";
 
-    let viewCount = 0;
-    onMount(() => {
-        const storedCount = localStorage.getItem('viewCount');
-        viewCount = storedCount ? parseInt(storedCount, 10) : 0;
+    let views = 0;
 
-        viewCount++;
-        localStorage.setItem('viewCount', viewCount);
+    async function fetchViews() {
+        try {
+            const response = await fetch('http://localhost:8000/api/views/');
+            const data = await response.json();
+            views = data.views;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des vues:', error);
+        }
+    }
+
+    //let viewCount = 0;
+    onMount(() => {
+        fetchViews();
+        // const storedCount = localStorage.getItem('viewCount');
+        // viewCount = storedCount ? parseInt(storedCount, 10) : 0;
+
+        // viewCount++;
+        // localStorage.setItem('viewCount', viewCount);
     });
 
     let loading = false;
@@ -97,7 +110,7 @@
     </div>
     <div class="body">
         <div class="sect1">
-            <span id="view">Views: {viewCount}</span>
+            <span id="view">Views: {views}</span>
             <p><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
             <div class="info">
                 <span><img src="adresse-white.png" alt=""> Antananarivo, Madagascar</span>
