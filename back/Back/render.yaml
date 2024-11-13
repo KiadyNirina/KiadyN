@@ -2,12 +2,12 @@ services:
   - type: web
     name: back-portfolio
     env: python
-    plan: free  
-    buildCommand: "pip install -r requirements.txt && python manage.py migrate"
-    startCommand: "gunicorn Back.wsgi:application"  
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn Back.wsgi:application --preload --bind 0.0.0.0:${PORT}"
     envVars:
-      - key: SECRET_KEY
-        value: "django-insecure-p^)$6garoaozwb@2jnn2+kxc7mbrl6n)tb^q6_*^7@igll(+_-"  
-      - key: DATABASE_URL
-        value: "sqlite:///db.sqlite3"  
-    autoDeploy: true
+      - key: DJANGO_SECRET_KEY
+        sync: false
+    mounts:
+      - type: volume
+        name: db
+        path: /var/lib/db
