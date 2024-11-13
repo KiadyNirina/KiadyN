@@ -31,7 +31,8 @@ DATABASES = {
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p^)$6garoaozwb@2jnn2+kxc7mbrl6n)tb^q6_*^7@igll(+_-'
+# SECRET_KEY = 'django-insecure-p^)$6garoaozwb@2jnn2+kxc7mbrl6n)tb^q6_*^7@igll(+_-'
+SECRET_KEY = '34fa61689f97e5375e12ee31146e55a6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
