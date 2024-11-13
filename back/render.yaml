@@ -1,7 +1,13 @@
 services:
   - type: web
-    name: Back
+    name: back-portfolio
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn Back.wsgi" 
-    plan: free
+    plan: free  
+    buildCommand: "pip install -r requirements.txt && python manage.py migrate"
+    startCommand: "gunicorn Back.wsgi:application"  
+    envVars:
+      - key: SECRET_KEY
+        value: "votre-clé-secrète"  
+      - key: DATABASE_URL
+        value: "sqlite:///db.sqlite3"  
+    autoDeploy: true
