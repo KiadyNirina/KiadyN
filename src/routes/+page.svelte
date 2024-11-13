@@ -89,7 +89,7 @@
         <img id="pdc" src="pdc2.jpg" alt="">
         <div id="pdp">
             <img src="pdp.jpg" alt="">
-            <div class="">
+            <div class="name">
                 <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
                 <p>Developer Full-Stack</p>
             </div>
@@ -131,8 +131,7 @@
         </div>
     </div>
     <div class="footer">
-        <p><span>© Copyright 2024</span><br>
-            <span>By <img src="logo.png" alt=""></span></p>
+        <p><span>© 2024<img src="logo.png" alt="">. All rights reserved.</span></p>
     </div>
 </div>
 
@@ -140,14 +139,13 @@
     .content{
         margin-left: auto;
         margin-right: auto;
-        max-width: 900px;
+        max-width: 1100px;
         color: rgba(255, 255, 255, 0.386);
     }
     #pdc{
         width: 100%;
         height: 200px;
         object-fit: cover;
-        border-radius: 15px;
     }
     #pdp{
         position: relative;
@@ -157,10 +155,15 @@
         align-items: center;
         width: 60%;
     }
+    #pdp .name{
+        background-color: rgb(0, 4, 12);
+        padding: 10px;
+        border-radius: 10px;
+    }
     #pdp img{
         height: 120px;
         border-radius: 100%;
-        border: 5px solid rgb(1, 16, 36);
+        border: 5px solid rgb(0, 4, 12);
         transform-style: preserve-3d;
     }
     #pdp img:hover{
@@ -174,7 +177,7 @@
         font-size: 17px;
         margin: 0px 0px 0px 10px;
         display: flex;
-        align-items: end;
+        align-items: center;
     }
     #pdp h1 img{
         height: 15px;
@@ -317,6 +320,9 @@
         #pdp{
             width: 50%;
         }
+        #pdp h1{
+            align-items: end;
+        }
         .sect1{
             width: auto;
             padding: 20px;
@@ -342,17 +348,18 @@
     }
     .footer{
         padding: 15px;
-        font-size: 12px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 13px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: rgb(83, 83, 83);
     }
     .footer img{
         height: 20px;
         margin-left: 5px;
+        margin-right: 5px;
     }
     .footer span{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 10px;
     }
 </style>

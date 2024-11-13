@@ -280,7 +280,7 @@
     }
     .card1 img, .card2 img{
         width: 100%;
-        height: 130px;
+        height: 160px;
         border-radius: 5px 5px 0px 0px;
     }
     .info{
