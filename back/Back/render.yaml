@@ -5,9 +5,5 @@ services:
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
     startCommand: "gunicorn Back.wsgi:application --preload --bind 0.0.0.0:${PORT}"
     envVars:
-      - key: DJANGO_SECRET_KEY
+      - key: SECRET_KEY
         sync: false
-    mounts:
-      - type: volume
-        name: db
-        path: /var/lib/db
