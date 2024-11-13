@@ -7,7 +7,7 @@ services:
     startCommand: "gunicorn Back.wsgi:application"  
     envVars:
       - key: SECRET_KEY
-        value: "votre-clé-secrète"  
+        value: "django-insecure-p^)$6garoaozwb@2jnn2+kxc7mbrl6n)tb^q6_*^7@igll(+_-"  
       - key: DATABASE_URL
         value: "sqlite:///db.sqlite3"  
     autoDeploy: true
