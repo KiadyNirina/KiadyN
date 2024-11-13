@@ -19,3 +19,20 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Fichiers de logs
+*.log
+
+back/venv/
+
+back/*.env
+back/config/settings_local.py
+
+back/Back/db.sqlite3
+
+back/Back/*/migrations/*
