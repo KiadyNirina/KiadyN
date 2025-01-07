@@ -19,14 +19,8 @@
         }
     }
 
-    //let viewCount = 0;
     onMount(() => {
         fetchViews();
-        // const storedCount = localStorage.getItem('viewCount');
-        // viewCount = storedCount ? parseInt(storedCount, 10) : 0;
-
-        // viewCount++;
-        // localStorage.setItem('viewCount', viewCount);
     });
 
     let loading = false;
@@ -44,57 +38,10 @@
         }, 5000);
     }
 
-    let about = true;
-    let techno = false;
-    let projects = false;
-    let exp = false;
-    let comp = false;
-
     let active = "about";
 
-    const handleClickAbout = (id) => {
+    const handleClick = (id) => {
         active = id;
-        about = true;
-        techno = false;
-        projects = false;
-        exp = false;
-        comp = false;
-    }
-
-    const handleClickTechno = (id) => {
-        active = id;
-        about = false;
-        techno = true;
-        projects = false;
-        exp = false;
-        comp = false;
-    }
-
-    const handleClickProjects = (id) => {
-        active = id;
-        about = false;
-        techno = false;
-        projects = true;
-        exp = false;
-        comp = false;
-    }
-
-    const handleClickExp = (id) => {
-        active = id;
-        about = false;
-        techno = false;
-        projects = false;
-        exp = true;
-        comp = false;
-    }
-
-    const handleClickComp = (id) => {
-        active = id;
-        about = false;
-        techno = false;
-        projects = false;
-        exp = false;
-        comp = true;
     }
 </script>
 
@@ -125,22 +72,22 @@
         </div>
         <div class="sect2">
             <div class="nav">
-                <span class:active={active == 'about'} on:click={() => handleClickAbout('about')}>About me</span>
-                <span class:active={active == 'techno'} on:click={() => handleClickTechno('techno')}>Techno</span>
-                <span class:active={active == 'projects'} on:click={() => handleClickProjects('projects')}>Projects</span>
-                <span class:active={active == 'exp'} on:click={() => handleClickExp('exp')}>Exp.</span>
-                <span class:active={active == 'comp'} on:click={() => handleClickComp('comp')}>Comp</span>
+                <span class:active={active == 'about'} on:click={() => handleClick('about')}>About me</span>
+                <span class:active={active == 'techno'} on:click={() => handleClick('techno')}>Techno</span>
+                <span class:active={active == 'projects'} on:click={() => handleClick('projects')}>Projects</span>
+                <span class:active={active == 'exp'} on:click={() => handleClick('exp')}>Exp.</span>
+                <span class:active={active == 'comp'} on:click={() => handleClick('comp')}>Comp</span>
             </div>
-            {#if about}
-                <About/>
-            {:else if techno}
-                <Techno/>
-            {:else if projects}
-                <Projects/>
-            {:else if exp}
-                <Exp/>
-            {:else if comp}
-                <Comp/>
+            {#if active === 'about'}
+                <About class="slide-in"/>
+            {:else if active === 'techno'}
+                <Techno class="slide-in"/>
+            {:else if active === 'projects'}
+                <Projects class="slide-in"/>
+            {:else if active === 'exp'}
+                <Exp class="slide-in"/>
+            {:else if active === 'comp'}
+                <Comp class="slide-in"/>
             {/if}
         </div>
     </div>
@@ -381,5 +328,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .slide-in {
+        animation: slide-in 0.5s ease-out forwards;
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 </style>
