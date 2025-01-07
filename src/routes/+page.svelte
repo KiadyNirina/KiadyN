@@ -145,7 +145,7 @@
         </div>
     </div>
     <div class="footer">
-        <p><span><img src="logo.png" alt="">© { currentYear } KiadyN.</span></p>
+        <p><span><img src="logo.png" alt="">© { currentYear } KiadyN, lnc.</span></p>
     </div>
 </div>
 
