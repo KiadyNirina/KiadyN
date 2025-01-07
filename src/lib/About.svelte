@@ -25,6 +25,7 @@
 </script>
 
 <div class="about">
+    <h1 class="title">Who am I?</h1>
     <p class="typed-text">{displayText}<span class="cursor">_</span></p>
     <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/2IudUHdI075HL02Pkk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 </div>
@@ -45,5 +46,9 @@
         border: 1px solid rgba(255, 255, 255, 0.182);
         padding: 5px;
         width: 100%;
+    }
+    .title{
+        font-family: 'Rubik', sans-serif;
+        font-size: 40px;
     }
 </style>

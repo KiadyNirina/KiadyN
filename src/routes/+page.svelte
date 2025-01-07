@@ -6,6 +6,7 @@
     import Techno from "../lib/Techno.svelte";
     import { onMount } from "svelte";
 
+    let currentYear = new Date().getFullYear();
     let views = 0;
 
     async function fetchViews() {
@@ -144,11 +145,17 @@
         </div>
     </div>
     <div class="footer">
-        <p><span>© 2024<img src="logo.png" alt="">. All rights reserved.</span></p>
+        <p><span><img src="logo.png" alt="">© { currentYear } KiadyN.</span></p>
     </div>
 </div>
 
 <style>
+    @font-face {
+        font-family: 'Rubik';
+        src: url('/font/RubikVinyl-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
     .content{
         margin-left: auto;
         margin-right: auto;
