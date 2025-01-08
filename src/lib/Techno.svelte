@@ -1,106 +1,38 @@
 <script>
-    let techno1 = false;
-    let techno2 = false;
-    let techno3 = false;
-    let techno4 = false;
-    let techno5 = false;
-    let techno6 = false;
-    let techno7 = false;
-    let techno8 = false;
+    import { slide } from "svelte/transition";
 
-    let front = "";
-    let back = "";
-    let manage = "";
-    let bdd = "";
-    let api = "";
-    let control = "";
-    let design = "";
-    let deploy = "";
+    let techno = {
+        front: false,
+        back: false,
+        manage: false,
+        bdd: false,
+        api: false,
+        control: false,
+        design: false,
+        deploy: false
+    };
 
-    const handleTechno1 = (id) => {
-        if(techno1 === false) {
-            techno1 = true;
-            front = id;
-        }else{
-            techno1 = false;
-            front = "";
-        }
-    } 
+    let selected = {
+        front: "",
+        back: "",
+        manage: "",
+        bdd: "",
+        api: "",
+        control: "",
+        design: "",
+        deploy: ""
+    };
 
-    const handleTechno2 = (id) => {
-        if(techno2 === false) {
-            techno2 = true;
-            back = id;
-        }else{
-            techno2 = false;
-            back = ""
-        }
-    } 
-
-    const handleTechno3 = (id) => {
-        if(techno3 === false) {
-            techno3 = true;
-            manage = id;
-        }else{
-            techno3 = false;
-            manage = "";
-        }
-    } 
-
-    const handleTechno4 = (id) => {
-        if(techno4 === false) {
-            techno4 = true;
-            bdd = id;
-        }else{
-            techno4 = false;
-            bdd = "";
-        }
-    } 
-    const handleTechno5 = (id) => {
-        if(techno5 === false) {
-            techno5 = true;
-            api = id;
-        }else{
-            techno5 = false;
-            api = "";
-        }
-    } 
-
-    const handleTechno6 = (id) => {
-        if(techno6 === false) {
-            techno6 = true;
-            control = id;
-        }else{
-            techno6 = false;
-            control = "";
-        }
-    } 
-
-    const handleTechno7 = (id) => {
-        if(techno7 === false) {
-            techno7 = true;
-            design = id;
-        }else{
-            techno7 = false;
-            design = "";
-        }
-    } 
-
-    const handleTechno8 = (id) => {
-        if(techno8 === false) {
-            techno8 = true;
-            deploy = id;
-        }else{
-            techno8 = false;
-            deploy = "";
-        }
-    } 
+    const handleTechno = (category, id) => {
+        techno[category] = !techno[category];
+        selected[category] = techno[category] ? id : "";
+    };
 </script>
 
 <div class="techno">
-    <p class:active={front == "front"} on:click={() => handleTechno1("front")}>🌐 Front-End Development</p>
-    {#if techno1}
-        <div class="img">
+    <p class:active={selected.front == "front"} on:click={() => handleTechno("front", "front")}>🌐 Front-End Development</p>
+    {#if techno.front}
+        <div in:slide out:slide class="img">
             <img src="html.png" alt="">
             <img src="css.png" alt="">
             <img src="js.png" alt="">
@@ -108,52 +40,52 @@
             <img src="vuejs.png" alt="">
         </div>
     {/if}
-    <p class:active={back == "back"} on:click={() => handleTechno2("back")}>💻 Back-End Development</p>
-    {#if techno2}
-        <div class="img">
+    <p class:active={selected.back == "back"} on:click={() => handleTechno("back", "back")}>💻 Back-End Development</p>
+    {#if techno.back}
+        <div in:slide out:slide class="img">
             <img src="php.png" alt="">
             <img src="laravel.png" alt="">
             <img src="python.png" alt="">
             <img src="django.png" alt="">
         </div>
     {/if}
-    <p class:active={ manage == "manage" } on:click={() => handleTechno3("manage")}>🖥️ Content Management & E-Commerce</p>
-    {#if techno3}
-        <div class="img">
+    <p class:active={selected.manage == "manage"} on:click={() => handleTechno("manage", "manage")}>🖥️ Content Management & E-Commerce</p>
+    {#if techno.manage}
+        <div in:slide out:slide class="img">
             <img src="wordpress.png" alt="">
             <img src="shopify.png" alt="">
         </div>
     {/if}
-    <p class:active={ bdd == "bdd" } on:click={() => handleTechno4("bdd")}>🗄️ Databases</p>
-    {#if techno4}
-        <div class="img">
+    <p class:active={selected.bdd == "bdd"} on:click={() => handleTechno("bdd", "bdd")}>🗄️ Databases</p>
+    {#if techno.bdd}
+        <div in:slide out:slide class="img">
             <img src="sqlite.png" alt="">
             <img src="mysql.png" alt="">
             <img src="postgresql.png" alt="">
         </div>
     {/if}
-    <p class:active={ api == "api" } on:click={() => handleTechno5("api")}>🧪 API & Testing</p>
-    {#if techno5}
-        <div class="img">
+    <p class:active={selected.api == "api"} on:click={() => handleTechno("api", "api")}>🧪 API & Testing</p>
+    {#if techno.api}
+        <div in:slide out:slide class="img">
             <img src="postman.png" alt="">
         </div>
     {/if}
-    <p class:active={control == "control"} on:click={() => handleTechno6("control")}>📂 Version Control</p>
-    {#if techno6}
-        <div class="img">
+    <p class:active={selected.control == "control"} on:click={() => handleTechno("control", "control")}>📂 Version Control</p>
+    {#if techno.control}
+        <div in:slide out:slide class="img">
             <img src="git.png" alt="">
         </div>
     {/if}
-    <p class:active={design == "design"} on:click={() => handleTechno7("design")}>🎨 Design Tools</p>
-    {#if techno7}
-        <div class="img">
+    <p class:active={selected.design == "design"} on:click={() => handleTechno("design", "design")}>🎨 Design Tools</p>
+    {#if techno.design}
+        <div in:slide out:slide class="img">
             <img src="photoshop.png" alt="">
             <img src="figma.png" alt="">
         </div>
     {/if}
-    <p class:active={deploy == "deploy"} on:click={() => handleTechno8("deploy")}>☁️ Hosting & Deployment</p>
-    {#if techno8}
-        <div class="img">
+    <p class:active={selected.deploy == "deploy"} on:click={() => handleTechno("deploy", "deploy")}>☁️ Hosting & Deployment</p>
+    {#if techno.deploy}
+        <div in:slide out:slide class="img">
             <img src="docker.png" alt="">
             <img src="heroku.png" alt="">
         </div>
