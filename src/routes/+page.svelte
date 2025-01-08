@@ -5,6 +5,7 @@
     import Projects from "../lib/Projects.svelte";
     import Techno from "../lib/Techno.svelte";
     import { onMount } from "svelte";
+    import { fade, fly, slide } from 'svelte/transition';
 
     let currentYear = new Date().getFullYear();
     let views = 0;
@@ -79,15 +80,25 @@
                 <span class:active={active == 'comp'} on:click={() => handleClick('comp')}>Comp</span>
             </div>
             {#if active === 'about'}
-                <About class="slide-in"/>
+                <div in:fade out:fade>
+                    <About/>
+                </div>    
             {:else if active === 'techno'}
-                <Techno class="slide-in"/>
+                <div out:fly="{{ x: 200, duration: 500 }}">
+                    <Techno/>
+                </div>
             {:else if active === 'projects'}
-                <Projects class="slide-in"/>
+                <div out:fade>
+                    <Projects/>
+                </div>
             {:else if active === 'exp'}
-                <Exp class="slide-in"/>
+                <div out:fly="{{ x: 200, duration: 500 }}">
+                    <Exp/>
+                </div>
             {:else if active === 'comp'}
-                <Comp class="slide-in"/>
+                <div out:fade>
+                    <Comp/>
+                </div>
             {/if}
         </div>
     </div>
@@ -328,19 +339,5 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .slide-in {
-        animation: slide-in 0.5s ease-out forwards;
-    }
-
-    @keyframes slide-in {
-        from {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
     }
 </style>
