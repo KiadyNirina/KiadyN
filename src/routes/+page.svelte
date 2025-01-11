@@ -53,7 +53,7 @@
             <img src="pdp.jpg" alt="">
             <div class="name">
                 <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
-                <p>Developer Full-Stack</p>
+                <p>Full-Stack Developer & Designer</p>
             </div>
         </div>
     </div>
@@ -168,6 +168,7 @@
         animation: none;
     }
     #pdp p{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         color: rgba(255, 255, 255, 0.505);
         font-size: 13px;
         margin: 0px 0px 0px 10px;
