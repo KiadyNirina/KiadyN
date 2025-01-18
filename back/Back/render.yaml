@@ -2,9 +2,9 @@ services:
   - type: web
     name: KiadyN
     env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py migrate --no-input"
+    startCommand: "gunicorn Back.wsgi:application --preload --workers 3"
     plan: free
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn Back.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: Back.settings
