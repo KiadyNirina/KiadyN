@@ -1,7 +1,14 @@
 services:
   - type: web
-    name: back-portfolio
+    name: KiadyN
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn Back.wsgi:application"
-    autoDeploy: true
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: Back.settings
+      - key: SECRET_KEY
+        value: "django-insecure-p^)$6garoaozwb@2jnn2+kxc7mbrl6n)tb^q6_*^7@igll(+_-"
+      - key: DEBUG
+        value: "False"
