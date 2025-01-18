@@ -2,8 +2,6 @@ services:
   - type: web
     name: back-portfolio
     env: python
-    buildCommand: "pip install -r requirements.txt && python manage.py"
-    startCommand: "gunicorn Back.wsgi:application --preload --bind 0.0.0.0:${PORT}"
-    envVars:
-      - key: SECRET_KEY
-        sync: false
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn Back.wsgi:application"
+    autoDeploy: true
