@@ -24,7 +24,6 @@ vite.config.ts.timestamp-*
 __pycache__/
 *.py[cod]
 *.pyo
-db.sqlite3
 
 # Fichiers de logs
 *.log
