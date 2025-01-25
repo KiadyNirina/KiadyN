@@ -6,6 +6,11 @@
     import Techno from "../lib/Techno.svelte";
     import { onMount } from "svelte";
     import { fade, fly, slide } from 'svelte/transition';
+    import Loading from "../lib/Loading.svelte";
+
+    let phase = 1;
+    let delay = 5000; // Durée avant le loader (en ms)
+    let delay2 = 10000;
 
     let currentYear = new Date().getFullYear();
     let views = 0;
@@ -21,7 +26,15 @@
     }
 
     onMount(() => {
-        fetchViews();
+        // Passer à la phase 2 après `delayImage` ms
+        setTimeout(() => {
+            phase = 2;
+        }, delay);
+
+        // Passer à la phase 3 après `delayImage + delayLoader` ms
+        setTimeout(() => {
+            phase = 3;
+        }, delay + delay2);
     });
 
     let loading = false;
@@ -46,6 +59,11 @@
     }
 </script>
 
+{#if phase < 3}
+    <Loading {phase} />
+{/if}
+
+{#if phase === 3}
 <div class="content">
     <div class="head">
         <img id="pdc" src="pdc2.jpg" alt="">
@@ -106,6 +124,7 @@
         <p><span><img src="logo.png" alt="">© { currentYear } KiadyN, lnc.</span></p>
     </div>
 </div>
+{/if}
 
 <style>
     @font-face {
@@ -119,6 +138,7 @@
         margin-right: auto;
         max-width: 1100px;
         color: rgba(255, 255, 255, 0.386);
+        animation: fadeIn 0.5s ease-out;
     }
     #pdc{
         width: 100%;
@@ -340,5 +360,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    @keyframes fadeIn {
+        0% {
+        opacity: 0;
+        }
+        100% {
+        opacity: 1;
+        }
     }
 </style>
