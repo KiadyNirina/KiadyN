@@ -5,7 +5,7 @@
 {#if phase === 1}
     <div class="loading-screen">
         <!-- <img id="welcome" src="welcome.png" alt=""> -->
-        <p id="welcome">Welcome to my world</p>
+        <p id="welcome" class="glitch" data-text="Welcome to my world">Welcome to my world</p>
     </div>
 {/if}
 
@@ -64,6 +64,121 @@
         text-align: center;
         color: white;
         font-size: 70px;
+    }
+    .glitch {
+        position: relative;
+        color: white;
+        font-family: "Jersey10";
+        font-size: 70px;
+        text-align: center;
+    }
+    .glitch::before, .glitch::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        overflow: hidden;
+        clip: rect(0, 900px, 0, 0);
+    }
+    .glitch::before {
+        left: 2px;
+        text-shadow: -2px 0 red;
+        animation: glitch 2s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+        left: -2px;
+        text-shadow: -2px 0 blue;
+        animation: glitch 2s infinite linear alternate-reverse;
+        animation-delay: .5s;
+    }
+    @keyframes glitch {
+        0% {
+            clip: rect(42px, 9999px, 44px, 0);
+            transform: skew(0.3deg);
+        }
+        5% {
+            clip: rect(12px, 9999px, 60px, 0);
+            transform: skew(0.3deg);
+        }
+        10% {
+            clip: rect(92px, 9999px, 100px, 0);
+            transform: skew(0.3deg);
+        }
+        15% {
+            clip: rect(72px, 9999px, 80px, 0);
+            transform: skew(0.3deg);
+        }
+        20% {
+            clip: rect(42px, 9999px, 44px, 0);
+            transform: skew(0.3deg);
+        }
+        25% {
+            clip: rect(12px, 9999px, 60px, 0);
+            transform: skew(0.3deg);
+        }
+        30% {
+            clip: rect(92px, 9999px, 100px, 0);
+            transform: skew(0.3deg);
+        }
+        35% {
+            clip: rect(72px, 9999px, 80px, 0);
+            transform: skew(0.3deg);
+        }
+        40% {
+            clip: rect(42px, 9999px, 44px, 0);
+            transform: skew(0.3deg);
+        }
+        45% {
+            clip: rect(12px, 9999px, 60px, 0);
+            transform: skew(0.3deg);
+        }
+        50% {
+            clip: rect(92px, 9999px, 100px, 0);
+            transform: skew(0.3deg);
+        }
+        55% {
+            clip: rect(72px, 9999px, 80px, 0);
+            transform: skew(0.3deg);
+        }
+        60% {
+            clip: rect(42px, 9999px, 44px, 0);
+            transform: skew(0.3deg);
+        }
+        65% {
+            clip: rect(12px, 9999px, 60px, 0);
+            transform: skew(0.3deg);
+        }
+        70% {
+            clip: rect(92px, 9999px, 100px, 0);
+            transform: skew(0.3deg);
+        }
+        75% {
+            clip: rect(72px, 9999px, 80px, 0);
+            transform: skew(0.3deg);
+        }
+        80% {
+            clip: rect(42px, 9999px, 44px, 0);
+            transform: skew(0.3deg);
+        }
+        85% {
+            clip: rect(12px, 9999px, 60px, 0);
+            transform: skew(0.3deg);
+        }
+        90% {
+            clip: rect(92px, 9999px, 100px, 0);
+            transform: skew(0.3deg);
+        }
+        95% {
+            clip: rect(72px, 9999px, 80px, 0);
+            transform: skew(0.3deg);
+        }
+        100% {
+            clip: rect(42px, 9999px, 44px, 0);
+            transform: skew(0.3deg);
+        }
     }
     @keyframes fadeIn {
         0% {
