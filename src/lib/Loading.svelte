@@ -12,8 +12,8 @@
 {#if phase === 2}
     <div class="loading-screen">
         <div class="img">
-            <img width="100px" src="logo.png" alt=""><br>
-            <p>Loading <br><img width="30px" id="loading" src="loading1.gif" alt=""></p>
+            <img src="logo.png" alt=""><br>
+            <p>Loading <img id="loading" src="loading2.gif" alt=""></p>
         </div>
     </div>
 {/if}
@@ -33,9 +33,9 @@
         height: 100vh;
         background: url('bg.jpg');
         background-attachment: fixed;
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -49,15 +49,24 @@
         align-items: center;
         justify-content: center; 
     }
+    .img img{
+      width: 40px;
+      border: 2px solid white;
+      border-radius: 100%;
+    }
     .img p {
         margin: 0;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center; 
         color: white;
         font-family: "Jersey10";
         font-size: 20px;
+    }
+    .img p img{
+      border: none;
+      margin-left: 5px;
+      width:30px;
     }
     #welcome {
         font-family: "Jersey10";
