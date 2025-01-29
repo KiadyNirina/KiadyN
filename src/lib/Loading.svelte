@@ -31,11 +31,12 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: url('bg.jpg');
+        background-color: black;
+        /* background: url('bg.jpg');
         background-attachment: fixed;
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat; */
         display: flex;
         align-items: center;
         justify-content: center;
