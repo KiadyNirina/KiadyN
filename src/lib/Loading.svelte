@@ -4,17 +4,17 @@
 
 {#if phase === 1}
     <div class="loading-screen">
-        <!-- <img id="welcome" src="welcome.png" alt=""> -->
-        <p id="welcome" class="glitch" data-text="Welcome to my world">Welcome to my world</p>
+        <div class="img">
+            <img src="logo.png" alt=""><br>
+            <p>Loading <img id="loading" src="loading2.gif" alt=""></p>
+        </div>
     </div>
 {/if}
 
 {#if phase === 2}
     <div class="loading-screen">
-        <div class="img">
-            <img src="logo.png" alt=""><br>
-            <p>Loading <img id="loading" src="loading2.gif" alt=""></p>
-        </div>
+        <!-- <img id="welcome" src="welcome.png" alt=""> -->
+        <p id="welcome" class="glitch" data-text="Welcome to my world">Welcome to my world</p>
     </div>
 {/if}
   
