@@ -45,7 +45,8 @@
     .content{
         border-left: 1px solid rgba(255, 255, 255, 0.463);
         padding-left: 20px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'poppins';
+        font-size: 14px;
         color: rgb(142, 142, 142);
         margin-bottom: 50px;
     }
@@ -73,7 +74,7 @@
             font-size: 15px;
         }
         ul{
-            font-size: 13px;
+            font-size: 11px;
             line-height: 20px;
         }
     }

@@ -132,6 +132,10 @@
         src: url('/font/RubikVinyl-Regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
+        font-family: 'poppins';
+        src: url('/font/Poppins-Light.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
     }
     .content{
         margin-left: auto;
@@ -348,7 +352,8 @@
     .footer{
         padding: 15px;
         font-size: 13px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-family: 'poppins';
+        font-weight: bold;
         color: rgb(83, 83, 83);
     }
     .footer img{

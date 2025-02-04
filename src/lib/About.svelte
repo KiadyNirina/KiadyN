@@ -35,7 +35,7 @@
         padding: 10px;
     }
     .typed-text {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: 'poppins';
         font-size: 13px;
         margin-bottom: 50px;
         color: rgba(255, 255, 255, 0.797);
