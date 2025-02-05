@@ -121,6 +121,12 @@
         </div>
     </div>
     <div class="footer">
+        <div class="social">
+            <a href="mailto:kiady142ram@gmail.com"><img src="email-footer.png" alt=""></a>
+            <a href="https://github.com/KiadyNirina"><img src="github-footer.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/"><img src="linkedin-footer.png" alt=""></a>
+            <a href="https://www.facebook.com/kiady.rambeloson"><img src="facebook-footer.png" alt=""></a>
+        </div>
         <p><span><img src="logo.png" alt="">© { currentYear } KiadyN, lnc.</span></p>
     </div>
 </div>
@@ -192,7 +198,7 @@
         animation: none;
     }
     #pdp p{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'poppins';
         color: rgba(255, 255, 255, 0.505);
         font-size: 13px;
         margin: 0px 0px 0px 10px;
@@ -355,6 +361,24 @@
         font-family: 'poppins';
         font-weight: bold;
         color: rgb(83, 83, 83);
+    }
+    .footer .social{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer .social a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+    .footer .social a img{
+        height: 30px;
+        padding: 2px;
+    }
+    .footer .social a:hover {
+        background-color: rgba(83, 83, 83, 0.15);
     }
     .footer img{
         height: 20px;
