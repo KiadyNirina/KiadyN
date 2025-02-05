@@ -77,7 +77,7 @@
     </div>
     <div class="body">
         <div class="sect1">
-            <span id="view">Views: {views}</span>
+            <span id="view"><img src="eye.png" alt=""> Views: {views}</span>
             <p><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
             <div class="info">
                 <span><img src="adresse-white.png" alt=""> Antananarivo, Madagascar</span>
@@ -315,6 +315,11 @@
         font-size: 15px;
         display: flex;
         justify-content: center;
+        align-items: center;
+    }
+    #view img{
+        height: 20px;
+        margin-right: 5px;
     }
     @media screen and (max-width : 700px) {
         .body{
