@@ -208,4 +208,19 @@
         visibility: hidden;
         }
     }
+
+    @media screen and (max-width : 700px) {
+        .img img{
+            width: 20px;
+        }
+        .img p{
+            font-size: 15px;
+        }
+        .img p img{
+            width: 20px;
+        }
+        #welcome {
+            font-size: 40px;
+        }
+    }
 </style>
