@@ -362,10 +362,10 @@
     }
     .footer{
         padding: 15px;
-        font-size: 13px;
+        font-size: 11px;
         font-family: 'poppins';
         font-weight: bold;
-        color: rgb(83, 83, 83);
+        color: rgb(120, 120, 120);
     }
     .footer .social{
         display: flex;
@@ -379,8 +379,7 @@
         border-radius: 5px;
     }
     .footer .social a img{
-        height: 30px;
-        padding: 2px;
+        height: 25px;
     }
     .footer .social a:hover {
         background-color: rgba(83, 83, 83, 0.15);
