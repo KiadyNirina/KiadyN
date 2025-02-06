@@ -72,6 +72,7 @@
             <div class="name">
                 <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
                 <p>Full-Stack Developer & Designer</p>
+                <p id="openWork"><img src="business.png" alt=""> <span>Open for collaborations</span></p>
             </div>
         </div>
     </div>
@@ -214,6 +215,29 @@
     .body{
         display: flex;
     }
+    #openWork {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+    }
+    #openWork span{
+        font-family: sans-serif;
+        font-weight: bolder;
+        font-size: 10px;
+        color: green;
+    }
+    #openWork img{
+        height: 12px;
+        border-radius: 0;
+        padding: 0;
+        border: none;
+        margin-right: 5px;
+    }
+    #openWork img:hover, #openWork span:hover {
+        cursor:auto;
+        box-shadow: none;
+        animation: none;
+    }
     .sect1{
         color: white;
         padding: 20px;
@@ -336,6 +360,13 @@
         }
         #pdp h1{
             align-items: end;
+        }
+        #openWork img{
+            height: 12px;
+            border-radius: 0;
+            padding: 0;
+            border: none;
+            margin-right: 5px;
         }
         .sect1{
             width: auto;
