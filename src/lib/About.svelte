@@ -31,6 +31,12 @@
 </div>
 
 <style>
+    @font-face {
+        font-family: 'Rubik';
+        src: url('/font/RubikVinyl-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
     .about{
         padding: 10px;
     }
@@ -48,7 +54,7 @@
         width: 100%;
     }
     .title{
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Rubik';
         font-size: 40px;
     }
 </style>

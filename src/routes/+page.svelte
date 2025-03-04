@@ -135,10 +135,6 @@
 
 <style>
     @font-face {
-        font-family: 'Rubik';
-        src: url('/font/RubikVinyl-Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
         font-family: 'poppins';
         src: url('/font/Poppins-Light.ttf') format('truetype');
         font-weight: normal;
@@ -245,6 +241,8 @@
         border-radius: 15px;
         width: 30%;
         margin-right: 10px;
+        position: sticky;
+        top: 20px;
     }
     .sect1 p span{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -311,6 +309,10 @@
     }
     .nav{
         display: flex;
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(50px);
+        z-index: 1;
     }
     .nav span{
         margin-right: auto;
@@ -372,6 +374,7 @@
             width: auto;
             padding: 20px;
             margin: 0;
+            position: static; /* Remove sticky positioning in responsive mode */
         }
         .sect1 p{
             text-align: center;
@@ -381,6 +384,8 @@
         }
         .nav{
             padding: 10px;
+            position: sticky;
+            top: 0;
         }
         .nav span{
             font-size: 12px;

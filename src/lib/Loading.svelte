@@ -52,8 +52,6 @@
     }
     .img img{
       width: 40px;
-      border: 2px solid white;
-      border-radius: 100%;
     }
     .img p {
         margin: 0;
@@ -211,7 +209,7 @@
 
     @media screen and (max-width : 700px) {
         .img img{
-            width: 20px;
+            width: 40px;
         }
         .img p{
             font-size: 15px;
