@@ -42,6 +42,10 @@
             {/if}
         </div>
     {:else}
+        <div class="head">
+            <h1>Hello!</h1>
+            <p>Here are some of the projects I have worked on. Each achievement reflects my commitment to creating efficient and intuitive web solutions.</p>
+        </div>
         <div class="projects">
             <div class="card2" on:click={() => handleClick('fintrack')}>
                 <img src="image.png" alt="">
@@ -217,35 +221,64 @@
 </div>
 
 <style>
+    .head{
+        text-align: center;
+    }
+    .head h1{
+        font-family: 'Rubik';
+    }
+    .head p{
+        font-family: 'poppins';
+        font-size: 13px;
+    }
     .projects{
         display: flex;
         margin-top: 15px;
     }
     .card1, .card2{
-        width: 46%;
+        width: 49%;
         background-color: rgba(255, 255, 255, 0.049);
-        padding: 5px;
         border-radius: 10px;
         margin-left: auto;
         margin-right: auto;
+        position: relative;
+        overflow: hidden;
     }
     .card1 img, .card2 img{
         width: 100%;
         height: 160px;
-        border-radius: 5px 5px 0px 0px;
+        border-radius: 5px;
+        transition: transform 0.5s, opacity 0.3s;
+    }
+    .card1:hover img, .card2:hover img{
+        cursor: pointer;
+        transform: scale(1.1);
+        opacity: 0.2;
     }
     .info{
         padding: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: rgb(243, 243, 243);
+        font-family: 'poppins';
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .card1:hover .info, .card2:hover .info{
+        cursor: pointer;
+        opacity: 1;
     }
     .info h3{
         display: flex;
         align-items: center;
-        color: rgb(157, 157, 157);
+        color: rgb(219, 219, 219);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     .info p{
-        color: rgb(165, 165, 165);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(194, 194, 194);
+        font-family: 'poppins';
         margin-block-start: 5px;
         margin-block-end: 5px;
         font-size: 13px;
@@ -261,13 +294,14 @@
         display: flex;
         align-items: center;
         background-color: rgb(37, 61, 72);
-        padding: 5px;
+        padding: 7px;
         border-radius: 15px;
         margin-right: 5px;
     }
     .techno .techno2 img{
         height: 15px;
         width: auto;
+        opacity: 1;
     }
     .techno .techno2 span{
         font-size: 11px;
@@ -300,7 +334,7 @@
         }
         .card1 img, .card2 img{
             width: 100%;
-            height: 150px;
+            height: auto;
             border-radius: 5px 5px 0px 0px;
         }
     }
