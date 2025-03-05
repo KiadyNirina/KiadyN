@@ -66,7 +66,6 @@
 {#if phase === 3}
 <div class="content">
     <div class="head">
-        <img id="pdc" src="pdc2.jpg" alt="">
         <div id="pdp">
             <img src="pdp.jpg" alt="">
             <div class="name">
@@ -147,18 +146,16 @@
         color: rgba(255, 255, 255, 0.386);
         animation: fadeIn 0.5s ease-out;
     }
-    #pdc{
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
+    .head{
+        padding: 30px;
     }
     #pdp{
-        position: relative;
-        top: -50px;
-        left: 10%;
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 60%;
+        margin-left: auto;
+        margin-right: auto;
     }
     #pdp .name{
         background-color: rgb(0, 4, 12);
@@ -179,7 +176,7 @@
     #pdp h1{
         color: rgba(255, 255, 255, 0.7);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 17px;
+        font-size: 25px;
         margin: 0px 0px 0px 10px;
         display: flex;
         align-items: center;
@@ -197,7 +194,7 @@
     #pdp p{
         font-family: 'poppins';
         color: rgba(255, 255, 255, 0.505);
-        font-size: 13px;
+        font-size: 15px;
         margin: 0px 0px 0px 10px;
     }
     @keyframes rotate3D {
@@ -217,13 +214,13 @@
         padding-top: 10px;
     }
     #openWork span{
-        font-family: sans-serif;
+        font-family: 'poppins';
         font-weight: bolder;
-        font-size: 10px;
+        font-size: 12px;
         color: green;
     }
     #openWork img{
-        height: 12px;
+        height: 15px;
         border-radius: 0;
         padding: 0;
         border: none;
@@ -239,7 +236,7 @@
         padding: 20px;
         border: 1px solid rgba(255, 255, 255, 0.061);
         border-radius: 15px;
-        width: 30%;
+        width: 20%;
         margin-right: 10px;
         position: sticky;
         top: 20px;
@@ -260,7 +257,7 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         display: flex;
         align-items: center;
-        font-size: 13px;
+        font-size: 12px;
         line-height: 28px;
         color: rgba(255, 255, 255, 0.889);
     }
@@ -305,7 +302,7 @@
         padding: 20px;
         border: 1px solid rgba(255, 255, 255, 0.061);
         border-radius: 15px;
-        width: 70%;
+        width: 80%;
     }
     .nav{
         display: flex;
@@ -347,7 +344,7 @@
         height: 20px;
         margin-right: 5px;
     }
-    @media screen and (max-width : 700px) {
+    @media screen and (max-width : 1000px) {
         .body{
             display: block;
             width: 95%;

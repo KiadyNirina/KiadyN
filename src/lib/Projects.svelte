@@ -223,9 +223,12 @@
 <style>
     .head{
         text-align: center;
+        color: rgb(194, 194, 194);
+        margin-bottom: 50px;
     }
     .head h1{
         font-family: 'Rubik';
+        font-size: 50px;
     }
     .head p{
         font-family: 'poppins';
@@ -239,14 +242,16 @@
         width: 49%;
         background-color: rgba(255, 255, 255, 0.049);
         border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.061);
         margin-left: auto;
         margin-right: auto;
         position: relative;
         overflow: hidden;
+        padding: 2px;
     }
     .card1 img, .card2 img{
         width: 100%;
-        height: 160px;
+        height: 200px;
         border-radius: 5px;
         transition: transform 0.5s, opacity 0.3s;
     }
