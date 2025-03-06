@@ -1,33 +1,13 @@
-<script>
-    import { onMount } from "svelte";
-
-    let message = ' My name is RAMBELOSON Kiady Nirina, I am from MADAGASCAR , I am a young developer. Passionate about technology🌐 and innovation💡, I am dedicated to acquiring solid technical skills and creating successful digital solutions⚙️. I am always looking for new challenges🌱 and opportunities🚪 to practice my skills and learn new technologies📚. Do not hesitate to contact me📧 for any questions, collaborations or professional opportunities🙏. '
-
-    let displayText = "";
-    
-    function typeText() {
-        let index = 0;
-        displayText = "";
-        
-        const typingInterval = setInterval(() => {
-            displayText += message[index];
-            index++;
-            
-            if (index === message.length) {
-                clearInterval(typingInterval);
-            }
-        }, 70);
-    }
-
-    onMount(() => {
-        typeText();
-    })
-</script>
-
-<div class="about">
-    <h1 class="title">Who am I?</h1>
-    <p class="typed-text">{displayText}<span class="cursor">_</span></p>
-    <div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/2IudUHdI075HL02Pkk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
+<div class="about-content">
+    <div class="about">
+        <div class="img">
+            <img src="pdp.jpg" alt="">
+        </div>
+        <div class="text">
+            <h1>Who am I?</h1>
+            <p class="typed-text">My name is RAMBELOSON Kiady Nirina, I am from MADAGASCAR , I am a young developer. Passionate about technology🌐 and innovation💡, I am dedicated to acquiring solid technical skills and creating successful digital solutions⚙️. I am always looking for new challenges🌱 and opportunities🚪 to practice my skills and learn new technologies📚. Do not hesitate to contact me📧 for any questions, collaborations or professional opportunities🙏.</p>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -37,13 +17,28 @@
         font-weight: normal;
         font-style: normal;
     }
+    .about-content h1{
+        font-family: 'Rubik';
+        font-size: 50px;
+        color: rgba(194, 194, 194, 0.859);
+    }
     .about{
         padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .img{
+        width: 40%;
+    }
+    .text{
+        width: 60%;
+        padding: 20px;
+        color: rgb(194, 194, 194);
+        margin-bottom: 50px;
     }
     .typed-text {
         font-family: 'poppins';
-        font-size: 13px;
-        margin-bottom: 50px;
+        font-size: 12px;
         color: rgba(255, 255, 255, 0.797);
         line-height: 25px;
     }
@@ -53,8 +48,15 @@
         padding: 5px;
         width: 100%;
     }
-    .title{
-        font-family: 'Rubik';
-        font-size: 40px;
+    @media screen and (max-width: 768px){
+        .about{
+            flex-direction: column;
+        }
+        .img{
+            width: 100%;
+        }
+        .text{
+            width: 100%;
+        }
     }
 </style>

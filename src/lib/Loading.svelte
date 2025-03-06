@@ -2,18 +2,17 @@
     export let phase;
 </script>
 
-{#if phase === 1}
+<!-- {#if phase === 1}
     <div class="loading-screen">
         <div class="img">
             <img src="logo.png" alt=""><br>
             <p>Loading <img id="loading" src="loading2.gif" alt=""></p>
         </div>
     </div>
-{/if}
+{/if} -->
 
-{#if phase === 2}
+{#if phase === 1}
     <div class="loading-screen">
-        <!-- <img id="welcome" src="welcome.png" alt=""> -->
         <p id="welcome" class="glitch" data-text="Welcome to my world">Welcome to my world</p>
     </div>
 {/if}
@@ -44,7 +43,7 @@
         animation: fadeIn 2s ease-out, fadeOut 1s ease-out forwards;
         animation-delay: 0s, 200s;
     } 
-    .img{
+    /* .img{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -52,6 +51,8 @@
     }
     .img img{
       width: 40px;
+      border: 2px solid white;
+      border-radius: 100%;
     }
     .img p {
         margin: 0;
@@ -66,7 +67,7 @@
       border: none;
       margin-left: 5px;
       width:30px;
-    }
+    } */
     #welcome {
         font-family: "Jersey10";
         text-align: center;
@@ -204,21 +205,6 @@
         100% {
         opacity: 0;
         visibility: hidden;
-        }
-    }
-
-    @media screen and (max-width : 700px) {
-        .img img{
-            width: 40px;
-        }
-        .img p{
-            font-size: 15px;
-        }
-        .img p img{
-            width: 20px;
-        }
-        #welcome {
-            font-size: 40px;
         }
     }
 </style>

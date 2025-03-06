@@ -47,7 +47,7 @@
             <p>Here are some of the projects I have worked on. Each achievement reflects my commitment to creating efficient and intuitive web solutions.</p>
         </div>
         <div class="projects">
-            <div class="card2" on:click={() => handleClick('fintrack')}>
+            <!-- <div class="card2" on:click={() => handleClick('fintrack')}>
                 <img src="image.png" alt="">
                 <div class="info">
                     <h3>FinTrack <span id="date">2024</span></h3>
@@ -67,7 +67,7 @@
                     </div>
                     <p>... <span id="seeMore">See more</span></p>
                 </div>
-            </div>
+            </div> -->
 
             <div class="card1" on:click={() => handleClick('datalens')}>
                 <img src="datalens.jpg" alt="">
@@ -137,22 +137,6 @@
                 </div>
             </div>
         
-            <div class="card2" on:click={() => handleClick('createcv')}>
-                <img src="createcv.PNG" alt="">
-                <div class="info">
-                    <h3>Create_CV <span id="date">2024</span></h3>
-                    <div class="techno">
-                        <div class="techno2">
-                            <img src="svelte.png" alt="">
-                            <span>Svelte</span>
-                        </div>
-                    </div>
-                    <p>CreateCV is a simple and intuitive ... <span id="seeMore">See more</span></p>
-                </div>
-            </div>
-        </div>
-    
-        <div class="projects">
             <div class="card1" on:click={() => handleClick('eboss')}>
                 <img src="eboss.jpg" alt="">
                 <div class="info">
@@ -174,7 +158,9 @@
                     <p>eBoss is a comprehensive school ... <span id="seeMore">See more</span></p>
                 </div>
             </div>
-        
+        </div>
+    
+        <div class="projects">
             <div class="card2" on:click={() => handleClick('estock')}>
                 <img src="e_stock.jpg" alt="">
                 <div class="info">
@@ -200,9 +186,7 @@
                     <p>E_Stock is a comprehensive business ... <span id="seeMore">See more</span></p>
                 </div>
             </div>
-        </div>
-    
-        <div class="projects">
+
             <div class="card2" on:click={() => handleClick('mci')}>
                 <img src="moncomparateurimmo.PNG" alt="">
                 <div class="info">
@@ -251,7 +235,7 @@
     }
     .card1 img, .card2 img{
         width: 100%;
-        height: 200px;
+        height: 180px;
         border-radius: 5px;
         transition: transform 0.5s, opacity 0.3s;
     }

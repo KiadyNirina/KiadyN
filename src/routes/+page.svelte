@@ -9,8 +9,8 @@
     import Loading from "../lib/Loading.svelte";
 
     let phase = 1;
-    let delay = 5000; // Durée avant le loader (en ms)
-    let delay2 = 10000;
+    //let delay = 5000; // Durée avant le loader (en ms)
+    let delay2 = 5000;
 
     let currentYear = new Date().getFullYear();
     let views = 0;
@@ -27,14 +27,14 @@
 
     onMount(() => {
         // Passer à la phase 2 après `delayImage` ms
-        setTimeout(() => {
-            phase = 2;
-        }, delay);
+        // setTimeout(() => {
+        //     phase = 2;
+        // }, delay);
 
         // Passer à la phase 3 après `delayImage + delayLoader` ms
         setTimeout(() => {
             phase = 3;
-        }, delay + delay2);
+        }, delay2);
     });
 
     let loading = false;
@@ -52,7 +52,7 @@
         }, 5000);
     }
 
-    let active = "about";
+    let active = "projects";
 
     const handleClick = (id) => {
         active = id;
@@ -91,11 +91,10 @@
         </div>
         <div class="sect2">
             <div class="nav">
+                <span class:active={active == 'projects'} on:click={() => handleClick('projects')}>Works</span>
                 <span class:active={active == 'about'} on:click={() => handleClick('about')}>About me</span>
                 <span class:active={active == 'techno'} on:click={() => handleClick('techno')}>Techno</span>
-                <span class:active={active == 'projects'} on:click={() => handleClick('projects')}>Projects</span>
                 <span class:active={active == 'exp'} on:click={() => handleClick('exp')}>Exp.</span>
-                <span class:active={active == 'comp'} on:click={() => handleClick('comp')}>Comp</span>
             </div>
             {#if active === 'about'}
                 <div in:fade out:fade>
