@@ -209,10 +209,12 @@
         text-align: center;
         color: rgb(194, 194, 194);
         margin-bottom: 50px;
+        animation: fadeIn 1s ease-in-out;
     }
     .head h1{
         font-family: 'Rubik';
         font-size: 50px;
+        animation: fadeIn 1s ease-in-out;
     }
     .head p{
         font-family: 'poppins';
@@ -221,6 +223,7 @@
     .projects{
         display: flex;
         margin-top: 15px;
+        animation: slideIn 1s ease-in-out;
     }
     .card1, .card2{
         width: 49%;
@@ -309,6 +312,14 @@
         cursor: pointer;
         color: rgb(150, 150, 150);
         letter-spacing: 1px;
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+        0% { opacity: 0; transform: translateX(-20px); }
+        100% { opacity: 1; transform: translateX(0); }
     }
     @media screen and (max-width: 800px) {
         .projects{
