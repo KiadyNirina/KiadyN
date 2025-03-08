@@ -37,6 +37,9 @@
 </div>
 
 <style>
+    .exp{
+        animation: fadeIn 1s ease-in-out;
+    }
     h2{
         font-size: 30px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -77,5 +80,13 @@
             font-size: 11px;
             line-height: 20px;
         }
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+        0% { opacity: 0; transform: translateX(-20px); }
+        100% { opacity: 1; transform: translateX(0); }
     }
 </style>

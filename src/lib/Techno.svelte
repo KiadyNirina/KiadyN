@@ -95,6 +95,7 @@
 <style>
     .techno{
         padding: 15px;
+        animation: slideIn 1s ease-in-out;
     }
     .techno p {
         color: rgba(255, 255, 255, 0.797);
@@ -141,5 +142,9 @@
         .techno p {
             font-size: 13px;
         }
+    }
+    @keyframes slideIn {
+        0% { opacity: 0; transform: translateX(-20px); }
+        100% { opacity: 1; transform: translateX(0); }
     }
 </style>

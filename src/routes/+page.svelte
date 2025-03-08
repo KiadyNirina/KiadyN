@@ -147,6 +147,7 @@
     }
     .head{
         padding: 30px;
+        animation: fadeIn 1s ease-in-out;
     }
     #pdp{
         display: flex;
@@ -206,6 +207,7 @@
     }
     .body{
         display: flex;
+        animation: slideIn 1s ease-in-out;
     }
     #openWork {
         display: flex;
@@ -427,11 +429,11 @@
         align-items: center;
     }
     @keyframes fadeIn {
-        0% {
-        opacity: 0;
-        }
-        100% {
-        opacity: 1;
-        }
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+        0% { opacity: 0; transform: translateX(-20px); }
+        100% { opacity: 1; transform: translateX(0); }
     }
 </style>

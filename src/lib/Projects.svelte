@@ -214,7 +214,6 @@
     .head h1{
         font-family: 'Rubik';
         font-size: 50px;
-        animation: fadeIn 1s ease-in-out;
     }
     .head p{
         font-family: 'poppins';
@@ -336,6 +335,10 @@
             width: 100%;
             height: auto;
             border-radius: 5px 5px 0px 0px;
+        }
+        .info{
+            opacity: 1;
+            position: relative;
         }
     }
 </style>

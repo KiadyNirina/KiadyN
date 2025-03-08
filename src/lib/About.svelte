@@ -26,6 +26,7 @@
         padding: 10px;
         display: flex;
         align-items: center;
+        animation: slideIn 1s ease-in-out;
     }
     .img{
         width: 40%;
@@ -58,5 +59,13 @@
         .text{
             width: 100%;
         }
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+        0% { opacity: 0; transform: translateX(-20px); }
+        100% { opacity: 1; transform: translateX(0); }
     }
 </style>
