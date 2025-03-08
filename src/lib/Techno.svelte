@@ -44,6 +44,7 @@
     {#if techno.back}
         <div in:slide out:slide class="img">
             <img src="php.png" alt="">
+            <img src="codeigniter.png" alt="">
             <img src="laravel.png" alt="">
             <img src="python.png" alt="">
             <img src="django.png" alt="">
@@ -53,6 +54,7 @@
     {#if techno.manage}
         <div in:slide out:slide class="img">
             <img src="wordpress.png" alt="">
+            <img src="magento.png" alt="">
             <img src="shopify.png" alt="">
         </div>
     {/if}
@@ -80,6 +82,7 @@
     {#if techno.design}
         <div in:slide out:slide class="img">
             <img src="photoshop.png" alt="">
+            <img src="inkscape.png" alt="">
             <img src="figma.png" alt="">
         </div>
     {/if}
