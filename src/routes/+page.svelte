@@ -17,7 +17,7 @@
 
     async function fetchViews() {
         try {
-            const response = await fetch('https://kiadyn.onrender.com/api/views');
+            const response = await fetch('http://127.0.0.1:8000/api/views/');
             const data = await response.json();
             views = data.views;
         } catch (error) {
@@ -26,6 +26,7 @@
     }
 
     onMount(() => {
+        fetchViews();
         // Passer à la phase 2 après `delayImage` ms
         // setTimeout(() => {
         //     phase = 2;

@@ -1,8 +1,8 @@
 from django.http import JsonResponse
-from .models import PageView
+from .models import Views
 
 def page_view_count(request):
-    view, created = PageView.objects.get_or_create(id=1)
-    view.count += 1
+    view, created = Views.objects.get_or_create(id=1)
+    view.number += 1
     view.save()
-    return JsonResponse({'views': view.count})  
+    return JsonResponse({'views': view.number})  
