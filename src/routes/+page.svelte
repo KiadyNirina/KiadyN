@@ -7,6 +7,7 @@
     import { onMount } from "svelte";
     import { fade, fly, slide } from 'svelte/transition';
     import Loading from "../lib/Loading.svelte";
+    import { supabase } from '$lib/supabaseClient';
 
     let phase = 1;
     let delay2 = 5000;
@@ -14,7 +15,14 @@
     let currentYear = new Date().getFullYear();
     let views = 0;
 
-    onMount(() => {
+    onMount(async () => {
+        const { data, error } = await supabase
+        .rpc('increment_views')
+        
+        if (!error && data) {
+        views = data
+        }
+
         setTimeout(() => {
             phase = 3;
         }, delay2);
