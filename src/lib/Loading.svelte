@@ -2,15 +2,6 @@
     export let phase;
 </script>
 
-<!-- {#if phase === 1}
-    <div class="loading-screen">
-        <div class="img">
-            <img src="logo.png" alt=""><br>
-            <p>Loading <img id="loading" src="loading2.gif" alt=""></p>
-        </div>
-    </div>
-{/if} -->
-
 {#if phase === 1}
     <div class="loading-screen">
         <p id="welcome" class="glitch" data-text="Welcome to my world">Welcome to my world</p>
@@ -31,11 +22,6 @@
         width: 100vw;
         height: 100vh;
         background-color: black;
-        /* background: url('bg.jpg');
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -43,31 +29,6 @@
         animation: fadeIn 2s ease-out, fadeOut 1s ease-out forwards;
         animation-delay: 0s, 200s;
     } 
-    /* .img{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; 
-    }
-    .img img{
-      width: 40px;
-      border: 2px solid white;
-      border-radius: 100%;
-    }
-    .img p {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center; 
-        color: white;
-        font-family: "Jersey10";
-        font-size: 20px;
-    }
-    .img p img{
-      border: none;
-      margin-left: 5px;
-      width:30px;
-    } */
     #welcome {
         font-family: "Jersey10";
         text-align: center;
