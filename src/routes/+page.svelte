@@ -9,24 +9,12 @@
     import Loading from "../lib/Loading.svelte";
 
     let phase = 1;
-    //let delay = 5000; // Durée avant le loader (en ms)
     let delay2 = 5000;
 
     let currentYear = new Date().getFullYear();
     let views = 0;
 
-    async function fetchViews() {
-        try {
-            const response = await fetch('http://127.0.0.1:8000/api/views/');
-            const data = await response.json();
-            views = data.views;
-        } catch (error) {
-            console.error('Erreur lors de la récupération des vues:', error);
-        }
-    }
-
     onMount(() => {
-        fetchViews();
         // Passer à la phase 2 après `delayImage` ms
         // setTimeout(() => {
         //     phase = 2;
