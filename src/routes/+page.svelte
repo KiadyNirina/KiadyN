@@ -15,12 +15,6 @@
     let views = 0;
 
     onMount(() => {
-        // Passer à la phase 2 après `delayImage` ms
-        // setTimeout(() => {
-        //     phase = 2;
-        // }, delay);
-
-        // Passer à la phase 3 après `delayImage + delayLoader` ms
         setTimeout(() => {
             phase = 3;
         }, delay2);
