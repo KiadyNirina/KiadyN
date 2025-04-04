@@ -10,7 +10,7 @@
     import { supabase } from '$lib/supabaseClient';
 
     let phase = 1;
-    let delay2 = 5000;
+    let delay2 = 2000;
 
     let currentYear = new Date().getFullYear();
     let views = 0;
@@ -58,7 +58,7 @@
 <div class="content">
     <div class="head">
         <div id="pdp">
-            <img src="pdp.jpg" alt="">
+            <img src="pdp1.png" alt="">
             <div class="name">
                 <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
                 <p>Full-Stack Developer & Designer</p>
@@ -154,7 +154,7 @@
         border-radius: 10px;
     }
     #pdp img{
-        height: 120px;
+        height: 150px;
         border-radius: 100%;
         border: 5px solid rgb(0, 4, 12);
         transform-style: preserve-3d;
@@ -184,7 +184,7 @@
     }
     #pdp p{
         font-family: 'poppins';
-        color: rgba(255, 255, 255, 0.505);
+        color: rgba(255, 255, 255, 0.733);
         font-size: 15px;
         margin: 0px 0px 0px 10px;
     }
@@ -246,22 +246,22 @@
         margin-top: 50px;
     }
     .sect1 .info span{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'poppins';
         display: flex;
         align-items: center;
         font-size: 12px;
         line-height: 28px;
-        color: rgba(255, 255, 255, 0.889);
+        color: white;
     }
     .sect1 .info span a{
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.889);
+        color: white;
     }
     .sect1 .info span a:hover{
         text-decoration: underline;
     }
     .sect1 .info img{
-        height: 15px;
+        height: 20px;
         margin-right: 10px;
     }
     .sect1 button{
@@ -404,7 +404,7 @@
         border-radius: 5px;
     }
     .footer .social a img{
-        height: 25px;
+        height: 30px;
     }
     .footer .social a:hover {
         background-color: rgba(83, 83, 83, 0.15);
