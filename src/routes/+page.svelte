@@ -387,7 +387,7 @@
     }
     .footer{
         padding: 15px;
-        font-size: 11px;
+        font-size: 13px;
         font-family: 'poppins';
         font-weight: bold;
         color: rgb(120, 120, 120);

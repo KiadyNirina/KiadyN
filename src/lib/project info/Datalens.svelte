@@ -28,6 +28,7 @@
     .cardOne{
         width: auto;
         padding: 10px;
+        font-family: 'poppins';
     }
     .img{
         display: flex;
@@ -45,11 +46,9 @@
         display: flex;
         align-items: center;
         color: rgb(157, 157, 157);
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     .info p, .info li{
         color: rgb(165, 165, 165);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-block-start: 5px;
         margin-block-end: 5px;
         line-height: 25px;
@@ -70,7 +69,7 @@
         display: flex;
         align-items: center;
         background-color: rgb(37, 61, 72);
-        padding: 5px;
+        padding: 7px;
         border-radius: 15px;
         margin-right: 5px;
     }
@@ -80,6 +79,7 @@
     }
     .techno .techno2 span{
         font-size: 11px;
+        color: white;
     }
     .repo {
         background-color: rgba(255, 255, 255, 0.049);
@@ -91,7 +91,6 @@
         justify-content: center;
         text-decoration: none;
         color: white;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: bold;
         font-size: 13px;
     }

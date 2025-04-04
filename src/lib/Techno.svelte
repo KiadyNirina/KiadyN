@@ -102,7 +102,7 @@
     }
     .techno p {
         color: rgba(255, 255, 255, 0.797);
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'poppins';
         font-size: 15px;
         font-weight: bold;
         margin: 0;
