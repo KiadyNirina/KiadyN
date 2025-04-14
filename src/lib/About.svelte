@@ -5,7 +5,9 @@
         </div>
         <div class="text">
             <h1>Who am I?</h1>
-            <p class="typed-text">My name is RAMBELOSON Kiady Nirina, I am from MADAGASCAR , I am a young developer. Passionate about technology🌐 and innovation💡, I am dedicated to acquiring solid technical skills and creating successful digital solutions⚙️. I am always looking for new challenges🌱 and opportunities🚪 to practice my skills and learn new technologies📚. Do not hesitate to contact me📧 for any questions, collaborations or professional opportunities🙏.</p>
+            <p class="typed-text">
+            👋 My name is RAMBELOSON Kiady Nirina, I am a young web developer from Madagascar 🇲🇬, passionate about creating innovative digital solutions 💡. Curious and motivated 🚀, I develop with languages ​​like <b>PHP</b> 🐘, <b>JavaScript</b> ⚡ and <b>Python</b> 🐍, as well as with frameworks such as <b>Laravel</b> 🛠️, <b>Django</b> 🔧, <b>Vue.js</b> 🌐 and <b>Svelte</b> 🔥. My career has allowed me to work on various projects 🎯, ranging from content management to the creation of custom web applications. Always looking for learning 📚, I strive to perfect my technical skills while developing a user-oriented and performance-oriented approach 💻✨.
+            </p>
         </div>
     </div>
 </div>
