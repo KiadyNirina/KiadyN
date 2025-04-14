@@ -34,12 +34,18 @@
 </div>
 
 <style>
+    @font-face {
+        font-family: 'Jersey';
+        src: url('/font/Jersey10-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
     .exp{
         animation: fadeIn 1s ease-in-out;
     }
     h2{
-        font-size: 30px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 40px;
+        font-family: 'Jersey';
         color: rgb(142, 142, 142);
     }
     .content{
