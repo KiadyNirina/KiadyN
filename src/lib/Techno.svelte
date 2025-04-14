@@ -103,7 +103,7 @@
     .techno p {
         color: rgba(255, 255, 255, 0.797);
         font-family: 'poppins';
-        font-size: 15px;
+        font-size: 13px;
         font-weight: bold;
         margin: 0;
         padding: 10px;
@@ -123,7 +123,7 @@
     .img img{
         margin-left: auto;
         margin-right: auto;
-        height: 50px;
+        height: 30px;
         padding: 10px;
         border-radius: 100%;
         transform-style: preserve-3d; /* Préserve l'effet 3D */
