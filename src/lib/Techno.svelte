@@ -101,7 +101,7 @@
         animation: slideIn 1s ease-in-out;
     }
     .techno p {
-        color: rgba(255, 255, 255, 0.797);
+        color: white;
         font-family: 'poppins';
         font-size: 13px;
         font-weight: bold;

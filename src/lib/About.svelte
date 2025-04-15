@@ -22,7 +22,7 @@
     .about-content h1{
         font-family: 'Rubik';
         font-size: 50px;
-        color: rgba(194, 194, 194, 0.859);
+        color: white;
     }
     .about{
         padding: 10px;
@@ -36,13 +36,13 @@
     .text{
         width: 60%;
         padding: 20px;
-        color: rgb(194, 194, 194);
+        color: white;
         margin-bottom: 50px;
     }
     .typed-text {
         font-family: 'poppins';
         font-size: 12px;
-        color: rgba(255, 255, 255, 0.797);
+        color: white;
         line-height: 25px;
     }
     .about img{

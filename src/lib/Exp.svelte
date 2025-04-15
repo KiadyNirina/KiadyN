@@ -1,7 +1,14 @@
 <div class="exp">
     <h2>2025</h2>
     <div class="content">
-        <h4><img src="/atout.png" alt="">Atout Service Mada <i>(CDI)</i> <span>Nov 2024 - Today</span></h4>
+        <h4>
+            <img src="/atout.png" alt="">
+            <div class="company">
+                Atout Service Mada (CDI) 
+                <span id="function">PHP developer</span>
+            </div>
+            <span>Nov 2024 - Today</span>
+        </h4>
         <ul>
             <li>As a PHP developer, I worked on projects using CodeIgniter and Magento, where I was responsible for feature development, module integration, and application maintenance.</li>
         </ul>
@@ -40,33 +47,50 @@
         font-weight: normal;
         font-style: normal;
     }
+    @font-face {
+        font-family: 'Poppins Bold';
+        src: url('/font/Poppins-ExtraBold.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
     .exp{
         animation: fadeIn 1s ease-in-out;
     }
-    h2{
-        font-size: 40px;
-        font-family: 'Jersey';
-        color: rgb(142, 142, 142);
+    h2 {
+        position: absolute;
+        background-color: rgb(0, 30, 87);
+        border-radius: 20px;
+        padding: 5px;
+        font-family: 'poppins bold';
+        font-size: 11px;
+        margin-top: -20px;
     }
     .content{
         border-left: 1px solid rgba(255, 255, 255, 0.463);
         padding-left: 20px;
         font-family: 'poppins';
         font-size: 14px;
-        color: rgb(142, 142, 142);
+        color: rgb(230, 230, 230);
         margin-bottom: 50px;
     }
     h4{
+        font-family: 'Poppins Bold';
         display: flex;
         align-items: center;
-        color: rgb(190, 190, 190);
+        color: rgb(255, 255, 255);
+        font-size: 15px;
     }
-    h4 i{
-        margin-left: 5px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    .company {
+        display: grid;
+    }
+    .company span {
+        margin-left: 0;
+        font-family: 'poppins';
+        color: rgb(158, 158, 158);
     }
     h4 span{
         margin-left: auto;
+        font-size: 12px;
     }
     h4 img{
         height: 15px;

@@ -207,7 +207,7 @@
 <style>
     .head{
         text-align: center;
-        color: rgb(194, 194, 194);
+        color: rgb(255, 255, 255);
         margin-bottom: 50px;
         animation: fadeIn 1s ease-in-out;
     }
@@ -268,7 +268,7 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     .info p{
-        color: rgb(194, 194, 194);
+        color: rgb(255, 255, 255);
         font-family: 'poppins';
         margin-block-start: 5px;
         margin-block-end: 5px;

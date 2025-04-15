@@ -133,7 +133,7 @@
         margin-left: auto;
         margin-right: auto;
         max-width: 1100px;
-        color: rgba(255, 255, 255, 0.386);
+        color: white;
         animation: fadeIn 0.5s ease-out;
     }
     .head{
@@ -165,7 +165,7 @@
         animation: rotate3D 5s linear infinite;
     }
     #pdp h1{
-        color: rgba(255, 255, 255, 0.7);
+        color: white;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 25px;
         margin: 0px 0px 0px 10px;
@@ -184,7 +184,7 @@
     }
     #pdp p{
         font-family: 'poppins';
-        color: rgba(255, 255, 255, 0.733);
+        color: white;
         font-size: 15px;
         margin: 0px 0px 0px 10px;
     }
@@ -209,7 +209,7 @@
         font-family: 'poppins';
         font-weight: bolder;
         font-size: 12px;
-        color: green;
+        color: rgb(0, 180, 0);
     }
     #openWork img{
         height: 15px;
@@ -226,7 +226,7 @@
     .sect1{
         color: white;
         padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.061);
+        border: 1px solid rgba(255, 255, 255, 0.151);
         border-radius: 15px;
         width: 20%;
         margin-right: 10px;
@@ -269,7 +269,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: rgba(255, 255, 255, 0.889);
+        color: white;
         border: none;
         border-radius: 10px;
         padding: 10px;
@@ -284,7 +284,7 @@
     }
     .sect1 button:hover{
         cursor: pointer;
-        background-color: rgba(32, 162, 255, 0.055);
+        background-color: rgba(32, 162, 255, 0.171);
     }
     .sect1 button:disabled:hover{
         cursor: not-allowed;
@@ -292,7 +292,7 @@
     }
     .sect2{
         padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.061);
+        border: 1px solid rgba(255, 255, 255, 0.151);
         border-radius: 15px;
         width: 80%;
     }
@@ -302,12 +302,13 @@
         top: 0;
         backdrop-filter: blur(50px);
         z-index: 1;
+        color: grey;
     }
     .nav span{
         margin-right: auto;
         margin-left: auto;
         font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'poppins bold';
         font-weight: bold;
     }
     .nav span:hover{
@@ -324,7 +325,7 @@
         background-color: rgba(255, 255, 255, 0.049);
         border-radius: 20px;
         padding: 10px;
-        color: rgb(190, 190, 190);
+        color: white;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-weight: bold;
         font-size: 15px;
