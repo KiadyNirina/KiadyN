@@ -4,6 +4,7 @@
     import Exp from "../lib/Exp.svelte";
     import Projects from "../lib/Projects.svelte";
     import Techno from "../lib/Techno.svelte";
+    import Contact from "../lib/Contact.svelte";
     import { onMount } from "svelte";
     import { fade, fly, slide } from 'svelte/transition';
     import Loading from "../lib/Loading.svelte";
@@ -109,6 +110,9 @@
                 </div>
             {/if}
         </div>
+    </div>
+    <div class="contact">
+        <Contact/>
     </div>
     <div class="footer">
         <div class="social">
@@ -337,6 +341,11 @@
         height: 20px;
         margin-right: 5px;
     }
+    .contact {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     @media screen and (max-width : 1000px) {
         .body{
             display: block;
@@ -384,6 +393,9 @@
             margin-top: 10px;
             width: auto;
             padding: 10px;
+        }
+        .contact{
+            width: 95%;
         }
     }
     .footer{
