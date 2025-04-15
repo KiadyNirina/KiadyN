@@ -226,9 +226,8 @@
     }
     .card1, .card2{
         width: 49%;
-        background-color: rgba(255, 255, 255, 0.049);
+        background-color: rgb(0, 22, 42);
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.061);
         margin-left: auto;
         margin-right: auto;
         position: relative;
@@ -329,7 +328,7 @@
             padding: 10px;
             border-radius: 10px;
             margin-top: 15px;
-            background-color: rgba(255, 255, 255, 0.082);
+            background-color: rgba(5, 39, 70, 0.822);
         }
         .card1 img, .card2 img{
             width: 100%;
