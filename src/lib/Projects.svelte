@@ -24,12 +24,21 @@
         mci: Mci
     };
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     const handleClick = (projectName) => {
         selectedProject = projectName;
+        scrollToTop();
     };
 
     const handleClickReturn = () => {
         selectedProject = null;
+        scrollToTop();
     };
 </script>
 
