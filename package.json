@@ -18,6 +18,7 @@
 	"type": "module",
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",
-		"@supabase/supabase-js": "^2.49.4"
+		"@supabase/supabase-js": "^2.49.4",
+		"lucide-svelte": "^0.503.0"
 	}
 }

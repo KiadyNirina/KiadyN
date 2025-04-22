@@ -9,6 +9,7 @@
     import { fade, fly, slide } from 'svelte/transition';
     import Loading from "../lib/Loading.svelte";
     import { supabase } from '$lib/supabaseClient';
+    import Theme from "../lib/Theme.svelte";
 
     let phase = 1;
     let delay2 = 2000;
@@ -65,6 +66,7 @@
                 <p>Full-Stack Developer & Designer</p>
                 <p id="openWork"><img src="business.png" alt=""> <span>Open for collaborations</span></p>
             </div>
+            <Theme theme="dark" />
         </div>
     </div>
     <div class="body">
