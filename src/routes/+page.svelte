@@ -10,6 +10,7 @@
     import Loading from "../lib/Loading.svelte";
     import { supabase } from '$lib/supabaseClient';
     import Theme from "../lib/Theme.svelte";
+    import Icon from '@iconify/svelte';
 
     let phase = 1;
     let delay2 = 2000;
