@@ -19,6 +19,8 @@
 	"dependencies": {
 		"@emailjs/browser": "^4.4.1",
 		"@supabase/supabase-js": "^2.49.4",
-		"lucide-svelte": "^0.503.0"
+		"@tailwindcss/vite": "^4.1.4",
+		"lucide-svelte": "^0.503.0",
+		"tailwindcss": "^4.1.4"
 	}
 }

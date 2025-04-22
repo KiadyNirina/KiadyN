@@ -129,6 +129,7 @@
 {/if}
 
 <style>
+    @import "tailwindcss";
     @font-face {
         font-family: 'poppins';
         src: url('/font/Poppins-Light.ttf') format('truetype');
