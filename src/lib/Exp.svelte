@@ -1,4 +1,4 @@
-<div class="exp">
+<div class="exp mt-10">
     <h2>2025</h2>
     <div class="content">
         <h4>
@@ -9,7 +9,7 @@
             </div>
             <span>Nov 2024 - Today</span>
         </h4>
-        <ul>
+        <ul class="mt-2 list-disc pl-5 text-gray-400 text-[14px]">
             <li>As a PHP developer, I worked on projects using CodeIgniter and Magento, where I was responsible for feature development, module integration, and application maintenance.</li>
         </ul>
     </div>
@@ -17,7 +17,7 @@
     <h2>2024</h2>
     <div class="content">
         <h4>Freelance <span>2024</span></h4>
-        <ul>
+        <ul class="mt-2 list-disc pl-5 text-gray-400 text-[14px]">
             <li><b>Website</b> : <a href="https://test-tc.rf.gd/mycore/">Mycore</a> , <b>Techno</b> : WordPress</li>
             <li><b>Website</b> : <a href="https://test-tc.rf.gd/beyond/">Beyond</a> , <b>Techno</b> : WordPress</li>
         </ul>
@@ -26,7 +26,7 @@
     <h2>2023</h2>
     <div class="content">
         <h4>Freelance <span>2023</span></h4>
-        <ul>
+        <ul class="mt-2 list-disc pl-5 text-gray-400 text-[14px]">
             <li><b>Website</b> : private , <b>Techno</b> : WordPress</li>
         </ul>
     </div>
@@ -34,7 +34,7 @@
     <h2>2022</h2>
     <div class="content">
         <h4>Freelance <span>2022</span></h4>
-        <ul>
+        <ul class="mt-2 list-disc pl-5 text-gray-400 text-[14px]">
             <li><b>Website</b> : <a href="https://www.moncomparateur-immo.com/">moncomparateur-immo</a> , <b>Techno</b> : WordPress</li>
         </ul>
     </div>
