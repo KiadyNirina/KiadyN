@@ -53,11 +53,11 @@
     }
 </script>
 
-{#if phase < 3}
+<!-- {#if phase < 3}
     <Loading {phase} />
-{/if}
+{/if} -->
 
-{#if phase === 3}
+<!-- {#if phase === 3} -->
 <div class="content">
     <div class="head">
         <div id="pdp">
@@ -71,16 +71,16 @@
         </div>
     </div>
     <div class="body">
-        <div class="sect1">
+        <div class="sect1 w-[30%]">
             <span id="view"><img src="eye.png" alt=""> Views: {views}</span>
             <p><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
             <div class="info">
-                <span><img src="adresse-white.png" alt=""> Antananarivo, Madagascar</span>
-                <span><img src="tel-white.png" alt=""> +261341039490</span>
-                <span><img src="email-white.png" alt=""> <a href="mailto:kiady142ram@gmail.com">kiady142ram@gmail.com</a></span>
-                <span><img src="linkedin-white.png" alt=""> <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/">Kiady Ram</a></span>
-                <span><img src="facebook-white.png" alt=""> <a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
-                <span><img src="github-white.png" alt=""> <a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
+                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:map-marker" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>Antananarivo, Madagascar</span>
+                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:phone" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>+261341039490</span>
+                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:email" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="mailto:kiady142ram@gmail.com">kiady142ram@gmail.com</a></span>
+                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:linkedin" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.linkedin.com/in/kiady-ram-5216592a9/">Kiady Ram</a></span>
+                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:facebook" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
+                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:github" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
             </div>
             <button on:click={download} disabled={loading}><img src="download.png" alt="">{loading ? 'loading...' : 'Download my CV'}</button>
         </div>
@@ -127,7 +127,7 @@
         <p><span><img src="logo.png" alt="">© { currentYear } KiadyN, lnc.</span></p>
     </div>
 </div>
-{/if}
+<!-- {/if} -->
 
 <style>
     @import "tailwindcss";
@@ -236,7 +236,6 @@
         padding: 20px;
         border: 1px solid rgba(255, 255, 255, 0.151);
         border-radius: 15px;
-        width: 20%;
         margin-right: 10px;
         position: sticky;
         top: 20px;
