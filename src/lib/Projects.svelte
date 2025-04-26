@@ -44,7 +44,7 @@
 
 <div>
     {#if selectedProject}
-        <p id="return" on:click={handleClickReturn}>Return to all</p>
+        <p id="return" class="mt-5 mb-5" on:click={handleClickReturn}>Return to all</p>
         <div in:slide out:slide>
             {#if projects[selectedProject]}
                 <svelte:component this={projects[selectedProject]} />

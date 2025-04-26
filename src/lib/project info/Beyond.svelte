@@ -34,6 +34,7 @@
         display: flex;
         align-items: center;
         color: rgb(157, 157, 157);
+        font-size: 20px;
     }
     .info p{
         color: rgb(165, 165, 165);
@@ -48,6 +49,7 @@
     }
     .techno{
         display: flex;
+        margin-bottom: 15px;
     }
     .techno .techno2{
         display: flex;
@@ -66,24 +68,24 @@
         color: white;
     }
     .repo {
-                background-color: rgba(255, 255, 255, 0.049);
-                border-radius: 10px;
-                width: auto;
-                padding: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                color: white;
-                font-weight: bold;
-                font-size: 13px;
+        background-color: rgba(255, 255, 255, 0.049);
+        border-radius: 10px;
+        width: auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 13px;
     }
     .repo:hover{
-                background-color: rgba(32, 162, 255, 0.055);
+        background-color: rgba(32, 162, 255, 0.055);
     }
     .repo img{
-                height: 25px;
-                width: auto;
-                margin-right: 5px;
+        height: 25px;
+        width: auto;
+        margin-right: 5px;
     }
 </style>

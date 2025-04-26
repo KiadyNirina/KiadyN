@@ -46,6 +46,7 @@
         display: flex;
         align-items: center;
         color: rgb(157, 157, 157);
+        font-size: 20px;
     }
     .info p, .info li{
         color: rgb(165, 165, 165);
@@ -64,6 +65,7 @@
     }
     .techno{
         display: flex;
+        margin-bottom: 15px;
     }
     .techno .techno2{
         display: flex;
