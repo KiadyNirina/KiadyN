@@ -5,7 +5,7 @@
         </div>
         <div class="text">
             <h1>Who am I?</h1>
-            <p class="typed-text">
+            <p class="typed-text text-gray-300">
             👋 My name is RAMBELOSON Kiady Nirina, I am a young web developer from Madagascar 🇲🇬, passionate about creating innovative digital solutions 💡. Curious and motivated 🚀, I develop with languages ​​like <b>PHP</b> 🐘, <b>JavaScript</b> ⚡ and <b>Python</b> 🐍, as well as with frameworks such as <b>Laravel</b> 🛠️, <b>Django</b> 🔧, <b>Vue.js</b> 🌐 and <b>Svelte</b> 🔥. My career has allowed me to work on various projects 🎯, ranging from content management to the creation of custom web applications. Always looking for learning 📚, I strive to perfect my technical skills while developing a user-oriented and performance-oriented approach 💻✨.
             </p>
         </div>
@@ -42,7 +42,6 @@
     .typed-text {
         font-family: 'poppins';
         font-size: 12px;
-        color: white;
         line-height: 25px;
     }
     .about img{
