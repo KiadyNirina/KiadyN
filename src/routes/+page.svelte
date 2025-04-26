@@ -75,21 +75,21 @@
             <span id="view"><img src="eye.png" alt=""> Views: {views}</span>
             <p><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
             <div class="info">
-                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:map-marker" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>Antananarivo, Madagascar</span>
-                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:phone" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>+261341039490</span>
-                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:email" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="mailto:kiady142ram@gmail.com">kiady142ram@gmail.com</a></span>
-                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:linkedin" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.linkedin.com/in/kiady-ram-5216592a9/">Kiady Ram</a></span>
-                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:facebook" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
-                <span class="hover:text-red-600 transition-colors duration-300 cursor-pointer group"><Icon icon="mdi:github" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:map-marker" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>Antananarivo, Madagascar</span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:phone" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>+261341039490</span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:email" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="mailto:kiady142ram@gmail.com">kiady142ram@gmail.com</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:linkedin" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.linkedin.com/in/kiady-ram-5216592a9/">Kiady Ram</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:facebook" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:github" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
             </div>
             <button on:click={download} disabled={loading}><img src="download.png" alt="">{loading ? 'loading...' : 'Download my CV'}</button>
         </div>
         <div class="sect2">
             <div class="nav">
-                <span class:active={active == 'projects'} on:click={() => handleClick('projects')}>Works</span>
-                <span class:active={active == 'about'} on:click={() => handleClick('about')}>About me</span>
-                <span class:active={active == 'techno'} on:click={() => handleClick('techno')}>Techno</span>
-                <span class:active={active == 'exp'} on:click={() => handleClick('exp')}>Exp.</span>
+                <span class:active={active == 'projects'} class="flex items-center transition-all duration-300 ease-in-out" on:click={() => handleClick('projects')}><Icon icon="mdi:rocket-launch" class="mr-1"/> Works</span>
+                <span class:active={active == 'about'} class="flex items-center transition-all duration-300 ease-in-out" on:click={() => handleClick('about')}><Icon icon="mdi:account" class="mr-1"/>About me</span>
+                <span class:active={active == 'techno'} class="flex items-center transition-all duration-300 ease-in-out" on:click={() => handleClick('techno')}><Icon icon="mdi:cog" class="mr-1"/>Techno</span>
+                <span class:active={active == 'exp'} class="flex items-center transition-all duration-300 ease-in-out" on:click={() => handleClick('exp')}><Icon icon="mdi:briefcase" class="mr-1"/>Exp.</span>
             </div>
             {#if active === 'about'}
                 <div in:fade out:fade>
@@ -117,12 +117,12 @@
     <div class="contact">
         <Contact/>
     </div>
-    <div class="footer">
-        <div class="social">
-            <a href="mailto:kiady142ram@gmail.com"><img src="email-footer.png" alt=""></a>
-            <a href="https://github.com/KiadyNirina"><img src="github-footer.png" alt=""></a>
-            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/"><img src="linkedin-footer.png" alt=""></a>
-            <a href="https://www.facebook.com/kiady.rambeloson"><img src="facebook-footer.png" alt=""></a>
+    <div class="footer mt-2 flex flex-col items-center space-y-2">
+        <div class="flex items-center space-x-2">
+            <a href="mailto:kiady142ram@gmail.com" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="mdi:email" height="30"/></a>
+            <a href="https://github.com/KiadyNirina" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="mdi:github" height="30"/></a>
+            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="mdi:linkedin" height="30"/></a>
+            <a href="https://www.facebook.com/kiady.rambeloson" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="mdi:facebook" height="30"/></a>
         </div>
         <p><span><img src="logo.png" alt="">© { currentYear } KiadyN, lnc.</span></p>
     </div>
@@ -234,7 +234,7 @@
     .sect1{
         color: white;
         padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.151);
+        border: 1px solid rgba(255, 255, 255, 0.078);
         border-radius: 15px;
         margin-right: 10px;
         position: sticky;
@@ -299,7 +299,7 @@
     }
     .sect2{
         padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.151);
+        border: 1px solid rgba(255, 255, 255, 0.078);
         border-radius: 15px;
         width: 80%;
     }
