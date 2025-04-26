@@ -1,11 +1,17 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
 <div class="exp mt-10">
     <h2>2025</h2>
     <div class="content">
         <h4>
             <img src="/atout.png" alt="">
             <div class="company">
-                Atout Service Mada (CDI) 
-                <span id="function">PHP developer</span>
+                Atout Service Mada
+                <div class="flex items-center">
+                    <span class="mr-2 text-gray-400">PHP developer</span>
+                    <span class="flex items-center text-green-400">( <Icon icon="mdi:briefcase-outline" class="mr-1"/> Permanent Position)</span>
+                </div>
             </div>
             <span>Nov 2024 - Today</span>
         </h4>
@@ -86,11 +92,11 @@
     .company span {
         margin-left: 0;
         font-family: 'poppins';
-        color: rgb(158, 158, 158);
     }
     h4 span{
         margin-left: auto;
         font-size: 12px;
+        font-family: 'poppins';
     }
     h4 img{
         height: 15px;
@@ -105,7 +111,10 @@
     }
     @media screen and (max-width : 700px) {
         h4{
-            font-size: 15px;
+            font-size: 13px;
+        }
+        h4 span{
+            font-size: 10px;
         }
         ul{
             font-size: 11px;

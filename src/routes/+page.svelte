@@ -64,8 +64,8 @@
             <img src="pdp1.png" alt="">
             <div class="name">
                 <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
-                <p>Full-Stack Developer & Designer</p>
-                <p id="openWork"><img src="business.png" alt=""> <span>Open for collaborations</span></p>
+                <p class="text-gray-300 flex items-center"><Icon icon="mdi:laptop" class="mr-2" />Full-Stack Developer & Designer</p>
+                <p id="openWork" class="text-green-600"><Icon icon="mdi:handshake" class="mr-2" /><span>Open for collaborations</span></p>
             </div>
             <Theme theme="dark" />
         </div>
@@ -192,7 +192,6 @@
     }
     #pdp p{
         font-family: 'poppins';
-        color: white;
         font-size: 15px;
         margin: 0px 0px 0px 10px;
     }
@@ -217,16 +216,8 @@
         font-family: 'poppins';
         font-weight: bolder;
         font-size: 12px;
-        color: rgb(0, 180, 0);
     }
-    #openWork img{
-        height: 15px;
-        border-radius: 0;
-        padding: 0;
-        border: none;
-        margin-right: 5px;
-    }
-    #openWork img:hover, #openWork span:hover {
+    #openWork span:hover {
         cursor:auto;
         box-shadow: none;
         animation: none;
@@ -360,17 +351,10 @@
             height: 100px;
         }
         #pdp{
-            width: 50%;
+            width: 100%;
         }
         #pdp h1{
             align-items: end;
-        }
-        #openWork img{
-            height: 12px;
-            border-radius: 0;
-            padding: 0;
-            border: none;
-            margin-right: 5px;
         }
         .sect1{
             width: auto;
