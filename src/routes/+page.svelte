@@ -64,14 +64,14 @@
             <img src="pdp1.png" alt="">
             <div class="name">
                 <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
-                <p class="text-gray-300 flex items-center"><Icon icon="mdi:laptop" class="mr-2" />Full-Stack Developer & Designer</p>
-                <p id="openWork" class="text-green-600"><Icon icon="mdi:handshake" class="mr-2" /><span>Open for collaborations</span></p>
+                <p class="text-gray-300 flex items-center"><Icon icon="mdi:laptop" class="mr-1" />Full-Stack Developer & Designer</p>
+                <p id="openWork" class="text-green-600"><Icon icon="mdi:handshake" class="mr-1" /><span>Open for collaborations</span></p>
             </div>
             <Theme theme="dark" />
         </div>
     </div>
     <div class="body">
-        <div class="sect1 w-[30%]">
+        <div class="sect1 w-[40%]">
             <span id="view"><img src="eye.png" alt=""> Views: {views}</span>
             <p><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
             <div class="info">
@@ -117,12 +117,17 @@
     <div class="contact">
         <Contact/>
     </div>
+    <div class="mt-5 max-w-xs md:max-w-md flex items-center mx-auto gap-4 w-full px-4">
+        <hr class="flex-grow border-t border-gray-700" />
+        <span class="text-gray-500 text-sm whitespace-nowrap">or</span>
+        <hr class="flex-grow border-t border-gray-700" />
+      </div>
     <div class="footer mt-2 flex flex-col items-center space-y-2">
-        <div class="flex items-center space-x-2">
-            <a href="mailto:kiady142ram@gmail.com" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="mdi:email" height="30"/></a>
-            <a href="https://github.com/KiadyNirina" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="mdi:github" height="30"/></a>
-            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="mdi:linkedin" height="30"/></a>
-            <a href="https://www.facebook.com/kiady.rambeloson" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="mdi:facebook" height="30"/></a>
+        <div class="flex items-center space-x-4 font-light font-sans">
+            <a href="mailto:kiady142ram@gmail.com" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="ri:mail-line" height="40"/></a>
+            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="ri:linkedin-line" height="40"/></a>
+            <a href="https://www.facebook.com/kiady.rambeloson" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="ri:facebook-line" height="40"/></a>
+            <a href="https://wa.me/+261335777152" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="ic:baseline-whatsapp" height="40"/></a>
         </div>
         <p><span><img src="logo.png" alt="">© { currentYear } KiadyN, lnc.</span></p>
     </div>
