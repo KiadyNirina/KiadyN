@@ -51,9 +51,9 @@
             {/if}
         </div>
     {:else}
-        <div class="head">
+        <div class="head pt-5">
             <h1>Hello!</h1>
-            <p>Here are some of the projects I have worked on. Each achievement reflects my commitment to creating efficient and intuitive web solutions.</p>
+            <p class="text-gray-300">Here are some of the projects I have worked on. Each achievement reflects my commitment to creating efficient and intuitive web solutions.</p>
         </div>
         <div class="projects">
             <!-- <div class="card2" on:click={() => handleClick('fintrack')}>
@@ -273,10 +273,10 @@
         display: flex;
         align-items: center;
         color: rgb(219, 219, 219);
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'poppins bold';
     }
     .info p{
-        color: rgb(255, 255, 255);
+        color: rgba(255, 255, 255, 0.824);
         font-family: 'poppins';
         margin-block-start: 5px;
         margin-block-end: 5px;
@@ -337,7 +337,7 @@
             padding: 10px;
             border-radius: 10px;
             margin-top: 15px;
-            background-color: rgba(5, 39, 70, 0.822);
+            background-color: rgba(1, 28, 53, 0.822);
         }
         .card1 img, .card2 img{
             width: 100%;
