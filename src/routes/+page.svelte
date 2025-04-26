@@ -345,7 +345,7 @@
         margin-right: 5px;
     }
     .contact {
-        width: 75%;
+        width: 60%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -407,23 +407,6 @@
         font-family: 'poppins';
         font-weight: bold;
         color: rgb(120, 120, 120);
-    }
-    .footer .social{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .footer .social a{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 5px;
-    }
-    .footer .social a img{
-        height: 30px;
-    }
-    .footer .social a:hover {
-        background-color: rgba(83, 83, 83, 0.15);
     }
     .footer img{
         height: 20px;

@@ -1,6 +1,7 @@
 <script>
   import { supabase } from '$lib/supabaseClient'
   import emailjs from '@emailjs/browser';
+  import Icon from '@iconify/svelte';
 
   let form = {
     name: '',
@@ -90,7 +91,8 @@
       <label for="name">Name</label>
       <input 
         type="text" 
-        id="name" 
+        id="name"
+        class="w-full" 
         bind:value={form.name}
         disabled={isSending}
         required
@@ -102,6 +104,7 @@
       <input 
         type="email" 
         id="email" 
+        class="w-full"
         bind:value={form.email}
         disabled={isSending}
         required
@@ -112,14 +115,16 @@
       <label for="message">Message</label>
       <textarea 
         id="message" 
+        class="w-full"
         bind:value={form.message}
         disabled={isSending}
         required
       ></textarea>
     </div>
     
-    <button type="submit" disabled={isSending}>
+    <button type="submit" class="w-full flex items-center justify-center" disabled={isSending}>
       {isSending ? 'Sending...' : 'Send message'}
+      <Icon icon="mdi:telegram" class="ml-1" width="25"/>
     </button>
   </form>
 </div>
@@ -137,7 +142,7 @@
 .content p{
     font-family: 'poppins';
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
     color: white;
     margin-bottom: 20px;
 }
@@ -153,9 +158,9 @@
 .content form .input label{
     font-family: 'poppins';
     color: white;
+    font-size: 13px;
 }
 .content form .input input{
-    width: 99%;
     height: 40px;
     border-radius: 5px;
     border: none;
@@ -166,7 +171,6 @@
     padding-left: 5px;
 }
 .content form .mess textarea{
-    width: 99%;
     height: 150px;
     border-radius: 5px;
     border: none;
@@ -177,7 +181,6 @@
     padding-left: 5px;
 }
 .content form button{
-    width: 100%;
     height: 40px;
     border-radius: 5px;
     border: none;
@@ -219,12 +222,5 @@
 .content form button:disabled {
     opacity: 0.7;
     cursor: not-allowed;
-}
-.debug { 
-  background: #f3f4f6; 
-  padding: 1rem; 
-  margin-top: 1rem;
-  font-family: monospace;
-  font-size: 0.8rem;
 }
 </style>
