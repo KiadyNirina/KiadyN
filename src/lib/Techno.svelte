@@ -117,13 +117,12 @@
     }
     .img{
         margin-bottom: 20px;
-        justify-content: center;
         perspective: 1000px;
+        display: flex;
+        align-items: center;
     }
     .img img{
-        margin-left: auto;
-        margin-right: auto;
-        height: 30px;
+        height: 50px;
         padding: 10px;
         border-radius: 100%;
         transform-style: preserve-3d; /* Préserve l'effet 3D */
