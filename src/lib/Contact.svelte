@@ -72,7 +72,7 @@
   
 <div class="content">
   <h1>Contact me</h1>
-  <p>Ready to bring your ideas to life? Let's talk! Send me a message and let's create together.</p>
+  <p class="text-gray-300">Ready to bring your ideas to life? Let's talk! Send me a message and let's create together.</p>
 
   <!-- Notifications -->
   {#if success}
@@ -143,7 +143,6 @@
     font-family: 'poppins';
     text-align: center;
     font-size: 13px;
-    color: white;
     margin-bottom: 20px;
 }
 .content form {

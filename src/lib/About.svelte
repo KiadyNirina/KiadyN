@@ -37,7 +37,6 @@
         width: 60%;
         padding: 20px;
         color: white;
-        margin-bottom: 50px;
     }
     .typed-text {
         font-family: 'poppins';
