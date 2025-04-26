@@ -71,9 +71,9 @@
         </div>
     </div>
     <div class="body">
-        <div class="sect1 w-[40%]">
+        <div class="sect1 w-[30%]">
             <span id="view"><img src="eye.png" alt=""> Views: {views}</span>
-            <p><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
+            <p class="mt-2"><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
             <div class="info">
                 <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:map-marker" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>Antananarivo, Madagascar</span>
                 <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:phone" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>+261341039490</span>
@@ -162,14 +162,14 @@
         margin-right: auto;
     }
     #pdp .name{
-        background-color: rgb(0, 4, 12);
+        background-color: rgba(0, 4, 12, 0.689);
         padding: 10px;
         border-radius: 10px;
     }
     #pdp img{
         height: 150px;
         border-radius: 100%;
-        border: 5px solid rgb(0, 4, 12);
+        border: 5px solid rgba(0, 4, 12, 0.689);
         transform-style: preserve-3d;
     }
     #pdp img:hover{
