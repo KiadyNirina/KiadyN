@@ -1,3 +1,6 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
 <div class="cardOne">
     <div class="img">
         <img src="datalens.jpg" alt="">
@@ -7,7 +10,7 @@
                 <h3>DataLens <span id="date">2024</span></h3>
                 <div class="techno">
                     <div class="techno2">
-                        <img src="python.png" alt="">
+                        <Icon icon="simple-icons:python" class="mr-1" />
                         <span>Python</span>
                     </div>
                 </div>
@@ -18,7 +21,7 @@
                 </ul>
 
                 <a href="https://github.com/KiadyNirina/DataLens" class="repo">
-                    <img src="github-white.png" alt="">
+                    <Icon icon="simple-icons:github" class="mr-1" height="20" />
                     Repo github
                 </a>
             </div>

@@ -1,16 +1,19 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
 <div class="cardOne">
     <img src="mycore.PNG" alt="">
     <div class="info">
         <h3>MyCore | <span>freelance</span> <span id="date">2024</span></h3>
         <div class="techno">
             <div class="techno2">
-                <img src="wordpress.png" alt="">
+                <Icon icon="simple-icons:wordpress" class="mr-1" />
                 <span>WordPress</span>
             </div>
         </div>
         <p>The Mycore company showcase site was developed as part of a freelance project. This site highlights the company's visual identity and services, with a clean and professional design, reflecting Mycore's values. It has been designed to provide intuitive navigation, allowing visitors to easily discover key information about the company's activities and products. The emphasis was placed on aesthetics, ergonomics and user experience, while integrating modern and efficient architecture.</p>
         <a href="https://test-tc.rf.gd/mycore/" class="repo">
-            <img src="lien.png" alt="">
+            <Icon icon="mdi:link" class="mr-1" height="20px"/>
             Link
         </a>
     </div>

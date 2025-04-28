@@ -9,6 +9,7 @@
     import EStock from "./project info/EStock.svelte";
     import Eboss from "./project info/Eboss.svelte";
     import Mci from "./project info/MCI.svelte";
+    import Icon from "@iconify/svelte";
 
     let selectedProject = null;
 
@@ -84,7 +85,7 @@
                     <h3>DataLens <span id="date">2024</span></h3>
                     <div class="techno">
                         <div class="techno2">
-                            <img src="python.png" alt="">
+                            <Icon icon="simple-icons:python" class="mr-1" />
                             <span>Python</span>
                         </div>
                     </div>
@@ -100,15 +101,15 @@
                     <h3>Real_Talk <span id="date">2024</span></h3>
                     <div class="techno">
                         <div class="techno2">
-                            <img src="svelte.png" alt="">
+                            <Icon icon="simple-icons:svelte" class="mr-1" />
                             <span>Svelte</span>
                         </div>
                         <div class="techno2">
-                            <img src="laravel.png" alt="">
+                            <Icon icon="simple-icons:laravel" class="mr-1" />
                             <span>Laravel</span>
                         </div>
                         <div class="techno2">
-                            <img src="mysql.png" alt="">
+                            <Icon icon="simple-icons:mysql" class="mr-1" />
                             <span>MySQL</span>
                         </div>
                     </div>
@@ -122,7 +123,7 @@
                     <h3>Beyond | <span>freelance</span> <span id="date">2024</span></h3>
                     <div class="techno">
                         <div class="techno2">
-                            <img src="wordpress.png" alt="">
+                            <Icon icon="simple-icons:wordpress" class="mr-1" />
                             <span>WordPress</span>
                         </div>
                     </div>
@@ -138,7 +139,7 @@
                     <h3>MyCore | <span>freelance</span> <span id="date">2024</span></h3>
                     <div class="techno">
                         <div class="techno2">
-                            <img src="wordpress.png" alt="">
+                            <Icon icon="simple-icons:wordpress" class="mr-1" />
                             <span>WordPress</span>
                         </div>
                     </div>
@@ -152,15 +153,15 @@
                     <h3>eBoss <span id="date">2024</span></h3>
                     <div class="techno">
                         <div class="techno2">
-                            <img src="svelte.png" alt="">
+                            <Icon icon="simple-icons:svelte" class="mr-1" />
                             <span>Svelte</span>
                         </div>
                         <div class="techno2">
-                            <img src="django.png" alt="">
+                            <Icon icon="simple-icons:django" class="mr-1" />
                             <span>Django</span>
                         </div>
                         <div class="techno2">
-                            <img src="postgresql.png" alt="">
+                            <Icon icon="simple-icons:postgresql" class="mr-1" />
                             <span>Postgresql</span>
                         </div>
                     </div>
@@ -176,19 +177,19 @@
                     <h3>E_Stock <span id="date">2023</span></h3>
                     <div class="techno">
                         <div class="techno2">
-                            <img src="html.png" alt="">
+                            <Icon icon="simple-icons:html5" class="mr-1" />
                             <span>Html</span>
                         </div>
                         <div class="techno2">
-                            <img src="css.png" alt="">
+                            <Icon icon="simple-icons:css3" class="mr-1" />
                             <span>Css</span>
                         </div>
                         <div class="techno2">
-                            <img src="php.png" alt="">
+                            <Icon icon="simple-icons:php" class="mr-1" />
                             <span>PHP</span>
                         </div>
                         <div class="techno2">
-                            <img src="mysql.png" alt="">
+                            <Icon icon="simple-icons:mysql" class="mr-1" />
                             <span>Mysql</span>
                         </div>
                     </div>
@@ -202,7 +203,7 @@
                     <h3>MCI <span id="date">2022</span></h3>
                     <div class="techno">
                         <div class="techno2">
-                            <img src="wordpress.png" alt="">
+                            <Icon icon="simple-icons:wordpress" class="mr-1" />
                             <span>WordPress</span>
                         </div>
                     </div>

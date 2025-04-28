@@ -1,3 +1,6 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
 <div class="cardOne">
     <div class="img">
         <img src="eboss.jpg" alt="">
@@ -11,15 +14,15 @@
         <h3>eBoss <span id="date">2024</span></h3>
         <div class="techno">
             <div class="techno2">
-                <img src="svelte.png" alt="">
+                <Icon icon="simple-icons:svelte" class="mr-1" />
                 <span>svelte</span>
             </div>
             <div class="techno2">
-                <img src="django.png" alt="">
+                <Icon icon="simple-icons:django" class="mr-1" />
                 <span>django</span>
             </div>
             <div class="techno2">
-                <img src="postgresql.png" alt="">
+                <Icon icon="simple-icons:postgresql" class="mr-1" />
                 <span>postgresql</span>
             </div>
         </div>
@@ -34,7 +37,7 @@
         </ul>
 
         <a href="https://github.com/KiadyNirina/eBoss" class="repo">
-            <img src="github-white.png" alt="">
+            <Icon icon="simple-icons:github" class="mr-1" height="20px" />
             Repo github
         </a>
     </div>

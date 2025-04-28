@@ -82,7 +82,7 @@
                 <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:facebook" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
                 <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:github" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
             </div>
-            <button on:click={download} disabled={loading}><img src="download.png" alt="">{loading ? 'loading...' : 'Download my CV'}</button>
+            <button on:click={download} disabled={loading}><Icon icon="fa:download" class="mr-1" />{loading ? 'loading...' : 'Download my CV'}</button>
         </div>
         <div class="sect2">
             <div class="nav">

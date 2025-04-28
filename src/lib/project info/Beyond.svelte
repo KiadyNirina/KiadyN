@@ -1,17 +1,20 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
 <div class="cardOne">
     <img src="beyond.PNG" alt="">
     <div class="info">
         <h3>Beyond | <span>freelance</span> <span id="date">2024</span></h3>
         <div class="techno">
             <div class="techno2">
-                <img src="wordpress.png" alt="">
+                <Icon icon="simple-icons:wordpress" class="mr-1" />
                 <span>WordPress</span>
             </div>
         </div>
         <p>The Beyond company showcase site was created to highlight the company's services and values. Developed with a modern design and smooth navigation, the site reflects Beyond's commitment to offering innovative and high-quality solutions. Designed with a user-focused approach, it provides a pleasant browsing experience while enhancing visual and textual content in a consistent and engaging manner. This project made it possible to create a professional interface, combining performance and aesthetics.</p>
 
         <a href="https://test-tc.rf.gd/beyond/" class="repo">
-            <img src="lien.png" alt="">
+            <Icon icon="mdi:link" class="mr-1" height="20px"/>
             Link
         </a>
     </div>

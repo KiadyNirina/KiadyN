@@ -1,22 +1,25 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
 <div class="cardOne">
     <img src="e_stock.jpg" alt="">
     <div class="info">
         <h3>E_Stock <span id="date">2023</span></h3>
         <div class="techno">
             <div class="techno2">
-                <img src="html.png" alt="">
+                <Icon icon="simple-icons:html5" class="mr-1" />
                 <span>Html</span>
             </div>
             <div class="techno2">
-                <img src="css.png" alt="">
+                <Icon icon="simple-icons:css3" class="mr-1" />
                 <span>Css</span>
             </div>
             <div class="techno2">
-                <img src="php.png" alt="">
+                <Icon icon="simple-icons:php" class="mr-1" />
                 <span>PHP</span>
             </div>
             <div class="techno2">
-                <img src="mysql.png" alt="">
+                <Icon icon="simple-icons:mysql" class="mr-1" />
                 <span>Mysql</span>
             </div>
         </div>
@@ -30,7 +33,7 @@
         </ul>
 
         <a href="https://github.com/KiadyNirina/E_Stock" class="repo">
-            <img src="github-white.png" alt="">
+            <Icon icon="simple-icons:github" class="mr-1" height="20px"/>
             Repo github
         </a>
     </div>

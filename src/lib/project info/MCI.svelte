@@ -1,16 +1,19 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
 <div class="cardOne">
     <img src="moncomparateurimmo.PNG" alt="">
     <div class="info">
         <h3>MCI | <span>freelance</span> <span id="date">2022</span></h3>
         <div class="techno">
             <div class="techno2">
-                <img src="wordpress.png" alt="">
+                <Icon icon="simple-icons:wordpress" class="mr-1" />
                 <span>WordPress</span>
             </div>
         </div>
         <p>The Mon Comparateur Immo - MCI company showcase site was developed as part of a freelance project. This site highlights the company's visual identity and services, with a clean and professional design, reflecting Mycore's values. It has been designed to provide intuitive navigation, allowing visitors to easily discover key information about the company's activities and products. The emphasis was placed on aesthetics, ergonomics and user experience, while integrating modern and efficient architecture.</p>
         <a href="https://www.moncomparateur-immo.com/" class="repo">
-            <img src="lien.png" alt="">
+            <Icon icon="mdi:link" class="mr-1" height="20px"/>
             Link
         </a>
     </div>

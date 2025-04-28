@@ -1,3 +1,6 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
 <div class="cardOne">
     <div class="img">
         <img src="real_talk.jpg" alt="">
@@ -7,15 +10,15 @@
                 <h3>Real_Talk <span id="date">2024</span></h3>
                 <div class="techno">
                     <div class="techno2">
-                        <img src="svelte.png" alt="">
+                        <Icon icon="simple-icons:svelte" class="mr-1" />
                         <span>Svelte</span>
                     </div>
                     <div class="techno2">
-                        <img src="laravel.png" alt="">
+                        <Icon icon="simple-icons:laravel" class="mr-1" />
                         <span>Laravel</span>
                     </div>
                     <div class="techno2">
-                        <img src="mysql.png" alt="">
+                        <Icon icon="simple-icons:mysql" class="mr-1" />
                         <span>MySQL</span>
                     </div>
                 </div>
@@ -29,7 +32,7 @@
                 </ul>
             </div>
             <a href="https://github.com/KiadyNirina/Real_talk" class="repo">
-                <img src="github-white.png" alt="">
+                <Icon icon="simple-icons:github" class="mr-1" height="20px" />
                 Repo github
             </a>
 </div>
