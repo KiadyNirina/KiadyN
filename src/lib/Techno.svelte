@@ -1,5 +1,6 @@
 <script>
     import { slide } from "svelte/transition";
+    import Icon from "@iconify/svelte";
 
     let techno = {
         front: false,
@@ -30,67 +31,68 @@
 </script>
 
 <div class="techno">
-    <p class:active={selected.front == "front"} on:click={() => handleTechno("front", "front")}>🌐 Front-End Development</p>
+    <p class:active={selected.front == "front"} class="flex items-center" on:click={() => handleTechno("front", "front")}><Icon icon="simple-icons:html5" class="mr-2" />Front-End Development</p>
     {#if techno.front}
-        <div in:slide out:slide class="img">
-            <img src="html.png" alt="">
-            <img src="css.png" alt="">
-            <img src="js.png" alt="">
-            <img src="svelte.png" alt="">
-            <img src="vuejs.png" alt="">
+        <div in:slide out:slide class="img p-2">
+            <Icon icon="simple-icons:html5" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:css3" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:javascript" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:tailwindcss" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:svelte" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:vuedotjs" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
         </div>
     {/if}
-    <p class:active={selected.back == "back"} on:click={() => handleTechno("back", "back")}>💻 Back-End Development</p>
+    <p class:active={selected.back == "back"} class="flex items-center" on:click={() => handleTechno("back", "back")}><Icon icon="simple-icons:php" class="mr-2" /> Back-End Development</p>
     {#if techno.back}
-        <div in:slide out:slide class="img">
-            <img src="php.png" alt="">
-            <img src="codeigniter.png" alt="">
-            <img src="laravel.png" alt="">
-            <img src="python.png" alt="">
-            <img src="django.png" alt="">
+        <div in:slide out:slide class="img p-2">
+            <Icon icon="simple-icons:php" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:codeigniter" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:laravel" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:python" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:django" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
         </div>
     {/if}
-    <p class:active={selected.manage == "manage"} on:click={() => handleTechno("manage", "manage")}>🖥️ Content Management & E-Commerce</p>
+    <p class:active={selected.manage == "manage"} class="flex items-center" on:click={() => handleTechno("manage", "manage")}><Icon icon="simple-icons:wordpress" class="mr-2" /> Content Management & E-Commerce</p>
     {#if techno.manage}
-        <div in:slide out:slide class="img">
-            <img src="wordpress.png" alt="">
-            <img src="magento.png" alt="">
-            <img src="shopify.png" alt="">
+        <div in:slide out:slide class="img p-2">
+            <Icon icon="simple-icons:wordpress" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:magento" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
         </div>
     {/if}
-    <p class:active={selected.bdd == "bdd"} on:click={() => handleTechno("bdd", "bdd")}>🗄️ Databases</p>
+    <p class:active={selected.bdd == "bdd"} class="flex items-center" on:click={() => handleTechno("bdd", "bdd")}><Icon icon="simple-icons:mysql" class="mr-2" /> Databases</p>
     {#if techno.bdd}
-        <div in:slide out:slide class="img">
-            <img src="sqlite.png" alt="">
-            <img src="mysql.png" alt="">
-            <img src="postgresql.png" alt="">
+        <div in:slide out:slide class="img p-2">
+            <Icon icon="simple-icons:sqlite" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:mysql" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:postgresql" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
         </div>
     {/if}
-    <p class:active={selected.api == "api"} on:click={() => handleTechno("api", "api")}>🧪 API & Testing</p>
+    <p class:active={selected.api == "api"} class="flex items-center" on:click={() => handleTechno("api", "api")}><Icon icon="simple-icons:postman" class="mr-2" /> API & Testing</p>
     {#if techno.api}
-        <div in:slide out:slide class="img">
-            <img src="postman.png" alt="">
+        <div in:slide out:slide class="img p-2">
+            <Icon icon="simple-icons:postman" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
         </div>
     {/if}
-    <p class:active={selected.control == "control"} on:click={() => handleTechno("control", "control")}>📂 Version Control</p>
+    <p class:active={selected.control == "control"} class="flex items-center" on:click={() => handleTechno("control", "control")}><Icon icon="simple-icons:git" class="mr-2" /> Version Control</p>
     {#if techno.control}
-        <div in:slide out:slide class="img">
-            <img src="git.png" alt="">
+        <div in:slide out:slide class="img p-2">
+            <Icon icon="simple-icons:git" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
         </div>
     {/if}
-    <p class:active={selected.design == "design"} on:click={() => handleTechno("design", "design")}>🎨 Design Tools</p>
+    <p class:active={selected.design == "design"} class="flex items-center" on:click={() => handleTechno("design", "design")}><Icon icon="mdi:paint" class="mr-2" /> Design Tools</p>
     {#if techno.design}
-        <div in:slide out:slide class="img">
-            <img src="photoshop.png" alt="">
-            <img src="inkscape.png" alt="">
-            <img src="figma.png" alt="">
+        <div in:slide out:slide class="img p-2">
+            <Icon icon="simple-icons:adobephotoshop" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:inkscape" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:figma" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
         </div>
     {/if}
-    <p class:active={selected.deploy == "deploy"} on:click={() => handleTechno("deploy", "deploy")}>☁️ Hosting & Deployment</p>
+    <p class:active={selected.deploy == "deploy"} class="flex items-center" on:click={() => handleTechno("deploy", "deploy")}><Icon icon="mdi:cloud" class="mr-2" /> Hosting & Deployment</p>
     {#if techno.deploy}
-        <div in:slide out:slide class="img">
-            <img src="docker.png" alt="">
-            <img src="heroku.png" alt="">
+        <div in:slide out:slide class="img p-2">
+            <Icon icon="simple-icons:github" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:netlify" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
+            <Icon icon="simple-icons:docker" class="text-gray-300 mr-2 h-10 w-10 transition-colors duration-300 hover:text-blue-500" />
         </div>
     {/if}
 </div>
@@ -113,24 +115,13 @@
         background-color: rgba(0, 98, 255, 0.13);
     }
     .active{
-        background-color: rgba(0, 98, 255, 0.13);
+        background-color: rgba(0, 98, 255, 0.171);
     }
     .img{
         margin-bottom: 20px;
         perspective: 1000px;
         display: flex;
         align-items: center;
-    }
-    .img img{
-        height: 50px;
-        padding: 10px;
-        border-radius: 100%;
-        transform-style: preserve-3d; /* Préserve l'effet 3D */
-    }
-    .img img:hover{
-        cursor: pointer;
-        box-shadow: 0px 0px 10px #ffffffee;
-        animation: rotate3D 2s linear infinite;
     }
     @keyframes rotate3D {
         from {
