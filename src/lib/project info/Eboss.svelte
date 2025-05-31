@@ -36,7 +36,7 @@
             <li><b>Salary Management</b> : Automate teacher and staff payments, track contracts and salary increases.</li>
         </ul>
 
-        <a href="https://github.com/KiadyNirina/eBoss" class="repo">
+        <a href="https://github.com/KiadyNirina/eBoss" class="repo" target="_blank">
             <Icon icon="simple-icons:github" class="mr-1" height="20px" />
             Repo github
         </a>

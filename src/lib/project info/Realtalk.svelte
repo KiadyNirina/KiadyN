@@ -31,7 +31,7 @@
                     <li><b>Secure system</b> : Authentication and protection of personal data guaranteed.</li>
                 </ul>
             </div>
-            <a href="https://github.com/KiadyNirina/Real_talk" class="repo">
+            <a href="https://github.com/KiadyNirina/Real_talk" class="repo" target="_blank">
                 <Icon icon="simple-icons:github" class="mr-1" height="20px" />
                 Repo github
             </a>

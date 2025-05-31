@@ -12,7 +12,7 @@
             </div>
         </div>
         <p>The Mon Comparateur Immo - MCI company showcase site was developed as part of a freelance project. This site highlights the company's visual identity and services, with a clean and professional design, reflecting Mycore's values. It has been designed to provide intuitive navigation, allowing visitors to easily discover key information about the company's activities and products. The emphasis was placed on aesthetics, ergonomics and user experience, while integrating modern and efficient architecture.</p>
-        <a href="https://www.moncomparateur-immo.com/" class="repo">
+        <a href="https://www.moncomparateur-immo.com/" class="repo" target="_blank">
             <Icon icon="mdi:link" class="mr-1" height="20px"/>
             Link
         </a>

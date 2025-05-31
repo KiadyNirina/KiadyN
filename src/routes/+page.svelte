@@ -7,9 +7,7 @@
     import Contact from "../lib/Contact.svelte";
     import { onMount } from "svelte";
     import { fade, fly, slide } from 'svelte/transition';
-    import Loading from "../lib/Loading.svelte";
     import { supabase } from '$lib/supabaseClient';
-    import Theme from "../lib/Theme.svelte";
     import Icon from '@iconify/svelte';
 
     let phase = 1;
@@ -53,21 +51,15 @@
     }
 </script>
 
-<!-- {#if phase < 3}
-    <Loading {phase} />
-{/if} -->
-
-<!-- {#if phase === 3} -->
 <div class="content">
     <div class="head">
         <div id="pdp">
             <img src="pdp1.png" alt="">
             <div class="name">
                 <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
-                <p class="text-gray-300 flex items-center"><Icon icon="mdi:laptop" class="mr-1" />Full-Stack Developer & Designer</p>
+                <p class="text-gray-300 flex items-center"><Icon icon="mdi:laptop" class="mr-1 animate-bounce" />Full-Stack Developer & Designer</p>
                 <p id="openWork" class="text-green-600"><Icon icon="mdi:handshake" class="mr-1" /><span>Open for collaborations</span></p>
             </div>
-            <Theme theme="dark" />
         </div>
     </div>
     <div class="body">
@@ -132,7 +124,6 @@
         <p><span><img src="logo.png" alt="">© { currentYear } KiadyN, lnc.</span></p>
     </div>
 </div>
-<!-- {/if} -->
 
 <style>
     @import "tailwindcss";
@@ -215,12 +206,12 @@
     #openWork {
         display: flex;
         align-items: center;
-        padding-top: 10px;
+        padding-top: 5px;
     }
     #openWork span{
         font-family: 'poppins';
         font-weight: bolder;
-        font-size: 12px;
+        font-size: 11px;
     }
     #openWork span:hover {
         cursor:auto;

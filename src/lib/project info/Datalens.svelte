@@ -20,7 +20,7 @@
                     <li><b>Interactive visualization</b> : Creating dynamic charts to explore trends and insights.</li>
                 </ul>
 
-                <a href="https://github.com/KiadyNirina/DataLens" class="repo">
+                <a href="https://github.com/KiadyNirina/DataLens" class="repo" target="_blank">
                     <Icon icon="simple-icons:github" class="mr-1" height="20" />
                     Repo github
                 </a>

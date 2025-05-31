@@ -32,7 +32,7 @@
             <li><b>Reporting and Statistics : </b>Generate detailed reports on resource utilization, supplier performance, procurement costs, and employee efficiency.</li>
         </ul>
 
-        <a href="https://github.com/KiadyNirina/E_Stock" class="repo">
+        <a href="https://github.com/KiadyNirina/E_Stock" class="repo" target="_blank">
             <Icon icon="simple-icons:github" class="mr-1" height="20px"/>
             Repo github
         </a>

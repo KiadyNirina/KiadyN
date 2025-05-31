@@ -1,10 +1,8 @@
 <script>
     import { slide } from "svelte/transition";
-    import Beyond from "./project info/Beyond.svelte";
     import Createcv from "./project info/Createcv.svelte";
     import Datalens from "./project info/Datalens.svelte";
     import Fintrack from "./project info/Fintrack.svelte"; 
-    import Mycore from "./project info/Mycore.svelte";
     import Realtalk from "./project info/Realtalk.svelte";
     import EStock from "./project info/EStock.svelte";
     import Eboss from "./project info/Eboss.svelte";
@@ -17,8 +15,6 @@
         fintrack: Fintrack,
         datalens: Datalens,
         realtalk: Realtalk,
-        mycore: Mycore,
-        beyond: Beyond,
         createcv: Createcv,
         eboss: Eboss,
         estock: EStock,
