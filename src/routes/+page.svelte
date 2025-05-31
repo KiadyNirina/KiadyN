@@ -73,9 +73,9 @@
                 <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:map-marker" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/>Antananarivo, Madagascar</span>
                 <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:phone" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/>+261341039490</span>
                 <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:email" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="mailto:kiady142ram@gmail.com">kiady142ram@gmail.com</a></span>
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:linkedin" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://www.linkedin.com/in/kiady-ram-5216592a9/">Kiady Ram</a></span>
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:facebook" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:github" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:linkedin" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" target="_blank">Kiady Ram</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:facebook" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://www.facebook.com/kiady.rambeloson" target="_blank">Kiady Rambeloson</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:github" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://github.com/KiadyNirina" target="_blank">KiadyNirina</a></span>
             </div>
             <button on:click={download} disabled={loading} class="group"><Icon icon="fa:download" class="mr-1 group-hover:animate-bounce" />{loading ? 'loading...' : 'Download my CV'}</button>
         </div>
@@ -119,10 +119,10 @@
       </div>
     <div class="footer mt-2 flex flex-col items-center space-y-2">
         <div class="flex items-center space-x-4 font-light font-sans">
-            <a href="mailto:kiady142ram@gmail.com" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="ri:mail-line" height="40"/></a>
-            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="ri:linkedin-line" height="40"/></a>
-            <a href="https://www.facebook.com/kiady.rambeloson" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="ri:facebook-line" height="40"/></a>
-            <a href="https://wa.me/+261335777152" class="hover:text-blue-500 transition-colors duration-300"><Icon icon="ic:baseline-whatsapp" height="40"/></a>
+            <a href="mailto:kiady142ram@gmail.com" class="hover:text-blue-500 transition-colors duration-300" target="_blank"><Icon icon="ri:mail-line" height="40"/></a>
+            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="hover:text-blue-500 transition-colors duration-300" target="_blank"><Icon icon="ri:linkedin-line" height="40"/></a>
+            <a href="https://www.facebook.com/kiady.rambeloson" class="hover:text-blue-500 transition-colors duration-300" target="_blank"><Icon icon="ri:facebook-line" height="40"/></a>
+            <a href="https://wa.me/+261335777152" class="hover:text-blue-500 transition-colors duration-300" target="_blank"><Icon icon="ic:baseline-whatsapp" height="40"/></a>
         </div>
         <p><span><img src="logo.png" alt="">© { currentYear } KiadyN, lnc.</span></p>
     </div>
