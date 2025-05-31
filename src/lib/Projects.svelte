@@ -110,6 +110,24 @@
                     <p>Real_Talk is a real-time chat platform,... <span id="seeMore">See more</span></p>
                 </div>
             </div>
+
+            <div class="card2">
+                <img src="portfolio.png" alt="">
+                <div class="info">
+                    <h3>KiadyN <span id="date">2024</span></h3>
+                    <div class="techno">
+                        <div class="techno2">
+                            <Icon icon="simple-icons:svelte" class="mr-1" />
+                            <span>Svelte</span>
+                        </div>
+                        <div class="techno2">
+                            <Icon icon="simple-icons:tailwindcss" class="mr-1" />
+                            <span>tailwindcss</span>
+                        </div>
+                    </div>
+                    <p>KiadyN is my portfolio</p>
+                </div>
+            </div>
         
             <div class="card1" on:click={() => handleClick('eboss')}>
                 <img src="eboss.jpg" alt="">
