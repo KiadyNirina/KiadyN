@@ -56,7 +56,7 @@
             <h1>Hello!</h1>
             <p class="text-gray-300">Here are some of the projects I have worked on. Each achievement reflects my commitment to creating efficient and intuitive web solutions.</p>
         </div>
-        <div class="projects">
+        <div class="projects mt-4 grid grid-cols-2 gap-x-3 gap-y-4">
             <!-- <div class="card2" on:click={() => handleClick('fintrack')}>
                 <img src="image.png" alt="">
                 <div class="info">
@@ -92,9 +92,7 @@
                     <p>DataLens is a data visualization ... <span id="seeMore">See more</span></p>
                 </div>
             </div>
-        </div>
 
-        <div class="projects">
             <div class="card2" on:click={() => handleClick('realtalk')}>
                 <img src="real_talk.jpg" alt="">
                 <div class="info">
@@ -130,9 +128,7 @@
                     <p>The Beyond company showcase site... <span id="seeMore">See more</span></p>
                 </div>
             </div>
-        </div>
     
-        <div class="projects">
             <div class="card2" on:click={() => handleClick('mycore')}>
                 <img src="mycore.PNG" alt="">
                 <div class="info">
@@ -168,9 +164,7 @@
                     <p>eBoss is a comprehensive school ... <span id="seeMore">See more</span></p>
                 </div>
             </div>
-        </div>
     
-        <div class="projects">
             <div class="card2" on:click={() => handleClick('estock')}>
                 <img src="e_stock.jpg" alt="">
                 <div class="info">
@@ -230,12 +224,9 @@
         font-size: 13px;
     }
     .projects{
-        display: flex;
-        margin-top: 15px;
         animation: slideIn 1s ease-in-out;
     }
     .card1, .card2{
-        width: 49%;
         background-color: rgb(0, 22, 42);
         border-radius: 10px;
         margin-left: auto;
@@ -246,7 +237,7 @@
     }
     .card1 img, .card2 img{
         width: 100%;
-        height: 180px;
+        height: 100%;
         border-radius: 5px;
         transition: transform 0.5s, opacity 0.3s;
     }
