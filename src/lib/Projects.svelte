@@ -114,34 +114,6 @@
                     <p>Real_Talk is a real-time chat platform,... <span id="seeMore">See more</span></p>
                 </div>
             </div>
-    
-            <div class="card1" on:click={() => handleClick('beyond')}>
-                <img src="beyond.PNG" alt="">
-                <div class="info">
-                    <h3>Beyond | <span>freelance</span> <span id="date">2024</span></h3>
-                    <div class="techno">
-                        <div class="techno2">
-                            <Icon icon="simple-icons:wordpress" class="mr-1" />
-                            <span>WordPress</span>
-                        </div>
-                    </div>
-                    <p>The Beyond company showcase site... <span id="seeMore">See more</span></p>
-                </div>
-            </div>
-    
-            <div class="card2" on:click={() => handleClick('mycore')}>
-                <img src="mycore.PNG" alt="">
-                <div class="info">
-                    <h3>MyCore | <span>freelance</span> <span id="date">2024</span></h3>
-                    <div class="techno">
-                        <div class="techno2">
-                            <Icon icon="simple-icons:wordpress" class="mr-1" />
-                            <span>WordPress</span>
-                        </div>
-                    </div>
-                    <p>The Mycore company showcase site... <span id="seeMore">See more</span></p>
-                </div>
-            </div>
         
             <div class="card1" on:click={() => handleClick('eboss')}>
                 <img src="eboss.jpg" alt="">
@@ -266,13 +238,14 @@
         align-items: center;
         color: rgb(219, 219, 219);
         font-family: 'poppins bold';
+        margin-bottom: 10px;
     }
     .info p{
-        color: rgba(255, 255, 255, 0.824);
+        color: rgba(255, 255, 255, 0.719);
         font-family: 'poppins';
         margin-block-start: 5px;
         margin-block-end: 5px;
-        font-size: 13px;
+        font-size: 12px;
     }
     #date{
         margin-left: auto;
@@ -282,11 +255,12 @@
         display: flex;
     }
     .techno .techno2{
+        font-size: 10px;
         display: flex;
         align-items: center;
-        background-color: rgb(37, 61, 72);
-        padding: 7px;
+        padding: 5px;
         border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.394);
         margin-right: 5px;
     }
     .techno .techno2 img{

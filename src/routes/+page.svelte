@@ -145,7 +145,7 @@
     .content{
         margin-left: auto;
         margin-right: auto;
-        max-width: 1100px;
+        max-width: 1300px;
         color: white;
         animation: fadeIn 0.5s ease-out;
     }
@@ -341,7 +341,7 @@
         margin-right: 5px;
     }
     .contact {
-        width: 60%;
+        width: 50%;
         margin-left: auto;
         margin-right: auto;
     }
