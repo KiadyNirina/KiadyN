@@ -56,7 +56,10 @@
         <div id="pdp">
             <img src="pdp1.png" alt="">
             <div class="name">
-                <h1>Kiady Nirina RAMBELOSON <img src="badge.png" alt=""></h1>
+                <h1 class="flex items-center">
+                    Kiady Nirina RAMBELOSON
+                    <Icon icon="bxs:badge-check" class="text-[17px] ml-1 text-blue-400"/> 
+                </h1>
                 <p class="text-gray-300 flex items-center"><Icon icon="mdi:laptop" class="mr-1 animate-bounce" />Full-Stack Developer & Designer</p>
                 <p id="openWork" class="text-green-600"><Icon icon="mdi:handshake" class="mr-1" /><span>Open for collaborations</span></p>
             </div>
@@ -166,15 +169,12 @@
     #pdp img:hover{
         cursor: pointer;
         box-shadow: 0px 0px 5px #ffffffee;
-        animation: rotate3D 5s linear infinite;
     }
     #pdp h1{
         color: white;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 25px;
         margin: 0px 0px 0px 10px;
-        display: flex;
-        align-items: center;
     }
     #pdp h1 img{
         height: 15px;
@@ -190,14 +190,6 @@
         font-family: 'poppins';
         font-size: 15px;
         margin: 0px 0px 0px 10px;
-    }
-    @keyframes rotate3D {
-        from {
-            transform: rotateY(0deg); /* Commence à 0 degrés */
-        }
-        to {
-            transform: rotateY(360deg); /* Fait une rotation complète de 360 degrés */
-        }
     }
     .body{
         display: flex;
@@ -344,13 +336,13 @@
             margin-right: auto;
         }
         #pdp img{
-            height: 100px;
+            height: 200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         #pdp{
             width: 100%;
-        }
-        #pdp h1{
-            align-items: end;
+            display: block;
         }
         .sect1{
             width: auto;
