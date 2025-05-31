@@ -75,14 +75,14 @@
             <span id="view"><img src="eye.png" alt=""> Views: {views}</span>
             <p class="mt-2"><span>“First, solve the problem. Then, write the code.”</span>__John Johnson</p>
             <div class="info">
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:map-marker" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>Antananarivo, Madagascar</span>
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:phone" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/>+261341039490</span>
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:email" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="mailto:kiady142ram@gmail.com">kiady142ram@gmail.com</a></span>
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:linkedin" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.linkedin.com/in/kiady-ram-5216592a9/">Kiady Ram</a></span>
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:facebook" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
-                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:github" class="mr-2 transition-all duration-300 group-hover:-translate-y-1" width="20px"/><a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:map-marker" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/>Antananarivo, Madagascar</span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:phone" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/>+261341039490</span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:email" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="mailto:kiady142ram@gmail.com">kiady142ram@gmail.com</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:linkedin" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://www.linkedin.com/in/kiady-ram-5216592a9/">Kiady Ram</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:facebook" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://www.facebook.com/kiady.rambeloson">Kiady Rambeloson</a></span>
+                <span class="text-sm duration-300 cursor-pointer group"><Icon icon="mdi:github" class="mr-2 transition-all duration-300 group-hover:-translate-y-1 group-hover:animate-bounce" width="20px"/><a href="https://github.com/KiadyNirina">KiadyNirina</a></span>
             </div>
-            <button on:click={download} disabled={loading}><Icon icon="fa:download" class="mr-1" />{loading ? 'loading...' : 'Download my CV'}</button>
+            <button on:click={download} disabled={loading} class="group"><Icon icon="fa:download" class="mr-1 group-hover:animate-bounce" />{loading ? 'loading...' : 'Download my CV'}</button>
         </div>
         <div class="sect2">
             <div class="nav">
