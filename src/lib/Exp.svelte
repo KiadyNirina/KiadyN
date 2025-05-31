@@ -51,7 +51,7 @@
             See more
         </span>
         {#if more}
-        <div transition:slide={{ duration: 300 }} class="mt-2 p-2 pl-5 bg-gray-900 rounded-xs">
+        <div in:slide out:slide class="mt-2 p-2 pl-5 bg-gray-900 rounded-xs">
             <h3 class="text-gray-400 font-bold text-sm">Responsibilities :</h3>
             <ul class="mt-1 list-disc text-gray-400 text-[12px] ml-7">
                 <li>Feature development</li>
