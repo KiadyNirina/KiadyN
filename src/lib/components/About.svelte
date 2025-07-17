@@ -1,0 +1,54 @@
+<script>
+  import Icon from "@iconify/svelte";
+</script>
+
+<section id="about" class="py-20 mt-20 mb-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        <span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">À propos</span>
+      </h2>
+      
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/3">
+          <div class="bg-gradient-to-br from-blue-500 to-green-600 p-1 rounded-full">
+            <img src="/pdp.jpg" alt="Profil" class="rounded-full w-64 h-64 object-cover border-4 border-white dark:border-gray-800" />
+          </div>
+        </div>
+        
+        <div class="md:w-2/3 space-y-6">
+          <h3 class="text-2xl font-bold dark:text-gray-100 flex items-center">
+            <Icon icon="mdi-laptop" class="text-2xl mr-2 animate-bounce" />
+            Développeur Full-Stack Passionné
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Je suis RAMBELOSON Kiady Nirina, un jeune développeur web de Madagascar 🇲🇬, passionné par la création de solutions digitales innovantes 💡. Je travaille avec PHP, JavaScript, Python, et des frameworks comme Laravel, Django , Vue.js et Svelte.
+          </p>
+          <p class="text-gray-600 dark:text-gray-300">
+            J'ai réalisé divers projets 🎯, de la gestion de contenu aux applications web personnalisées, en mettant l'accent sur l'expérience utilisateur et la performance 💻✨.
+          </p>
+          <p class="text-gray-600 dark:text-gray-300">
+            Envie de collaborer sur un projet ou de discuter d'une idée ? <a href="#contact" class="text-blue-500 hover:underline font-semibold">Contactez-moi !</a>
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4 mt-12 text-blue-500">
+            <div class="flex items-center space-x-2">
+              <Icon icon="mdi-email" class="text-xl animate-bounce" />
+              <span>kiady142ram@gmail.com</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Icon icon="mdi-map-marker" class="text-xl animate-bounce" />
+              <span>Antananarivo, Madagascar</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Icon icon="mdi-github" class="text-xl animate-bounce" />
+              <a href="https://github.com/kiadynirina" class="hover:underline" target="_blank">@kiadynirina</a>
+            </div>
+            <div class="flex items-center space-x-2">
+              <Icon icon="mdi-linkedin" class="text-xl animate-bounce" />
+              <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="hover:underline" target="_blank">@kiady_ram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

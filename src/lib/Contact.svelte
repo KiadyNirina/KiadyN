@@ -1,5 +1,5 @@
 <script>
-  import { supabase } from '$lib/supabaseClient'
+  //import { supabase } from '$lib/supabaseClient'
   import emailjs from '@emailjs/browser';
   import Icon from '@iconify/svelte';
 
@@ -52,11 +52,11 @@
       );
 
       // Enregistrement dans Supabase 
-      const { error: dbError } = await supabase
+      /*const { error: dbError } = await supabase
         .from('contacts')
         .insert([{ ...form }])
 
-      if (dbError) throw dbError
+      if (dbError) throw dbError*/
 
       success = true
       form = { name: '', email: '', message: '' }
