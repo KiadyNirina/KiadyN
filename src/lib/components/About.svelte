@@ -33,7 +33,7 @@
           <div class="grid md:grid-cols-2 gap-4 mt-12 text-blue-500">
             <div class="flex items-center space-x-2">
               <Icon icon="mdi-email" class="text-xl animate-bounce" />
-              <span>kiady142ram@gmail.com</span>
+              <a href="mailto:kiady142ram@gmail.com" class="hover:underline" target="_blank">kiady142ram@gmail.com</a>
             </div>
             <div class="flex items-center space-x-2">
               <Icon icon="mdi-map-marker" class="text-xl animate-bounce" />
