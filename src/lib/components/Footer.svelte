@@ -1,8 +1,12 @@
+<script>
+    import Icon from "@iconify/svelte";
+</script>
+
 <footer class="bg-gray-800 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
         
-        <div>
+        <div class="text-center md:text-left">
           <h3 class="text-xl font-bold mb-4">Liens rapides</h3>
           <ul class="space-y-2">
             <li><a href="#about" class="text-xs text-gray-400 hover:text-white transition-colors">À propos</a></li>
@@ -12,20 +16,20 @@
           </ul>
         </div>
         
-        <div>
+        <div class="text-center md:text-left">
           <h3 class="text-xl font-bold mb-4">Réseaux sociaux</h3>
-          <div class="flex space-x-4">
+          <div class="flex space-x-4 justify-center md:justify-start">
             <a href="#" class="text-gray-400 hover:text-white transition-colors">
-              <span class="i-mdi-github text-2xl"></span>
+              <Icon icon="mage:facebook" class="text-4xl" />
             </a>
             <a href="#" class="text-gray-400 hover:text-white transition-colors">
-              <span class="i-mdi-linkedin text-2xl"></span>
+              <Icon icon="mage:github" class="text-4xl" />
             </a>
             <a href="#" class="text-gray-400 hover:text-white transition-colors">
-              <span class="i-mdi-twitter text-2xl"></span>
+              <Icon icon="mage:linkedin" class="text-4xl" />
             </a>
             <a href="#" class="text-gray-400 hover:text-white transition-colors">
-              <span class="i-mdi-instagram text-2xl"></span>
+              <Icon icon="mage:whatsapp" class="text-4xl" />
             </a>
           </div>
         </div>

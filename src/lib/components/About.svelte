@@ -15,7 +15,7 @@
           </div>
         </div>
         
-        <div class="md:w-2/3 space-y-6">
+        <div class="md:w-2/3 space-y-6 md:text-base text-sm">
           <h3 class="text-2xl font-bold dark:text-gray-100 flex items-center">
             <Icon icon="mdi-laptop" class="text-2xl mr-2 animate-bounce" />
             Développeur Full-Stack Passionné
@@ -30,7 +30,7 @@
             Envie de collaborer sur un projet ou de discuter d'une idée ? <a href="#contact" class="text-blue-500 hover:underline font-semibold">Contactez-moi !</a>
           </p>
           
-          <div class="grid grid-cols-2 gap-4 mt-12 text-blue-500">
+          <div class="grid md:grid-cols-2 gap-4 mt-12 text-blue-500">
             <div class="flex items-center space-x-2">
               <Icon icon="mdi-email" class="text-xl animate-bounce" />
               <span>kiady142ram@gmail.com</span>
