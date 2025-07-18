@@ -20,11 +20,36 @@
             <Icon icon="mdi-laptop" class="text-2xl mr-2 animate-bounce" />
             Développeur Full-Stack Passionné
           </h3>
+          <div class="text-gray-600 dark:text-gray-300">
+            Je suis RAMBELOSON Kiady Nirina, un jeune développeur web de Madagascar 🇲🇬, passionné par la création de solutions digitales innovantes 💡. Je travaille avec 
+            <div class="flex items-center">
+              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-sm">
+                <Icon icon="mdi:code" class="mr-1"/> PHP
+              </span> , 
+              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-sm">
+                <Icon icon="mdi:code" class="mr-1"/> JavaScript
+              </span> , 
+              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-sm">
+                <Icon icon="mdi:code" class="mr-1"/> Python
+              </span> 
+            </div> et des frameworks comme 
+            <div class="flex items-center">
+              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-sm">
+                <Icon icon="mdi:code" class="mr-1"/> Laravel
+              </span> , 
+              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-sm">
+                <Icon icon="mdi:code" class="mr-1"/> Django
+              </span> , 
+              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-sm">
+                <Icon icon="mdi:code" class="mr-1"/> Vue.js
+              </span> et 
+              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-sm">
+                <Icon icon="mdi:code" class="mr-1"/> Svelte
+              </span>.
+            </div>
+          </div>
           <p class="text-gray-600 dark:text-gray-300">
-            Je suis RAMBELOSON Kiady Nirina, un jeune développeur web de Madagascar 🇲🇬, passionné par la création de solutions digitales innovantes 💡. Je travaille avec PHP, JavaScript, Python, et des frameworks comme Laravel, Django , Vue.js et Svelte.
-          </p>
-          <p class="text-gray-600 dark:text-gray-300">
-            J'ai réalisé divers projets 🎯, de la gestion de contenu aux applications web personnalisées, en mettant l'accent sur l'expérience utilisateur et la performance 💻✨.
+            J'ai réalisé divers projets 🎯, en mettant l'accent sur l'expérience utilisateur et la performance 💻✨.
           </p>
           <p class="text-gray-600 dark:text-gray-300">
             Envie de collaborer sur un projet ou de discuter d'une idée ? <a href="#contact" class="text-blue-500 hover:underline font-semibold">Contactez-moi !</a>
