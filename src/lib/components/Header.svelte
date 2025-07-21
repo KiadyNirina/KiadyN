@@ -26,6 +26,7 @@
         </div>
 
         <div class="hidden md:flex items-center space-x-6">
+            <a href="#about" class="hover:text-blue-500 transition-colors">À propos</a>
             <a href="#projects" class="hover:text-blue-500 transition-colors">Projets</a>
             <a href="#skills" class="hover:text-blue-500 transition-colors">Compétences</a>
             <a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a>
@@ -35,6 +36,13 @@
         {#if isMenuOpen}
             <div class="absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 shadow-lg md:hidden">
                 <div class="flex flex-col items-center py-4 space-y-4">
+                    <a 
+                        href="#about"
+                        class="hover:text-blue-500 transition-colors"
+                        on:click={toggleMenu}
+                    >
+                        À propos
+                    </a>
                     <a 
                         href="#projects" 
                         class="hover:text-blue-500 transition-colors"
