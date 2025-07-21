@@ -12,19 +12,23 @@
             />
         </div>
 
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
             <span class="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
                 Bienvenue dans mon univers créatif !
             </span>
         </h1>
         
         <div class="relative inline-block">
-            <p class="flex items-center text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 px-4 py-2 bg-gray-400/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in" style="animation-delay: 0.2s;">
-                <Icon icon="mdi:code" class="mr-1.5 animate-bounce" />
-                Développeur full-stack ∙ 
-                <Icon icon="mdi:pencil" class="ml-2 mr-1.5 animate-bounce" />
-                UI/UX
-            </p>
+            <div class="md:flex items-center text-base md:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 px-4 py-2 bg-gray-400/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="flex items-center">
+                    <Icon icon="mdi:code" class="mr-1.5 animate-bounce" />
+                    Développeur full-stack ∙ 
+                </div>
+                <div class="flex items-center">
+                    <Icon icon="mdi:pencil" class="md:ml-2 mr-1.5 animate-bounce" />
+                    UI/UX
+                </div>
+            </div>
             <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-underline" style="animation-delay: 0.3s;"></div>
         </div>
 
@@ -59,13 +63,13 @@
         </div>
 
         <div class="flex justify-center gap-4 mt-12 animate-fade-in" style="animation-delay: 0.6s;">
-            <a href="https://github.com/KiadyNirina" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+            <a href="https://github.com/KiadyNirina" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors" target="_blank">
                 <Icon icon="mdi:github" class="w-6 h-6" />
             </a>
-            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors" target="_blank">
                 <Icon icon="mdi:linkedin" class="w-6 h-6" />
             </a>
-            <a href="https://www.facebook.com/kiady.rambeloson" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
+            <a href="https://www.facebook.com/kiady.rambeloson" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors" target="_blank">
                 <Icon icon="mdi:facebook" class="w-6 h-6" />
             </a>
         </div>
