@@ -13,8 +13,8 @@
         </div>
 
         <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
-            <span class="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
-                Bienvenue dans mon univers créatif !
+            <span class="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent schoolbell-regular">
+                Transformez vos idées en réalité !
             </span>
         </h1>
         
@@ -81,6 +81,14 @@
 </section>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+
+    .schoolbell-regular {
+        font-family: "Schoolbell", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
     .animate-slide-up {
         animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
