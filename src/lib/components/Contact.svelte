@@ -74,7 +74,7 @@
         <span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">Contactez-moi</span>
       </h2>
 
-      <p class="dark:text-gray-100 text-center mb-[50px] text-sm">Prêt à collaborer sur votre prochain projet ?
+      <p class="dark:text-gray-100 text-center mb-[50px] text-base">Prêt à collaborer sur votre prochain projet ?
       Remplissez le formulaire ou contactez-moi via mes réseaux sociaux !</p>
 
       {#if success}
@@ -140,7 +140,7 @@
         
         <button 
           type="submit" 
-          class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium" 
+          class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed" 
           disabled={isSending}
         >
           {isSending ? 'Envoie en cours...' : 'Envoyer le message'}
