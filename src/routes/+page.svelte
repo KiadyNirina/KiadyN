@@ -8,6 +8,7 @@
 	import About from '$lib/components/About.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 	import Skills from '$lib/components/Skills.svelte';
+    import Experiences from '$lib/components/Experiences.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
@@ -16,6 +17,7 @@
         about: false,
         projects: false,
         skills: false,
+        experiences: false,
         contact: false
     };
 
@@ -55,6 +57,10 @@
         
         <div id="skills" class:animate-fade-in={animated.skills}>
             <Skills />
+        </div>
+
+        <div id="experiences" class:animate-fade-in={animated.experiences}>
+            <Experiences />
         </div>
         
         <div id="contact" class:animate-fade-in={animated.contact}>
