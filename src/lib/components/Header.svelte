@@ -29,6 +29,7 @@
             <a href="#about" class="hover:text-blue-500 transition-colors">À propos</a>
             <a href="#projects" class="hover:text-blue-500 transition-colors">Projets</a>
             <a href="#skills" class="hover:text-blue-500 transition-colors">Compétences</a>
+            <a href="#experiences" class="hover:text-blue-500 transition-colors">Expériences</a>
             <a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a>
             <ThemeToggle/>
         </div>
@@ -56,6 +57,13 @@
                         on:click={toggleMenu}
                     >
                         Compétences
+                    </a>
+                    <a 
+                        href="#experiences"
+                        class="hover:text-blue-500 transition-colors"
+                        on:click={toggleMenu}
+                    >
+                        Expériences
                     </a>
                     <a 
                         href="#contact" 
