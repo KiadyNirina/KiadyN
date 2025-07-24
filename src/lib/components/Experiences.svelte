@@ -39,7 +39,7 @@
             <div class="flex flex-col md:flex-row items-start md:items-center mb-1">
               <div class="flex items-center">
                 <div class="absolute left-3 md:-left-5 h-4 w-4 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900 z-10"></div>
-                <h3 class="text-xl font-bold text-gray-900 dark:text-white ml-2 md:ml-0 md:w-32">
+                <h3 class="text-base font-bold ml-2 md:ml-0 md:w-32 bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
                   {exp.period}
                 </h3>
               </div>
