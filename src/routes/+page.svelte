@@ -55,7 +55,7 @@
 	});
 
 	function scrollToSection() {
-		const target = scrollToTop ? 'hero' : 'contact';
+		const target = scrollToTop ? 'hero' : 'footer';
 		const element = document.getElementById(target);
 		if (element) {
 			element.scrollIntoView({ behavior: 'smooth' });
