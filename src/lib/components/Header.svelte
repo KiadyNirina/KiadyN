@@ -8,7 +8,7 @@
     }
 </script>
 
-<header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-gray-900/80 shadow-sm dark:text-gray-100">
+<header class="sticky top-0 z-50 backdrop-blur-md bg-white/70 dark:bg-gray-900/10 shadow-sm dark:text-gray-100">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <a href="/" class="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-500 bg-clip-text text-transparent">
             <img src="/logo.png" class="w-[50px] bg-gray-900/80 rounded-full" alt="">
