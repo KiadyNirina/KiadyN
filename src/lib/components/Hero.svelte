@@ -3,6 +3,49 @@
 </script>
 
 <section class="relative py-28 md:py-36 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        {#each Array(15) as _, i}
+            <div class="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/80 to-transparent dark:via-blue-400/70 animate-moving-line"
+                 style="
+                    left: -{Math.random() * 100 + 100}px;
+                    width: {Math.random() * 200 + 100}px;
+                    animation-delay: {i * 0.5}s;
+                    animation-duration: {Math.random() * 10 + 10}s;
+                    top: {Math.random() * 100}%;
+                    opacity: {Math.random() * 0.7 + 0.3};
+                 "
+            ></div>
+        {/each}
+        
+        {#each Array(20) as _, i}
+            <div class="absolute rounded-full animate-floating-star bg-blue-500/80 dark:bg-blue-400/70"
+                 style="
+                    left: {Math.random() * 100}%;
+                    top: {Math.random() * 100}%;
+                    width: {Math.random() * 5 + 2}px;
+                    height: {Math.random() * 5 + 2}px;
+                    animation-delay: {i * 2}s;
+                    animation-duration: {Math.random() * 15 + 10}s;
+                    opacity: {Math.random() * 0.8 + 0.2};
+                    filter: blur(0.5px);
+                 "
+            ></div>
+        {/each}
+
+        {#each Array(10) as _, i}
+            <div class="absolute rounded-full animate-sparkle bg-blue-400/90 dark:opacity-0"
+                 style="
+                    left: {Math.random() * 100}%;
+                    top: {Math.random() * 100}%;
+                    width: {Math.random() * 3 + 1}px;
+                    height: {Math.random() * 3 + 1}px;
+                    animation-delay: {i * 3}s;
+                    animation-duration: {Math.random() * 5 + 3}s;
+                 "
+            ></div>
+        {/each}
+    </div>
+
     <div class="relative text-center max-w-4xl mx-auto px-6">
         <div class="w-24 h-24 md:w-28 md:h-28 mx-auto mb-6 rounded-full border-4 border-white/10 shadow-lg overflow-hidden animate-float">
             <img 
@@ -110,6 +153,12 @@
     .animate-pulse-slow {
         animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
+    .animate-moving-line {
+        animation: movingLine linear infinite;
+    }
+    .animate-floating-star {
+        animation: floatingStar ease-in-out infinite;
+    }
 
     @keyframes slideUp {
         from {
@@ -177,4 +226,31 @@
             transform: scale(0.98);
         }
     }
+    @keyframes movingLine {
+        0% {
+            transform: translateX(0) scaleX(1);
+        }
+        50% {
+            transform: translateX(100vw) scaleX(0.5);
+        }
+        100% {
+            transform: translateX(200vw) scaleX(1);
+        }
+    }
+    @keyframes floatingStar {
+        0% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.7;
+        }
+        50% {
+            transform: translate(50px, 20px) scale(1.2);
+            opacity: 0.3;
+        }
+        100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.7;
+        }
+    }
+
+
 </style>
