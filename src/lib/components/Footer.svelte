@@ -2,7 +2,7 @@
     import Icon from "@iconify/svelte";
 </script>
 
-<footer class="bg-gray-800 text-white py-12">
+<footer id="footer" class="bg-gray-800 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
         
@@ -11,6 +11,7 @@
             <li><a href="#about" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">À propos</a></li>
             <li><a href="#projects" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">Projets</a></li>
             <li><a href="#skills" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">Compétences</a></li>
+            <li><a href="#experiences" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">Experiences</a></li>
             <li><a href="#contact" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">Contact</a></li>
           </ul>
         </div>
