@@ -75,16 +75,16 @@
             <About />
         </div>
         
-        <div id="projects" class:animate-fade-in={animated.projects}>
-            <Projects />
-        </div>
-        
         <div id="skills" class:animate-fade-in={animated.skills}>
             <Skills />
         </div>
 
         <div id="experiences" class:animate-fade-in={animated.experiences}>
             <Experiences />
+        </div>
+
+	<div id="projects" class:animate-fade-in={animated.projects}>
+            <Projects />
         </div>
         
         <div id="contact" class:animate-fade-in={animated.contact}>
