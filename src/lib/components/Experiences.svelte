@@ -1,10 +1,14 @@
 <script>
+    import Icon from "@iconify/svelte";
+
     const experiences = [
       {
         period: "Mars 2025 - Présent",
         position: "Développeur Full-Stack",
         company: "Atout Service Mada",
         type: "CDI",
+        img: "atout.png",
+        localisation: "Ambohimiandra, Antananarivo, Madagascar",
         description: "Conception et développement d'applications web e-commerce basée sur Magento 2.",
         technologies: ["HTML / CSS", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"]
       },
@@ -13,6 +17,8 @@
         position: "Stagiaire Développeur Full-Stack",
         company: "Atout Service Mada",
         type: "Stage",
+        img: "atout.png",
+        localisation: "Ambohimiandra, Antananarivo, Madagascar",
         description: "Participation au développement et à la maintenance des fonctionnalités front-end et back-end d'une plateforme e-commerce.",
         technologies: ["HTML / CSS", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"]
       },
@@ -21,6 +27,7 @@
         position: "Freelance Développeur Web",
         company: "Divers Clients",
         type: "Freelance",
+        localisation: "Divers Lieux",
         description: "Développement d'applications web pour divers clients.",
         technologies: ["Wordpress", "HTML", "CSS", "JavaScript", "PHP", "MySQL"]
       }
@@ -36,7 +43,7 @@
       <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-blue-500 before:to-transparent dark:before:via-blue-400 md:before:ml-0 md:before:-left-[12.6px]">
         {#each experiences as exp}
           <div class="relative pl-10 md:pl-0">
-            <div class="flex flex-col md:flex-row items-start md:items-center mb-1">
+            <div class="flex flex-col md:flex-row items-start md:items-center mb-15">
               <div class="flex items-center">
                 <div class="absolute left-3 md:-left-5 h-4 w-4 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900 z-10"></div>
                 <h3 class="text-base font-bold ml-2 md:ml-0 md:w-32 bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
@@ -46,13 +53,32 @@
               <div class="md:ml-12 flex-1">
                 <div class="flex flex-col md:flex-row md:items-center justify-between">
                   <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-100">
-                    {exp.position} • {exp.company}
+                    {exp.position}
                   </h4>
-                  <span class="inline-block px-2 py-1 text-xs font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-full mt-1 md:mt-0">
-                    {exp.type}
+                  <span class="mr-auto md:mr-0 px-2 py-1 text-xs font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-full mt-1 md:mt-0">
+                    <span class="flex items-center"><Icon icon="pajamas:work" class="mr-2 animate-bounce" />
+                      {exp.type}
+                    </span>
                   </span>
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 mt-2 text-sm">
+
+                <div class="flex items-center mt-2">
+                  {#if exp.img}
+                    <img src={`${exp.img}`} alt={exp.company} class="w-[30px] mr-3" />
+                  {:else}
+                    <Icon icon="mdi:company" class="text-sm text-gray-800 dark:text-gray-100 mr-3 animate-bounce" />
+                  {/if}
+                  <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-100">
+                    {exp.company}
+                  </h4>
+                </div>
+                <div class="text-xs text-gray-800 dark:text-gray-400 flex items-center mt-2 mb-2">
+                  <Icon icon="mdi:map-marker" class="mr-1 animate-bounce" />
+                  <span>
+                    {exp.localisation}
+                  </span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 mt-4 mb-4 text-sm">
                   {exp.description}
                 </p>
                 <div class="mt-3 flex flex-wrap gap-2">
