@@ -1,3 +1,88 @@
+<script>
+    import Icon from "@iconify/svelte";
+    import { fade, blur } from 'svelte/transition';
+
+    const projects = [
+        {
+            type: "Projet personnel",
+            title: "Real-Talk",
+            description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
+            tech: ["Svelte", "Laravel", "MySQL"],
+            image: "/real_talk.jpg",
+            link: "#",
+            details: "Application de chat en temps réel avec notifications instantanées et gestion des utilisateurs. Utilise Svelte pour le front-end et Laravel pour le back-end.",
+            github: "https://github.com/KiadyNirina/Real_talk",
+            gallery: [
+                "/real_talk.jpg",
+                "/real_talk 2.jpg",
+            ]
+        },
+        {
+            type: "Projet personnel",
+            title: "Datalens",
+            description: "Application de visualisation et d'analyse de données",
+            tech: ["Python"],
+            image: "/datalens.jpg",
+            link: "#",
+            details: "Application de visualisation et d'analyse de données. Utilise Python pour le traitement des données et la génération de graphiques interactifs.",
+            github: "https://github.com/KiadyNirina/Datalens",
+            gallery: [
+                "/datalens.jpg",
+                "/datalens 2.jpg",
+            ]
+        },
+        {
+            type: "Projet personnel",
+            title: "eBoss",
+            description: "Application de gestion de projet avec suivi des tâches et collaboration en équipe",
+            tech: ["Svelte", "Django", "PostgreSQL"],
+            image: "/eboss.jpg",
+            link: "#",
+            details: "Application de gestion de projet avec suivi des tâches et collaboration en équipe. Utilise Svelte pour le front-end et Django pour le back-end.",
+            github: "https://github.com/KiadyNirina/eBoss",
+            gallery: [
+                "/eboss 2.jpg",
+                "/eboss 3.jpg",
+                "/eboss 4.jpg",
+                "/eboss 5.jpg",
+                "/eboss 6.jpg",
+                "/eboss 7.jpg",
+            ]
+        },
+        {
+            type: "Projet personnel",
+            title: "E-Stock",
+            description: "Application de centralisation et automatisation de la gestion des ressources internes",
+            tech: ["Html", "Css", "MySQL"],
+            image: "/e_stock.jpg",
+            link: "#",
+            details: "Application de centralisation et automatisation de la gestion des ressources internes. Utilise HTML, CSS et MySQL pour la gestion des données.",
+            github: "https://github.com/KiadyNirina/E_stock"
+        },
+        {
+            type: "Projet freelance",
+            title: "MCI",
+            description: "Site vitrine pour une entreprise de comparateur d'agences immobilières",
+            tech: ["wordpress", "PHP", "MySQL"],
+            image: "/moncomparateurimmo.PNG",
+            link: "https://www.moncomparateur-immo.com/",
+            details: "Site vitrine pour une entreprise de comparateur d'agences immobilières. Utilise WordPress pour la gestion du contenu.",
+        }
+    ];
+
+    let selectedProject = null;
+    let showModal = false;
+
+    function openModal(project) {
+        selectedProject = project;
+        showModal = true;
+    }
+
+    function closeModal() {
+        showModal = false;
+    }
+</script>
+
 <section id="projects" class="py-20 mt-50 mb-50">
     <h2 class="text-3xl font-bold text-center mb-12">
         <span class="border-b-4 border-blue-500 pb-2  dark:text-gray-100">Mes Projets</span>
@@ -15,49 +100,146 @@
                             <span class="px-2 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-full">{tech}</span>
                         {/each}
                     </div>
-                    <a href={project.link} class="text-blue-500 hover:underline">Voir le projet →</a>
+                    <div 
+                        on:click={() => openModal(project)} 
+                        class="text-blue-500 hover:underline hover:cursor-pointer flex items-center"
+                    >
+                        <span>Voir les détails</span>
+                        <Icon icon="mdi:chevron-right" class="ml-1" />
+                    </div>
                 </div>
             </div>
         {/each}
     </div>
-</section>
 
-<script>
-    const projects = [
-        {
-            title: "Real-Talk",
-            description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
-            tech: ["Svelte", "Laravel", "MySQL"],
-            image: "/real_talk.jpg",
-            link: "#"
-        },
-        {
-            title: "Datalens",
-            description: "Application de visualisation et d'analyse de données",
-            tech: ["Python"],
-            image: "/datalens.jpg",
-            link: "#"
-        },
-        {
-            title: "eBoss",
-            description: "Application de gestion de projet avec suivi des tâches et collaboration en équipe",
-            tech: ["Svelte", "Django", "PostgreSQL"],
-            image: "/eboss.jpg",
-            link: "#"
-        },
-        {
-            title: "E-Stock",
-            description: "Application de centralisation et automatisation de la gestion des ressources internes",
-            tech: ["Html", "Css", "MySQL"],
-            image: "/e_stock.jpg",
-            link: "#"
-        },
-        {
-            title: "MCI",
-            description: "Site vitrine pour une entreprise de comparateur d'agences immobilières",
-            tech: ["wordpress", "PHP", "MySQL"],
-            image: "/moncomparateurimmo.PNG",
-            link: "#"
-        }
-    ];
-</script>
+    {#if showModal}
+        <div 
+            transition:blur={{ amount: 10 }}
+            class="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-lg"
+            on:click|self={closeModal}
+        >
+            <div 
+                transition:fade
+                class="relative bg-white dark:bg-gray-900 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-2 border-blue-500/20 dark:border-blue-400/20"
+            >
+                <button 
+                    on:click={closeModal}
+                    class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all transform hover:rotate-90 duration-300 group"
+                    aria-label="Fermer"
+                >
+                    <Icon icon="mdi:close" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-500" />
+                </button>
+
+                {#if selectedProject}
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                                    {selectedProject.title}
+                                </h3>
+                                <div class="flex items-center mt-2 space-x-2">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 text-xs font-medium rounded-full">
+                                        {selectedProject.type || 'Projet'}
+                                    </span>
+                                    {#if selectedProject.date}
+                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs rounded-full">
+                                            {selectedProject.date}
+                                        </span>
+                                    {/if}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <div class="relative rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video">
+                                    <img 
+                                        src={selectedProject.image} 
+                                        alt={selectedProject.title} 
+                                        class="w-full h-full object-cover"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    </div>
+                                </div>
+
+                                {#if selectedProject.gallery && selectedProject.gallery.length > 0}
+                                    <div class="grid grid-cols-3 gap-2">
+                                        {#each selectedProject.gallery as img, i}
+                                            <div class="cursor-pointer hover:opacity-80 transition-opacity">
+                                                <img 
+                                                    src={img} 
+                                                    alt={`Preview ${i+1}`} 
+                                                    class="w-full h-20 object-cover rounded-md"
+                                                />
+                                            </div>
+                                        {/each}
+                                    </div>
+                                {/if}
+                            </div>
+
+                            <div>
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
+                                        <Icon icon="mdi:information-outline" class="mr-2 text-blue-500" />
+                                        Description
+                                    </h4>
+                                    <p class="text-gray-700 dark:text-gray-400 text-sm">{selectedProject.description}</p>
+                                </div>
+
+                                {#if selectedProject.details}
+                                    <div class="mb-6">
+                                        <h4 class="text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
+                                            <Icon icon="mdi:file-document-outline" class="mr-2 text-blue-500" />
+                                            Détails techniques
+                                        </h4>
+                                        <p class="text-gray-700 dark:text-gray-400 text-sm">{selectedProject.details}</p>
+                                    </div>
+                                {/if}
+
+                                <div class="mb-6">
+                                    <h4 class="text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
+                                        <Icon icon="mdi:code-tags" class="mr-2 text-blue-500" />
+                                        Technologies
+                                    </h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        {#each selectedProject.tech as tech}
+                                            <span class="px-3 py-1 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-600 dark:text-blue-300 text-sm rounded-full border border-blue-200 dark:border-blue-800">
+                                                {tech}
+                                            </span>
+                                        {/each}
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-4 mt-8">
+                                    {#if selectedProject.link}
+                                        <a 
+                                            href={selectedProject.link} 
+                                            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white rounded-lg transition-all shadow-lg hover:shadow-blue-500/20"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Icon icon="mdi:web" class="mr-2" />
+                                            Voir en ligne
+                                        </a>
+                                    {/if}
+
+                                    {#if selectedProject.github}
+                                        <a 
+                                            href={selectedProject.github} 
+                                            class="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-lg transition-all shadow-lg hover:shadow-gray-500/20"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Icon icon="mdi:github" class="mr-2" />
+                                            Code source
+                                        </a>
+                                    {/if}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/if}
+            </div>
+        </div>
+    {/if}
+</section>
