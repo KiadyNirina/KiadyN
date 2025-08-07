@@ -32,6 +32,56 @@
         technologies: ["Wordpress", "HTML", "CSS", "JavaScript", "PHP", "MySQL"]
       }
     ];
+
+    function calculateDuration(period) {
+        if (period.includes("Présent")) {
+            const startDateStr = period.split(" - ")[0];
+            const startDate = parseDate(startDateStr);
+            const currentDate = new Date();
+            return getDuration(startDate, currentDate);
+        } else if (period.includes(" - ")) {
+            const [startStr, endStr] = period.split(" - ");
+            const startDate = parseDate(startStr);
+            const endDate = parseDate(endStr);
+            return getDuration(startDate, endDate);
+        }
+        return "Durée non spécifiée";
+    }
+
+    function parseDate(dateStr) {
+        if (/^\d{4}$/.test(dateStr)) {
+            return new Date(parseInt(dateStr), 0, 1);
+        }
+        
+        const months = {
+            "Jan.": 0, "Fev.": 1, "Mars": 2, "Avr.": 3, "Mai": 4, "Juin": 5,
+            "Juil.": 6, "Août": 7, "Sept.": 8, "Oct.": 9, "Nov.": 10, "Déc.": 11
+        };
+        
+        const parts = dateStr.split(" ");
+        if (parts.length === 2 && months[parts[0]] !== undefined) {
+            return new Date(parseInt(parts[1]), months[parts[0]], 1);
+        }
+        
+        return new Date();
+    }
+
+    function getDuration(startDate, endDate) {
+        const diffInMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + 
+                            (endDate.getMonth() - startDate.getMonth());
+        
+        if (diffInMonths < 12) {
+            return `${diffInMonths} mois`;
+        } else {
+            const years = Math.floor(diffInMonths / 12);
+            const remainingMonths = diffInMonths % 12;
+            if (remainingMonths === 0) {
+                return `${years} an${years > 1 ? 's' : ''}`;
+            } else {
+                return `${years} an${years > 1 ? 's' : ''} ${remainingMonths} mois`;
+            }
+        }
+    }
 </script>
 
 <section id="experiences" class="transition-colors duration-300 mt-50 mb-50 py-20">
@@ -76,6 +126,12 @@
                   <Icon icon="mdi:map-marker" class="mr-1 animate-bounce" />
                   <span>
                     {exp.localisation}
+                  </span>
+                </div>
+                <div class="text-xs text-gray-800 dark:text-gray-400 flex items-center mt-2">
+                  <Icon icon="mdi:clock-outline" class="mr-1 animate-bounce" />
+                  <span>
+                    {calculateDuration(exp.period)}
                   </span>
                 </div>
                 <p class="text-gray-600 dark:text-gray-300 mt-4 mb-4 text-sm">
