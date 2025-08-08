@@ -179,31 +179,31 @@
 
                             <div>
                                 <div class="mb-6">
-                                    <h4 class="text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
+                                    <h4 class="text-base md:text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
                                         <Icon icon="mdi:information-outline" class="mr-2 text-blue-500" />
                                         Description
                                     </h4>
-                                    <p class="text-gray-700 dark:text-gray-400 text-sm">{selectedProject.description}</p>
+                                    <p class="text-gray-700 dark:text-gray-400 text-xs md:text-sm">{selectedProject.description}</p>
                                 </div>
 
                                 {#if selectedProject.details}
                                     <div class="mb-6">
-                                        <h4 class="text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
+                                        <h4 class="text-base md:text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
                                             <Icon icon="mdi:file-document-outline" class="mr-2 text-blue-500" />
                                             Détails techniques
                                         </h4>
-                                        <p class="text-gray-700 dark:text-gray-400 text-sm">{selectedProject.details}</p>
+                                        <p class="text-gray-700 dark:text-gray-400 text-xs md:text-sm">{selectedProject.details}</p>
                                     </div>
                                 {/if}
 
                                 <div class="mb-6">
-                                    <h4 class="text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
+                                    <h4 class="text-base md:text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
                                         <Icon icon="mdi:code-tags" class="mr-2 text-blue-500" />
                                         Technologies
                                     </h4>
                                     <div class="flex flex-wrap gap-2">
                                         {#each selectedProject.tech as tech}
-                                            <span class="px-3 py-1 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-600 dark:text-blue-300 text-sm rounded-full border border-blue-200 dark:border-blue-800">
+                                            <span class="px-3 py-1 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-600 dark:text-blue-300 text-xs md:text-sm rounded-full border border-blue-200 dark:border-blue-800">
                                                 {tech}
                                             </span>
                                         {/each}
@@ -214,7 +214,7 @@
                                     {#if selectedProject.link}
                                         <a 
                                             href={selectedProject.link} 
-                                            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white rounded-lg transition-all shadow-lg hover:shadow-blue-500/20"
+                                            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white text-xs md:text-sm rounded-lg transition-all shadow-lg hover:shadow-blue-500/20"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
@@ -226,7 +226,7 @@
                                     {#if selectedProject.github}
                                         <a 
                                             href={selectedProject.github} 
-                                            class="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-lg transition-all shadow-lg hover:shadow-gray-500/20"
+                                            class="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white text-xs md:text-sm rounded-lg transition-all shadow-lg hover:shadow-gray-500/20"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
