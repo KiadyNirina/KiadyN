@@ -52,11 +52,11 @@
         </button>
       </div>
   
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-center justify-items-center">
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-items-center">
         {#each filteredSkills as skill}
-          <div class="skill-card bg-white dark:bg-black p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex flex-col items-center w-[120px] dark:shadow-gray-900" data-category={skill.category}>
-            <Icon icon={skill.icon} class="text-4xl mb-2 {skill.color} transition-transform duration-300 hover:scale-110" />
-            <h3 class="font-semibold text-xs text-gray-900 dark:text-gray-100 text-center">{skill.name}</h3>
+          <div class="bg-white dark:bg-black p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center dark:shadow-gray-900 w-[120px]" data-category={skill.category}>
+            <Icon icon={skill.icon} class="text-2xl {skill.color} transition-transform duration-300 hover:scale-110" />
+            <h3 class="font-semibold text-xs text-gray-900 dark:text-gray-100 text-center ml-2">{skill.name}</h3>
           </div>
         {/each}
       </div>

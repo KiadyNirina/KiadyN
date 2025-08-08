@@ -55,8 +55,8 @@
             />
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
-            <span class="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent schoolbell-regular">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 animate-slide-up">
+            <span class="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent permanent-marker-regular">
                 Transformez vos idées en réalité !
             </span>
         </h1>
@@ -124,10 +124,10 @@
 </section>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-    .schoolbell-regular {
-        font-family: "Schoolbell", cursive;
+    .permanent-marker-regular {
+        font-family: "Permanent Marker", cursive;
         font-weight: 400;
         font-style: normal;
     }
