@@ -131,7 +131,7 @@
         <div 
             use:portal
             transition:fade={{ duration: 250 }} 
-            class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 font-['Poppins']"
             on:click|self={closeModal}
         >
             <div 
