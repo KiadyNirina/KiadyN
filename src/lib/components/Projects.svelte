@@ -76,19 +76,34 @@
     function openModal(project) {
         selectedProject = project;
         showModal = true;
+        document.body.classList.add('overflow-hidden');
     }
 
     function closeModal() {
         showModal = false;
+        selectedProject = null;
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    function portal(node, target = 'body') {
+        const targetNode = document.querySelector(target);
+        targetNode.appendChild(node);
+        return {
+            destroy() {
+                if (node.parentNode) {
+                    node.parentNode.removeChild(node);
+                }
+            }
+        };
     }
 </script>
 
 <section id="projects" class="py-20 mt-50 mb-50">
     <h2 class="text-3xl font-bold text-center mb-12">
-        <span class="border-b-4 border-blue-500 pb-2  dark:text-gray-100">Mes Projets</span>
+        <span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">Mes Projets</span>
     </h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8  dark:text-gray-100">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 dark:text-gray-100">
         {#each projects as project}
             <div class="bg-white dark:bg-black rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 dark:shadow-gray-900">
                 <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
@@ -114,21 +129,25 @@
 
     {#if showModal}
         <div 
-            transition:blur={{ amount: 10 }}
-            class="fixed inset-0 z-50 flex items-center justify-center p-4 backdrop-blur-lg"
+            use:portal
+            transition:fade={{ duration: 250 }} 
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
             on:click|self={closeModal}
         >
             <div 
-                transition:fade
-                class="relative bg-white dark:bg-gray-900 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-2 border-blue-500/20 dark:border-blue-400/20"
+                transition:blur={{ amount: 10 }}
+                class="bg-white dark:bg-gray-900 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-2 border-blue-500/20 dark:border-blue-400/20"
             >
-                <button 
-                    on:click={closeModal}
-                    class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all transform hover:rotate-90 duration-300 group"
-                    aria-label="Fermer"
-                >
-                    <Icon icon="mdi:close" class="w-6 h-6 text-gray-700 dark:text-gray-300 group-hover:text-red-500" />
-                </button>
+                <div class="sticky top-0 bg-white dark:bg-gray-900 p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center z-10">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Détails du projet</h2>
+                    <button 
+                        on:click={closeModal}
+                        class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors"
+                        aria-label="Fermer"
+                    >
+                        <Icon icon="mdi:close" class="w-6 h-6" />
+                    </button>
+                </div>
 
                 {#if selectedProject}
                     <div class="p-8">
@@ -141,11 +160,6 @@
                                     <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 text-xs font-medium rounded-full">
                                         {selectedProject.type || 'Projet'}
                                     </span>
-                                    {#if selectedProject.date}
-                                        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs rounded-full">
-                                            {selectedProject.date}
-                                        </span>
-                                    {/if}
                                 </div>
                             </div>
                         </div>
@@ -210,7 +224,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex flex-wrap gap-4 mt-8">
+                                <div class="flex flex-col sm:flex-row justify-end gap-4 mt-8">
                                     {#if selectedProject.link}
                                         <a 
                                             href={selectedProject.link} 
