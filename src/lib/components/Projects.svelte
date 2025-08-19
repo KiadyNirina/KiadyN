@@ -35,14 +35,15 @@
             type: "Projet personnel",
             title: "Datalens",
             description: "Application de visualisation et d'analyse de données",
-            tech: ["Python"],
-            image: "/datalens.jpg",
+            tech: ["Python", "Flask", "Plotly"],
+            image: "/Datalens1.png",
             link: "#",
             details: "Application de visualisation et d'analyse de données. Utilise Python pour le traitement des données et la génération de graphiques interactifs.",
             github: "https://github.com/KiadyNirina/Datalens",
             gallery: [
-                "/datalens.jpg",
-                "/datalens 2.jpg",
+                "/Datalens2.png",
+                "/Datalens3.png",
+                "/Datalens4.png",
             ]
         },
         {
