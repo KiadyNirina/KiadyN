@@ -5,6 +5,20 @@
     const projects = [
         {
             type: "Projet personnel",
+            title: "CookUp",
+            description: "Application de suggestion de recettes de cuisine avec fonctionnalités de filtrage avancée",
+            tech: ["SvelteKit", "Tailwind CSS", "Spoonacular API"],
+            image: "/Cookup1.png",
+            link: "https://cookuup.netlify.app/",
+            details: "Application de suggestion de recettes de cuisine avec fonctionnalités de filtrage avancée. Utilise SvelteKit pour le front-end et l'API Spoonacular pour les données.",
+            github: "https://github.com/KiadyNirina/CookUp",
+            gallery: [
+                "/Cookup2.png",
+                "/Cookup3.png",
+            ]
+        },
+        {
+            type: "Projet personnel",
             title: "Real-Talk",
             description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
             tech: ["Svelte", "Laravel", "MySQL"],
