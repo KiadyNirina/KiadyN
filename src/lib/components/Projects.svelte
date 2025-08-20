@@ -11,6 +11,14 @@
             image: "/Cookup1.png",
             link: "https://cookuup.netlify.app/",
             details: "Application de suggestion de recettes de cuisine avec fonctionnalités de filtrage avancée. Utilise SvelteKit pour le front-end et l'API Spoonacular pour les données.",
+            functionalities: [
+                "Suggestions de recettes basées sur les préférences",
+                "Affichage des recettes avec détails et images",
+                "Export de recettes en PDF",
+                "Partage de recettes via un lien et vers les réseaux sociaux",
+                "Multi-langue (français, anglais)",
+                "Mode sombre et clair",
+            ],
             github: "https://github.com/KiadyNirina/CookUp",
             gallery: [
                 "/Cookup2.png",
@@ -23,7 +31,6 @@
             description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
             tech: ["Svelte", "Laravel", "MySQL"],
             image: "/real_talk.jpg",
-            link: "#",
             details: "Application de chat en temps réel avec notifications instantanées et gestion des utilisateurs. Utilise Svelte pour le front-end et Laravel pour le back-end.",
             github: "https://github.com/KiadyNirina/Real_talk",
             gallery: [
@@ -35,10 +42,15 @@
             type: "Projet personnel",
             title: "Datalens",
             description: "Application de visualisation et d'analyse de données",
-            tech: ["Python", "Flask", "Plotly"],
+            tech: ["Python", "Flask", "Plotly", "Tailwind CSS"],
             image: "/Datalens1.png",
-            link: "#",
             details: "Application de visualisation et d'analyse de données. Utilise Python pour le traitement des données et la génération de graphiques interactifs.",
+            functionalities: [
+                "Chargement de données depuis des fichiers CSV ou JSON",
+                "Graphiques interactifs avec Plotly",
+                "Export de graphiques en images",
+                "Tableaux de données avec pagination et tri",
+            ],
             github: "https://github.com/KiadyNirina/Datalens",
             gallery: [
                 "/Datalens2.png",
@@ -52,7 +64,6 @@
             description: "Application de gestion de projet avec suivi des tâches et collaboration en équipe",
             tech: ["Svelte", "Django", "PostgreSQL"],
             image: "/eboss.jpg",
-            link: "#",
             details: "Application de gestion de projet avec suivi des tâches et collaboration en équipe. Utilise Svelte pour le front-end et Django pour le back-end.",
             github: "https://github.com/KiadyNirina/eBoss",
             gallery: [
@@ -70,7 +81,6 @@
             description: "Application de centralisation et automatisation de la gestion des ressources internes",
             tech: ["Html", "Css", "MySQL"],
             image: "/e_stock.jpg",
-            link: "#",
             details: "Application de centralisation et automatisation de la gestion des ressources internes. Utilise HTML, CSS et MySQL pour la gestion des données.",
             github: "https://github.com/KiadyNirina/E_stock"
         },
@@ -222,6 +232,20 @@
                                             Détails techniques
                                         </h4>
                                         <p class="text-gray-700 dark:text-gray-400 text-xs md:text-sm">{selectedProject.details}</p>
+                                    </div>
+                                {/if}
+
+                                {#if selectedProject.functionalities && selectedProject.functionalities.length > 0}
+                                    <div class="mb-6">
+                                        <h4 class="text-base md:text-lg font-semibold mb-2 flex items-center text-gray-800 dark:text-gray-100">
+                                            <Icon icon="mdi:check-circle-outline" class="mr-2 text-blue-500" />
+                                            Fonctionnalités
+                                        </h4>
+                                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 text-xs md:text-sm">
+                                            {#each selectedProject.functionalities as feature}
+                                                <li>{feature}</li>
+                                            {/each}
+                                        </ul>
                                     </div>
                                 {/if}
 
