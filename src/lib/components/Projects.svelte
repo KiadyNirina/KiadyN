@@ -31,7 +31,6 @@
             description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
             tech: ["Svelte", "Laravel", "MySQL"],
             image: "/real_talk.jpg",
-            link: "#",
             details: "Application de chat en temps réel avec notifications instantanées et gestion des utilisateurs. Utilise Svelte pour le front-end et Laravel pour le back-end.",
             github: "https://github.com/KiadyNirina/Real_talk",
             gallery: [
@@ -45,7 +44,6 @@
             description: "Application de visualisation et d'analyse de données",
             tech: ["Python", "Flask", "Plotly", "Tailwind CSS"],
             image: "/Datalens1.png",
-            link: "#",
             details: "Application de visualisation et d'analyse de données. Utilise Python pour le traitement des données et la génération de graphiques interactifs.",
             functionalities: [
                 "Chargement de données depuis des fichiers CSV ou JSON",
@@ -66,7 +64,6 @@
             description: "Application de gestion de projet avec suivi des tâches et collaboration en équipe",
             tech: ["Svelte", "Django", "PostgreSQL"],
             image: "/eboss.jpg",
-            link: "#",
             details: "Application de gestion de projet avec suivi des tâches et collaboration en équipe. Utilise Svelte pour le front-end et Django pour le back-end.",
             github: "https://github.com/KiadyNirina/eBoss",
             gallery: [
@@ -84,7 +81,6 @@
             description: "Application de centralisation et automatisation de la gestion des ressources internes",
             tech: ["Html", "Css", "MySQL"],
             image: "/e_stock.jpg",
-            link: "#",
             details: "Application de centralisation et automatisation de la gestion des ressources internes. Utilise HTML, CSS et MySQL pour la gestion des données.",
             github: "https://github.com/KiadyNirina/E_stock"
         },
