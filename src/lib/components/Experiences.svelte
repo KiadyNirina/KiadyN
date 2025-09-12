@@ -4,22 +4,22 @@
     const experiences = [
       {
         period: "Mars 2025 - Présent",
-        position: "Développeur Full-Stack",
+        position: "Développeur Web Junior",
         company: "Atout Service Mada",
         type: "CDI",
         img: "atout.png",
         localisation: "Ambohimiandra, Antananarivo, Madagascar",
         description: "Conception et développement d'applications web e-commerce basée sur Magento 2.",
-        technologies: ["HTML / CSS", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"]
+        technologies: ["HTML / CSS", "PHP", "Magento", "MySQL", "Git"]
       },
       {
         period: "Nov. 2024 - Fev. 2025",
-        position: "Stagiaire Développeur Full-Stack",
+        position: "Stagiaire Développeur Web",
         company: "Atout Service Mada",
         type: "Stage",
         img: "atout.png",
         localisation: "Ambohimiandra, Antananarivo, Madagascar",
-        description: "Participation au développement et à la maintenance des fonctionnalités front-end et back-end d'une plateforme e-commerce.",
+        description: "Contribué au développement et à la maintenance d'une plateforme e-commerce et d'une application web de gestion de stock, couvrant les aspects front-end et back-end.",
         technologies: ["HTML / CSS", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"]
       },
       {
