@@ -94,15 +94,6 @@
             image: "/moncomparateurimmo.PNG",
             link: "https://www.moncomparateur-immo.com/",
             details: "Site vitrine pour une entreprise de comparateur d'agences immobilières. Utilise WordPress pour la gestion du contenu.",
-        },
-        {
-            type: "Projet freelance",
-            title: "MCI",
-            description: "Site vitrine pour une entreprise de comparateur d'agences immobilières",
-            tech: ["wordpress", "PHP", "MySQL"],
-            image: "/moncomparateurimmo.PNG",
-            link: "https://www.moncomparateur-immo.com/",
-            details: "Site vitrine pour une entreprise de comparateur d'agences immobilières. Utilise WordPress pour la gestion du contenu.",
         }
     ];
 
