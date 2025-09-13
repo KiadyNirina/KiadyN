@@ -62,14 +62,10 @@
         </h1>
         
         <div class="relative inline-block">
-            <div class="md:flex items-center text-base md:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 px-4 py-2 bg-gray-400/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="text-base md:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 px-4 py-2 bg-gray-400/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in" style="animation-delay: 0.2s;">
                 <div class="flex items-center">
                     <Icon icon="mdi:code" class="mr-1.5 animate-bounce" />
-                    Développeur full-stack ∙ 
-                </div>
-                <div class="flex items-center">
-                    <Icon icon="mdi:pencil" class="md:ml-2 mr-1.5 animate-bounce" />
-                    UI/UX
+                    Développeur full-stack
                 </div>
             </div>
             <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-underline" style="animation-delay: 0.3s;"></div>
