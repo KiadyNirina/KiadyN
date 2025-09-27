@@ -9,37 +9,37 @@
       <!-- Filtres -->
       <div class="flex flex-wrap justify-center gap-3 mb-8">
         <button 
-          class="filter-btn px-3 py-1.5 rounded-full font-semibold text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
+          class="filter-btn px-3 py-1.5 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
           on:click={() => setFilter('all')}
         >
           Tous
         </button>
         <button 
-          class="filter-btn px-3 py-1.5 rounded-full font-semibold text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'frontend' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
+          class="filter-btn px-3 py-1.5 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'frontend' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
           on:click={() => setFilter('frontend')}
         >
           Frontend
         </button>
         <button 
-          class="filter-btn px-3 py-1.5 rounded-full font-semibold text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'backend' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
+          class="filter-btn px-3 py-1.5 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'backend' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
           on:click={() => setFilter('backend')}
         >
           Backend
         </button>
         <button 
-          class="filter-btn px-3 py-1.5 rounded-full font-semibold text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'cms' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
+          class="filter-btn px-3 py-1.5 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'cms' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
           on:click={() => setFilter('cms')}
         >
           CMS
         </button>
         <button 
-          class="filter-btn px-3 py-1.5 rounded-full font-semibold text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'bdd' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
+          class="filter-btn px-3 py-1.5 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'bdd' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
           on:click={() => setFilter('bdd')}
         >
           Bases de données
         </button>
         <button 
-          class="filter-btn px-3 py-1.5 rounded-full font-semibold text-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'tools' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
+          class="filter-btn px-3 py-1.5 rounded-full text-base transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 {activeFilter === 'tools' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700 dark:bg-gray-900 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800'}" 
           on:click={() => setFilter('tools')}
         >
           Outils
@@ -48,9 +48,9 @@
   
       <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-items-center">
         {#each filteredSkills as skill}
-          <div class="bg-white dark:bg-black p-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center dark:shadow-gray-900 w-[120px]" data-category={skill.category}>
+          <div class="bg-white dark:bg-black p-3 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center dark:shadow-gray-900 w-[150px]" data-category={skill.category}>
             <Icon icon={skill.icon} class="text-2xl {skill.color} transition-transform duration-300 hover:scale-110" />
-            <h3 class="font-semibold text-xs text-gray-900 dark:text-gray-100 text-center ml-2">{skill.name}</h3>
+            <h3 class="text-base text-gray-900 dark:text-gray-100 text-center ml-2">{skill.name}</h3>
           </div>
         {/each}
       </div>

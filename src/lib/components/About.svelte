@@ -15,12 +15,12 @@
           </div>
         </div>
         
-        <div class="md:w-2/3 space-y-6 md:text-base text-sm">
+        <div class="md:w-2/3 space-y-6 md:text-base/7 text-sm">
           <h3 class="text-2xl font-bold dark:text-gray-100 flex items-center">
             <Icon icon="mdi-laptop" class="text-2xl mr-2 animate-bounce" />
             Développeur Full-Stack Passionné
           </h3>
-          <div class="text-gray-600 dark:text-gray-300">
+          <div class="text-gray-900 dark:text-gray-300">
             Je suis RAMBELOSON Kiady Nirina, un jeune développeur web de Madagascar 🇲🇬, passionné par la création de solutions digitales innovantes 💡. Je travaille avec 
             <div class="flex items-center">
               <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
@@ -48,10 +48,10 @@
               </span>.
             </div>
           </div>
-          <p class="text-gray-600 dark:text-gray-300">
+          <p class="text-gray-900 dark:text-gray-300">
             J'ai réalisé divers projets 🎯, en mettant l'accent sur l'expérience utilisateur et la performance 💻✨.
           </p>
-          <p class="text-gray-600 dark:text-gray-300">
+          <p class="text-gray-900 dark:text-gray-300">
             Envie de collaborer sur un projet ou de discuter d'une idée ? <a href="#contact" class="text-blue-500 hover:underline font-semibold">Contactez-moi !</a>
           </p>
           

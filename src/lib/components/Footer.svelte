@@ -8,11 +8,11 @@
         
         <div class="text-center md:text-left">
           <ul class="space-y-2">
-            <li><a href="#about" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">À propos</a></li>
-            <li><a href="#projects" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">Projets</a></li>
-            <li><a href="#skills" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">Compétences</a></li>
-            <li><a href="#experiences" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">Experiences</a></li>
-            <li><a href="#contact" class="text-xs text-gray-400 hover:text-blue-600 transition-colors">Contact</a></li>
+            <li><a href="#about" class="text-base text-gray-400 hover:text-blue-600 transition-colors">À propos</a></li>
+            <li><a href="#projects" class="text-base text-gray-400 hover:text-blue-600 transition-colors">Projets</a></li>
+            <li><a href="#skills" class="text-base text-gray-400 hover:text-blue-600 transition-colors">Compétences</a></li>
+            <li><a href="#experiences" class="text-base text-gray-400 hover:text-blue-600 transition-colors">Experiences</a></li>
+            <li><a href="#contact" class="text-base text-gray-400 hover:text-blue-600 transition-colors">Contact</a></li>
           </ul>
         </div>
         
@@ -38,7 +38,7 @@
         </div>
       </div>
       
-      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-xs">
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
         <p>© {new Date().getFullYear()} KiadyN. Tous droits réservés.</p>
       </div>
     </div>

@@ -224,10 +224,10 @@
                     <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">{project.title}</h3>
-                        <p class="text-gray-600 text-sm dark:text-gray-400 mb-4">{project.description}</p>
+                        <p class="text-gray-600 text-base dark:text-gray-400 mb-4">{project.description}</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             {#each project.tech as tech}
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-full">{tech}</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-900 text-sm rounded-full">{tech}</span>
                             {/each}
                         </div>
                         <div 
@@ -348,7 +348,7 @@
         <div 
             use:portal
             transition:fade={{ duration: 250 }} 
-            class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 font-['Poppins']"
+            class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
             on:click|self={closeModal}
         >
             <div 
@@ -374,7 +374,7 @@
                                     {selectedProject.title}
                                 </h3>
                                 <div class="flex items-center mt-2 space-x-2">
-                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 text-xs font-medium rounded-full">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 text-sm font-medium rounded-full">
                                         {selectedProject.type || 'Projet'}
                                     </span>
                                 </div>
@@ -414,7 +414,7 @@
                                         <Icon icon="mdi:information-outline" class="mr-2 text-blue-500" />
                                         Description
                                     </h4>
-                                    <p class="text-gray-700 dark:text-gray-400 text-xs md:text-sm">{selectedProject.description}</p>
+                                    <p class="text-gray-700 dark:text-gray-400 text-xs md:text-base">{selectedProject.description}</p>
                                 </div>
 
                                 {#if selectedProject.details}
@@ -423,7 +423,7 @@
                                             <Icon icon="mdi:file-document-outline" class="mr-2 text-blue-500" />
                                             Détails techniques
                                         </h4>
-                                        <p class="text-gray-700 dark:text-gray-400 text-xs md:text-sm">{selectedProject.details}</p>
+                                        <p class="text-gray-700 dark:text-gray-400 text-xs md:text-base">{selectedProject.details}</p>
                                     </div>
                                 {/if}
 
@@ -433,7 +433,7 @@
                                             <Icon icon="mdi:check-circle-outline" class="mr-2 text-blue-500" />
                                             Fonctionnalités
                                         </h4>
-                                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 text-xs md:text-sm">
+                                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 text-xs md:text-base">
                                             {#each selectedProject.functionalities as feature, i}
                                                 <li 
                                                     in:slide={{
@@ -461,7 +461,7 @@
                                                     delay: i * 80,
                                                     duration: 400
                                                 }}
-                                                class="px-3 py-1 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-600 dark:text-blue-300 text-xs md:text-sm rounded-full border border-blue-200 dark:border-blue-800 transition-transform duration-300 hover:scale-105"
+                                                class="px-3 py-1 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-600 dark:text-blue-300 text-sm md:text-base rounded-full border border-blue-200 dark:border-blue-800 transition-transform duration-300 hover:scale-105"
                                             >
                                                 {tech}
                                             </span>

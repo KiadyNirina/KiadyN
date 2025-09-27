@@ -63,7 +63,7 @@
 	}
 </script>
 
-<div class="min-h-screen transition-colors duration-300 font-['Poppins']">
+<div class="min-h-screen transition-colors duration-300">
     <Header />
     
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,6 +109,7 @@
 </div>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 	@import "tailwindcss";
 	@custom-variant dark (&:where(.dark, .dark *));
 	@font-face {
@@ -117,6 +118,12 @@
         font-weight: normal;
         font-style: normal;
     }
+
+	*{
+		font-family: "Lato", sans-serif;
+		font-weight: 500;
+		font-style: normal;
+	}
     
     .animate-fade-in {
         animation: fadeIn 1.5s ease-out forwards;
