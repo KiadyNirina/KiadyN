@@ -50,7 +50,7 @@
         {#each filteredSkills as skill}
           <div class="bg-white dark:bg-black p-3 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center dark:shadow-gray-900 w-[150px]" data-category={skill.category}>
             <Icon icon={skill.icon} class="text-2xl {skill.color} transition-transform duration-300 hover:scale-110" />
-            <h3 class="text-base text-gray-900 dark:text-gray-100 text-center ml-2">{skill.name}</h3>
+            <h3 class="text-sm text-gray-900 dark:text-gray-100 text-center ml-2">{skill.name}</h3>
           </div>
         {/each}
       </div>
