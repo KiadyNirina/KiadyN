@@ -414,7 +414,7 @@
                                         <Icon icon="mdi:information-outline" class="mr-2 text-blue-500" />
                                         Description
                                     </h4>
-                                    <p class="text-gray-700 dark:text-gray-400 text-xs md:text-base">{selectedProject.description}</p>
+                                    <p class="text-gray-700 dark:text-gray-400 text-sm md:text-base">{selectedProject.description}</p>
                                 </div>
 
                                 {#if selectedProject.details}
@@ -423,7 +423,7 @@
                                             <Icon icon="mdi:file-document-outline" class="mr-2 text-blue-500" />
                                             Détails techniques
                                         </h4>
-                                        <p class="text-gray-700 dark:text-gray-400 text-xs md:text-base">{selectedProject.details}</p>
+                                        <p class="text-gray-700 dark:text-gray-400 text-sm md:text-base">{selectedProject.details}</p>
                                     </div>
                                 {/if}
 
@@ -433,7 +433,7 @@
                                             <Icon icon="mdi:check-circle-outline" class="mr-2 text-blue-500" />
                                             Fonctionnalités
                                         </h4>
-                                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 text-xs md:text-base">
+                                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-400 text-sm md:text-base">
                                             {#each selectedProject.functionalities as feature, i}
                                                 <li 
                                                     in:slide={{
@@ -473,7 +473,7 @@
                                     {#if selectedProject.link}
                                         <a 
                                             href={selectedProject.link} 
-                                            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white text-xs md:text-sm rounded-lg transition-all shadow-lg hover:shadow-blue-500/20 transform hover:-translate-y-1 duration-300"
+                                            class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white text-sm rounded-lg transition-all shadow-lg hover:shadow-blue-500/20 transform hover:-translate-y-1 duration-300"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
@@ -485,7 +485,7 @@
                                     {#if selectedProject.github}
                                         <a 
                                             href={selectedProject.github} 
-                                            class="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white text-xs md:text-sm rounded-lg transition-all shadow-lg hover:shadow-gray-500/20 transform hover:-translate-y-1 duration-300"
+                                            class="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white text-sm rounded-lg transition-all shadow-lg hover:shadow-gray-500/20 transform hover:-translate-y-1 duration-300"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
