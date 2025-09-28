@@ -105,7 +105,7 @@
                   <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-300">
                     {exp.position}
                   </h4>
-                  <span class="mr-auto md:mr-0 px-2 py-1 text-base font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-full mt-1 md:mt-0">
+                  <span class="mr-auto md:mr-0 px-2 py-1 text-sm md:text-base font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 rounded-full mt-1 md:mt-0">
                     <span class="flex items-center"><Icon icon="pajamas:work" class="mr-2 animate-bounce" />
                       {exp.type}
                     </span>
