@@ -78,15 +78,6 @@
             ]
         },
         {
-            type: "Projet personnel",
-            title: "E-Stock",
-            description: "Application de centralisation et automatisation de la gestion des ressources internes",
-            tech: ["Html", "Css", "MySQL"],
-            image: "/e_stock.jpg",
-            details: "Application de centralisation et automatisation de la gestion des ressources internes. Utilise HTML, CSS et MySQL pour la gestion des données.",
-            github: "https://github.com/KiadyNirina/E_stock"
-        },
-        {
             type: "Projet freelance",
             title: "MCI",
             description: "Site vitrine pour une entreprise de comparateur d'agences immobilières",
