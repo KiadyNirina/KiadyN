@@ -1,8 +1,51 @@
 <script>
-  let loading = false;
-  export let form;
+  let name = '';
+  let email = '';
+  let subject = '';
+  let message = '';
 
-  $: if (form?.success || form?.error) loading = false;
+  let loading = false;
+  let success = '';
+  let error = '';
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    loading = true;
+    success = '';
+    error = '';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message })
+      });
+
+      let data;
+      try {
+        data = await res.json();
+      } catch (err) {
+        data = { error: 'Réponse invalide du serveur.' };
+      }
+
+      if (res.ok) {
+        success = data.success || 'Message envoyé avec succès ✅';
+        setTimeout(() => {
+          name = '';
+          email = '';
+          subject = '';
+          message = '';
+        }, 300);
+      } else {
+        error = data.error || 'Une erreur est survenue lors de l’envoi.';
+      }
+    } catch (err) {
+      console.error('Erreur réseau:', err);
+      error = 'Impossible de contacter le serveur.';
+    } finally {
+      loading = false;
+    }
+  }
 </script>
 
 <section id="contact" class="py-20 mt-50">
@@ -14,26 +57,27 @@
       <p class="dark:text-gray-100 text-center mb-[50px] text-base">Prêt à collaborer sur votre prochain projet ?
       Remplissez le formulaire ou contactez-moi via mes réseaux sociaux !</p>
 
-      {#if form?.success}
+      {#if success}
         <div class="p-[10px] bg-green-500 text-white rounded-lg mb-[20px] text-center">
-          ✓ Message envoyé avec succès ! Une confirmation vous a été envoyée par email.
+          ✓ {success}
         </div>
-      {:else if form?.error}
+      {:else if error}
         <div class="p-[10px] bg-red-500 text-white rounded-lg mb-[20px] text-center">
-          ⚠ {form?.error}
+          ⚠ {error}
         </div>
       {/if}
       
-      <form method="post" on:submit={() => (loading = true)} class="space-y-6 dark:text-gray-100">
+      <form on:submit={handleSubmit} class="space-y-6 dark:text-gray-100">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label for="name" class="block mb-2 font-medium">Nom *</label>
             <input 
               type="text" 
               id="name" 
+              name="name" 
+              bind:value={name}
               class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
               placeholder="Votre nom"
-              name="name"
               required
             />
           </div>
@@ -45,6 +89,7 @@
               class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
               placeholder="votre@email.com"
               name="email"
+              bind:value={email}
               required
             />
           </div>
@@ -57,6 +102,8 @@
             id="subject" 
             class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
             placeholder="Objet du message"
+            name="subject"
+            bind:value={subject}
           />
         </div>
         
@@ -68,16 +115,16 @@
             class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
             placeholder="Votre message..."
             name="message"
+            bind:value={message}
             required
           ></textarea>
         </div>
-        
         <button
+          type="submit" 
           class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed" 
           disabled={loading}
         >
-          {#if loading}Envoie en cours...{/if}
-          {#if !loading}Envoyer le message{/if}
+          {#if loading}Envoie en cours...{:else}Envoyer le message{/if}
         </button>
       </form>
     </div>
