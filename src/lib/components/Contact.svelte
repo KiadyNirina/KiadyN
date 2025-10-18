@@ -1,69 +1,49 @@
 <script>
-  import { supabase } from '$lib/supabaseClient'
-  import emailjs from '@emailjs/browser';
+  let name = '';
+  let email = '';
+  let subject = '';
+  let message = '';
 
-  let form = {
-    name: '',
-    email: '',
-    message: ''
-  }
-  let isSending = false
-  let success = false
-  let error = ''
+  let loading = false;
+  let success = '';
+  let error = '';
 
   async function handleSubmit(event) {
-    event.preventDefault()
-    isSending = true
-    error = ''
-    success = false
+    event.preventDefault();
+    loading = true;
+    success = '';
+    error = '';
 
     try {
-      if (!form.name.trim()) throw new Error('Le nom est requis')
-      if (!form.email.trim()) throw new Error('L\'email est requis')
-      if (!form.message.trim()) throw new Error('Le message est requis')
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-        throw new Error('Email invalide')
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message })
+      });
+
+      let data;
+      try {
+        data = await res.json();
+      } catch (err) {
+        data = { error: 'Réponse invalide du serveur.' };
       }
 
-      // 1. Email pour MOI (notification)
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_WELCOME,
-        {
-          name: form.name,
-          email: form.email,
-          message: form.message
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
-      // 2. Email de confirmation pour L'UTILISATEUR
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
-        {
-          name: form.name,
-          email: form.email,
-          message: form.message
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-
-      // Enregistrement dans Supabase 
-      const { error: dbError } = await supabase
-        .from('contacts')
-        .insert([{ ...form }])
-
-      if (dbError) throw dbError
-
-      success = true
-      form = { name: '', email: '', message: '' }
-
+      if (res.ok) {
+        success = data.success || 'Message envoyé avec succès ✅';
+        setTimeout(() => {
+          name = '';
+          email = '';
+          subject = '';
+          message = '';
+        }, 300);
+      } else {
+        error = data.error || 'Une erreur est survenue lors de l’envoi.';
+      }
     } catch (err) {
-      error = err.message
-      console.error('Erreur:', err)
+      console.error('Erreur réseau:', err);
+      error = 'Impossible de contacter le serveur.';
     } finally {
-      isSending = false
+      loading = false;
     }
   }
 </script>
@@ -79,7 +59,7 @@
 
       {#if success}
         <div class="p-[10px] bg-green-500 text-white rounded-lg mb-[20px] text-center">
-          ✓ Message envoyé avec succès ! Une confirmation vous a été envoyée par email.
+          ✓ {success}
         </div>
       {:else if error}
         <div class="p-[10px] bg-red-500 text-white rounded-lg mb-[20px] text-center">
@@ -87,17 +67,17 @@
         </div>
       {/if}
       
-      <form on:submit|preventDefault={handleSubmit} class="space-y-6 dark:text-gray-100">
+      <form on:submit={handleSubmit} class="space-y-6 dark:text-gray-100">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label for="name" class="block mb-2 font-medium">Nom *</label>
             <input 
               type="text" 
               id="name" 
+              name="name" 
+              bind:value={name}
               class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
               placeholder="Votre nom"
-              bind:value={form.name}
-              disabled={isSending}
               required
             />
           </div>
@@ -108,8 +88,8 @@
               id="email" 
               class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
               placeholder="votre@email.com"
-              bind:value={form.email}
-              disabled={isSending}
+              name="email"
+              bind:value={email}
               required
             />
           </div>
@@ -122,6 +102,8 @@
             id="subject" 
             class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
             placeholder="Objet du message"
+            name="subject"
+            bind:value={subject}
           />
         </div>
         
@@ -132,18 +114,17 @@
             rows="5"
             class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
             placeholder="Votre message..."
-            bind:value={form.message}
-            disabled={isSending}
+            name="message"
+            bind:value={message}
             required
           ></textarea>
         </div>
-        
-        <button 
+        <button
           type="submit" 
           class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed" 
-          disabled={isSending}
+          disabled={loading}
         >
-          {isSending ? 'Envoie en cours...' : 'Envoyer le message'}
+          {#if loading}Envoie en cours...{:else}Envoyer le message{/if}
         </button>
       </form>
     </div>
