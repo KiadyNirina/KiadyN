@@ -23,27 +23,27 @@
           <div class="text-gray-900 dark:text-gray-300">
             Je suis RAMBELOSON Kiady Nirina, un jeune développeur web de Madagascar 🇲🇬, passionné par la création de solutions digitales innovantes 💡. Je travaille avec 
             <div class="flex items-center">
-              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
+              <span class="bg-gray-200 dark:bg-gray-800 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
                 <Icon icon="mdi:code" class="mr-1"/> PHP
               </span> , 
-              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
+              <span class="bg-gray-200 dark:bg-gray-800 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
                 <Icon icon="mdi:code" class="mr-1"/> JavaScript
               </span> , 
-              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
+              <span class="bg-gray-200 dark:bg-gray-800 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
                 <Icon icon="mdi:code" class="mr-1"/> Python
               </span> 
             </div> et des frameworks comme 
             <div class="flex items-center">
-              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
+              <span class="bg-gray-200 dark:bg-gray-800 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
                 <Icon icon="mdi:code" class="mr-1"/> Laravel
               </span> , 
-              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
+              <span class="bg-gray-200 dark:bg-gray-800 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
                 <Icon icon="mdi:code" class="mr-1"/> Django
               </span> , 
-              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
+              <span class="bg-gray-200 dark:bg-gray-800 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
                 <Icon icon="mdi:code" class="mr-1"/> Vue.js
               </span> et 
-              <span class="bg-gray-200 dark:bg-gray-900 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
+              <span class="bg-gray-200 dark:bg-gray-800 px-2 py-1 flex items-center w-auto rounded-full mr-1 ml-1 text-xs sm:text-sm">
                 <Icon icon="mdi:code" class="mr-1"/> Svelte
               </span>.
             </div>

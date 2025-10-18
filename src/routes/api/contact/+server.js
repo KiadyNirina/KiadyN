@@ -55,19 +55,52 @@ export async function POST({ request }) {
 
     // ✅ 2️⃣ Email de confirmation envoyé à l’expéditeur
     await transporter.sendMail({
-      from: `"${name}" <${EMAIL_USER}>`,
+      from: `TeamKn <${EMAIL_USER}>`,
       to: email,
       subject: 'Confirmation de réception de votre message',
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px;">
-          <h2>Merci pour votre message 🙏</h2>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; color: #333; line-height: 1.6;">
           <p>Bonjour <strong>${name}</strong>,</p>
-          <p>J’ai bien reçu votre message concernant <em>"${subject}"</em>. Je vous répondrai dans les plus brefs délais.</p>
-          <div style="background:#f5f5f5;padding:15px;border-radius:5px;margin:15px 0;">
-            <strong>Votre message :</strong><br>
+
+          <p>
+            Ceci est un e-mail de confirmation automatique pour vous informer que 
+            j’ai bien reçu votre message envoyé via le formulaire de contact de mon 
+            <strong>portfolio</strong>.
+          </p>
+
+          <p>
+            Votre message concernait : <em>"${subject || 'Sans sujet'}"</em>.<br>
+            Je prendrai le temps de le lire attentivement et de vous répondre 
+            dans les plus brefs délais.
+          </p>
+
+          <div style="background: #f8f9fa; padding: 15px; border-left: 4px solid #0d6efd; border-radius: 5px; margin: 20px 0;">
+            <strong>📝 Contenu de votre message :</strong><br>
             ${message.replace(/\n/g, '<br>')}
           </div>
-          <p>Cordialement,<br><strong>Kiady — Développeur Web</strong></p>
+
+          <p>
+            Merci encore pour votre intérêt et votre confiance.<br>
+            À très bientôt !
+          </p>
+
+           <p style="margin-top: 40px;">
+            Cordialement,
+          </p>
+
+          <p style="margin-top: 10px;">
+            <strong>TeamKn</strong><br>
+            <span>Développeur Web Fullstack</span><br>
+            E-mail : <a href="mailto:${EMAIL_USER}" style="color: #0d6efd; text-decoration: none;">${EMAIL_USER}</a><br>
+            Tel : +261 34 10 394 90<br>
+            Site web : <a href="https://kiadynirina.netlify.app" style="color: #0d6efd; text-decoration: none;">kiadynirina.netlify.app</a>
+          </p>
+
+          <hr style="margin: 30px 0; border: none; border-top: 1px solid #ddd;">
+          <p style="font-size: 13px; color: #777;">
+            Cet e-mail vous a été envoyé automatiquement suite à la soumission du formulaire de contact sur le portfolio de Kiady. 
+            Merci de ne pas y répondre directement.
+          </p>
         </div>
       `
     });
