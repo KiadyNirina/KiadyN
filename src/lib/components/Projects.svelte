@@ -210,7 +210,7 @@
                 <div 
                     in:slide={{ delay: index * 100, duration: 500, easing: quintOut }}
                     out:fade={{ duration: 300 }}
-                    class="bg-white dark:bg-black rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 dark:shadow-gray-900"
+                    class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 dark:shadow-gray-800"
                 >
                     <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
                     <div class="p-6">
@@ -218,7 +218,7 @@
                         <p class="text-gray-600 text-base dark:text-gray-400 mb-4">{project.description}</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             {#each project.tech as tech}
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-900 text-sm rounded-full">{tech}</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-full">{tech}</span>
                             {/each}
                         </div>
                         <div 
@@ -250,7 +250,7 @@
                                 direction: sliderDirection > 0 ? 'right' : 'left'
                             }}
                             out:fade={{ duration: 300 }}
-                            class="bg-white dark:bg-black rounded-xl overflow-hidden shadow-lg dark:shadow-gray-900"
+                            class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg dark:shadow-gray-800"
                         >
                             <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
                             <div class="p-6">
@@ -258,7 +258,7 @@
                                 <p class="text-gray-600 text-base dark:text-gray-400 mb-4">{project.description}</p>
                                 <div class="flex flex-wrap gap-2 mb-4">
                                     {#each project.tech as tech}
-                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-900 text-xs rounded-full">{tech}</span>
+                                        <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs rounded-full">{tech}</span>
                                     {/each}
                                 </div>
                                 <div 

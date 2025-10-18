@@ -90,7 +90,7 @@
               id="name" 
               name="name" 
               bind:value={name}
-              class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
+              class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800"
               placeholder="Votre nom"
               required
             />
@@ -100,7 +100,7 @@
             <input 
               type="email" 
               id="email" 
-              class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
+              class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800"
               placeholder="votre@email.com"
               name="email"
               bind:value={email}
@@ -114,7 +114,7 @@
           <input 
             type="text" 
             id="subject" 
-            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
+            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800"
             placeholder="Objet du message"
             name="subject"
             bind:value={subject}
@@ -126,7 +126,7 @@
           <textarea 
             id="message" 
             rows="5"
-            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-900"
+            class="w-full px-4 py-2 border border-gray-300 dark:border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800"
             placeholder="Votre message..."
             name="message"
             bind:value={message}

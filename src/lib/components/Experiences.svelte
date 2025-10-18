@@ -139,7 +139,7 @@
                 </p>
                 <div class="mt-3 flex flex-wrap gap-2">
                   {#each exp.technologies as tech}
-                    <span class="px-2 py-1 bg-gray-200 dark:bg-gray-900 text-xs rounded-full dark:text-gray-200 text-gray-800">
+                    <span class="px-2 py-1 bg-gray-200 dark:bg-gray-800 text-xs rounded-full dark:text-gray-200 text-gray-800">
                       {tech}
                     </span>
                   {/each}
