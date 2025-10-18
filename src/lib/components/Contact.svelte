@@ -1,4 +1,6 @@
 <script>
+  import { fade, slide } from 'svelte/transition';
+
   let name = '';
   let email = '';
   let subject = '';
@@ -36,12 +38,16 @@
           subject = '';
           message = '';
         }, 300);
+
+        setTimeout(() => (success = ''), 3500);
       } else {
         error = data.error || 'Une erreur est survenue lors de l’envoi.';
+        setTimeout(() => (error = ''), 3500);
       }
     } catch (err) {
       console.error('Erreur réseau:', err);
       error = 'Impossible de contacter le serveur.';
+      setTimeout(() => (error = ''), 3500);
     } finally {
       loading = false;
     }
@@ -58,11 +64,19 @@
       Remplissez le formulaire ou contactez-moi via mes réseaux sociaux !</p>
 
       {#if success}
-        <div class="p-[10px] bg-green-500 text-white rounded-lg mb-[20px] text-center">
+        <div
+          class="p-[10px] bg-green-500 text-white rounded-lg mb-[20px] text-center shadow-md"
+          in:fade={{ duration: 300 }}
+          out:slide={{ duration: 400 }}
+        >
           ✓ {success}
         </div>
       {:else if error}
-        <div class="p-[10px] bg-red-500 text-white rounded-lg mb-[20px] text-center">
+        <div
+          class="p-[10px] bg-red-500 text-white rounded-lg mb-[20px] text-center shadow-md"
+          in:fade={{ duration: 300 }}
+          out:slide={{ duration: 400 }}
+        >
           ⚠ {error}
         </div>
       {/if}
@@ -124,7 +138,7 @@
           class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed" 
           disabled={loading}
         >
-          {#if loading}Envoie en cours...{:else}Envoyer le message{/if}
+          {#if loading}Envoi en cours...{:else}Envoyer le message{/if}
         </button>
       </form>
     </div>
