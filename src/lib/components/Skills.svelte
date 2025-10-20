@@ -62,7 +62,10 @@
     import Icon from '@iconify/svelte';
 
     const skills = [
+        { name: 'HTML', icon: 'simple-icons:html5', color: 'text-orange-400', category: 'frontend' },
+        { name: 'CSS', icon: 'simple-icons:css3', color: 'text-blue-400', category: 'frontend'},
         { name: 'Tailwind', icon: 'simple-icons:tailwindcss', color: 'text-cyan-400', category: 'frontend' },
+        { name: 'Javascript', icon: 'simple-icons:javascript', color: 'text-yellow-400', category: 'frontend' },
         { name: 'Vue', icon: 'mdi:vuejs', color: 'text-green-500', category: 'frontend' },
         { name: 'Svelte', icon: 'simple-icons:svelte', color: 'text-orange-500', category: 'frontend' },
         { name: 'PHP', icon: 'simple-icons:php', color: 'text-violet-800', category: 'backend' },
@@ -73,6 +76,7 @@
         { name: 'magento', icon: 'simple-icons:magento', color: 'text-orange-500', category: 'cms' },
         { name: 'MySQL', icon: 'logos:mysql', color: 'text-blue-500', category: 'bdd' },
         { name: 'PostgreSQL', icon: 'akar-icons:postgresql-fill', color: 'text-blue-700', category: 'bdd' },
+        { name: 'Supabase', icon: 'simple-icons:supabase', color: 'text-green-500', category: 'bdd' },
         { name: 'Git', icon: 'simple-icons:git', color: 'text-red-500', category: 'tools' },
         { name: 'Postman', icon: 'simple-icons:postman', color: 'text-orange-600', category: 'tools' },
         { name: 'Docker', icon: 'simple-icons:docker', color: 'text-blue-400', category: 'tools' },
