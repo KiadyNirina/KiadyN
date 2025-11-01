@@ -5,7 +5,7 @@
     let isMenuOpen = false;
     let activeSection = ""; // par défaut
 
-    const sections = ["about", "projects", "skills", "experiences", "contact"];
+    const sections = ["about", "skills", "experiences", "projects", "contact"];
 
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
@@ -60,15 +60,15 @@
                 >
                     <Icon icon={
                         section === "about" ? "ix:about" :
-                        section === "projects" ? "tabler:code" :
                         section === "skills" ? "mdi:tools" :
                         section === "experiences" ? "pajamas:work" :
+                        section === "projects" ? "tabler:code" :
                         "hugeicons:contact-02"
                     } width="15" class="mr-1"/>
                     {section === "about" ? "À propos" :
-                    section === "projects" ? "Projets" :
                     section === "skills" ? "Compétences" :
                     section === "experiences" ? "Expériences" :
+                    section === "projects" ? "Projets" :
                     "Contact"}
                 </a>
             {/each}
@@ -87,15 +87,15 @@
                         >
                             <Icon icon={
                                 section === "about" ? "ix:about" :
-                                section === "projects" ? "tabler:code" :
                                 section === "skills" ? "mdi:tools" :
                                 section === "experiences" ? "pajamas:work" :
+                                section === "projects" ? "tabler:code" :
                                 "hugeicons:contact-02"
                             } width="15" class="mr-1"/>
                             {section === "about" ? "À propos" :
-                            section === "projects" ? "Projets" :
                             section === "skills" ? "Compétences" :
                             section === "experiences" ? "Expériences" :
+                            section === "projects" ? "Projets" :
                             "Contact"}
                         </a>
                     {/each}
