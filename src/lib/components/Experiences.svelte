@@ -133,26 +133,26 @@
                     {exp.company}
                   </h4>
                 </div>
-                <div class="text-sm text-gray-800 dark:text-gray-400 flex items-center mt-2">
+                <div class="text-sm text-gray-600 dark:text-gray-400 flex items-center mt-2">
                   <Icon icon="mdi:map-marker" class="mr-1 animate-bounce" />
                   <span>
                     {exp.localisation}
                   </span>
                 </div>
-                <div class="text-sm text-gray-800 dark:text-gray-400 flex items-center mt-1">
+                <div class="text-sm text-gray-600 dark:text-gray-400 flex items-center mt-1">
                   <Icon icon="mdi:clock-outline" class="mr-1 animate-bounce" />
                   <span>
                     {calculateDuration(exp.period)}
                   </span>
                 </div>
-                <div class="text-sm text-gray-800 dark:text-gray-400 flex items-center mt-1">
+                <div class="text-sm text-gray-600 dark:text-gray-400 flex items-center mt-1">
                   <Icon icon="mdi:calendar-clock" class="mr-1 animate-bounce" />
                   <span>
                     {exp.workSchedule}
                   </span>
                 </div>
 
-                <p class="text-gray-600 dark:text-gray-300 mt-4 mb-5 text-base">
+                <p class="text-gray-800 dark:text-gray-300 mt-4 mb-5 text-base">
                   {#each Array.isArray(exp.description) ? exp.description : [exp.description] as desc}
                     <ul>
                       <li class="list-disc ml-5 mb-2">{@html desc}</li>
