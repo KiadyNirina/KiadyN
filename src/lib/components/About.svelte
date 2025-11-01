@@ -2,7 +2,7 @@
   import Icon from "@iconify/svelte";
 </script>
 
-<section id="about" class="py-20 mt-20 mb-20">
+<section id="about" class="py-20 mt-10 mb-10">
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-12">
         <span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">À propos</span>

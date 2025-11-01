@@ -54,7 +54,7 @@
   }
 </script>
 
-<section id="contact" class="py-20 mt-50">
+<section id="contact" class="py-20 mt-10">
     <div class="">
       <h2 class="text-4xl font-bold text-center mb-12">
         <span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">Contactez-moi</span>
