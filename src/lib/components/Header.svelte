@@ -1,11 +1,37 @@
 <script>
     import ThemeToggle from "$lib/ThemeToggle.svelte";
     import Icon from "@iconify/svelte";
+
     let isMenuOpen = false;
-    
+    let activeSection = ""; // par défaut
+
+    const sections = ["about", "projects", "skills", "experiences", "contact"];
+
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
     }
+
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        activeSection = entry.target.id;
+                    }
+                });
+            },
+            { threshold: 0.4 } // 40% visible pour être actif
+        );
+
+        sections.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        return () => observer.disconnect();
+    });
 </script>
 
 <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-sm dark:text-gray-100">
@@ -26,26 +52,26 @@
         </div>
 
         <div class="hidden md:flex items-center space-x-6">
-            <a href="#about" class="hover:text-blue-500 transition-colors flex items-center">
-                <Icon icon="ix:about" width="15" class="mr-1" />
-                À propos
-            </a>
-            <a href="#projects" class="hover:text-blue-500 transition-colors flex items-center">
-                <Icon icon="tabler:code" width="15" class="mr-1" />
-                Projets
-            </a>
-            <a href="#skills" class="hover:text-blue-500 transition-colors flex items-center">
-                <Icon icon="mdi:tools" width="15" class="mr-1" />
-                Compétences
-            </a>
-            <a href="#experiences" class="hover:text-blue-500 transition-colors flex items-center">
-                <Icon icon="pajamas:work" width="15" class="mr-1" />
-                Expériences
-            </a>
-            <a href="#contact" class="hover:text-blue-500 transition-colors flex items-center">
-                <Icon icon="hugeicons:contact-02" width="15" class="mr-1" />
-                Contact
-            </a>
+            {#each sections as section}
+                <a 
+                    href={"#" + section} 
+                    class="flex items-center transition-colors hover:text-blue-500"
+                    class:text-blue-600={activeSection === section}
+                >
+                    <Icon icon={
+                        section === "about" ? "ix:about" :
+                        section === "projects" ? "tabler:code" :
+                        section === "skills" ? "mdi:tools" :
+                        section === "experiences" ? "pajamas:work" :
+                        "hugeicons:contact-02"
+                    } width="15" class="mr-1"/>
+                    {section === "about" ? "À propos" :
+                    section === "projects" ? "Projets" :
+                    section === "skills" ? "Compétences" :
+                    section === "experiences" ? "Expériences" :
+                    "Contact"}
+                </a>
+            {/each}
             <ThemeToggle/>
         </div>
 
