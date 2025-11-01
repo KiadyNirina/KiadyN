@@ -7,9 +7,14 @@
         position: "Développeur Web Junior",
         company: "Atout Service Mada",
         type: "CDI",
+        workSchedule: "Temps plein",
         img: "atout.png",
         localisation: "Ambohimiandra, Antananarivo, Madagascar",
-        description: "Conception et développement d'applications web e-commerce basée sur Magento 2.",
+        description: [
+        "Intégration de maquettes et développement de nouvelles fonctionnalités pour sites e-commerce Magento 2.",
+        "Maintenance, correction de bugs.",
+        "Déploiement via SSH et collaboration avec l'équipe de développeurs pour assurer la cohérence des projets."
+        ],
         technologies: ["HTML / CSS", "PHP", "Magento", "MySQL", "Git"]
       },
       {
@@ -17,9 +22,14 @@
         position: "Stagiaire Développeur Web",
         company: "Atout Service Mada",
         type: "Stage",
+        workSchedule: "Temps plein",
         img: "atout.png",
         localisation: "Ambohimiandra, Antananarivo, Madagascar",
-        description: "Contribué au développement et à la maintenance d'une plateforme e-commerce et d'une application web de gestion de stock, couvrant les aspects front-end et back-end.",
+        description: [
+        "Développement et intégration front-end/back-end d'une plateforme e-commerce et d'une application de gestion de stock.",
+        "Maintenance, correction de bugs des fonctionnalités existantes.",
+        "Collaboration avec l'équipe de développeurs."
+        ],
         technologies: ["HTML / CSS", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"]
       },
       {
@@ -27,6 +37,7 @@
         position: "Freelance Développeur Web",
         company: "Divers Clients",
         type: "Freelance",
+        workSchedule: "Variable",
         localisation: "Divers Lieux",
         description: "Développement d'applications web pour divers clients.",
         technologies: ["Wordpress", "HTML", "CSS", "JavaScript", "PHP", "MySQL"]
@@ -84,9 +95,9 @@
     }
 </script>
 
-<section id="experiences" class="transition-colors duration-300 mt-50 mb-50 py-20">
+<section id="experiences" class="transition-colors duration-300 mt-10 mb-10 py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-12 dark:text-gray-100">
+      <h2 class="text-4xl font-bold text-center mb-12 dark:text-gray-100">
         <span class="border-b-4 border-blue-500 pb-2">Expériences Professionnelles</span>
       </h2>
   
@@ -122,20 +133,31 @@
                     {exp.company}
                   </h4>
                 </div>
-                <div class="text-sm text-gray-800 dark:text-gray-400 flex items-center mt-2 mb-2">
+                <div class="text-sm text-gray-600 dark:text-gray-400 flex items-center mt-2">
                   <Icon icon="mdi:map-marker" class="mr-1 animate-bounce" />
                   <span>
                     {exp.localisation}
                   </span>
                 </div>
-                <div class="text-sm text-gray-800 dark:text-gray-400 flex items-center mt-2">
+                <div class="text-sm text-gray-600 dark:text-gray-400 flex items-center mt-1">
                   <Icon icon="mdi:clock-outline" class="mr-1 animate-bounce" />
                   <span>
                     {calculateDuration(exp.period)}
                   </span>
                 </div>
-                <p class="text-gray-600 dark:text-gray-300 mt-4 mb-4 text-base">
-                  {exp.description}
+                <div class="text-sm text-gray-600 dark:text-gray-400 flex items-center mt-1">
+                  <Icon icon="mdi:calendar-clock" class="mr-1 animate-bounce" />
+                  <span>
+                    {exp.workSchedule}
+                  </span>
+                </div>
+
+                <p class="text-gray-800 dark:text-gray-300 mt-4 mb-5 text-base">
+                  {#each Array.isArray(exp.description) ? exp.description : [exp.description] as desc}
+                    <ul>
+                      <li class="list-disc ml-5 mb-2">{@html desc}</li>
+                    </ul>
+                  {/each}
                 </p>
                 <div class="mt-3 flex flex-wrap gap-2">
                   {#each exp.technologies as tech}
@@ -151,5 +173,5 @@
       </div>
     </div>
 </section>
-  
+
   

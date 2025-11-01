@@ -28,6 +28,8 @@
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						animated = { ...animated, [entry.target.id]: true };
+					} else {
+						animated = { ...animated, [entry.target.id]: false };
 					}
 				});
 			},
