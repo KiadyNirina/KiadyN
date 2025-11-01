@@ -17,7 +17,7 @@
         </div>
         
         <div class="text-center md:text-left">
-          <h3 class="text-xl font-bold mb-4">Réseaux sociaux</h3>
+          <h3 class="text-2xl font-bold mb-4">Réseaux sociaux</h3>
           <div class="flex space-x-4 justify-center md:justify-start">
             <a href="https://www.facebook.com/kiady.rambeloson" class="text-gray-400 hover:text-blue-600 transition-colors" target="_blank">
               <Icon icon="mage:facebook" class="text-4xl" />

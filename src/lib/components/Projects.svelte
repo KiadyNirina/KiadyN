@@ -200,7 +200,7 @@
 </script>
 
 <section id="projects" class="py-20 mt-50 mb-50">
-    <h2 class="text-3xl font-bold text-center mb-12">
+    <h2 class="text-4xl font-bold text-center mb-12">
         <span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">Mes Projets</span>
     </h2>
     

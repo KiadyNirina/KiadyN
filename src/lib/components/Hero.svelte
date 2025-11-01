@@ -55,24 +55,25 @@
             />
         </div>
 
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 animate-slide-up">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-slide-up">
             <span class="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent permanent-marker-regular">
                 Transformez vos idées en réalité !
             </span>
         </h1>
         
         <div class="relative inline-block">
-            <div class="text-base text-gray-600 dark:text-gray-300 mb-8 px-4 py-2 bg-gray-400/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="text-lg text-gray-600 dark:text-gray-300 mb-8 px-4 py-2 bg-gray-400/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in" style="animation-delay: 0.2s;">
                 <div class="flex items-center">
                     <Icon icon="mdi:code" class="mr-1.5 animate-bounce" />
-                    Développeur full-stack
+                    Développeur full-stack <br>
+                    Svelte / Vue - Laravel / Django
                 </div>
             </div>
             <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-underline" style="animation-delay: 0.3s;"></div>
         </div>
 
         <div class="mt-8 animate-pulse-slow" style="animation-delay: 0.8s;">
-            <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border border-green-200 dark:border-green-800/50">
+            <span class="inline-flex items-center px-4 py-2 rounded-full text-base font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border border-green-200 dark:border-green-800/50">
                 <Icon icon="mdi:work" class="mr-1.5 animate-bounce" />
                 Ouvert à de nouveaux projets
             </span>

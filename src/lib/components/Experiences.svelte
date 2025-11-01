@@ -97,7 +97,7 @@
 
 <section id="experiences" class="transition-colors duration-300 mt-50 mb-50 py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-12 dark:text-gray-100">
+      <h2 class="text-4xl font-bold text-center mb-12 dark:text-gray-100">
         <span class="border-b-4 border-blue-500 pb-2">Expériences Professionnelles</span>
       </h2>
   
