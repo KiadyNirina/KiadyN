@@ -2,252 +2,273 @@
     import Icon from '@iconify/svelte';
 </script>
 
-<section class="relative py-28 md:py-36 overflow-hidden">
+<section class="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
+    <!-- Background Elements -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        {#each Array(15) as _, i}
-            <div class="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/80 to-transparent dark:via-blue-400/70 animate-moving-line"
-                 style="
-                    left: -{Math.random() * 100 + 100}px;
-                    width: {Math.random() * 200 + 100}px;
-                    animation-delay: {i * 0.5}s;
-                    animation-duration: {Math.random() * 10 + 10}s;
-                    top: {Math.random() * 100}%;
-                    opacity: {Math.random() * 0.7 + 0.3};
-                 "
-            ></div>
-        {/each}
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-20 dark:opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
         
-        {#each Array(20) as _, i}
-            <div class="absolute rounded-full animate-floating-star bg-blue-500/80 dark:bg-blue-400/70"
+        <!-- Animated Orbs -->
+        {#each Array(3) as _, i}
+            <div class="absolute rounded-full animate-orb-move blur-xl opacity-40 dark:opacity-20"
                  style="
-                    left: {Math.random() * 100}%;
-                    top: {Math.random() * 100}%;
-                    width: {Math.random() * 5 + 2}px;
-                    height: {Math.random() * 5 + 2}px;
-                    animation-delay: {i * 2}s;
-                    animation-duration: {Math.random() * 15 + 10}s;
-                    opacity: {Math.random() * 0.8 + 0.2};
-                    filter: blur(0.5px);
+                    width: {Math.random() * 300 + 200}px;
+                    height: {Math.random() * 300 + 200}px;
+                    background: {i === 0 ? 'linear-gradient(45deg, #3B82F6, #8B5CF6)' : i === 1 ? 'linear-gradient(45deg, #10B981, #06B6D4)' : 'linear-gradient(45deg, #F59E0B, #EF4444)'};
+                    left: {Math.random() * 60 + 20}%;
+                    top: {Math.random() * 60 + 20}%;
+                    animation-delay: {i * 7}s;
+                    animation-duration: {Math.random() * 20 + 20}s;
                  "
             ></div>
         {/each}
 
-        {#each Array(10) as _, i}
-            <div class="absolute rounded-full animate-sparkle bg-blue-400/90 dark:opacity-0"
+        <!-- Floating Particles -->
+        {#each Array(12) as _, i}
+            <div class="absolute rounded-full animate-particle-float bg-blue-500/30 dark:bg-blue-400/20"
                  style="
                     left: {Math.random() * 100}%;
                     top: {Math.random() * 100}%;
-                    width: {Math.random() * 3 + 1}px;
-                    height: {Math.random() * 3 + 1}px;
+                    width: {Math.random() * 4 + 2}px;
+                    height: {Math.random() * 4 + 2}px;
                     animation-delay: {i * 3}s;
-                    animation-duration: {Math.random() * 5 + 3}s;
+                    animation-duration: {Math.random() * 15 + 10}s;
                  "
             ></div>
         {/each}
     </div>
 
     <div class="relative text-center max-w-4xl mx-auto px-6">
-        <div class="w-24 h-24 md:w-28 md:h-28 mx-auto mb-6 rounded-full border-4 border-white/10 shadow-lg overflow-hidden animate-float">
-            <img 
-                src="/pdp1.png" 
-                alt="Kiady"
-                class="w-full h-full object-cover"
-            />
-        </div>
-
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-slide-up">
-            <span class="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent permanent-marker-regular">
-                Transformez vos idées en réalité !
-            </span>
-        </h1>
-        
-        <div class="relative inline-block">
-            <div class="text-lg text-gray-600 dark:text-gray-300 mb-8 px-4 py-2 bg-gray-400/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in" style="animation-delay: 0.2s;">
-                <div class="flex items-center">
-                    <Icon icon="mdi:code" class="mr-1.5 animate-bounce" />
-                    Développeur full-stack <br>
-                    Svelte / Vue - Laravel / Django
+        <!-- Profile Image with Modern Frame -->
+        <div class="relative mb-8 animate-slide-up flex items-center flex-col md:flex-row gap-20 justify-center" style="animation-delay: 0.1s;">
+            <div class="relative w-32 h-32 mx-auto">
+                <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 animate-spin-slow" style="animation-duration: 8s;"></div>
+                <div class="absolute inset-2 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden border-4 border-white dark:border-gray-900">
+                    <img 
+                        src="/pdp1.png" 
+                        alt="Kiady"
+                        class="w-full h-full object-cover"
+                    />
                 </div>
             </div>
-            <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-underline" style="animation-delay: 0.3s;"></div>
+            <div class="">
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-7xl font-black mb-6 animate-slide-up" style="animation-delay: 0.1s;">
+                    <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 dark:from-blue-400 dark:via-purple-400 dark:to-blue-600 bg-clip-text text-transparent">
+                        Kiady Nirina
+                    </span>
+                </h1>
+
+                <!-- Subtitle -->
+                <div class="relative mb-5 animate-slide-up" style="animation-delay: 0.2s;">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">
+                        Développeur Full-Stack
+                        <span class="block text-lg font-normal text-gray-600 dark:text-gray-400 mt-2">
+                            Créateur d'expériences digitales
+                        </span>
+                    </h2>
+                </div>
+
+                <!-- Tech Stack Badges -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in" style="animation-delay: 0.3s;">
+                    {#each ['Svelte', 'Vue.js', 'Laravel', 'Django'] as tech}
+                        <span class="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                            {tech}
+                        </span>
+                    {/each}
+                </div>
+            </div>
         </div>
 
-        <div class="mt-8 animate-pulse-slow" style="animation-delay: 0.8s;">
-            <span class="inline-flex items-center px-4 py-2 rounded-full text-base font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border border-green-200 dark:border-green-800/50">
-                <Icon icon="mdi:work" class="mr-1.5 animate-bounce" />
-                Ouvert à de nouveaux projets
+        <!-- Status Badge -->
+        <div class="mb-10">
+            <span class="animate-pulse-gentle inline-flex items-center px-6 py-3 rounded-full text-base font-semibold bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style="animation-delay: 0.4s;">
+                <div class="w-2 h-2 bg-white rounded-full mr-3 animate-ping" style="animation-duration: 2s;"></div>
+                Disponible pour nouveaux projets
             </span>
         </div>
 
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
             <a 
                 href="#projects" 
-                class="relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group animate-pop"
-                style="animation-delay: 0.4s;"
+                class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
+                style="animation-delay: 0.5s;"
             >
-                <span class="relative z-10">Voir mes projets</span>
-                <span class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300"></span>
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span class="relative z-10 flex items-center justify-center gap-3">
+                    <Icon icon="mdi:rocket-launch" class="text-xl" />
+                    Explorer mes projets
+                </span>
             </a>
             
             <a 
                 href="#contact" 
-                class="relative px-8 py-4 border-2 border-blue-500/30 text-blue-600 dark:text-blue-400 font-medium rounded-xl hover:bg-blue-50/50 dark:hover:bg-gray-800/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group animate-pop"
-                style="animation-delay: 0.5s;"
+                class="group relative px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-semibold rounded-2xl hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
+                style="animation-delay: 0.6s;"
             >
-                <span class="relative z-10 flex items-center justify-center gap-2">
-                    <Icon icon="mdi:email-fast" class="text-xl" />
-                    Me contacter
+                <span class="relative z-10 flex items-center justify-center gap-3">
+                    <Icon icon="mdi:message-text" class="text-xl" />
+                    Discutons ensemble
                 </span>
-                <span class="absolute inset-0 bg-blue-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             </a>
         </div>
 
-        <div class="flex justify-center gap-4 mt-12 animate-fade-in" style="animation-delay: 0.6s;">
-            <a href="https://github.com/KiadyNirina" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors" target="_blank">
-                <Icon icon="mdi:github" class="w-6 h-6" />
-            </a>
-            <a href="https://www.linkedin.com/in/kiady-ram-5216592a9/" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors" target="_blank">
-                <Icon icon="mdi:linkedin" class="w-6 h-6" />
-            </a>
-            <a href="https://www.facebook.com/kiady.rambeloson" class="text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors" target="_blank">
-                <Icon icon="mdi:facebook" class="w-6 h-6" />
-            </a>
+        <!-- Social Links -->
+        <div class="flex justify-center gap-6 mb-16 animate-fade-in" style="animation-delay: 0.7s;">
+            {#each [
+                { icon: 'mdi:github', href: 'https://github.com/KiadyNirina', color: 'hover:text-gray-900 dark:hover:text-white' },
+                { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', color: 'hover:text-blue-600' },
+                { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson', color: 'hover:text-blue-500' },
+                { icon: 'mdi:email', href: '#contact', color: 'hover:text-red-500' }
+            ] as social}
+                <a 
+                    href={social.href} 
+                    class={`w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg ${social.color}`}
+                    target={social.href.startsWith('http') ? '_blank' : '_self'}
+                >
+                    <Icon icon={social.icon} class="w-6 h-6" />
+                </a>
+            {/each}
         </div>
 
-        <div class="mt-16 animate-bounce" style="animation-delay: 1s;">
-            <Icon icon="mdi:chevron-double-down" class="w-8 h-8 text-gray-400 dark:text-gray-500" />
+        <!-- Scroll Indicator -->
+        <div class="animate-bounce-slow" style="animation-delay: 1s;">
+            <div class="flex flex-col items-center text-gray-400 dark:text-gray-600">
+                <span class="text-sm font-medium mb-2">Scroll pour découvrir</span>
+                <Icon icon="mdi:chevron-double-down" class="w-6 h-6" />
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-    .permanent-marker-regular {
-        font-family: "Permanent Marker", cursive;
-        font-weight: 400;
-        font-style: normal;
-    }
-
-    .animate-slide-up {
-        animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-    .animate-fade-in {
-        animation: fadeIn 1s ease-out forwards;
-    }
-    .animate-pop {
-        animation: pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    }
-    .animate-float {
-        animation: float 6s ease-in-out infinite;
-    }
-    .animate-underline {
-        animation: underline 1s ease-out forwards;
-    }
-    .animate-bounce {
-        animation: bounce 2s infinite;
-    }
-    .animate-pulse-slow {
-        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    .animate-moving-line {
-        animation: movingLine linear infinite;
-    }
-    .animate-floating-star {
-        animation: floatingStar ease-in-out infinite;
-    }
-
     @keyframes slideUp {
         from {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(60px);
         }
         to {
             opacity: 1;
             transform: translateY(0);
         }
     }
+    
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from { 
+            opacity: 0; 
+        }
+        to { 
+            opacity: 1; 
+        }
     }
+    
     @keyframes pop {
         0% {
             opacity: 0;
-            transform: scale(0.8);
+            transform: scale(0.8) translateY(20px);
         }
         50% {
-            transform: scale(1.05);
+            transform: scale(1.05) translateY(-5px);
         }
         100% {
             opacity: 1;
-            transform: scale(1);
+            transform: scale(1) translateY(0);
         }
     }
-    @keyframes float {
+    
+    @keyframes orb-move {
         0%, 100% {
-            transform: translateY(0);
+            transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+            transform: translate(50px, -30px) rotate(90deg);
         }
         50% {
-            transform: translateY(-12px);
+            transform: translate(20px, 40px) rotate(180deg);
+        }
+        75% {
+            transform: translate(-30px, -20px) rotate(270deg);
         }
     }
-    @keyframes underline {
+    
+    @keyframes particle-float {
+        0%, 100% {
+            transform: translate(0, 0);
+            opacity: 0.3;
+        }
+        50% {
+            transform: translate(20px, -20px);
+            opacity: 0.8;
+        }
+    }
+    
+    @keyframes spin-slow {
         from {
-            width: 0;
-            opacity: 0;
+            transform: rotate(0deg);
         }
         to {
-            width: 100%;
-            opacity: 1;
+            transform: rotate(360deg);
         }
     }
-    @keyframes bounce {
+    
+    @keyframes bounce-slow {
         0%, 20%, 50%, 80%, 100% {
             transform: translateY(0);
         }
         40% {
-            transform: translateY(-20px);
-        }
-        60% {
             transform: translateY(-10px);
         }
+        60% {
+            transform: translateY(-5px);
+        }
     }
-    @keyframes pulse {
+    
+    @keyframes pulse-gentle {
         0%, 100% {
-            opacity: 1;
             transform: scale(1);
+            box-shadow: 0 10px 25px -3px rgba(16, 185, 129, 0.3);
         }
         50% {
-            opacity: 0.8;
-            transform: scale(0.98);
-        }
-    }
-    @keyframes movingLine {
-        0% {
-            transform: translateX(0) scaleX(1);
-        }
-        50% {
-            transform: translateX(100vw) scaleX(0.5);
-        }
-        100% {
-            transform: translateX(200vw) scaleX(1);
-        }
-    }
-    @keyframes floatingStar {
-        0% {
-            transform: translate(0, 0) scale(1);
-            opacity: 0.7;
-        }
-        50% {
-            transform: translate(50px, 20px) scale(1.2);
-            opacity: 0.3;
-        }
-        100% {
-            transform: translate(0, 0) scale(1);
-            opacity: 0.7;
+            transform: scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.4);
         }
     }
 
-
+    .animate-slide-up {
+        animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        opacity: 0;
+    }
+    
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+        opacity: 0;
+    }
+    
+    .animate-pop {
+        animation: pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        opacity: 0;
+    }
+    
+    .animate-orb-move {
+        animation: orb-move linear infinite;
+    }
+    
+    .animate-particle-float {
+        animation: particle-float ease-in-out infinite;
+    }
+    
+    .animate-spin-slow {
+        animation: spin-slow linear infinite;
+    }
+    
+    .animate-bounce-slow {
+        animation: bounce-slow 3s infinite;
+    }
+    
+    .animate-pulse-gentle {
+        animation: pulse-gentle 3s ease-in-out infinite;
+    }
 </style>
