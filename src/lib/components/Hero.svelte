@@ -44,7 +44,7 @@
         <!-- Profile Image with Modern Frame -->
         <div class="relative mb-8 animate-slide-up flex items-center flex-col md:flex-row gap-20 justify-center" style="animation-delay: 0.1s;">
             <div class="relative w-32 h-32 mx-auto">
-                <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 to-purple-600 animate-spin-slow" style="animation-duration: 8s;"></div>
+                <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 to-green-600 animate-spin-slow" style="animation-duration: 8s;"></div>
                 <div class="absolute inset-2 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden border-4 border-white dark:border-gray-900">
                     <img 
                         src="/pdp1.png" 
@@ -56,7 +56,7 @@
             <div class="">
                 <!-- Main Heading -->
                 <h1 class="text-5xl md:text-7xl font-black mb-6 animate-slide-up" style="animation-delay: 0.1s;">
-                    <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 dark:from-blue-400 dark:via-purple-400 dark:to-blue-600 bg-clip-text text-transparent">
+                    <span class="bg-gradient-to-r from-blue-600 via-green-600 to-blue-800 dark:from-blue-400 dark:via-green-400 dark:to-blue-600 bg-clip-text text-transparent">
                         Kiady Nirina
                     </span>
                 </h1>
@@ -94,10 +94,10 @@
         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
             <a 
                 href="#projects" 
-                class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
+                class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
                 style="animation-delay: 0.5s;"
             >
-                <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span class="relative z-10 flex items-center justify-center gap-3">
                     <Icon icon="mdi:rocket-launch" class="text-xl" />
                     Explorer mes projets
