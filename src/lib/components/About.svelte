@@ -15,7 +15,7 @@
           </div>
         </div>
         
-        <div class="md:w-2/3 space-y-6 text-sm/7 md:text-base">
+        <div class="md:w-2/3 space-y-6 text-sm/7 md:text-base/7">
           <h3 class="text-2xl font-bold dark:text-gray-100 flex items-center">
             <Icon icon="mdi-laptop" class="text-2xl mr-2 animate-bounce" />
             Développeur Full-Stack Passionné
