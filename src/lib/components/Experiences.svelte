@@ -95,7 +95,7 @@
     }
 </script>
 
-<section id="experiences" class="transition-colors duration-300 mt-10 mb-10 py-20">
+<section class="transition-colors duration-300 mt-10 mb-10 py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl font-bold text-center mb-12 dark:text-gray-100">
         <span class="border-b-4 border-blue-500 pb-2">Expériences Professionnelles</span>
@@ -152,7 +152,7 @@
                   </span>
                 </div>
 
-                <p class="text-gray-800 dark:text-gray-300 mt-4 mb-5 text-base">
+                <p class="text-gray-800 dark:text-gray-300 mt-4 mb-5 text-sm md:text-base">
                   {#each Array.isArray(exp.description) ? exp.description : [exp.description] as desc}
                     <ul>
                       <li class="list-disc ml-5 mb-2">{@html desc}</li>

@@ -54,7 +54,7 @@
   }
 </script>
 
-<section id="contact" class="py-20 mt-10">
+<section class="py-20 mt-10">
     <div class="">
       <h2 class="text-4xl font-bold text-center mb-12">
         <span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">Contactez-moi</span>
@@ -68,7 +68,7 @@
 
       <!-- Formulaire -->
       <div class="max-w-2xl md:w-1/2">
-        <p class="dark:text-gray-100 text-center mb-[50px] text-base">
+        <p class="dark:text-gray-100 text-center mb-[50px] text-sm md:text-base">
           Prêt à collaborer sur votre prochain projet ? <br>
           Remplissez le formulaire ou contactez-moi via mes réseaux sociaux !
         </p>
@@ -91,7 +91,7 @@
           </div>
         {/if}
 
-        <form on:submit={handleSubmit} class="space-y-6 dark:text-gray-100">
+        <form on:submit={handleSubmit} class="space-y-6 dark:text-gray-100 text-sm md:text-base">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label for="name" class="block mb-2 font-medium">Nom *</label>

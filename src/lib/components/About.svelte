@@ -2,7 +2,7 @@
   import Icon from "@iconify/svelte";
 </script>
 
-<section id="about" class="py-20 mt-10 mb-10">
+<section class="py-20 mt-10 mb-10">
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="text-4xl font-bold text-center mb-12">
         <span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">À propos</span>
@@ -15,7 +15,7 @@
           </div>
         </div>
         
-        <div class="md:w-2/3 space-y-6 text-base/7">
+        <div class="md:w-2/3 space-y-6 text-sm/7 md:text-base/7">
           <h3 class="text-2xl font-bold dark:text-gray-100 flex items-center">
             <Icon icon="mdi-laptop" class="text-2xl mr-2 animate-bounce" />
             Développeur Full-Stack Passionné

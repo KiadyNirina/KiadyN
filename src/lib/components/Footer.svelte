@@ -2,17 +2,17 @@
     import Icon from "@iconify/svelte";
 </script>
 
-<footer id="footer" class="bg-gray-800 text-white py-12">
+<footer class="bg-gray-800 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
         
         <div class="text-center md:text-left">
           <ul class="space-y-2">
-            <li><a href="#about" class="text-base text-gray-400 hover:text-blue-600 transition-colors">À propos</a></li>
-            <li><a href="#projects" class="text-base text-gray-400 hover:text-blue-600 transition-colors">Projets</a></li>
-            <li><a href="#skills" class="text-base text-gray-400 hover:text-blue-600 transition-colors">Compétences</a></li>
-            <li><a href="#experiences" class="text-base text-gray-400 hover:text-blue-600 transition-colors">Experiences</a></li>
-            <li><a href="#contact" class="text-base text-gray-400 hover:text-blue-600 transition-colors">Contact</a></li>
+            <li><a href="#about" class="text-sm md:text-base text-gray-400 hover:text-blue-600 transition-colors">À propos</a></li>
+            <li><a href="#projects" class="text-sm md:text-base text-gray-400 hover:text-blue-600 transition-colors">Projets</a></li>
+            <li><a href="#skills" class="text-sm md:text-base text-gray-400 hover:text-blue-600 transition-colors">Compétences</a></li>
+            <li><a href="#experiences" class="text-sm md:text-base text-gray-400 hover:text-blue-600 transition-colors">Experiences</a></li>
+            <li><a href="#contact" class="text-sm md:text-base text-gray-400 hover:text-blue-600 transition-colors">Contact</a></li>
           </ul>
         </div>
         
