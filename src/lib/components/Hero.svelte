@@ -65,7 +65,7 @@
                 <div class="relative mb-5 animate-slide-up" style="animation-delay: 0.2s;">
                     <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">
                         Développeur Full-Stack
-                        <span class="block text-lg font-normal text-gray-600 dark:text-gray-400 mt-2">
+                        <span class="block text-base md:text-lg font-normal text-gray-600 dark:text-gray-400 mt-2">
                             Créateur d'expériences digitales
                         </span>
                     </h2>

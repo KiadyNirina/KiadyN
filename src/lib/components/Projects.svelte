@@ -255,7 +255,7 @@
                             <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2">{project.title}</h3>
-                                <p class="text-gray-600 text-base dark:text-gray-400 mb-4">{project.description}</p>
+                                <p class="text-gray-600 text-sm md:text-base dark:text-gray-400 mb-4">{project.description}</p>
                                 <div class="flex flex-wrap gap-2 mb-4">
                                     {#each project.tech as tech}
                                         <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs rounded-full">{tech}</span>

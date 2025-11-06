@@ -152,7 +152,7 @@
                   </span>
                 </div>
 
-                <p class="text-gray-800 dark:text-gray-300 mt-4 mb-5 text-base">
+                <p class="text-gray-800 dark:text-gray-300 mt-4 mb-5 text-sm md:text-base">
                   {#each Array.isArray(exp.description) ? exp.description : [exp.description] as desc}
                     <ul>
                       <li class="list-disc ml-5 mb-2">{@html desc}</li>
