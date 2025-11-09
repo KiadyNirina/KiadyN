@@ -76,15 +76,6 @@
                 "/eboss 6.jpg",
                 "/eboss 7.jpg",
             ]
-        },
-        {
-            type: "Projet freelance",
-            title: "MCI",
-            description: "Site vitrine pour une entreprise de comparateur d'agences immobilières",
-            tech: ["wordpress", "PHP", "MySQL"],
-            image: "/moncomparateurimmo.PNG",
-            link: "https://www.moncomparateur-immo.com/",
-            details: "Site vitrine pour une entreprise de comparateur d'agences immobilières. Utilise WordPress pour la gestion du contenu.",
         }
     ];
 
@@ -106,6 +97,8 @@
     let touchStartX = 0;
     let touchEndX = 0;
     let sliderDirection = 0;
+
+    const defaultImage = '/pic.svg';
     
     onMount(() => {
         const checkMobile = () => {
@@ -212,7 +205,7 @@
                     out:fade={{ duration: 300 }}
                     class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 dark:shadow-gray-800"
                 >
-                    <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
+                    <img src={project.image} alt={project.title} class="w-full h-48 object-cover" on:error={(e) => e.target.src = defaultImage}/>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">{project.title}</h3>
                         <p class="text-gray-600 text-base dark:text-gray-400 mb-4">{project.description}</p>
@@ -252,7 +245,7 @@
                             out:fade={{ duration: 300 }}
                             class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg dark:shadow-gray-800"
                         >
-                            <img src={project.image} alt={project.title} class="w-full h-48 object-cover" />
+                            <img src={project.image} alt={project.title} class="w-full h-48 object-cover" on:error={(e) => e.target.src = defaultImage}/>
                             <div class="p-6">
                                 <h3 class="text-xl font-bold mb-2">{project.title}</h3>
                                 <p class="text-gray-600 text-sm md:text-base dark:text-gray-400 mb-4">{project.description}</p>
@@ -379,6 +372,7 @@
                                         src={selectedProject.image} 
                                         alt={selectedProject.title} 
                                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                        on:error={(e) => e.target.src = defaultImage}
                                     />
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                                     </div>
@@ -392,6 +386,7 @@
                                                     src={img} 
                                                     alt={`Preview ${i+1}`} 
                                                     class="w-full h-20 object-cover rounded-md transition-transform duration-300 hover:scale-110"
+                                                    on:error={(e) => e.target.src = defaultImage}
                                                 />
                                             </div>
                                         {/each}
