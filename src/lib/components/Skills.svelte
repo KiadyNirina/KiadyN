@@ -1,5 +1,5 @@
 <section class="transition-colors duration-300 mt-10 mb-10 py-20">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 class="text-4xl font-bold text-center mb-12 dark:text-gray-100">
       <span class="border-b-4 border-blue-500 pb-2">Mes Compétences</span>
     </h2>
@@ -35,13 +35,13 @@
           class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6 dark:shadow-gray-800"
           use:fadeInOnScroll
         >
-          <h3 class="text-base font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 flex items-center">
             <span class={`w-3 h-3 ${section.color} rounded-full mr-3`}></span>
             {section.title}
           </h3>
 
           {#each section.subsections as sub}
-            <h4 class="text-sm font-semibold text-gray-600 dark:text-gray-300 mt-5 mb-3">{sub.subtitle}</h4>
+            <h4 class="text-base font-semibold text-gray-600 dark:text-gray-300 mt-5 mb-3">{sub.subtitle}</h4>
             <div class="grid grid-cols-2 gap-2">
               {#each sub.items as skillName}
                 {#each skills.filter(skill => skill.name === skillName) as skill}
@@ -50,7 +50,7 @@
                     use:fadeInOnScroll
                   >
                     <Icon icon={skill.icon} class="text-lg {skill.color} transition-transform duration-300 hover:scale-110" />
-                    <span class="text-xs text-gray-700 dark:text-gray-300 ml-2">{skill.name}</span>
+                    <span class="text-sm text-gray-700 dark:text-gray-300 ml-2">{skill.name}</span>
                   </div>
                 {/each}
               {/each}

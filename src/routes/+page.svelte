@@ -6,6 +6,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Hero from '$lib/components/Hero.svelte';
 	import About from '$lib/components/About.svelte';
+	import Services from '$lib/components/Services.svelte'
 	import Projects from '$lib/components/Projects.svelte';
 	import Skills from '$lib/components/Skills.svelte';
     import Experiences from '$lib/components/Experiences.svelte';
@@ -15,6 +16,7 @@
     let animated = {
         hero: false,
         about: false,
+		services: false,
         projects: false,
         skills: false,
         experiences: false,
@@ -75,6 +77,10 @@
         
         <div id="about" class:animate-fade-in={animated.about}>
             <About />
+        </div>
+
+		<div id="services" class:animate-fade-in={animated.services}>
+            <Services />
         </div>
         
         <div id="skills" class:animate-fade-in={animated.skills}>

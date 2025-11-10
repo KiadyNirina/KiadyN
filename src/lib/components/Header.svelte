@@ -6,7 +6,7 @@
     let isMenuOpen = false;
     let activeSection = "hero"; // par défaut
 
-    const sections = ["hero", "about", "skills", "experiences", "projects", "contact"];
+    const sections = ["hero", "about", "services", "skills", "experiences", "projects", "contact"];
     let animated = {};
 
     let underlineStyle = { left: '0px', width: '0px' };
@@ -90,12 +90,14 @@
                 >
                     <Icon icon={
                         section === "about" ? "ix:about" :
+                        section === "services" ? "pajamas:work" :
                         section === "skills" ? "mdi:tools" :
                         section === "experiences" ? "pajamas:work" :
                         section === "projects" ? "tabler:code" :
                         "hugeicons:contact-02"
                     } width="15" class="mr-1"/>
                     {section === "about" ? "À propos" :
+                     section === "services" ? "Services" :
                      section === "skills" ? "Compétences" :
                      section === "experiences" ? "Expériences" :
                      section === "projects" ? "Projets" :
@@ -123,12 +125,14 @@
                     >
                         <Icon icon={
                             section === "about" ? "ix:about" :
+                            section === "services" ? "pajamas:work" :
                             section === "skills" ? "mdi:tools" :
                             section === "experiences" ? "pajamas:work" :
                             section === "projects" ? "tabler:code" :
                             "hugeicons:contact-02"
                         } width="15" class="mr-1"/>
                         {section === "about" ? "À propos" :
+                        section === "services" ? "Services" :
                         section === "skills" ? "Compétences" :
                         section === "experiences" ? "Expériences" :
                         section === "projects" ? "Projets" :
