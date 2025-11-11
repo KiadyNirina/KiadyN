@@ -10,6 +10,7 @@
 	import Projects from '$lib/components/Projects.svelte';
 	import Skills from '$lib/components/Skills.svelte';
     import Experiences from '$lib/components/Experiences.svelte';
+	import Cta from '$lib/components/Cta.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
@@ -20,6 +21,7 @@
         projects: false,
         skills: false,
         experiences: false,
+		cta: false,
         contact: false
     };
 
@@ -94,6 +96,10 @@
 	<div id="projects" class:animate-fade-in={animated.projects}>
             <Projects />
         </div>
+
+		<div id="cta" class:animate-fade-in={animated.cta}>
+			<Cta />
+		</div>
         
         <div id="contact" class:animate-fade-in={animated.contact}>
             <Contact />
