@@ -8,47 +8,48 @@
 			title: "Site Vitrine",
 			gradient: "from-blue-500 to-purple-600",
 			description:
-				"Présence en ligne professionnelle avec design moderne, responsive et optimisé pour le référencement.",
-			features: [
-				"Design responsive",
-				"SEO optimisé",
-				"Performance maximale",
-				"Maintenance incluse",
-			],
+				"Création de sites modernes et élégants pour valoriser votre activité en ligne.",
+			features: ["Design soigné", "Navigation fluide", "Optimisé SEO"],
 		},
 		{
 			icon: "mdi:cloud",
-			title: "Application SaaS",
+			title: "Application Web",
 			gradient: "from-green-500 to-emerald-600",
 			description:
-				"Solutions logicielles cloud scalables avec architecture moderne et fonctionnalités avancées.",
-			features: [
-				"Architecture scalable",
-				"API RESTful",
-				"Base de données",
-				"Dashboard admin",
-			],
+				"Développement d’applications en ligne performantes et évolutives pour vos besoins métiers.",
+			features: ["Interface intuitive", "Gestion des données", "Espace sécurisé"],
 		},
 		{
 			icon: "mdi:shopping",
 			title: "E-commerce",
 			gradient: "from-purple-500 to-pink-600",
 			description:
-				"Boutiques en ligne performantes avec gestion des stocks, paiements sécurisés et expérience utilisateur optimisée.",
-			features: [
-				"Paiements sécurisés",
-				"Gestion stocks",
-				"SEO e-commerce",
-				"Analytics",
-			],
+				"Création de boutiques en ligne efficaces pour vendre vos produits facilement.",
+			features: ["Paiements sécurisés", "Gestion produits", "Suivi des ventes"],
+		},
+		{
+			icon: "mdi:layers",
+			title: "Intégration & Automatisation",
+			gradient: "from-orange-500 to-yellow-600",
+			description:
+				"Connexion fluide entre vos outils et automatisation de vos processus quotidiens.",
+			features: ["Flux automatisés", "Intégration API", "Gain de temps"],
+		},
+		{
+			icon: "mdi:brush",
+			title: "UI/UX Design",
+			gradient: "from-pink-500 to-rose-600",
+			description:
+				"Conception d’expériences utilisateurs agréables et cohérentes avec votre image.",
+			features: ["Wireframes", "Prototypes", "Identité visuelle"],
 		},
 		{
 			icon: "mdi:tools",
 			title: "Maintenance & Support",
 			gradient: "from-teal-500 to-cyan-600",
 			description:
-				"Services de maintenance continue, optimisation des performances et support technique réactif.",
-			features: ["Support 24/7", "Mises à jour", "Sécurité", "Backups"],
+				"Assistance continue pour garantir la stabilité, la sécurité et les mises à jour de vos projets.",
+			features: ["Support rapide", "Mises à jour", "Sécurité renforcée"],
 		},
 	];
 </script>
@@ -62,7 +63,7 @@
 			</span>
 		</h2>
 		<p class="text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-			Des solutions digitales sur mesure pour transformer vos idées en expériences exceptionnelles
+			Des solutions sur mesure pour donner vie à vos projets numériques.
 		</p>
 	</div>
 
@@ -75,12 +76,12 @@
 			>
 				<!-- Glow Effect -->
 				<div
-					class="absolute inset-0 bg-gradient-to-r {service.gradient} rounded-3xl blur opacity-25 group-hover:opacity-75 transition-opacity duration-300"
+					class="absolute inset-0 bg-gradient-to-r {service.gradient} rounded-3xl blur opacity-10 dark:opacity-25 group-hover:opacity-20 dark:group-hover:opacity-45 transition-opacity duration-300"
 				></div>
 
 				<!-- Card -->
 				<div
-					class="relative bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform group-hover:-translate-y-2"
+					class="relative bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2"
 				>
 					<!-- Icon -->
 					<div
@@ -114,7 +115,7 @@
 	<!-- Bottom CTA -->
 	<div class="text-center mt-16" in:fade={{ duration: 600, delay: 300 }}>
 		<p class="text-base text-gray-600 dark:text-gray-300 mb-6">
-			Vous avez un projet spécifique ? Parlons-en ensemble !
+			Vous avez un projet ? Discutons de votre idée dès aujourd’hui.
 		</p>
 		<a
 			href="#contact"
