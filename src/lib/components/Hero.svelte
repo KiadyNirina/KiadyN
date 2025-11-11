@@ -122,7 +122,7 @@
                 { icon: 'mdi:github', href: 'https://github.com/KiadyNirina', color: 'hover:text-gray-900 dark:hover:text-white' },
                 { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', color: 'hover:text-blue-600' },
                 { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson', color: 'hover:text-blue-500' },
-                { icon: 'mdi:email', href: '#contact', color: 'hover:text-red-500' }
+                { icon: 'mdi:email', href: 'mailto:kiady142ram@gmail.com', color: 'hover:text-red-500' }
             ] as social}
                 <a 
                     href={social.href} 
