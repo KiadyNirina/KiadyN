@@ -4,7 +4,7 @@
     const experiences = [
       {
         period: "Mars 2025 - Présent",
-        position: "Développeur Web Junior",
+        position: "Développeur PHP",
         company: "Atout Service Mada",
         type: "CDI",
         workSchedule: "Temps plein",
@@ -15,7 +15,7 @@
         "Maintenance, correction de bugs.",
         "Déploiement via SSH et collaboration avec l'équipe de développeurs pour assurer la cohérence des projets."
         ],
-        technologies: ["HTML / CSS", "PHP", "Magento", "MySQL", "Git"]
+        technologies: ["HTML / CSS", "jQuery", "PHP", "Magento", "MySQL", "Git"]
       },
       {
         period: "Nov. 2024 - Fev. 2025",
