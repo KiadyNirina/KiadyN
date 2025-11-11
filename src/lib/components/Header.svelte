@@ -88,14 +88,6 @@
                     class="flex items-center relative z-10 px-1 py-1 transition-colors hover:text-blue-500"
                     class:text-blue-600={activeSection === section}
                 >
-                    <Icon icon={
-                        section === "about" ? "ix:about" :
-                        section === "services" ? "pajamas:work" :
-                        section === "skills" ? "mdi:tools" :
-                        section === "experiences" ? "pajamas:work" :
-                        section === "projects" ? "tabler:code" :
-                        "hugeicons:contact-02"
-                    } width="15" class="mr-1"/>
                     {section === "about" ? "À propos" :
                      section === "services" ? "Services" :
                      section === "skills" ? "Compétences" :
@@ -123,14 +115,6 @@
                         class:text-blue-600={activeSection === section}
                         on:click={toggleMenu}
                     >
-                        <Icon icon={
-                            section === "about" ? "ix:about" :
-                            section === "services" ? "pajamas:work" :
-                            section === "skills" ? "mdi:tools" :
-                            section === "experiences" ? "pajamas:work" :
-                            section === "projects" ? "tabler:code" :
-                            "hugeicons:contact-02"
-                        } width="15" class="mr-1"/>
                         {section === "about" ? "À propos" :
                         section === "services" ? "Services" :
                         section === "skills" ? "Compétences" :
