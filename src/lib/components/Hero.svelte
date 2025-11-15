@@ -3,43 +3,6 @@
 </script>
 
 <section class="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <!-- Grid Pattern -->
-        <div class="absolute inset-0 opacity-20 dark:opacity-10">
-            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0); background-size: 40px 40px;"></div>
-        </div>
-        
-        <!-- Animated Orbs -->
-        {#each Array(3) as _, i}
-            <div class="absolute rounded-full animate-orb-move blur-xl opacity-40 dark:opacity-20"
-                 style="
-                    width: {Math.random() * 300 + 200}px;
-                    height: {Math.random() * 300 + 200}px;
-                    background: {i === 0 ? 'linear-gradient(45deg, #3B82F6, #8B5CF6)' : i === 1 ? 'linear-gradient(45deg, #10B981, #06B6D4)' : 'linear-gradient(45deg, #F59E0B, #EF4444)'};
-                    left: {Math.random() * 60 + 20}%;
-                    top: {Math.random() * 60 + 20}%;
-                    animation-delay: {i * 7}s;
-                    animation-duration: {Math.random() * 20 + 20}s;
-                 "
-            ></div>
-        {/each}
-
-        <!-- Floating Particles -->
-        {#each Array(12) as _, i}
-            <div class="absolute rounded-full animate-particle-float bg-blue-500/30 dark:bg-blue-400/20"
-                 style="
-                    left: {Math.random() * 100}%;
-                    top: {Math.random() * 100}%;
-                    width: {Math.random() * 4 + 2}px;
-                    height: {Math.random() * 4 + 2}px;
-                    animation-delay: {i * 3}s;
-                    animation-duration: {Math.random() * 15 + 10}s;
-                 "
-            ></div>
-        {/each}
-    </div>
-
     <div class="relative text-center max-w-4xl mx-auto px-6">
         <!-- Profile Image with Modern Frame -->
         <div class="relative mb-8 animate-slide-up flex items-center flex-col md:flex-row gap-20 justify-center" style="animation-delay: 0.1s;">
