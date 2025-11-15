@@ -30,7 +30,7 @@
 
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-10 mb-10">
 	<!-- Section Header -->
-	<div class="text-center mb-16" in:fade={{ duration: 400 }}>
+	<div class="text-center mb-5" in:fade={{ duration: 400 }}>
 		<h2 class="text-4xl font-bold text-center mb-10">
 			<span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">
 				Mes Services
@@ -45,7 +45,7 @@
 		bind:this={sliderContainer}
 		class="overflow-x-auto md:overflow-visible hide-scrollbar"
 	>
-		<div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 min-w-max md:min-w-0">
+		<div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
 			{#each services as service, i}
 				<div
