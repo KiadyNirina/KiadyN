@@ -1,63 +1,37 @@
 <script>
 	import Icon from "@iconify/svelte";
 	import { fade, fly } from "svelte/transition";
+	import { onMount } from "svelte";
 
 	const services = [
-		{
-			icon: "mdi:web",
-			title: "Site Vitrine",
-			gradient: "from-blue-500 to-purple-600",
-			description:
-				"Création de sites modernes et élégants pour valoriser votre activité en ligne.",
-			features: ["Design soigné", "Navigation fluide", "Optimisé SEO"],
-		},
-		{
-			icon: "mdi:cloud",
-			title: "Application Web",
-			gradient: "from-green-500 to-emerald-600",
-			description:
-				"Développement d’applications en ligne performantes et évolutives pour vos besoins métiers.",
-			features: ["Interface intuitive", "Gestion des données", "Espace sécurisé"],
-		},
-		{
-			icon: "mdi:shopping",
-			title: "E-commerce",
-			gradient: "from-purple-500 to-pink-600",
-			description:
-				"Création de boutiques en ligne efficaces pour vendre vos produits facilement.",
-			features: ["Paiements sécurisés", "Gestion produits", "Suivi des ventes"],
-		},
-		{
-			icon: "mdi:layers",
-			title: "Intégration & Automatisation",
-			gradient: "from-orange-500 to-yellow-600",
-			description:
-				"Connexion fluide entre vos outils et automatisation de vos processus quotidiens.",
-			features: ["Flux automatisés", "Intégration API", "Gain de temps"],
-		},
-		{
-			icon: "mdi:brush",
-			title: "UI/UX Design",
-			gradient: "from-pink-500 to-rose-600",
-			description:
-				"Conception d’expériences utilisateurs agréables et cohérentes avec votre image.",
-			features: ["Wireframes", "Prototypes", "Identité visuelle"],
-		},
-		{
-			icon: "mdi:tools",
-			title: "Maintenance & Support",
-			gradient: "from-teal-500 to-cyan-600",
-			description:
-				"Assistance continue pour garantir la stabilité, la sécurité et les mises à jour de vos projets.",
-			features: ["Support rapide", "Mises à jour", "Sécurité renforcée"],
-		},
+		{ icon: "mdi:web", title: "Site Vitrine", description: "Création de sites modernes et élégants.", features: ["Design soigné", "Navigation fluide", "Optimisé SEO"] },
+		{ icon: "mdi:cloud-outline", title: "Application Web", description: "Apps performantes et évolutives.", features: ["Interface intuitive", "Données", "Sécurisé"] },
+		{ icon: "mdi:shopping-outline", title: "E-commerce", description: "Boutiques en ligne rapides.", features: ["Paiements", "Produits", "Stats"] },
+		{ icon: "mdi:layers-outline", title: "Automatisation", description: "Workflows et API.", features: ["API", "Automation", "Gain de temps"] },
+		{ icon: "mdi:brush-outline", title: "UI/UX Design", description: "Expériences simples et cohérentes.", features: ["Wireframes", "Prototypes", "Branding"] },
+		{ icon: "mdi:tools", title: "Maintenance", description: "Support & sécurité continue.", features: ["Support", "Updates", "Sécurité"] },
 	];
+
+	let sliderContainer;
+	let autoSlideInterval;
+
+	onMount(() => {
+		autoSlideInterval = setInterval(() => {
+			scrollRight();
+		}, 4000);
+
+		return () => clearInterval(autoSlideInterval);
+	});
+
+	function scrollRight() {
+		sliderContainer.scrollBy({ left: 300, behavior: "smooth" });
+	}
 </script>
 
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-10 mb-10">
 	<!-- Section Header -->
-	<div class="text-center mb-16" in:fade={{ duration: 400 }}>
-		<h2 class="text-4xl font-bold text-center mb-12">
+	<div class="text-center mb-5" in:fade={{ duration: 400 }}>
+		<h2 class="text-4xl font-bold text-center mb-10">
 			<span class="border-b-4 border-blue-500 pb-2 dark:text-gray-100">
 				Mes Services
 			</span>
@@ -67,55 +41,43 @@
 		</p>
 	</div>
 
-	<!-- Services Grid -->
-	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-		{#each services as service, i}
-			<div
-				class="group relative"
-				in:fly={{ y: 40, duration: 600, delay: i * 150 }}
-			>
-				<!-- Glow Effect -->
-				<div
-					class="absolute inset-0 bg-gradient-to-r {service.gradient} rounded-3xl blur opacity-10 dark:opacity-25 group-hover:opacity-20 dark:group-hover:opacity-45 transition-opacity duration-300"
-				></div>
+	<div
+		bind:this={sliderContainer}
+		class="overflow-x-auto md:overflow-visible hide-scrollbar"
+	>
+		<div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-				<!-- Card -->
+			{#each services as service, i}
 				<div
-					class="relative bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-2"
+					class="flex-shrink-0 md:flex-shrink bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 w-72 md:w-auto shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+					in:fly={{ y: 35, duration: 500, delay: i * 120 }}
 				>
-					<!-- Icon -->
-					<div
-						class="w-16 h-16 bg-gradient-to-r {service.gradient} rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300"
-					>
-						<Icon icon={service.icon} class="w-8 h-8 text-white" />
+					<div class="mb-6">
+						<Icon icon={service.icon} class="w-10 h-10 text-gray-700 dark:text-gray-300" />
 					</div>
-
-					<!-- Content -->
-					<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+					<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
 						{service.title}
 					</h3>
 					<p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
 						{service.description}
 					</p>
-
-					<!-- Features -->
-					<ul class="space-y-3 mb-8">
+					<ul class="space-y-2">
 						{#each service.features as feature}
-							<li class="flex items-center text-gray-700 dark:text-gray-300">
-								<Icon icon="mdi:check-circle" class="w-5 h-5 text-green-500 mr-3" />
-								<span class="text-sm">{feature}</span>
+							<li class="flex items-center text-gray-700 dark:text-gray-300 text-sm">
+								<Icon icon="mdi:check" class="w-4 h-4 mr-2 text-gray-500" />
+								{feature}
 							</li>
 						{/each}
 					</ul>
 				</div>
-			</div>
-		{/each}
+			{/each}
+
+		</div>
 	</div>
 
-	<!-- Bottom CTA -->
-	<div class="text-center mt-16" in:fade={{ duration: 600, delay: 300 }}>
-		<p class="text-base text-gray-600 dark:text-gray-300 mb-6">
-			Vous avez un projet ? Discutons de votre idée dès aujourd’hui.
+	<div class="text-center mt-16" in:fade={{ duration: 600 }}>
+		<p class="text-gray-600 dark:text-gray-300 mb-6">
+			Vous avez un projet ? Je suis prêt à vous accompagner.
 		</p>
 		<a
 			href="#contact"
@@ -128,17 +90,12 @@
 </div>
 
 <style>
-	/* Petit effet de flottement sur le hover */
-	@keyframes float {
-		0%,
-		100% {
-			transform: translateY(0);
-		}
-		50% {
-			transform: translateY(-6px);
-		}
+	/* Scrollbar invisible */
+	.hide-scrollbar::-webkit-scrollbar {
+		display: none;
 	}
-	.group:hover {
-		animation: float 2s ease-in-out infinite;
+	.hide-scrollbar {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
 	}
 </style>
