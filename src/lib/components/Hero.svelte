@@ -4,40 +4,52 @@
 
 <section class="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
     <div class="relative text-center max-w-4xl mx-auto px-6">
-        <!-- Profile Image with Modern Frame -->
-        <div class="relative mb-8 animate-slide-up flex items-center flex-col md:flex-row gap-20 justify-center" style="animation-delay: 0.1s;">
-            <div class="relative w-32 h-32 mx-auto">
-                <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 to-green-600 animate-spin-slow" style="animation-duration: 8s;"></div>
-                <div class="absolute inset-2 rounded-2xl bg-white dark:bg-gray-900 overflow-hidden border-4 border-white dark:border-gray-900">
-                    <img 
-                        src="/pdp1.png" 
-                        alt="Kiady"
-                        class="w-full h-full object-cover"
-                    />
+        <!-- Profile Section -->
+        <div class="relative mb-12 animate-slide-up flex flex-col md:flex-row items-center gap-12 justify-center" style="animation-delay: 0.1s;">
+            <!-- Profile Image with Modern Border -->
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl opacity-20 blur group-hover:opacity-30 transition-all duration-500 animate-pulse-gentle"></div>
+                <div class="relative w-32 h-32">
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 animate-spin-slow opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="animation-duration: 8s;"></div>
+                    <div class="absolute inset-1 rounded-2xl bg-white dark:bg-gray-800 overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
+                        <img 
+                            src="/pdp1.png" 
+                            alt="Kiady"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
                 </div>
+                <!-- Animated Ring -->
+                <div class="absolute -inset-2 border-2 border-blue-400/30 rounded-3xl animate-ping-slow"></div>
             </div>
-            <div class="">
-                <!-- Main Heading -->
-                <h1 class="text-5xl md:text-7xl font-black mb-6 animate-slide-up" style="animation-delay: 0.1s;">
-                    <span class="bg-gradient-to-r from-blue-600 via-green-600 to-blue-800 dark:from-blue-400 dark:via-green-400 dark:to-blue-600 bg-clip-text text-transparent">
-                        Kiady Nirina
-                    </span>
-                </h1>
 
-                <!-- Subtitle -->
-                <div class="relative mb-5 animate-slide-up" style="animation-delay: 0.2s;">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">
-                        Développeur Full-Stack
-                        <span class="block text-base md:text-lg font-normal text-gray-600 dark:text-gray-400 mt-2">
-                            Créateur d'expériences digitales
+            <!-- Text Content -->
+            <div class="space-y-6">
+                <!-- Main Heading -->
+                <div class="space-y-4">
+                    <h1 class="text-5xl md:text-7xl font-black mb-6 animate-slide-up" style="animation-delay: 0.2s;">
+                        <span class="bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 dark:from-blue-400 dark:via-blue-300 dark:to-blue-500 bg-clip-text text-transparent">
+                            Kiady Nirina
                         </span>
-                    </h2>
+                    </h1>
+                    
+                    <!-- Title with Animated Underline -->
+                    <div class="relative inline-block">
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">
+                            Développeur Full-Stack
+                        </h2>
+                        <div class="absolute -bottom-2 left-0 w-0 h-1 bg-blue-500 group-hover:w-full transition-all duration-500 animate-expand-width"></div>
+                    </div>
+                    
+                    <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-md mx-auto mt-2">
+                        Créateur d'expériences digitales innovantes
+                    </p>
                 </div>
 
                 <!-- Tech Stack Badges -->
-                <div class="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in" style="animation-delay: 0.3s;">
+                <div class="flex flex-wrap justify-center gap-3 animate-fade-in" style="animation-delay: 0.4s;">
                     {#each ['Svelte', 'Vue.js', 'Laravel', 'Django'] as tech}
-                        <span class="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300">
+                        <span class="px-4 py-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 border border-blue-200 dark:border-blue-800/50 shadow-sm hover:shadow-lg hover:scale-105 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 group hover:bg-blue-50 dark:hover:bg-blue-900/20">
                             {tech}
                         </span>
                     {/each}
@@ -45,63 +57,70 @@
             </div>
         </div>
 
-        <!-- Status Badge -->
-        <div class="mb-10">
-            <span class="animate-pulse-gentle inline-flex items-center px-6 py-3 rounded-full text-base font-semibold bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" style="animation-delay: 0.4s;">
-                <div class="w-2 h-2 bg-white rounded-full mr-3 animate-ping" style="animation-duration: 2s;"></div>
-                Disponible pour nouveaux projets
-            </span>
+        <!-- Status Badge with Flash Animation -->
+        <div class="mb-12 animate-pop" style="animation-delay: 0.6s;">
+            <div class="relative inline-flex items-center group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300 animate-pulse-flash"></div>
+                <span class="relative inline-flex items-center px-6 py-3 rounded-full text-base font-semibold bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-400/50">
+                    <div class="w-2 h-2 bg-white rounded-full mr-3 animate-ping-fast"></div>
+                    Disponible pour nouveaux projets
+                </span>
+            </div>
         </div>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+            <!-- Primary Button -->
             <a 
                 href="#projects" 
-                class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-2xl hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
-                style="animation-delay: 0.5s;"
+                class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
+                style="animation-delay: 0.7s;"
             >
-                <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-700 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
                 <span class="relative z-10 flex items-center justify-center gap-3">
-                    <Icon icon="mdi:rocket-launch" class="text-xl" />
+                    <Icon icon="mdi:rocket-launch" class="text-xl group-hover:scale-110 transition-transform duration-300" />
                     Explorer mes projets
                 </span>
             </a>
             
+            <!-- Secondary Button -->
             <a 
                 href="#contact" 
-                class="group relative px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 font-semibold rounded-2xl hover:shadow-2xl hover:border-blue-500 dark:hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
-                style="animation-delay: 0.6s;"
+                class="group relative px-8 py-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-2 border-blue-200 dark:border-blue-800 text-gray-800 dark:text-gray-200 font-semibold rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
+                style="animation-delay: 0.8s;"
             >
+                <div class="absolute inset-0 rounded-2xl bg-blue-50 dark:bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span class="relative z-10 flex items-center justify-center gap-3">
-                    <Icon icon="mdi:message-text" class="text-xl" />
+                    <Icon icon="mdi:message-text" class="text-xl group-hover:scale-110 transition-transform duration-300" />
                     Discutons ensemble
                 </span>
             </a>
         </div>
 
         <!-- Social Links -->
-        <div class="flex justify-center gap-6 mb-16 animate-fade-in" style="animation-delay: 0.7s;">
+        <div class="flex justify-center gap-6 mb-16 animate-fade-in" style="animation-delay: 0.9s;">
             {#each [
-                { icon: 'mdi:github', href: 'https://github.com/KiadyNirina', color: 'hover:text-gray-900 dark:hover:text-white' },
-                { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', color: 'hover:text-blue-600' },
-                { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson', color: 'hover:text-blue-500' },
-                { icon: 'mdi:email', href: 'mailto:kiady142ram@gmail.com', color: 'hover:text-red-500' }
+                { icon: 'mdi:github', href: 'https://github.com/KiadyNirina', color: 'hover:bg-gray-900 hover:text-white' },
+                { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', color: 'hover:bg-blue-600 hover:text-white' },
+                { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson', color: 'hover:bg-blue-500 hover:text-white' },
+                { icon: 'mdi:email', href: 'mailto:kiady142ram@gmail.com', color: 'hover:bg-red-500 hover:text-white' }
             ] as social}
                 <a 
                     href={social.href} 
-                    class={`w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg ${social.color}`}
+                    class={`relative w-12 h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-500 dark:text-gray-400 border border-blue-200 dark:border-blue-800/50 shadow-sm transition-all duration-300 transform hover:scale-110 hover:shadow-lg ${social.color}`}
                     target={social.href.startsWith('http') ? '_blank' : '_self'}
                 >
-                    <Icon icon={social.icon} class="w-6 h-6" />
+                    <Icon icon={social.icon} class="w-5 h-5" />
                 </a>
             {/each}
         </div>
 
         <!-- Scroll Indicator -->
         <div class="animate-bounce-slow" style="animation-delay: 1s;">
-            <div class="flex flex-col items-center text-gray-400 dark:text-gray-600">
+            <div class="flex flex-col items-center text-blue-400 dark:text-blue-600">
                 <span class="text-sm font-medium mb-2">Scroll pour découvrir</span>
-                <Icon icon="mdi:chevron-double-down" class="w-6 h-6" />
+                <Icon icon="mdi:chevron-double-down" class="w-5 h-5" />
             </div>
         </div>
     </div>
@@ -142,32 +161,6 @@
         }
     }
     
-    @keyframes orb-move {
-        0%, 100% {
-            transform: translate(0, 0) rotate(0deg);
-        }
-        25% {
-            transform: translate(50px, -30px) rotate(90deg);
-        }
-        50% {
-            transform: translate(20px, 40px) rotate(180deg);
-        }
-        75% {
-            transform: translate(-30px, -20px) rotate(270deg);
-        }
-    }
-    
-    @keyframes particle-float {
-        0%, 100% {
-            transform: translate(0, 0);
-            opacity: 0.3;
-        }
-        50% {
-            transform: translate(20px, -20px);
-            opacity: 0.8;
-        }
-    }
-    
     @keyframes spin-slow {
         from {
             transform: rotate(0deg);
@@ -182,21 +175,73 @@
             transform: translateY(0);
         }
         40% {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
         }
         60% {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
     }
     
     @keyframes pulse-gentle {
         0%, 100% {
+            opacity: 0.2;
             transform: scale(1);
-            box-shadow: 0 10px 25px -3px rgba(16, 185, 129, 0.3);
         }
         50% {
-            transform: scale(1.02);
-            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.4);
+            opacity: 0.3;
+            transform: scale(1.05);
+        }
+    }
+
+    @keyframes pulse-slow {
+        0%, 100% {
+            opacity: 0.1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.2;
+            transform: scale(1.1);
+        }
+    }
+
+    @keyframes ping-fast {
+        0% {
+            transform: scale(0.8);
+            opacity: 1;
+        }
+        75%, 100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+
+    @keyframes pulse-flash {
+        0%, 100% {
+            opacity: 0.3;
+        }
+        50% {
+            opacity: 0.6;
+        }
+    }
+
+    @keyframes expand-width {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) translateX(0);
+        }
+        33% {
+            transform: translateY(-20px) translateX(10px);
+        }
+        66% {
+            transform: translateY(10px) translateX(-10px);
         }
     }
 
@@ -215,14 +260,6 @@
         opacity: 0;
     }
     
-    .animate-orb-move {
-        animation: orb-move linear infinite;
-    }
-    
-    .animate-particle-float {
-        animation: particle-float ease-in-out infinite;
-    }
-    
     .animate-spin-slow {
         animation: spin-slow linear infinite;
     }
@@ -232,6 +269,26 @@
     }
     
     .animate-pulse-gentle {
-        animation: pulse-gentle 3s ease-in-out infinite;
+        animation: pulse-gentle 4s ease-in-out infinite;
+    }
+
+    .animate-pulse-slow {
+        animation: pulse-slow 6s ease-in-out infinite;
+    }
+
+    .animate-ping-fast {
+        animation: ping-fast 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    .animate-pulse-flash {
+        animation: pulse-flash 2s ease-in-out infinite;
+    }
+
+    .animate-expand-width {
+        animation: expand-width 2s ease-out forwards;
+    }
+
+    .animate-float {
+        animation: float 8s ease-in-out infinite;
     }
 </style>
