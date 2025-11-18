@@ -152,7 +152,7 @@
                                         <div class="flex-1">
                                             <div class="flex items-center mb-2">
                                                 {#if exp.img}
-                                                    <img src={exp.img} alt={exp.company} class="w-8 h-8 mr-3 rounded-lg shadow-sm" />
+                                                    <img src={exp.img} alt={exp.company} class="w-8 h-auto mr-3 rounded-lg shadow-sm" />
                                                 {:else}
                                                     <div class="w-8 h-8 bg-gradient-to-r {exp.gradient} rounded-lg flex items-center justify-center mr-3 shadow-sm">
                                                         <Icon icon="mdi:company" class="w-4 h-4 text-white" />
