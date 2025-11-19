@@ -150,9 +150,10 @@
 			{/each}
 		</div>
 	</div>
-{:else}
+{/if}
+
 	<!-- Main Content -->
-	<div class="min-h-screen transition-colors duration-300 animate-fade-in-content">
+	<div class="min-h-screen transition-colors duration-300 animate-fade-in-content" class:hidden={isLoading}>
 		<Header />
 		
 		<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -205,7 +206,6 @@
 
 		<Footer />
 	</div>
-{/if}
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
