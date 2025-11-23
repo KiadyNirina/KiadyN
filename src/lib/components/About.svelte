@@ -22,7 +22,7 @@
             <div class="lg:w-2/5 flex justify-center">
                 <div class="relative group" in:slide={{ delay: 200, duration: 600 }}>
                     <!-- Animated Border -->
-                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full opacity-20 blur group-hover:opacity-30 transition-all duration-500 animate-pulse-gentle"></div>
+                    <div class="absolute -inset-4 bg-blue-600/70 rounded-full opacity-20 blur group-hover:opacity-30 transition-all duration-500 animate-pulse-gentle"></div>
                     
                     <!-- Main Image Container -->
                     <div class="relative bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-full shadow-2xl">
