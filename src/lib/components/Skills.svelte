@@ -16,7 +16,7 @@
       {#each [
         { title: 'Frontend', color: 'from-blue-500 to-blue-600', category: 'frontend', subsections: [
             { subtitle: 'Langages', items: ['HTML','CSS','Javascript'] },
-            { subtitle: 'Frameworks / Libs', items: ['Vue','Svelte','Tailwind'] },
+            { subtitle: 'Frameworks / Libs', items: ['Vue','Nuxt','Svelte','Sveltekit','Tailwind'] },
           ]
         },
         { title: 'Backend', color: 'from-blue-600 to-blue-700', category: 'backend', subsections: [
@@ -109,7 +109,9 @@
     { name: 'Tailwind', icon: 'simple-icons:tailwindcss', category: 'frontend' },
     { name: 'Javascript', icon: 'simple-icons:javascript', category: 'frontend' },
     { name: 'Vue', icon: 'mdi:vuejs', category: 'frontend' },
+    { name: 'Nuxt', icon: 'mdi:nuxt', category: 'frontend' },
     { name: 'Svelte', icon: 'simple-icons:svelte', category: 'frontend' },
+    { name: 'Sveltekit', icon: 'simple-icons:svelte', category: 'frontend' },
     { name: 'PHP', icon: 'simple-icons:php', category: 'backend' },
     { name: 'Laravel', icon: 'simple-icons:laravel', category: 'backend' },
     { name: 'Python', icon: 'simple-icons:python', category: 'backend' },
