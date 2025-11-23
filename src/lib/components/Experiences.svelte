@@ -16,7 +16,7 @@
         "Maintenance, correction de bugs.",
         "Déploiement via SSH et collaboration avec l'équipe de développeurs pour assurer la cohérence des projets."
         ],
-        technologies: ["HTML / CSS", "jQuery", "PHP", "Magento", "MySQL", "Git"],
+        technologies: ["Magento", "HTML / CSS", "Javascript", "PHP", "MySQL", "Git"],
         gradient: "from-blue-500 to-blue-600"
       },
       {
@@ -32,7 +32,7 @@
         "Maintenance, correction de bugs des fonctionnalités existantes.",
         "Collaboration avec l'équipe de développeurs."
         ],
-        technologies: ["HTML / CSS", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"],
+        technologies: ["HTML / CSS", "Javascript", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"],
         gradient: "from-blue-600 to-blue-700"
       },
       {
@@ -43,7 +43,7 @@
         workSchedule: "Variable",
         localisation: "Divers Lieux",
         description: "Développement d'applications web pour divers clients.",
-        technologies: ["Wordpress", "HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+        technologies: ["Wordpress", "Sveltekit", "Vue", "Nuxt", "Tailwind", "Laravel", "Django"],
         gradient: "from-blue-700 to-blue-800"
       }
     ];
