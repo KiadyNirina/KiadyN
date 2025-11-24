@@ -85,6 +85,9 @@
 
     let selectedProject = null;
     let showModal = false;
+
+    let tilt = 0;
+    let isDragging = false;
     
     let currentPage = 1;
     const projectsPerPage = 6;
@@ -151,11 +154,24 @@
     }
     
     function handleTouchStart(e) {
-        touchStartX = e.changedTouches[0].screenX;
+        isDragging = true;
+        tilt = 0;
+        touchStartX = e.changedTouches[0].clientX;
+    }
+
+    function handleTouchMove(e) {
+        if (!isDragging) return;
+        const currentX = e.changedTouches[0].clientX;
+        const diff = currentX - touchStartX;
+
+        // Inclinaison max 12°
+        tilt = Math.max(-12, Math.min(12, diff / 10));
     }
     
     function handleTouchEnd(e) {
-        touchEndX = e.changedTouches[0].screenX;
+        isDragging = false;
+        touchEndX = e.changedTouches[0].clientX;
+        tilt = 0;
         handleSwipe();
     }
     
@@ -277,27 +293,23 @@
                 {/each}
             </div>
         {:else}
-            <!-- Mobile Slider -->
-            <div class="relative overflow-hidden rounded-xl md:hidden">
+            <!-- Mobile Slider avec Effet 3D -->
+            <div class="relative overflow-hidden md:hidden select-none">
                 <div 
-                    class="flex transition-transform duration-500 ease-in-out"
+                    class="flex transition-transform duration-500 ease-out"
                     style="transform: translateX(-{currentSlide * 100}%);"
                     on:touchstart={handleTouchStart}
+                    on:touchmove={handleTouchMove}
                     on:touchend={handleTouchEnd}
                 >
                     {#each projects as project, index}
-                        <div class="w-full flex-shrink-0 px-4">
+                        <div class="w-full flex-shrink-0 px-5">
                             <div 
-                                in:slide={{ 
-                                    delay: 100, 
-                                    duration: 500, 
-                                    easing: quintOut,
-                                    direction: sliderDirection > 0 ? 'right' : 'left'
-                                }}
-                                out:fade={{ duration: 300 }}
-                                class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-blue-200/50 dark:border-blue-800/50"
+                                class="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl border border-blue-200/50 dark:border-blue-800/50 transition-transform duration-300"
+                                style="transform: perspective(900px) rotateY({index === currentSlide ? tilt : 0}deg) scale({index === currentSlide ? 1 : 0.9});"
                             >
-                                <div class="relative overflow-hidden">
+                                <!-- Image -->
+                                <div class="relative overflow-hidden rounded-t-2xl">
                                     <img 
                                         src={project.image} 
                                         alt={project.title} 
@@ -306,23 +318,28 @@
                                     />
                                     <div class="absolute top-4 right-4 w-2 h-2 bg-blue-500 rounded-full animate-pulse-gentle"></div>
                                 </div>
+
+                                <!-- Content -->
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
                                         {project.title}
                                     </h3>
+
                                     <p class="text-gray-600 dark:text-gray-400 mb-4">
                                         {project.description}
                                     </p>
-                                    <div class="flex flex-wrap gap-2 mb-4">
+
+                                    <div class="flex flex-wrap gap-2 mb-5">
                                         {#each project.tech as tech}
                                             <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded-full border border-blue-200 dark:border-blue-800">
                                                 {tech}
                                             </span>
                                         {/each}
                                     </div>
+
                                     <div 
                                         on:click={() => openModal(project)} 
-                                        class="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 cursor-pointer"
+                                        class="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 cursor-pointer transition-all duration-300"
                                     >
                                         <span class="mr-2">Voir les détails</span>
                                         <Icon icon="mdi:arrow-right" class="w-4 h-4" />
@@ -332,41 +349,41 @@
                         </div>
                     {/each}
                 </div>
-                
-                <!-- Mobile Controls -->
-                <div class="flex justify-center items-center mt-6 space-x-4">
-                    <button 
-                        on:click={prevSlide}
-                        class="p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 hover:scale-110"
-                        aria-label="Projet précédent"
-                    >
-                        <Icon icon="mdi:chevron-left" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                    </button>
-                    
+
+                <button
+                    on:click={prevSlide}
+                    class="absolute top-1/2 left-3 -translate-y-1/2 
+                        p-3 bg-white/80 dark:bg-gray-800/80 rounded-full shadow-md 
+                        hover:scale-110 transition z-20">
+                    <Icon icon="mdi:chevron-left" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                </button>
+
+                <button
+                    on:click={nextSlide}
+                    class="absolute top-1/2 right-3 -translate-y-1/2 
+                        p-3 bg-white/80 dark:bg-gray-800/80 rounded-full shadow-md 
+                        hover:scale-110 transition z-20">
+                    <Icon icon="mdi:chevron-right" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                </button>
+
+                <!-- Navigation Dots + Controls -->
+                <div class="flex flex-col items-center mt-6 space-y-3">
+
                     <div class="flex space-x-2">
                         {#each projects as _, index}
                             <button 
                                 on:click={() => goToSlide(index)}
-                                class="w-2 h-2 rounded-full transition-all duration-300 {index === currentSlide ? 'bg-blue-500 scale-125' : 'bg-gray-300 dark:bg-gray-600'}"
-                                aria-label="Aller au projet {index + 1}"
+                                class="w-2.5 h-2.5 rounded-full transition-all duration-300 {index === currentSlide ? 'bg-blue-600 scale-125' : 'bg-gray-400 dark:bg-gray-600'}"
                             />
                         {/each}
                     </div>
-                    
-                    <button 
-                        on:click={nextSlide}
-                        class="p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 hover:scale-110"
-                        aria-label="Projet suivant"
-                    >
-                        <Icon icon="mdi:chevron-right" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                    </button>
-                </div>
-                
-                <div class="text-center mt-4 text-sm text-blue-600 dark:text-blue-400 font-medium">
-                    {currentSlide + 1} / {projects.length}
+
+                    <p class="text-sm text-blue-600 dark:text-blue-400 font-medium">
+                        {currentSlide + 1} / {projects.length}
+                    </p>
                 </div>
             </div>
-        {/if}
+            {/if}
 
         <!-- Pagination -->
         {#if totalPages > 1 && !isMobile}
