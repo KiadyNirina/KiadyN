@@ -3,6 +3,12 @@
 	import { fade, fly } from "svelte/transition";
 	import { onMount } from "svelte";
 
+	let sliderContainer;
+	let autoSlideInterval;
+	let servicesSection;
+	let isVisible = false;
+	let cardRef;
+
 	const services = [
 		{ 
 			icon: "mdi:web", 
@@ -48,25 +54,59 @@
 		},
 	];
 
-	let sliderContainer;
-	let autoSlideInterval;
-
-	onMount(() => {
-		autoSlideInterval = setInterval(() => {
-			scrollRight();
-		}, 4000);
-
-		return () => clearInterval(autoSlideInterval);
-	});
-
-	function scrollRight() {
-		if (sliderContainer) {
-			sliderContainer.scrollBy({ left: 300, behavior: "smooth" });
+	function setCardRef(el) {
+		if (!cardRef) {
+			cardRef = el;
 		}
 	}
+
+	function startAutoSlide() {
+		if (!autoSlideInterval) {
+			autoSlideInterval = setInterval(() => {
+				scrollRight();
+			}, 4000);
+		}
+	}
+
+	function stopAutoSlide() {
+		if (autoSlideInterval) {
+			clearInterval(autoSlideInterval);
+			autoSlideInterval = null;
+		}
+	}
+
+	function scrollRight() {
+		if (sliderContainer && cardRef) {
+			const cardWidth = cardRef.offsetWidth + 24;
+			sliderContainer.scrollBy({ left: cardWidth, behavior: "smooth" });
+		}
+	}
+
+	onMount(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const entry = entries[0];
+				if (entry.isIntersecting) {
+					isVisible = true;
+					startAutoSlide();
+				} else {
+					isVisible = false;
+					stopAutoSlide();
+				}
+			},
+			{ threshold: 0.3 }
+		);
+
+		observer.observe(servicesSection);
+
+		return () => {
+			stopAutoSlide();
+			observer.disconnect();
+		};
+	});
 </script>
 
-<section class="py-20">
+<section class="py-20" bind:this={servicesSection}>
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Section Header -->
 		<div class="text-center mb-16 animate-slide-up">
@@ -87,6 +127,7 @@
 			<div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-w-max md:min-w-0">
 				{#each services as service, i}
 					<div
+						use:setCardRef
 						class="group relative flex-shrink-0 md:flex-shrink bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-2xl p-8 w-80 md:w-auto shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
 						in:fly={{ y: 40, duration: 600, delay: i * 100 }}
 					>

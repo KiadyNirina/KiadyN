@@ -22,7 +22,7 @@
             <div class="lg:w-2/5 flex justify-center">
                 <div class="relative group" in:slide={{ delay: 200, duration: 600 }}>
                     <!-- Animated Border -->
-                    <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full opacity-20 blur group-hover:opacity-30 transition-all duration-500 animate-pulse-gentle"></div>
+                    <div class="absolute -inset-4 bg-blue-600/70 rounded-full opacity-20 blur group-hover:opacity-30 transition-all duration-500 animate-pulse-gentle"></div>
                     
                     <!-- Main Image Container -->
                     <div class="relative bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-full shadow-2xl">
@@ -63,12 +63,17 @@
                 <!-- Introduction -->
                 <div class="space-y-6 text-gray-700 dark:text-gray-300 text-base leading-relaxed">
                     <p>
-                        Je suis <span class="font-bold text-blue-600 dark:text-blue-400">RAMBELOSON Kiady Nirina</span>, un jeune développeur web de <span class="font-semibold">Madagascar 🇲🇬</span>, passionné par la création de solutions digitales innovantes 💡.
+                        Je suis <span class="font-bold text-blue-600 dark:text-blue-400">RAMBELOSON Kiady Nirina</span>, un jeune développeur web Full-Stack basé à <span class="font-semibold">Madagascar 🇲🇬</span>, passionné par la création de solutions digitales innovantes 💡.
+                    </p>
+
+                    <p>
+                        Curieux, autonome et toujours prêt à apprendre, j’aime concevoir des interfaces modernes et fluides, créer des API robustes et construire des applications capables de résoudre de vrais problèmes.  
+                        J’accorde une grande importance à <span class="font-bold text-blue-600 dark:text-blue-400">l’expérience utilisateur</span>, à <span class="font-bold text-blue-600 dark:text-blue-400">la performance</span>, et à <span class="font-bold text-blue-600 dark:text-blue-400">la qualité du code</span> que j’écris.
                     </p>
 
                     <!-- Technologies Stack -->
                     <div class="space-y-4">
-                        <p class="font-medium text-gray-900 dark:text-white">Je maîtrise plusieurs technologies :</p>
+                        <p>Je travaille avec des technologies telles que :</p>
                         
                         <!-- Languages -->
                         <div>
