@@ -25,6 +25,7 @@
             gallery: [
                 "/Cookup2.png",
                 "/Cookup3.png",
+                "/Cookup4.png",
             ],
             gradient: "from-blue-500 to-blue-600"
         },
