@@ -7,6 +7,12 @@
     const projects = [
         {
             type: "Projet personnel",
+            title: "Bookly",
+            description: "Plateforme de lecture en streaming permettant aux utilisateurs de lire et de découvrir des œuvres en ligne, n'importe où et n'importe quand.",
+            tech: ["Vue", "Tailwind CSS", "Laravel", "MySQL"],
+        },
+        {
+            type: "Projet personnel",
             title: "CookUp",
             description: "Application de suggestion de recettes de cuisine avec fonctionnalités de filtrage avancée",
             tech: ["SvelteKit", "Tailwind CSS", "Spoonacular API"],
