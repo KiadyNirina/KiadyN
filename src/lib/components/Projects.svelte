@@ -10,6 +10,7 @@
             title: "Bookly",
             description: "Plateforme de lecture en streaming permettant aux utilisateurs de lire et de découvrir des œuvres en ligne, n'importe où et n'importe quand.",
             tech: ["Vue", "Tailwind CSS", "Laravel", "MySQL"],
+            github: "https://github.com/KiadyNirina/Bookly",
             gradient: "from-blue-500 to-blue-600"
         },
         {
