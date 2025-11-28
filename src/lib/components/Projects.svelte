@@ -7,6 +7,14 @@
     const projects = [
         {
             type: "Projet personnel",
+            title: "Bookly",
+            description: "Plateforme de lecture en streaming permettant aux utilisateurs de lire et de découvrir des œuvres en ligne, n'importe où et n'importe quand.",
+            tech: ["Vue", "Tailwind CSS", "Laravel", "MySQL"],
+            github: "https://github.com/KiadyNirina/Bookly",
+            gradient: "from-blue-500 to-blue-600"
+        },
+        {
+            type: "Projet personnel",
             title: "CookUp",
             description: "Application de suggestion de recettes de cuisine avec fonctionnalités de filtrage avancée",
             tech: ["SvelteKit", "Tailwind CSS", "Spoonacular API"],
@@ -25,6 +33,7 @@
             gallery: [
                 "/Cookup2.png",
                 "/Cookup3.png",
+                "/Cookup4.png",
             ],
             gradient: "from-blue-500 to-blue-600"
         },
@@ -242,7 +251,7 @@
                         <!-- Project Image -->
                         <div class="relative overflow-hidden">
                             <img 
-                                src={project.image} 
+                                src={project.image ? project.image : defaultImage } 
                                 alt={project.title} 
                                 class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                                 on:error={(e) => e.target.src = defaultImage}
@@ -311,7 +320,7 @@
                                 <!-- Image -->
                                 <div class="relative overflow-hidden rounded-t-2xl">
                                     <img 
-                                        src={project.image} 
+                                        src={project.image ? project.image : defaultImage } 
                                         alt={project.title} 
                                         class="w-full h-48 object-cover"
                                         on:error={(e) => e.target.src = defaultImage}
@@ -463,7 +472,7 @@
                             <div class="space-y-4">
                                 <div class="relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video group">
                                     <img 
-                                        src={selectedProject.image} 
+                                        src={selectedProject.image ? selectedProject.image : defaultImage } 
                                         alt={selectedProject.title} 
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         on:error={(e) => e.target.src = defaultImage}
