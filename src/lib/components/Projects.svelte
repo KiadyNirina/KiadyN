@@ -348,80 +348,99 @@
         >
             <div 
                 transition:blur={{ amount: 10, duration: 300 }}
-                class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-y-auto shadow-2xl border border-blue-200/50 dark:border-blue-800/50"
+                class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800/30 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-y-auto shadow-2xl border-2 border-blue-200/50 dark:border-blue-800/30"
             >
-                <div class="sticky top-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 border-b border-blue-200/50 dark:border-blue-800/50 flex justify-between items-center z-10">
-                    <h2 class="text-2xl font-black bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-                        Détails du projet
-                    </h2>
-                    <button 
-                        on:click={closeModal}
-                        class="p-2 text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl transition-all duration-300 hover:scale-110"
-                        aria-label="Fermer"
-                    >
-                        <Icon icon="mdi:close" class="w-6 h-6" />
-                    </button>
-                </div>
-
+                <!-- Header -->
                 {#if selectedProject}
-                    <div class="p-8">
-                        <!-- Header -->
-                        <div class="flex justify-between items-start mb-8">
-                            <div>
-                                <h3 class="text-3xl font-black bg-gradient-to-r {selectedProject.gradient} bg-clip-text text-transparent mb-2">
-                                    {selectedProject.title}
-                                </h3>
-                                <div class="flex items-center space-x-3">
-                                    <span class="px-4 py-2 bg-gradient-to-r {selectedProject.gradient} text-white text-sm font-bold rounded-full shadow-lg animate-pulse-gentle">
-                                        {selectedProject.type}
-                                    </span>
-                                    <div class="w-2 h-2 bg-blue-500 rounded-full animate-ping-fast"></div>
+                    <div class="relative rounded-t-3xl overflow-hidden">        
+                        <!-- Header Content -->
+                        <div class="relative p-8">
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    <!-- Type Badge -->
+                                    <div class="mb-4">
+                                        <span class="inline-block px-4 py-2 bg-blue-500/10 backdrop-blur-sm text-blue-600 dark:text-blue-300 text-sm font-bold rounded-full border border-blue-500/30">
+                                            {selectedProject.type}
+                                        </span>
+                                    </div>
+                                    
+                                    <!-- Title -->
+                                    <h3 class="text-4xl md:text-5xl font-black text-gray-800 dark:text-blue-100 mb-4 tracking-tight">
+                                        {selectedProject.title}
+                                    </h3>
+
+                                    <!-- Description -->
+                                    <p class="text-gray-900/80 dark:text-blue-200/80 text-base mb-6 max-w-2xl">
+                                        {selectedProject.description}
+                                    </p>
+
+                                    <!-- Technologies -->
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        {#each selectedProject.tech as tech}
+                                            <span class="px-3 py-1 bg-blue-500/10 backdrop-blur-sm text-blue-600 dark:text-blue-300 text-sm rounded-lg border border-blue-500/30">
+                                                {tech}
+                                            </span>
+                                        {/each}
+                                    </div>
                                 </div>
+                                
+                                <!-- Close Button -->
+                                <button 
+                                    on:click={closeModal}
+                                    class="p-3 bg-blue-500/10 backdrop-blur-md hover:bg-blue-500/20 text-blue-600 dark:text-blue-300 hover:text-white rounded-xl border border-blue-500/30 transition-all duration-300 hover:scale-110 ml-4 flex-shrink-0"
+                                    aria-label="Fermer"
+                                >
+                                    <Icon icon="mdi:close" class="w-6 h-6" />
+                                </button>
                             </div>
                         </div>
+                    </div>
+                {/if}
 
+                <!-- Content -->
+                {#if selectedProject}
+                    <div class="p-8">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             <!-- Images Section -->
-                            <div class="space-y-4">
+                            <div class="space-y-6">
+                                <!-- Main Image -->
                                 <div class="relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video group">
                                     <img 
-                                        src={selectedProject.image ? selectedProject.image : defaultImage } 
-                                        alt={selectedProject.title} 
+                                        src={selectedProject.image ? selectedProject.image : defaultImage} 
+                                        alt={selectedProject.title}
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         on:error={(e) => e.target.src = defaultImage}
                                     />
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
 
+                                <!-- Gallery -->
                                 {#if selectedProject.gallery && selectedProject.gallery.length > 0}
-                                    <div class="grid grid-cols-3 gap-3">
-                                        {#each selectedProject.gallery as img, i}
-                                            <div class="cursor-pointer group/gallery hover:opacity-80 transition-all duration-300">
-                                                <img 
-                                                    src={img} 
-                                                    alt={`Preview ${i+1}`} 
-                                                    class="w-full h-20 object-cover rounded-xl transition-transform duration-300 group-hover/gallery:scale-110"
-                                                    on:error={(e) => e.target.src = defaultImage}
-                                                />
+                                    <div>
+                                        <h4 class="text-lg font-bold mb-4 flex items-center text-gray-900 dark:text-white">
+                                            <div class="w-8 h-8 bg-gradient-to-r {selectedProject.gradient} rounded-lg flex items-center justify-center mr-3">
+                                                <Icon icon="mdi:image-multiple" class="w-4 h-4 text-white" />
                                             </div>
-                                        {/each}
+                                            Galerie
+                                        </h4>
+                                        <div class="grid grid-cols-3 gap-3">
+                                            {#each selectedProject.gallery as img, i}
+                                                <div class="cursor-pointer group/gallery hover:opacity-80 transition-all duration-300">
+                                                    <img 
+                                                        src={img} 
+                                                        alt={`Preview ${i+1}`}
+                                                        class="w-full h-20 object-cover rounded-xl transition-transform duration-300 group-hover/gallery:scale-110 border border-blue-200/50 dark:border-blue-800/30"
+                                                        on:error={(e) => e.target.src = defaultImage}
+                                                    />
+                                                </div>
+                                            {/each}
+                                        </div>
                                     </div>
                                 {/if}
                             </div>
 
                             <!-- Details Section -->
                             <div class="space-y-6">
-                                <!-- Description -->
-                                <div>
-                                    <h4 class="text-lg font-bold mb-3 flex items-center text-gray-900 dark:text-white">
-                                        <div class="w-8 h-8 bg-gradient-to-r {selectedProject.gradient} rounded-lg flex items-center justify-center mr-3">
-                                            <Icon icon="mdi:information-outline" class="w-4 h-4 text-white" />
-                                        </div>
-                                        Description
-                                    </h4>
-                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{selectedProject.description}</p>
-                                </div>
-
                                 <!-- Technical Details -->
                                 {#if selectedProject.details}
                                     <div>
@@ -431,7 +450,9 @@
                                             </div>
                                             Détails techniques
                                         </h4>
-                                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{selectedProject.details}</p>
+                                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-4 rounded-xl border border-blue-200/30 dark:border-blue-800/30">
+                                            {selectedProject.details}
+                                        </p>
                                     </div>
                                 {/if}
 
@@ -444,46 +465,28 @@
                                             </div>
                                             Fonctionnalités
                                         </h4>
-                                        <ul class="space-y-2">
-                                            {#each selectedProject.functionalities as feature, i}
-                                                <li 
-                                                    in:slide={{ delay: i * 80, duration: 400 }}
-                                                    class="flex items-start text-gray-700 dark:text-gray-300"
-                                                >
-                                                    <div class="w-2 h-2 bg-gradient-to-r {selectedProject.gradient} rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-gentle"></div>
-                                                    <span>{feature}</span>
-                                                </li>
-                                            {/each}
-                                        </ul>
+                                        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-blue-200/30 dark:border-blue-800/30 p-4">
+                                            <ul class="space-y-2">
+                                                {#each selectedProject.functionalities as feature, i}
+                                                    <li 
+                                                        in:slide={{ delay: i * 80, duration: 400 }}
+                                                        class="flex items-start text-gray-700 dark:text-gray-300"
+                                                    >
+                                                        <div class="w-2 h-2 bg-gradient-to-r {selectedProject.gradient} rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-gentle"></div>
+                                                        <span>{feature}</span>
+                                                    </li>
+                                                {/each}
+                                            </ul>
+                                        </div>
                                     </div>
                                 {/if}
-
-                                <!-- Technologies -->
-                                <div>
-                                    <h4 class="text-lg font-bold mb-3 flex items-center text-gray-900 dark:text-white">
-                                        <div class="w-8 h-8 bg-gradient-to-r {selectedProject.gradient} rounded-lg flex items-center justify-center mr-3">
-                                            <Icon icon="mdi:hammer-wrench" class="w-4 h-4 text-white" />
-                                        </div>
-                                        Technologies
-                                    </h4>
-                                    <div class="flex flex-wrap gap-2">
-                                        {#each selectedProject.tech as tech, i}
-                                            <span 
-                                                in:slide={{ delay: i * 60, duration: 400 }}
-                                                class="px-4 py-2 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 text-blue-700 dark:text-blue-300 font-medium rounded-xl border border-blue-200 dark:border-blue-800 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                                            >
-                                                {tech}
-                                            </span>
-                                        {/each}
-                                    </div>
-                                </div>
 
                                 <!-- Action Buttons -->
                                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
                                     {#if selectedProject.link}
                                         <a 
                                             href={selectedProject.link} 
-                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 border border-blue-500/50"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
@@ -496,7 +499,7 @@
                                     {#if selectedProject.github}
                                         <a 
                                             href={selectedProject.github} 
-                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 border border-gray-700/50"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
