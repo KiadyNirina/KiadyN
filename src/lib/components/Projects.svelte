@@ -8,9 +8,28 @@
         {
             type: "Projet personnel",
             title: "Bookly",
-            description: "Plateforme de lecture en streaming permettant aux utilisateurs de lire et de découvrir des œuvres en ligne, n'importe où et n'importe quand.",
+            description: "Une plateforme permettant aux utilisateurs de lire des livres en streaming, de partager leurs propres œuvres (romans, poèmes, nouvelles) et de découvrir les créations d'autres passionnés.",
             tech: ["Vue", "Tailwind CSS", "Laravel", "MySQL"],
+            image:  "/1bookly.png",
+            details: `La plateforme utilise une architecture SPA + API avec Vue.js pour le frontend et Laravel pour le backend. L’authentification se fait via Sanctum et les livres sont stockés localement ou sur le cloud, avec un système de lecture en streaming paginée. La base de données (MySQL) gère les œuvres, auteurs, interactions (notes, favoris, commentaires) et la plateforme intègre un moteur de recherche ainsi qu’un module de recommandation basé sur les catégories.`,
+            functionalities: [
+                "Partage d’œuvres : upload de livres, poèmes, nouvelles, PDF ou textes.",
+                "Lecture de livres en streaming (chargement progressif, pagination dynamique).",
+                "Profil créateur : gestion des œuvres publiées, statistiques de lecture.",
+                "Classement par catégories : genres, tags, tendances, nouveautés.",
+                "Moteur de recherche : recherche par titre, auteur, catégorie, mots-clés.",
+                "Interaction utilisateur : notes, favoris, commentaires.",
+                "Sécurité & authentification : comptes utilisateurs, créateurs, login via Sanctum.",
+            ],
             github: "https://github.com/KiadyNirina/Bookly",
+            gallery: [
+                "/2bookly.png",
+                "/3bookly.png",
+                "/4bookly.png",
+                "/5bookly.png",
+                "/6bookly.png",
+                "/7bookly.png"
+            ],
             gradient: "from-blue-500 to-blue-600"
         },
         {
