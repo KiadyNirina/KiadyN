@@ -141,7 +141,7 @@
 
                             <!-- Experience Card -->
                             <div class="md:w-2/3">
-                                <div class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-blue-200/50 dark:border-blue-800/50 transition-all duration-500 hover:-translate-y-1">
+                                <div class="group relative bg-white dark:bg-gray-800 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-blue-200/50 dark:border-blue-800/50 transition-all duration-500 hover:-translate-y-1">
                                     <!-- Animated Border -->
                                     <div class="absolute inset-0 rounded-2xl bg-gradient-to-r {exp.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
                                         <div class="absolute inset-[2px] rounded-2xl bg-white dark:bg-gray-800"></div>
