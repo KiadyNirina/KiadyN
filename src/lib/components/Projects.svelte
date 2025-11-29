@@ -235,194 +235,107 @@
         </div>
         
         <!-- Projects Grid -->
-        {#if !isMobile}
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {#each paginatedProjects as project, index}
-                    <div 
-                        in:slide={{ delay: index * 100, duration: 500, easing: quintOut }}
-                        out:fade={{ duration: 300 }}
-                        class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-blue-200/50 dark:border-blue-800/50 transition-all duration-500 hover:-translate-y-2"
-                    >
-                        <!-- Animated Border -->
-                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-r {project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
-                            <div class="absolute inset-[2px] rounded-2xl bg-white dark:bg-gray-800"></div>
-                        </div>
-
-                        <!-- Project Image -->
-                        <div class="relative overflow-hidden">
-                            <img 
-                                src={project.image ? project.image : defaultImage } 
-                                alt={project.title} 
-                                class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-                                on:error={(e) => e.target.src = defaultImage}
-                            />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <span class="text-white text-sm font-medium bg-blue-500 px-3 py-1 rounded-full">
-                                    {project.type}
-                                </span>
-                            </div>
-                            <!-- Floating Dot -->
-                            <div class="absolute top-4 right-4 w-3 h-3 bg-blue-500 rounded-full animate-pulse-gentle"></div>
-                        </div>
-
-                        <!-- Project Content -->
-                        <div class="p-6 relative z-10">
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                                {project.title}
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-                                {project.description}
-                            </p>
-                            
-                            <!-- Technologies -->
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                {#each project.tech as tech, i}
-                                    <span 
-                                        class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded-full border border-blue-200 dark:border-blue-800 transition-all duration-300 hover:scale-105"
-                                        style="animation-delay: {i * 0.1}s;"
-                                    >
-                                        {tech}
-                                    </span>
-                                {/each}
-                            </div>
-
-                            <!-- CTA Button -->
-                            <div 
-                                on:click={() => openModal(project)} 
-                                class="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-300 group/btn cursor-pointer"
-                            >
-                                <span class="mr-2">Voir les détails</span>
-                                <Icon icon="mdi:arrow-right" class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300" />
-                            </div>
-                        </div>
-
-                        <!-- Hover Effect -->
-                        <div class="absolute inset-0 rounded-2xl bg-blue-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
-                    </div>
-                {/each}
-            </div>
-        {:else}
-            <!-- Mobile Slider avec Effet 3D -->
-            <div class="relative overflow-hidden md:hidden select-none">
+        <div class="relative">
+            <!-- Main Slider -->
+            <div class="overflow-hidden">
                 <div 
-                    class="flex transition-transform duration-500 ease-out"
+                    class="flex transition-transform duration-700 ease-out"
                     style="transform: translateX(-{currentSlide * 100}%);"
-                    on:touchstart={handleTouchStart}
-                    on:touchmove={handleTouchMove}
-                    on:touchend={handleTouchEnd}
                 >
                     {#each projects as project, index}
-                        <div class="w-full flex-shrink-0 px-5">
+                        <div class="w-full flex-shrink-0 px-1">
                             <div 
-                                class="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl border border-blue-200/50 dark:border-blue-800/50 transition-transform duration-300"
-                                style="transform: perspective(900px) rotateY({index === currentSlide ? tilt : 0}deg) scale({index === currentSlide ? 1 : 0.9});"
+                                class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800/30 rounded-3xl overflow-hidden shadow-2xl border-2 border-blue-200/50 dark:border-blue-800/30 hover:border-blue-500/70 transition-all duration-500 max-w-5xl mx-auto"
+                                style="height: 500px;"
                             >
-                                <!-- Image -->
-                                <div class="relative overflow-hidden rounded-t-2xl">
+                                <!-- Background Image with Overlay -->
+                                <div class="absolute inset-0">
                                     <img 
                                         src={project.image ? project.image : defaultImage } 
                                         alt={project.title} 
-                                        class="w-full h-48 object-cover"
+                                        class="w-full h-full object-cover transition-opacity duration-500"
                                         on:error={(e) => e.target.src = defaultImage}
                                     />
-                                    <div class="absolute top-4 right-4 w-2 h-2 bg-blue-500 rounded-full animate-pulse-gentle"></div>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 dark:from-gray-900 via-gray-900/90 to-transparent"></div>
                                 </div>
 
                                 <!-- Content -->
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                                <div class="relative h-full flex flex-col justify-end p-10">
+                                    <!-- Type Badge -->
+                                    <div class="mb-4">
+                                        <span class="inline-block px-4 py-2 bg-blue-500/10 backdrop-blur-sm text-blue-300 dark:text-blue-300 text-sm font-bold rounded-full border border-blue-500/30">
+                                            {project.type}
+                                        </span>
+                                    </div>
+
+                                    <!-- Title -->
+                                    <h3 class="text-4xl md:text-5xl font-black text-blue-100 dark:text-blue-100 mb-4 tracking-tight">
                                         {project.title}
                                     </h3>
 
-                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    <!-- Description -->
+                                    <p class="text-blue-200/80 dark:text-blue-200/80 text-base mb-6 max-w-2xl">
                                         {project.description}
                                     </p>
 
-                                    <div class="flex flex-wrap gap-2 mb-5">
+                                    <!-- Technologies -->
+                                    <div class="flex flex-wrap gap-2 mb-6">
                                         {#each project.tech as tech}
-                                            <span class="px-2 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded-full border border-blue-200 dark:border-blue-800">
+                                            <span class="px-3 py-1 bg-blue-500/10 backdrop-blur-sm text-blue-300 dark:text-blue-300 text-sm rounded-lg border border-blue-500/30">
                                                 {tech}
                                             </span>
                                         {/each}
                                     </div>
 
-                                    <div 
-                                        on:click={() => openModal(project)} 
-                                        class="inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 cursor-pointer transition-all duration-300"
-                                    >
-                                        <span class="mr-2">Voir les détails</span>
-                                        <Icon icon="mdi:arrow-right" class="w-4 h-4" />
+                                    <!-- CTA Button -->
+                                    <div>
+                                        <button
+                                            on:click={() => openModal(project)} 
+                                            class="group/btn inline-flex items-center px-6 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/40"
+                                        >
+                                            <span class="mr-2">Voir les détails</span>
+                                            <Icon icon="mdi:arrow-right" class="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform duration-300" />
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     {/each}
                 </div>
-
-                <button
-                    on:click={prevSlide}
-                    class="absolute top-1/2 left-3 -translate-y-1/2 
-                        p-3 bg-white/80 dark:bg-gray-800/80 rounded-full shadow-md 
-                        hover:scale-110 transition z-20">
-                    <Icon icon="mdi:chevron-left" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </button>
-
-                <button
-                    on:click={nextSlide}
-                    class="absolute top-1/2 right-3 -translate-y-1/2 
-                        p-3 bg-white/80 dark:bg-gray-800/80 rounded-full shadow-md 
-                        hover:scale-110 transition z-20">
-                    <Icon icon="mdi:chevron-right" class="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </button>
-
-                <!-- Navigation Dots + Controls -->
-                <div class="flex flex-col items-center mt-6 space-y-3">
-
-                    <div class="flex space-x-2">
-                        {#each projects as _, index}
-                            <button 
-                                on:click={() => goToSlide(index)}
-                                class="w-2.5 h-2.5 rounded-full transition-all duration-300 {index === currentSlide ? 'bg-blue-600 scale-125' : 'bg-gray-400 dark:bg-gray-600'}"
-                            />
-                        {/each}
-                    </div>
-
-                    <p class="text-sm text-blue-600 dark:text-blue-400 font-medium">
-                        {currentSlide + 1} / {projects.length}
-                    </p>
-                </div>
             </div>
-            {/if}
 
-        <!-- Pagination -->
-        {#if totalPages > 1 && !isMobile}
-            <div 
-                in:fade={{ delay: 300, duration: 500 }}
-                class="flex justify-center items-center mt-12 space-x-4"
+            <!-- Navigation Arrows -->
+            <button
+                on:click={prevSlide}
+                class="absolute top-1/2 -left-6 -translate-y-1/2 p-4 bg-blue-500/10 backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
             >
-                <button 
-                    on:click={prevPage}
-                    disabled={currentPage === 1}
-                    class="p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200/50 dark:border-blue-800/50 hover:bg-blue-50 dark:hover:bg-blue-900/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105"
-                >
-                    <Icon icon="mdi:chevron-left" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                </button>
-                
-                <div class="flex items-center space-x-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-lg border border-blue-200/50 dark:border-blue-800/50">
-                    <span class="text-blue-600 dark:text-blue-400 font-bold">{currentPage}</span>
-                    <span class="text-gray-400">/</span>
-                    <span class="text-gray-600 dark:text-gray-400">{totalPages}</span>
-                </div>
-                
-                <button 
-                    on:click={nextPage}
-                    disabled={currentPage === totalPages}
-                    class="p-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200/50 dark:border-blue-800/50 hover:bg-blue-50 dark:hover:bg-blue-900/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105"
-                >
-                    <Icon icon="mdi:chevron-right" class="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                </button>
+                <Icon icon="mdi:chevron-left" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            </button>
+
+            <button
+                on:click={nextSlide}
+                class="absolute top-1/2 -right-6 -translate-y-1/2 p-4 bg-blue-500/10 backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
+            >
+                <Icon icon="mdi:chevron-right" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            </button>
+
+            <!-- Navigation Dots -->
+            <div class="flex justify-center items-center mt-8 space-x-3">
+                {#each projects as _, index}
+                    <button 
+                        on:click={() => goToSlide(index)}
+                        class="transition-all duration-300 {index === currentSlide ? 'w-12 h-3 bg-blue-500' : 'w-3 h-3 bg-blue-300 hover:bg-blue-400'} rounded-full"
+                    />
+                {/each}
             </div>
-        {/if}
+
+            <!-- Counter -->
+            <div class="text-center mt-4">
+                <p class="text-blue-600 dark:text-blue-400 font-bold text-lg">
+                    {currentSlide + 1} / {projects.length}
+                </p>
+            </div>
+        </div>
     </div>
 
     <!-- Project Modal -->
