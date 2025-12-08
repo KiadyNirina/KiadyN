@@ -133,39 +133,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Contact Info -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">
-                    {#each [
-                        { icon: 'mdi:email', text: 'kiady142ram@gmail.com', href: 'mailto:kiady142ram@gmail.com', color: 'text-blue-500' },
-                        { icon: 'mdi:map-marker', text: 'Antananarivo, Madagascar', href: null, color: 'text-green-500' },
-                        { icon: 'mdi:github', text: '@kiadynirina', href: 'https://github.com/kiadynirina', color: 'text-gray-700 dark:text-gray-300' },
-                        { icon: 'mdi:linkedin', text: '@kiady_ram', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', color: 'text-blue-600' }
-                    ] as contact, i}
-                        <div 
-                            class="flex items-center space-x-4 p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-blue-200/50 dark:border-blue-800/50 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
-                            in:fade={{ delay: 600 + (i * 100), duration: 400 }}
-                        >
-                            <div class={`w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/30 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                                <Icon icon={contact.icon} class={`text-xl ${contact.color}`} />
-                            </div>
-                            {#if contact.href}
-                                <a 
-                                    href={contact.href} 
-                                    target={contact.href.startsWith('http') ? '_blank' : '_self'}
-                                    class="flex-1 text-gray-700 dark:text-gray-300 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                                >
-                                    {contact.text}
-                                </a>
-                            {:else}
-                                <span class="flex-1 text-gray-700 dark:text-gray-300 font-medium">
-                                    {contact.text}
-                                </span>
-                            {/if}
-                            <Icon icon="mdi:chevron-right" class="text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all duration-300" />
-                        </div>
-                    {/each}
-                </div>
             </div>
         </div>
 

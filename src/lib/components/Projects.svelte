@@ -132,20 +132,15 @@
     let touchStartX = 0;
     let touchEndX = 0;
     let sliderDirection = 0;
+    let cardsPerView = 3;
 
     const defaultImage = '/pic.svg';
     
     onMount(() => {
-        const checkMobile = () => {
-            isMobile = window.innerWidth < 768;
-        };
-        
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        
-        return () => {
-            window.removeEventListener('resize', checkMobile);
-        };
+        updateCardsPerView();
+        window.addEventListener("resize", updateCardsPerView);
+
+        return () => window.removeEventListener("resize", updateCardsPerView);
     });
     
     function nextPage() {
@@ -238,6 +233,16 @@
             }
         };
     }
+
+    function updateCardsPerView() {
+        if (window.innerWidth < 768) {
+            cardsPerView = 1;
+        } else if (window.innerWidth < 1024) {
+            cardsPerView = 2;
+        } else {
+            cardsPerView = 3;
+        }
+    }
 </script>
 
 <section class="py-20">
@@ -259,12 +264,27 @@
             <div class="overflow-hidden">
                 <div 
                     class="flex transition-transform duration-700 ease-out"
-                    style="transform: translateX(-{currentSlide * 100}%);"
+                    style="
+                        transform: translateX(
+                            calc(
+                                -{(100 / cardsPerView) * currentSlide}% 
+                                + {(100 / cardsPerView) * ((cardsPerView - 1) / 2)}%
+                            )
+                        );
+                    "
                 >
                     {#each projects as project, index}
-                        <div class="w-full flex-shrink-0 px-1">
+                        <div 
+                            class="px-1 flex-shrink-0 transition-all duration-500"
+                            style="
+                                width: {100 / cardsPerView}%;
+                                transform: scale({index === currentSlide ? 1 : 0.82});
+                                opacity: {index === currentSlide ? 1 : 0.45};
+                                filter: {index === currentSlide ? 'blur(0)' : 'blur(1.5px)'};
+                            "
+                        >
                             <div 
-                                class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800/30 rounded-3xl overflow-hidden shadow-2xl border-2 border-blue-200/50 dark:border-blue-800/30 hover:border-blue-500/70 transition-all duration-500 max-w-5xl mx-auto"
+                                class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800/30 rounded-3xl overflow-hidden shadow-2xl border-2 border-blue-200/50 dark:border-blue-800/30 transition-all duration-500"
                                 style="height: 500px;"
                             >
                                 <!-- Background Image with Overlay -->
@@ -279,7 +299,7 @@
                                 </div>
 
                                 <!-- Content -->
-                                <div class="relative h-full flex flex-col justify-end p-10">
+                                <div class="relative h-full flex flex-col justify-end p-10" on:click={() => goToSlide(index)}>
                                     <!-- Type Badge -->
                                     <div class="mb-4">
                                         <span class="inline-block px-4 py-2 bg-blue-500/10 backdrop-blur-sm text-blue-300 dark:text-blue-300 text-sm font-bold rounded-full border border-blue-500/30">
@@ -326,14 +346,14 @@
             <!-- Navigation Arrows -->
             <button
                 on:click={prevSlide}
-                class="absolute top-1/2 -left-6 -translate-y-1/2 p-4 bg-blue-500/10 backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
+                class="absolute top-1/2 -left-6 -translate-y-1/2 p-4 bg-white dark:bg-blue-500/10 dark:backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500 dark:border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
             >
                 <Icon icon="mdi:chevron-left" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
             </button>
 
             <button
                 on:click={nextSlide}
-                class="absolute top-1/2 -right-6 -translate-y-1/2 p-4 bg-blue-500/10 backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
+                class="absolute top-1/2 -right-6 -translate-y-1/2 p-4 bg-white dark:bg-blue-500/10 dark:backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500 dark:border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
             >
                 <Icon icon="mdi:chevron-right" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
             </button>
