@@ -264,7 +264,14 @@
             <div class="overflow-hidden">
                 <div 
                     class="flex transition-transform duration-700 ease-out"
-                    style="transform: translateX(-{currentSlide * (100 / cardsPerView)}%);"
+                    style="
+                        transform: translateX(
+                            calc(
+                                -{(100 / cardsPerView) * currentSlide}% 
+                                + {(100 / cardsPerView) * ((cardsPerView - 1) / 2)}%
+                            )
+                        );
+                    "
                 >
                     {#each projects as project, index}
                         <div 
