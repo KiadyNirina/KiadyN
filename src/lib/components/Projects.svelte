@@ -339,14 +339,14 @@
             <!-- Navigation Arrows -->
             <button
                 on:click={prevSlide}
-                class="absolute top-1/2 -left-6 -translate-y-1/2 p-4 bg-blue-500/10 backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
+                class="absolute top-1/2 -left-6 -translate-y-1/2 p-4 bg-white dark:bg-blue-500/10 dark:backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500 dark:border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
             >
                 <Icon icon="mdi:chevron-left" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
             </button>
 
             <button
                 on:click={nextSlide}
-                class="absolute top-1/2 -right-6 -translate-y-1/2 p-4 bg-blue-500/10 backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
+                class="absolute top-1/2 -right-6 -translate-y-1/2 p-4 bg-white dark:bg-blue-500/10 dark:backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500 dark:border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
             >
                 <Icon icon="mdi:chevron-right" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
             </button>
