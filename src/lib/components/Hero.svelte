@@ -13,7 +13,7 @@
                     <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 animate-spin-slow opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="animation-duration: 8s;"></div>
                     <div class="absolute inset-1 rounded-2xl bg-white dark:bg-gray-800 overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
                         <img 
-                            src="/pdp1.png" 
+                            src="/pdp2.png" 
                             alt="Kiady"
                             class="w-full h-full object-cover"
                         />
