@@ -6,6 +6,39 @@
 
     const projects = [
         {
+            type: "Freelance",
+            title: "Mireille",
+            description: "Portfolio professionnel d'une technicienne en génie civil, présentant son parcours, ses expériences et ses compétences techniques avec clarté.",
+            tech: ["Nuxt", "Tailwind CSS", "JavaScript"],
+            image: "/mireille.png",
+            details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
+            gallery: [
+                "mireille2.png",
+                "mireille3.png",
+                "mireille4.png",
+                "mireille5.png",
+                "mireille6.png",
+            ],
+            link: "https://mireillerane.netlify.app",
+            gradient: "from-blue-500 to-blue-600"
+        },
+        {
+            type: "Freelance",
+            title: "Kleonix",
+            description: "Site vitrine moderne pour Kleonix, mettant en valeur son expertise en développement web et son approche client sur mesure",
+            tech: ["Nuxt", "Tailwind CSS", "JavaScript"],
+            image: "/kleonix.png",
+            details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
+            gallery: [
+                "kleonix2.png",
+                "kleonix3.png",
+                "kleonix4.png",
+                "kleonix5.png",
+            ],
+            link: "https://kleonix.netlify.app",
+            gradient: "from-blue-500 to-blue-600"
+        },
+        {
             type: "Projet personnel",
             title: "Bookly",
             description: "Une plateforme permettant aux utilisateurs de lire des livres en streaming, de partager leurs propres œuvres (romans, poèmes, nouvelles) et de découvrir les créations d'autres passionnés.",
