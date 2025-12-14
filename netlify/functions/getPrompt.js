@@ -1,9 +1,18 @@
 import { getStore } from "@netlify/blobs";
+import fs from "fs";
 
 export default async function handler() {
   try {
-    const store = getStore("system");
-    const systemPrompt = await store.get("system_prompt");
+    let systemPrompt;
+
+    if (process.env.NETLIFY_DEV) {
+      // Local : lire le fichier directement
+      systemPrompt = fs.readFileSync("private/ai-system-prompt.txt", "utf-8");
+    } else {
+      // Prod : utiliser Netlify Blobs
+      const store = getStore("system");
+      systemPrompt = await store.get("system_prompt");
+    }
 
     if (!systemPrompt) {
       return new Response(
