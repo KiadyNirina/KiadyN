@@ -136,36 +136,100 @@
 
 <!-- Bouton flottant avec animation -->
 <div class="fixed bottom-6 left-4 sm:left-6 z-50 group">
-  <!-- Effet de halo -->
-  <div class="absolute -inset-2 bg-blue-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow"></div>
+  <!-- Effet de halo AI -->
+  <div class="absolute -inset-3 bg-gradient-to-r from-blue-500/20 via-blue-500/20 to-blue-600/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow"></div>
   
-  <!-- Bouton principal -->
+  <!-- Effet de particules AI -->
+  <div class="absolute inset-0 overflow-hidden rounded-full">
+    {#each [0, 1, 2, 3] as i}
+      <div 
+        class="absolute w-1 h-1 bg-blue-400 rounded-full animate-ai-particle"
+        style="
+          left: ${30 + i * 15}%;
+          top: ${20 + i * 20}%;
+          animation-delay: ${i * 0.3}s;
+        "
+      ></div>
+    {/each}
+  </div>
+  
+  <!-- Bouton principal AI -->
   <button
-    class="relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:shadow-blue-500/40 dark:from-blue-500 dark:to-blue-600 dark:hover:shadow-blue-400/40"
+    class="relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-blue-600 text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:shadow-blue-500/50 dark:from-blue-600 dark:via-blue-700 dark:to-blue-700 group-hover:animate-ai-spin"
     on:click={() => showChat = !showChat}
-    aria-label={showChat ? 'Fermer le chat' : 'Ouvrir le chat'}
+    aria-label={showChat ? 'Fermer le chat IA' : 'Parler avec Kiady AI'}
   >
-    <!-- Point de notification -->
-    <div class="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full border-2 border-white dark:border-gray-900 animate-ping-fast"></div>
+    <!-- Anneau AI animé -->
+    <div class="absolute -inset-3 border-2 border-blue-400/30 border-t-blue-500 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-ai-ring"></div>
     
-    <!-- Icone animée -->
-    <div class="relative">
+    <!-- Point de notification AI -->
+    <div class="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-2 border-white dark:border-gray-900 shadow-lg animate-ai-pulse">
+      <div class="absolute inset-0 bg-green-400 rounded-full animate-ping-fast opacity-60"></div>
+    </div>
+    
+    <!-- Contenu du bouton AI -->
+    <div class="relative flex flex-col items-center justify-center">
       {#if showChat}
-        <Icon icon="material-symbols:close" class="h-6 w-6 sm:h-7 sm:w-7" />
+        <!-- État fermé - Logo AI -->
+        <div class="relative">
+          <Icon icon="material-symbols:close" class="h-6 w-6 sm:h-7 sm:w-7" />
+          <div class="absolute -inset-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+        </div>
       {:else}
-        <Icon icon="material-symbols:chat" class="h-6 w-6 sm:h-7 sm:w-7" />
+        <!-- État ouvert - Logo AI avec animations -->
+        <div class="relative">
+          <!-- Brain effect -->
+          <div class="absolute -inset-1">
+            <Icon icon="mdi:brain" class="h-8 w-8 text-blue-400/20 group-hover:text-blue-400/40 transition-colors duration-300" />
+          </div>
+          
+          <!-- Main icon with glow -->
+          <Icon icon="material-symbols:robot-2" class="h-6 w-6 sm:h-7 sm:w-7 relative z-10" />
+          
+          <!-- Sparkle effects -->
+          <div class="absolute -top-1 -right-1">
+            <Icon icon="mdi:sparkles" class="h-3 w-3 text-yellow-300 animate-spin-slow" />
+          </div>
+          <div class="absolute -bottom-1 -left-1">
+            <Icon icon="mdi:sparkles" class="h-2 w-2 text-blue-300 animate-spin-slow" style="animation-delay: 0.5s;" />
+          </div>
+        </div>
+        
+        <!-- Texte IA sur mobile -->
+        <span class="absolute -bottom-6 text-xs font-bold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent sm:hidden">
+          AI
+        </span>
       {/if}
-      
-      <!-- Effet de pulsation -->
-      <div class="absolute inset-0 rounded-full bg-blue-400 opacity-0 group-hover:opacity-30 animate-pulse-gentle"></div>
     </div>
   </button>
   
   <!-- Label flottant -->
-  <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none hidden sm:block">
-    <div class="bg-gray-800 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap">
-      Discuter avec Kiady AI
-      <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-800"></div>
+  <div class="absolute bottom-full left-50 transform -translate-x-1/2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none hidden sm:block">
+    <div class="bg-gradient-to-r from-gray-900 to-blue-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-blue-500/30 flex items-center space-x-2 animate-ai-float">
+      <!-- AI Badge -->
+      <div class="flex items-center justify-center p-2 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full">
+        <Icon icon="mdi:brain" class="h-5 w-5 text-white" />
+      </div>
+      
+      <!-- Texte avec animation -->
+      <div class="flex flex-col">
+        <span class="font-bold text-blue-200 text-[15px]">Kiady AI</span>
+        <span class="text-blue-100 text-[11px]">Assistant intelligent</span>
+      </div>
+      
+      <!-- Flèche -->
+      <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-blue-900"></div>
+    </div>
+  </div>
+  
+  <!-- Mini label mobile -->
+  <div class="absolute -right-2 top-1/2 transform -translate-y-1/2 translate-x-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none sm:hidden">
+    <div class="bg-gradient-to-r from-blue-600 to-blue-600 text-white text-[10px] px-2 py-1 rounded-lg whitespace-nowrap">
+      <div class="flex items-center space-x-1">
+        <Icon icon="mdi:brain" class="h-2 w-2" />
+        <span class="font-bold">Kiady AI</span>
+      </div>
+      <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 border-4 border-transparent border-r-blue-600"></div>
     </div>
   </div>
 </div>
@@ -473,5 +537,113 @@
     .sm\:w-96 {
       width: 28rem;
     }
+  }
+
+  @keyframes ai-particle {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0;
+    }
+    50% {
+      transform: translate(var(--tx, 10px), var(--ty, -10px)) scale(1.5);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes ai-ring {
+    0% {
+      transform: rotate(0deg) scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: rotate(180deg) scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes ai-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+    }
+  }
+
+  @keyframes ai-spin {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      transform: rotate(5deg) scale(1.05);
+    }
+    75% {
+      transform: rotate(-5deg) scale(1.05);
+    }
+    100% {
+      transform: rotate(0deg) scale(1.1);
+    }
+  }
+
+  @keyframes ai-float {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-3px);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-ai-particle {
+    animation: ai-particle 3s ease-in-out infinite;
+  }
+
+  .animate-ai-ring {
+    animation: ai-ring 4s linear infinite;
+  }
+
+  .animate-ai-pulse {
+    animation: ai-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-ai-spin {
+    animation: ai-spin 0.6s ease-out forwards;
+  }
+
+  .animate-ai-float {
+    animation: ai-float 3s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  /* Effets de brillance IA */
+  .shadow-3xl {
+    box-shadow: 
+      0 0 20px rgba(59, 130, 246, 0.5),
+      0 0 40px rgba(59, 130, 246, 0.3),
+      0 0 60px rgba(59, 130, 246, 0.1),
+      0 25px 50px -12px rgba(59, 130, 246, 0.4);
+  }
+
+  /* Hover state amélioré */
+  .group:hover .group-hover\:animate-ai-spin {
+    animation: ai-spin 0.6s ease-out forwards;
   }
 </style>
