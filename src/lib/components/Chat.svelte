@@ -164,8 +164,7 @@
 <!-- Popup chat -->
 {#if showChat}
   <div
-    class="fixed sm:bottom-0 sm:left-6 z-60 flex flex-col overflow-hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 sm:rounded-3xl sm:border sm:border-blue-200/50 dark:sm:border-blue-800/50 sm:shadow-2xl sm:w-96"
-    style="height: 100dvh;"
+    class="fixed sm:bottom-0 sm:left-6 z-60 flex flex-col overflow-hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 sm:rounded-3xl sm:border sm:border-blue-200/50 dark:sm:border-blue-800/50 sm:shadow-2xl w-full sm:w-96 h-screen sm:h-[500px] sm:max-h-[80dvh] sm:mb-6"
     transition:fade={{ duration: 300 }}
   >
     <!-- En-tête avec animation -->
@@ -237,7 +236,7 @@
                 ? 'rounded-br-none bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg'
                 : 'rounded-bl-none bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-100/50 dark:border-blue-800/50 text-gray-800 dark:text-gray-200 shadow-sm'}"
             >
-              <p class="whitespace-pre-wrap text-xs sm:text-sm leading-relaxed">{msg.text}</p>
+              <p class="whitespace-pre-wrap text-sm sm:text-base leading-relaxed">{msg.text}</p>
               <div class="flex items-center justify-between mt-1 sm:mt-2">
                 <p class="text-xs opacity-60">
                   {msg.timestamp?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -266,7 +265,6 @@
                     style="animation-delay: {i * 0.2}s;"
                   ></div>
                 {/each}
-                <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 ml-2">Kiady AI réfléchit...</span>
               </div>
             </div>
           </div>
@@ -287,7 +285,7 @@
             type="text"
             bind:value={userMessage}
             placeholder="Votre message..."
-            class="relative w-full rounded-xl border border-blue-200/50 bg-white/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-blue-800/50 dark:bg-gray-800/90 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-400 transition-all duration-300"
+            class="relative w-full rounded-xl border border-blue-200/50 bg-white/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-blue-800/50 dark:bg-gray-800/90 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-400 transition-all duration-300"
             on:keydown={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()}
           />
         </div>
@@ -296,11 +294,11 @@
         <button
           type="submit"
           disabled={!userMessage.trim() || isTyping}
-          class="group relative rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 p-2 sm:p-3 text-white transition-all hover:shadow-lg hover:shadow-blue-500/40 disabled:cursor-not-allowed disabled:opacity-50 dark:from-blue-500 dark:to-blue-600 dark:hover:shadow-blue-400/40 min-w-[44px] min-h-[44px]"
+          class="group relative rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 p-2 sm:p-3 text-white transition-all hover:shadow-lg hover:shadow-blue-500/40 disabled:cursor-not-allowed disabled:opacity-50 dark:from-blue-500 dark:to-blue-600 dark:hover:shadow-blue-400/40"
           aria-label="Envoyer le message"
         >
           <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-          <Icon icon="material-symbols:send" class="h-4 w-4 sm:h-5 sm:w-5 relative z-10 transform group-hover:scale-110 transition-transform duration-300" />
+          <Icon icon="material-symbols:send" class="h-5 sm:w-5 relative z-10 transform group-hover:scale-110 transition-transform duration-300" />
         </button>
       </form>
       
