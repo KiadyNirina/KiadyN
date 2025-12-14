@@ -28,7 +28,7 @@
     systemPrompt = data.systemPrompt
   })
 
-  const SYSTEM_PROMPT = import.meta.env.VITE_AI_SYSTEM_PROMPT;
+  //const SYSTEM_PROMPT = import.meta.env.VITE_AI_SYSTEM_PROMPT;
   const AI_MODEL = import.meta.env.VITE_AI_MODEL;
   
   // Fonction pour scroller automatiquement vers le bas
