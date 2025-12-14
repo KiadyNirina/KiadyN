@@ -2,6 +2,6 @@
   directory = "netlify/functions"
 
 [functions."*"]
-included_files = [
-"private/ai-system-prompt.txt"
-]
+  included_files = [
+    "private/ai-system-prompt.txt"
+  ]
