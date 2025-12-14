@@ -170,27 +170,6 @@
 				{/each}
 			</div>
 		</div>
-
-		<!-- CTA Section -->
-		<div class="text-center mt-16 animate-fade-in" style="animation-delay: 0.8s;">
-			<p class="text-gray-600 dark:text-gray-400 mb-8 text-lg">
-				Vous avez un projet ? Je suis prêt à vous accompagner.
-			</p>
-			<a
-				href="#contact"
-				class="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 animate-pulse-gentle"
-			>
-				<!-- Animated Background -->
-				<div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-700 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-				<div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-				
-				<!-- Content -->
-				<span class="relative z-10 flex items-center">
-					<Icon icon="mdi:rocket-launch" class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" />
-					Démarrer un projet
-				</span>
-			</a>
-		</div>
 	</div>
 </section>
 
