@@ -1,20 +1,20 @@
-import fs from "fs"
-import path from "path"
+import { getStore } from "@netlify/blobs";
 
-export default async () => {
+export default async function handler() {
   try {
-    const promptPath = path.join(
-      process.cwd(),
-      "private",
-      "ai-system-prompt.txt"
-    )
+    const store = getStore("system");
+    const systemPrompt = await store.get("system_prompt");
 
-    const systemPrompt = fs.readFileSync(promptPath, "utf-8")
+    if (!systemPrompt) {
+      return new Response(
+        JSON.stringify({ error: "System prompt not found" }),
+        { status: 404 }
+      );
+    }
 
     return new Response(
       JSON.stringify({ systemPrompt }),
       {
-        status: 200,
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
@@ -22,23 +22,11 @@ export default async () => {
           "Access-Control-Allow-Headers": "Content-Type"
         }
       }
-    )
-  } catch (error) {
-    console.error("getPrompt error:", error)
-
+    );
+  } catch (err) {
     return new Response(
-      JSON.stringify({
-        error: "Failed to load system prompt"
-      }),
-      {
-        status: 500,
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type"
-        }
-      }
-    )
+      JSON.stringify({ error: err.message }),
+      { status: 500 }
+    );
   }
 }
