@@ -19,7 +19,16 @@
   let messagesContainer;
   
   const HF_API_KEY = import.meta.env.VITE_HF_API_KEY;
-  const SYSTEM_PROMPT = import.meta.env.VITE_AI_SYSTEM_PROMPT;
+
+  let systemPrompt = ""
+  
+  onMount(async () => {
+    const res = await fetch("/.netlify/functions/getPrompt")
+    const data = await res.json()
+    systemPrompt = data.systemPrompt
+  })
+
+  //const SYSTEM_PROMPT = import.meta.env.VITE_AI_SYSTEM_PROMPT;
   const AI_MODEL = import.meta.env.VITE_AI_MODEL;
   
   // Fonction pour scroller automatiquement vers le bas
@@ -54,7 +63,7 @@
       messages: [
         {
           role: "system",
-          content: SYSTEM_PROMPT
+          content: systemPrompt
         },
         {
           role: "user",

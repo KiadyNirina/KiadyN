@@ -37,3 +37,7 @@ back/config/settings_local.py
 back/Back/db.sqlite3
 
 back/Back/*/migrations/*
+
+/private/ai-system-prompt.txt
+# Local Netlify folder
+.netlify
