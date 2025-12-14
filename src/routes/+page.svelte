@@ -13,6 +13,7 @@
 	import Cta from '$lib/components/Cta.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Chat from '$lib/components/Chat.svelte';
 
     let animated = {
         hero: false,
@@ -155,6 +156,8 @@
 	<!-- Main Content -->
 	<div class="min-h-screen transition-colors duration-300 animate-fade-in-content" class:hidden={isLoading}>
 		<Header />
+
+		<Chat />
 		
 		<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div id="hero" class:animate-fade-in={animated.hero}>
