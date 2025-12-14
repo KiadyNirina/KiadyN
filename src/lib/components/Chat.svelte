@@ -310,15 +310,6 @@
           <Icon icon="material-symbols:send" class="h-5 sm:w-5 relative z-10 transform group-hover:scale-110 transition-transform duration-300" />
         </button>
       </form>
-      
-      <!-- Indicateur de raccourci -->
-      <p class="mt-2 sm:mt-3 text-center text-xs text-gray-500 dark:text-gray-400 flex items-center justify-center">
-        <Icon icon="mdi:keyboard" class="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 animate-bounce-slow" />
-        <span class="hidden sm:inline">Appuyez sur </span>
-        <kbd class="mx-1 px-1.5 py-0.5 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded text-xs font-mono">Entrée</kbd>
-        <span class="hidden sm:inline"> pour envoyer</span>
-        <span class="sm:hidden"> pour envoyer</span>
-      </p>
     </div>
   </div>
 {/if}
