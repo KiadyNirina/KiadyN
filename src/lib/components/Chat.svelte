@@ -237,7 +237,7 @@
 <!-- Popup chat -->
 {#if showChat}
   <div
-    class="fixed sm:bottom-0 sm:left-6 z-60 flex flex-col overflow-hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 sm:rounded-3xl sm:border sm:border-blue-200/50 dark:sm:border-blue-800/50 sm:shadow-2xl w-full sm:w-96 h-screen sm:h-[500px] sm:max-h-[80dvh] sm:mb-6"
+    class="fixed sm:bottom-0 sm:left-6 z-60 flex flex-col overflow-hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 sm:rounded-3xl sm:border sm:border-blue-200/50 dark:sm:border-blue-800/50 sm:shadow-2xl w-full sm:w-96 h-full sm:h-[500px] sm:max-h-[80vh] sm:mb-6"
     transition:fade={{ duration: 300 }}
   >
     <!-- En-tête avec animation -->
