@@ -20,29 +20,18 @@
         <div class="flex flex-col lg:flex-row gap-12 items-center">
             <!-- Profile Image -->
             <div class="lg:w-2/5 flex justify-center">
-                <div class="relative group" in:slide={{ delay: 200, duration: 600 }}>
-                    <!-- Animated Border -->
-                    <div class="absolute -inset-4 bg-blue-600/70 rounded-full opacity-20 blur group-hover:opacity-30 transition-all duration-500 animate-pulse-gentle"></div>
-                    
+                <div class="relative group" in:slide={{ delay: 200, duration: 600 }}>                    
                     <!-- Main Image Container -->
-                    <div class="relative bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-full shadow-2xl">
+                    <div class="relative bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-full">
                         <img 
                             src="/pdp.jpg" 
                             alt="Profil" 
-                            class="rounded-full w-72 h-72 object-cover border-4 border-white dark:border-gray-800 shadow-lg transition-transform duration-500 group-hover:scale-105" 
+                            class="rounded-full w-72 h-72 object-cover border-4 border-white dark:border-gray-800 transition-transform duration-500 group-hover:scale-105" 
                         />
                         
                         <!-- Floating Elements -->
                         <div class="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full animate-ping-fast"></div>
                         <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-blue-400 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
-                    </div>
-                    
-                    <!-- Status Badge -->
-                    <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                        <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2 rounded-full shadow-lg flex items-center space-x-2 animate-pulse-gentle">
-                            <div class="w-2 h-2 bg-white rounded-full animate-ping-fast"></div>
-                            <span class="text-sm font-bold">Disponible</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -52,8 +41,8 @@
                 <!-- Main Title -->
                 <div>
                     <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-4 flex items-center">
-                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                            <Icon icon="mdi:laptop" class="text-white text-xl" />
+                        <div class="flex items-center justify-center mr-4">
+                            <Icon icon="mdi:laptop" />
                         </div>
                         Développeur Full-Stack
                     </h3>
@@ -118,20 +107,6 @@
                     <p>
                         J'ai réalisé divers <span class="font-semibold text-blue-600 dark:text-blue-400">projets innovants 🎯</span>, en mettant l'accent sur l'expérience utilisateur et les performances 💻✨.
                     </p>
-
-                    <!-- Call to Action -->
-                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-6 border border-blue-200 dark:border-blue-800/50">
-                        <p class="text-gray-900 dark:text-white font-medium mb-3">
-                            Envie de collaborer sur un projet ou de discuter d'une idée ?
-                        </p>
-                        <a 
-                            href="#contact" 
-                            class="group inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
-                        >
-                            <Icon icon="mdi:message-text" class="mr-3 group-hover:scale-110 transition-transform duration-300" />
-                            Contactez-moi !
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -224,7 +199,7 @@
         opacity: 0;
         animation: slideUp 0.6s ease-out forwards;
         padding: 0.5rem 1rem;
-        border-radius: 1rem;
+        border-radius: 3rem;
         border-width: 1px;
         font-size: 0.875rem;
         font-weight: 500;

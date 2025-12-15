@@ -43,14 +43,14 @@
 			title: "UI/UX Design", 
 			description: "Conception d'expériences utilisateur intuitives et engageantes.", 
 			features: ["Wireframes", "Prototypes interactifs", "Design system"],
-			gradient: "from-blue-900 to-indigo-600"
+			gradient: "from-blue-900 to-blue-600"
 		},
 		{ 
 			icon: "mdi:tools", 
 			title: "Maintenance", 
 			description: "Support technique et maintenance proactive de vos solutions.", 
 			features: ["Support réactif", "Mises à jour", "Sécurité continue"],
-			gradient: "from-indigo-600 to-indigo-700"
+			gradient: "from-blue-600 to-blue-700"
 		},
 	];
 
@@ -139,8 +139,8 @@
 						<!-- Floating Icon -->
 						<div class="relative mb-6">
 							<div class="absolute -top-2 -right-2 w-3 h-3 bg-blue-500 rounded-full animate-pulse-gentle"></div>
-							<div class={`w-14 h-14 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-								<Icon icon={service.icon} class="w-7 h-7 text-white" />
+							<div class={`w-14 h-14 flex items-center group-hover:scale-110 transition-transform  transition-colors`}>
+								<Icon icon={service.icon} class="w-10 h-10 text-dark dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 duration-300" />
 							</div>
 						</div>
 

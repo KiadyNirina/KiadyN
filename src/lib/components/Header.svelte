@@ -78,7 +78,6 @@
             class="group relative flex items-center space-x-3"
         >
             <div class="relative">
-                <div class="absolute -inset-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full opacity-20 blur group-hover:opacity-30 transition-all duration-500"></div>
                 <img 
                     src="/logo.png" 
                     class="w-12 h-12 bg-gray-900/80 rounded-full border-2 border-white/20 group-hover:border-blue-500/30 transition-all duration-300 group-hover:scale-110" 

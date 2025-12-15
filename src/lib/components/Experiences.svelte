@@ -154,8 +154,8 @@
                                                 {#if exp.img}
                                                     <img src={exp.img} alt={exp.company} class="w-8 h-auto mr-3 rounded-lg shadow-sm" />
                                                 {:else}
-                                                    <div class="w-8 h-8 bg-gradient-to-r {exp.gradient} rounded-lg flex items-center justify-center mr-3 shadow-sm">
-                                                        <Icon icon="mdi:company" class="w-4 h-4 text-white" />
+                                                    <div class="w-8 h-8 flex items-center justify-center mr-3">
+                                                        <Icon icon="mdi:company" class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300" />
                                                     </div>
                                                 {/if}
                                                 <div>
