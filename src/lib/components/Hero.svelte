@@ -8,10 +8,10 @@
         <div class="relative mb-12 animate-slide-up flex flex-col md:flex-row items-center gap-12 justify-center" style="animation-delay: 0.1s;">
             <!-- Profile Image with Modern Border -->
             <div class="relative group">
-                <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl opacity-20 blur group-hover:opacity-30 transition-all duration-500 animate-pulse-gentle"></div>
+
                 <div class="relative w-32 h-32">
                     <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 animate-spin-slow opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="animation-duration: 8s;"></div>
-                    <div class="absolute inset-1 rounded-2xl bg-white dark:bg-gray-800 overflow-hidden border-4 border-white dark:border-gray-800 shadow-lg">
+                    <div class="absolute inset-1 rounded-2xl bg-white dark:bg-gray-800 overflow-hidden border-4 border-white dark:border-gray-800">
                         <img 
                             src="/pdp2.png" 
                             alt="Kiady"
@@ -73,7 +73,7 @@
             <!-- Primary Button -->
             <a 
                 href="#projects" 
-                class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 animate-pop"
+                class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-1 animate-pop"
                 style="animation-delay: 0.7s;"
             >
                 <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-700 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -101,27 +101,19 @@
         <!-- Social Links -->
         <div class="flex justify-center gap-6 mb-16 animate-fade-in" style="animation-delay: 0.9s;">
             {#each [
-                { icon: 'mdi:github', href: 'https://github.com/KiadyNirina', color: 'hover:bg-gray-900 hover:text-white' },
-                { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', color: 'hover:bg-blue-600 hover:text-white' },
-                { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson', color: 'hover:bg-blue-500 hover:text-white' },
-                { icon: 'mdi:email', href: 'mailto:kiady142ram@gmail.com', color: 'hover:bg-red-500 hover:text-white' }
+                { icon: 'mdi:github', href: 'https://github.com/KiadyNirina', color: 'hover:text-gray-500' },
+                { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', color: 'hover:text-blue-600' },
+                { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson', color: 'hover:text-blue-500' },
+                { icon: 'mdi:email', href: 'mailto:kiady142ram@gmail.com', color: 'hover:text-red-500' }
             ] as social}
                 <a 
                     href={social.href} 
-                    class={`relative w-12 h-12 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-500 dark:text-gray-400 border border-blue-200 dark:border-blue-800/50 shadow-sm transition-all duration-300 transform hover:scale-110 hover:shadow-lg ${social.color}`}
+                    class={`relative flex items-center justify-center text-gray-500 dark:text-gray-400 transition-all duration-300 transform hover:scale-110 ${social.color}`}
                     target={social.href.startsWith('http') ? '_blank' : '_self'}
                 >
                     <Icon icon={social.icon} class="w-5 h-5" />
                 </a>
             {/each}
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="animate-bounce-slow" style="animation-delay: 1s;">
-            <div class="flex flex-col items-center text-blue-400 dark:text-blue-600">
-                <span class="text-sm font-medium mb-2">Scroll pour découvrir</span>
-                <Icon icon="mdi:chevron-double-down" class="w-5 h-5" />
-            </div>
         </div>
     </div>
 </section>

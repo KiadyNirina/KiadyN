@@ -33,7 +33,7 @@
             { subtitle: 'SGBD', items: ['SQLite','MySQL','PostgreSQL','Supabase'] },
           ]
         },
-        { title: 'Outils', color: 'from-blue-900 to-indigo-600', category: 'tools', subsections: [
+        { title: 'Outils', color: 'from-blue-900 to-blue-600', category: 'tools', subsections: [
             { subtitle: 'Versioning & Collaboration', items: ['Git','Trello'] },
             { subtitle: 'API & Conteneurs', items: ['Postman','Docker'] },
           ]
@@ -52,8 +52,8 @@
           <div class="relative z-10">
             <!-- Titre avec icône -->
             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              <span class={`w-8 h-8 bg-gradient-to-r ${section.color} rounded-lg flex items-center justify-center mr-3 shadow-lg`}>
-                <span class="w-2 h-2 bg-white rounded-full animate-ping-fast"></span>
+              <span class={`flex items-center justify-center`}>
+                
               </span>
               {section.title}
             </h3>
