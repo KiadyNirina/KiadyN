@@ -14,7 +14,7 @@
   <div class="animate-bounce mb-8">
     <Icon
       icon="ph:rocket-launch-duotone"
-      class="text-6xl text-blue-500 dark:text-blue-400"
+      class="text-6xl text-gray-700 dark:text-gray-400"
     />
   </div>
 
@@ -37,7 +37,7 @@
   <!-- Bouton CTA -->
   <button
     on:click={scrollToContact}
-    class="px-8 py-3 rounded-2xl bg-blue-500 text-white font-semibold shadow-lg hover:bg-blue-600 transition-transform transform hover:scale-105 hover:cursor-pointer"
+    class="px-8 py-3 rounded-2xl bg-gray-800 text-white font-semibold shadow-lg hover:bg-gray-900 transition-transform transform hover:scale-105 hover:cursor-pointer"
   >
     Me contacter 🚀
   </button>

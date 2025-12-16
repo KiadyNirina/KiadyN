@@ -15,42 +15,42 @@
 			title: "Site Vitrine", 
 			description: "Création de sites modernes et élégants pour présenter votre activité.", 
 			features: ["Design responsive", "Optimisation SEO", "Performance optimale"],
-			gradient: "from-blue-500 to-blue-600"
+			gradient: "from-gray-600 to-gray-700"
 		},
 		{ 
 			icon: "mdi:cloud-outline", 
 			title: "Application Web", 
 			description: "Développement d'applications web performantes et évolutives.", 
 			features: ["Interface intuitive", "Base de données", "Sécurité renforcée"],
-			gradient: "from-blue-600 to-blue-700"
+			gradient: "from-gray-700 to-gray-800"
 		},
 		{ 
 			icon: "mdi:shopping-outline", 
 			title: "E-commerce", 
 			description: "Boutiques en ligne sécurisées et optimisées pour la conversion.", 
 			features: ["Paiements sécurisés", "Gestion produits", "Analytics intégrés"],
-			gradient: "from-blue-700 to-blue-800"
+			gradient: "from-gray-800 to-gray-900"
 		},
 		{ 
 			icon: "mdi:layers-outline", 
 			title: "Automatisation", 
 			description: "Automatisation de processus et développement d'API sur mesure.", 
 			features: ["API RESTful", "Workflows automatisés", "Gain de temps"],
-			gradient: "from-blue-800 to-blue-900"
+			gradient: "from-gray-900 to-gray-700"
 		},
 		{ 
 			icon: "mdi:brush-outline", 
 			title: "UI/UX Design", 
 			description: "Conception d'expériences utilisateur intuitives et engageantes.", 
 			features: ["Wireframes", "Prototypes interactifs", "Design system"],
-			gradient: "from-blue-900 to-blue-600"
+			gradient: "from-gray-700 to-gray-800"
 		},
 		{ 
 			icon: "mdi:tools", 
 			title: "Maintenance", 
 			description: "Support technique et maintenance proactive de vos solutions.", 
 			features: ["Support réactif", "Mises à jour", "Sécurité continue"],
-			gradient: "from-blue-600 to-blue-700"
+			gradient: "from-gray-600 to-gray-700"
 		},
 	];
 
@@ -114,8 +114,8 @@
 				Mes Services
 			</h2>
 			<div class="relative inline-block mb-4">
-				<div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto"></div>
-				<div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full animate-ping-slow"></div>
+				<div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
+				<div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
 			</div>
 		</div>
 
@@ -128,25 +128,25 @@
 				{#each services as service, i}
 					<div
 						use:setCardRef
-						class="group relative flex-shrink-0 md:flex-shrink bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-2xl p-8 w-80 md:w-auto shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+						class="group relative flex-shrink-0 md:flex-shrink bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-2xl p-8 w-80 md:w-auto shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
 						in:fly={{ y: 40, duration: 600, delay: i * 100 }}
 					>
 						<!-- Animated Border -->
-						<div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
+						<div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
 							<div class="absolute inset-[2px] rounded-2xl bg-white dark:bg-gray-800"></div>
 						</div>
 
 						<!-- Floating Icon -->
 						<div class="relative mb-6">
-							<div class="absolute -top-2 -right-2 w-3 h-3 bg-blue-500 rounded-full animate-pulse-gentle"></div>
+							<div class="absolute -top-2 -right-2 w-3 h-3 bg-gray-600 rounded-full animate-pulse-gentle"></div>
 							<div class={`w-14 h-14 flex items-center group-hover:scale-110 transition-transform  transition-colors`}>
-								<Icon icon={service.icon} class="w-10 h-10 text-dark dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 duration-300" />
+								<Icon icon={service.icon} class="w-10 h-10 text-gray-800 dark:text-gray-200 group-hover:text-gray-700 dark:group-hover:text-gray-300 duration-300" />
 							</div>
 						</div>
 
 						<!-- Content -->
 						<div class="relative z-10">
-							<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">
 								{service.title}
 							</h3>
 							<p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
@@ -156,7 +156,7 @@
 								{#each service.features as feature, j}
 									<li class="flex items-center text-gray-700 dark:text-gray-300 text-sm group-hover/item:translate-x-1 transition-transform duration-300" 
 											style="animation-delay: {j * 0.1}s;">
-										<div class="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse-gentle" 
+										<div class="w-2 h-2 bg-gray-600 rounded-full mr-3 animate-pulse-gentle" 
 													style="animation-delay: {j * 0.2}s;"></div>
 										{feature}
 									</li>
@@ -165,7 +165,7 @@
 						</div>
 
 						<!-- Hover Flash Effect -->
-						<div class="absolute inset-0 rounded-2xl bg-blue-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
+						<div class="absolute inset-0 rounded-2xl bg-gray-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
 					</div>
 				{/each}
 			</div>

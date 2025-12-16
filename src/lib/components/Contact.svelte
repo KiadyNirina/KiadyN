@@ -63,8 +63,8 @@
                 Contactez-moi
             </h2>
             <div class="relative inline-block">
-                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto"></div>
-                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full animate-ping-slow"></div>
+                <div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
+                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
             </div>
         </div>
 
@@ -78,8 +78,8 @@
                         class="relative max-w-md w-full h-auto transform group-hover:scale-105 transition-transform duration-500" 
                     />
                     <!-- Floating Elements -->
-                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full animate-ping-fast"></div>
-                    <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-400 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
+                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-gray-600 rounded-full animate-ping-fast"></div>
+                    <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-gray-500 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
                 </div>
             </div>
 
@@ -99,18 +99,18 @@
                     <!-- Status Messages -->
                     {#if success}
                         <div
-                            class="p-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl mb-6 shadow-lg border border-green-400/50 flex items-center space-x-3"
+                            class="p-4 bg-gray-800 text-white rounded-2xl mb-6 shadow-lg border border-gray-700 flex items-center space-x-3"
                             in:fade={{ duration: 300 }}
                             out:slide={{ duration: 400 }}
                         >
                             <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                                <Icon icon="mdi:check" class="text-green-600 text-sm font-bold" />
+                                <Icon icon="mdi:check" class="text-gray-800 text-sm font-bold" />
                             </div>
                             <span class="font-medium">{success}</span>
                         </div>
                     {:else if error}
                         <div
-                            class="p-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl mb-6 shadow-lg border border-red-400/50 flex items-center space-x-3"
+                            class="p-4 bg-gray-800 text-white rounded-2xl mb-6 shadow-lg border border-gray-700 flex items-center space-x-3"
                             in:fade={{ duration: 300 }}
                             out:slide={{ duration: 400 }}
                         >
@@ -125,7 +125,7 @@
                             <!-- Name Field -->
                             <div class="group">
                                 <label for="name" class="block mb-3 font-semibold text-gray-900 dark:text-white flex items-center">
-                                    <Icon icon="mdi:account" class="mr-2 text-blue-500" />
+                                    <Icon icon="mdi:account" class="mr-2 text-gray-600" />
                                     Nom *
                                 </label>
                                 <input 
@@ -133,7 +133,7 @@
                                     id="name" 
                                     name="name" 
                                     bind:value={name}
-                                    class="dark:text-white dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
+                                    class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
                                     placeholder="Votre nom complet"
                                     required
                                 />
@@ -142,13 +142,13 @@
                             <!-- Email Field -->
                             <div class="group">
                                 <label for="email" class="block mb-3 font-semibold text-gray-900 dark:text-white flex items-center">
-                                    <Icon icon="mdi:email" class="mr-2 text-blue-500" />
+                                    <Icon icon="mdi:email" class="mr-2 text-gray-600" />
                                     Email *
                                 </label>
                                 <input 
                                     type="email" 
                                     id="email" 
-                                    class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
+                                    class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
                                     placeholder="votre@email.com"
                                     name="email"
                                     bind:value={email}
@@ -160,13 +160,13 @@
                         <!-- Subject Field -->
                         <div class="group">
                             <label for="subject" class="block mb-3 font-semibold text-gray-900 dark:text-white flex items-center">
-                                <Icon icon="mdi:tag" class="mr-2 text-blue-500" />
+                                <Icon icon="mdi:tag" class="mr-2 text-gray-600" />
                                 Sujet
                             </label>
                             <input 
                                 type="text" 
                                 id="subject" 
-                                class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
+                                class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
                                 placeholder="Objet de votre message"
                                 name="subject"
                                 bind:value={subject}
@@ -176,13 +176,13 @@
                         <!-- Message Field -->
                         <div class="group">
                             <label for="message" class="block mb-3 font-semibold text-gray-900 dark:text-white flex items-center">
-                                <Icon icon="mdi:message-text" class="mr-2 text-blue-500" />
+                                <Icon icon="mdi:message-text" class="mr-2 text-gray-600" />
                                 Message *
                             </label>
                             <textarea 
                                 id="message" 
                                 rows="5"
-                                class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg resize-none"
+                                class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg resize-none"
                                 placeholder="Décrivez votre projet ou votre demande..."
                                 name="message"
                                 bind:value={message}
@@ -193,12 +193,12 @@
                         <!-- Submit Button -->
                         <button
                             type="submit" 
-                            class="group relative w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-lg" 
+                            class="group relative w-full px-8 py-4 bg-gray-800 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-lg" 
                             disabled={loading}
                         >
                             <!-- Animated Background -->
-                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-700 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                            <div class="absolute inset-0 rounded-2xl bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute -inset-1 bg-gray-700 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
                             
                             <!-- Button Content -->
                             <span class="relative z-10 flex items-center justify-center">
@@ -220,14 +220,14 @@
                         </p>
                         <div class="flex justify-center lg:justify-start space-x-4">
                             {#each [
-                                { icon: 'mdi:email', href: 'mailto:kiady142ram@gmail.com', color: 'hover:bg-red-500 hover:text-white' },
-                                { icon: 'mdi:github', href: 'https://github.com/KiadyNirina', color: 'hover:bg-gray-900 hover:text-white' },
-                                { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', color: 'hover:bg-blue-600 hover:text-white' },
-                                { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson', color: 'hover:bg-blue-500 hover:text-white' }
+                                { icon: 'mdi:email', href: 'mailto:kiady142ram@gmail.com' },
+                                { icon: 'mdi:github', href: 'https://github.com/KiadyNirina' },
+                                { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/' },
+                                { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson' }
                             ] as social}
                                 <a 
                                     href={social.href} 
-                                    class="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-500 dark:text-gray-400 border border-blue-200/50 dark:border-blue-800/50 shadow-sm transition-all duration-300 transform hover:scale-110 hover:shadow-lg {social.color}"
+                                    class="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 shadow-sm transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-gray-200"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

@@ -137,13 +137,13 @@
 <!-- Bouton flottant avec animation -->
 <div class="fixed bottom-6 left-4 sm:left-6 z-50 group">
   <!-- Effet de halo AI -->
-  <div class="absolute -inset-3 bg-gradient-to-r from-blue-500/20 via-blue-500/20 to-blue-600/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow"></div>
+  <div class="absolute -inset-3 bg-gray-600/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow"></div>
   
   <!-- Effet de particules AI -->
   <div class="absolute inset-0 overflow-hidden rounded-full">
     {#each [0, 1, 2, 3] as i}
       <div 
-        class="absolute w-1 h-1 bg-blue-400 rounded-full animate-ai-particle"
+        class="absolute w-1 h-1 bg-gray-400 rounded-full animate-ai-particle"
         style="
           left: ${30 + i * 15}%;
           top: ${20 + i * 20}%;
@@ -155,16 +155,16 @@
   
   <!-- Bouton principal AI -->
   <button
-    class="relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-blue-600 to-blue-600 text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:shadow-blue-500/50 dark:from-blue-600 dark:via-blue-700 dark:to-blue-700 group-hover:animate-ai-spin"
+    class="relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gray-800 text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:shadow-gray-500/50 group-hover:animate-ai-spin"
     on:click={() => showChat = !showChat}
     aria-label={showChat ? 'Fermer le chat IA' : 'Parler avec Kiady AI'}
   >
     <!-- Anneau AI animé -->
-    <div class="absolute -inset-3 border-2 border-blue-400/30 border-t-blue-500 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-ai-ring"></div>
+    <div class="absolute -inset-3 border-2 border-gray-400/30 border-t-gray-600 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-ai-ring"></div>
     
     <!-- Point de notification AI -->
-    <div class="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full border-2 border-white dark:border-gray-900 shadow-lg animate-ai-pulse">
-      <div class="absolute inset-0 bg-green-400 rounded-full animate-ping-fast opacity-60"></div>
+    <div class="absolute -top-1 -right-1 w-3 h-3 bg-gray-600 rounded-full border-2 border-white dark:border-gray-900 shadow-lg animate-ai-pulse">
+      <div class="absolute inset-0 bg-gray-400 rounded-full animate-ping-fast opacity-60"></div>
     </div>
     
     <!-- Contenu du bouton AI -->
@@ -173,14 +173,14 @@
         <!-- État fermé - Logo AI -->
         <div class="relative">
           <Icon icon="material-symbols:close" class="h-6 w-6 sm:h-7 sm:w-7" />
-          <div class="absolute -inset-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+          <div class="absolute -inset-2 bg-gray-500 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
         </div>
       {:else}
         <!-- État ouvert - Logo AI avec animations -->
         <div class="relative">
           <!-- Brain effect -->
           <div class="absolute -inset-1">
-            <Icon icon="mdi:brain" class="h-8 w-8 text-blue-400/20 group-hover:text-blue-400/40 transition-colors duration-300" />
+            <Icon icon="mdi:brain" class="h-8 w-8 text-gray-400/20 group-hover:text-gray-400/40 transition-colors duration-300" />
           </div>
           
           <!-- Main icon with glow -->
@@ -188,15 +188,15 @@
           
           <!-- Sparkle effects -->
           <div class="absolute -top-1 -right-1">
-            <Icon icon="mdi:sparkles" class="h-3 w-3 text-yellow-300 animate-spin-slow" />
+            <Icon icon="mdi:sparkles" class="h-3 w-3 text-gray-300 animate-spin-slow" />
           </div>
           <div class="absolute -bottom-1 -left-1">
-            <Icon icon="mdi:sparkles" class="h-2 w-2 text-blue-300 animate-spin-slow" style="animation-delay: 0.5s;" />
+            <Icon icon="mdi:sparkles" class="h-2 w-2 text-gray-400 animate-spin-slow" style="animation-delay: 0.5s;" />
           </div>
         </div>
         
         <!-- Texte IA sur mobile -->
-        <span class="absolute -bottom-6 text-xs font-bold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent sm:hidden">
+        <span class="absolute -bottom-6 text-xs font-bold text-gray-600 sm:hidden">
           AI
         </span>
       {/if}
@@ -205,31 +205,31 @@
   
   <!-- Label flottant -->
   <div class="absolute bottom-full left-50 transform -translate-x-1/2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none hidden sm:block">
-    <div class="bg-gradient-to-r from-gray-900 to-blue-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-blue-500/30 flex items-center space-x-2 animate-ai-float">
+    <div class="bg-gray-800 text-white px-4 py-3 rounded-xl shadow-2xl border border-gray-600 flex items-center space-x-2 animate-ai-float">
       <!-- AI Badge -->
-      <div class="flex items-center justify-center p-2 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full">
+      <div class="flex items-center justify-center p-2 bg-gray-700 rounded-full">
         <Icon icon="mdi:brain" class="h-5 w-5 text-white" />
       </div>
       
       <!-- Texte avec animation -->
       <div class="flex flex-col">
-        <span class="font-bold text-blue-200 text-[15px]">Kiady AI</span>
-        <span class="text-blue-100 text-[11px]">Assistant intelligent</span>
+        <span class="font-bold text-gray-200 text-[15px]">Kiady AI</span>
+        <span class="text-gray-300 text-[11px]">Assistant intelligent</span>
       </div>
       
       <!-- Flèche -->
-      <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-blue-900"></div>
+      <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-800"></div>
     </div>
   </div>
   
   <!-- Mini label mobile -->
   <div class="absolute -right-2 top-1/2 transform -translate-y-1/2 translate-x-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none sm:hidden">
-    <div class="bg-gradient-to-r from-blue-600 to-blue-600 text-white text-[10px] px-2 py-1 rounded-lg whitespace-nowrap">
+    <div class="bg-gray-700 text-white text-[10px] px-2 py-1 rounded-lg whitespace-nowrap">
       <div class="flex items-center space-x-1">
         <Icon icon="mdi:brain" class="h-2 w-2" />
         <span class="font-bold">Kiady AI</span>
       </div>
-      <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 border-4 border-transparent border-r-blue-600"></div>
+      <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 border-4 border-transparent border-r-gray-700"></div>
     </div>
   </div>
 </div>
@@ -237,30 +237,30 @@
 <!-- Popup chat -->
 {#if showChat}
   <div
-    class="fixed sm:bottom-0 sm:left-6 z-60 flex flex-col overflow-hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 sm:rounded-3xl sm:border sm:border-blue-200/50 dark:sm:border-blue-800/50 sm:shadow-2xl w-full sm:w-96 h-full sm:h-[500px] sm:max-h-[80vh] sm:mb-6"
+    class="fixed sm:bottom-0 sm:left-6 z-60 flex flex-col overflow-hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 sm:rounded-3xl sm:border sm:border-gray-300 dark:sm:border-gray-700 sm:shadow-2xl w-full sm:w-96 h-full sm:h-[500px] sm:max-h-[80vh] sm:mb-6"
     transition:fade={{ duration: 300 }}
   >
     <!-- En-tête avec animation -->
-    <div class="relative bg-gradient-to-r from-blue-600 to-blue-700 px-4 sm:px-6 py-4 sm:py-5 dark:from-blue-700 dark:to-blue-800 overflow-hidden">
+    <div class="relative bg-gray-800 px-4 sm:px-6 py-4 sm:py-5 overflow-hidden">
       <!-- Effet de vague animée -->
-      <div class="absolute -bottom-10 left-0 right-0 h-10 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-full blur-lg animate-wave"></div>
+      <div class="absolute -bottom-10 left-0 right-0 h-10 bg-gray-600/20 rounded-full blur-lg animate-wave"></div>
       
       <div class="flex items-center justify-between relative z-10">
         <div class="flex items-center gap-3 sm:gap-4">
           <!-- Avatar animé -->
           <div class="relative group/avatar">
             <div class="absolute -inset-1 sm:-inset-2 bg-white/20 rounded-full blur opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div class="relative w-10 h-10 sm:w-12 sm:h-12 bg-gray-700 rounded-2xl flex items-center justify-center shadow-lg">
               <Icon icon="material-symbols:robot-2" class="h-5 w-5 sm:h-7 sm:w-7 text-white" />
               <!-- Point de statut -->
-              <div class="absolute -bottom-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full border-2 border-blue-600 animate-pulse-gentle"></div>
+              <div class="absolute -bottom-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full border-2 border-gray-600 animate-pulse-gentle"></div>
             </div>
           </div>
           
           <div>
             <h3 class="font-bold text-white text-base sm:text-lg">Kiady AI</h3>
-            <p class="text-blue-100 text-xs sm:text-sm flex items-center">
-              <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse-gentle"></span>
+            <p class="text-gray-300 text-xs sm:text-sm flex items-center">
+              <span class="w-2 h-2 bg-gray-400 rounded-full mr-2 animate-pulse-gentle"></span>
               Assistant intelligent
             </p>      
           </div>
@@ -301,13 +301,13 @@
           <div class="group/message relative max-w-[90%] sm:max-w-[85%]">
             <!-- Effet de bordure animée pour les messages AI -->
             {#if msg.from === 'ai'}
-              <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl blur opacity-0 group-hover/message:opacity-20 transition-opacity duration-300"></div>
+              <div class="absolute -inset-1 bg-gray-600 rounded-2xl blur opacity-0 group-hover/message:opacity-20 transition-opacity duration-300"></div>
             {/if}
             
             <div
               class="relative rounded-2xl px-3 py-2 sm:px-4 sm:py-3 {msg.from === 'user'
-                ? 'rounded-br-none bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg'
-                : 'rounded-bl-none bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-100/50 dark:border-blue-800/50 text-gray-800 dark:text-gray-200 shadow-sm'}"
+                ? 'rounded-br-none bg-gray-800 dark:bg-white text-white/80 dark:text-black shadow-lg'
+                : 'rounded-bl-none bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 shadow-sm'}"
             >
               <p class="whitespace-pre-wrap text-sm sm:text-base leading-relaxed">{msg.text}</p>
               <div class="flex items-center justify-between mt-1 sm:mt-2">
@@ -329,12 +329,12 @@
       {#if isTyping}
         <div class="flex justify-start animate-fade-in">
           <div class="group/message relative max-w-[90%] sm:max-w-[85%]">
-            <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl blur opacity-0 group-hover/message:opacity-20 transition-opacity duration-300"></div>
-            <div class="relative rounded-2xl rounded-bl-none bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-100/50 dark:border-blue-800/50 px-3 py-2 sm:px-4 sm:py-3 shadow-sm">
+            <div class="absolute -inset-1 bg-gray-600 rounded-2xl blur opacity-0 group-hover/message:opacity-20 transition-opacity duration-300"></div>
+            <div class="relative rounded-2xl rounded-bl-none bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 px-3 py-2 sm:px-4 sm:py-3 shadow-sm">
               <div class="flex items-center space-x-1 sm:space-x-2">
                 {#each [0, 1, 2] as i}
                   <div 
-                    class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce"
+                    class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-600 rounded-full animate-bounce"
                     style="animation-delay: {i * 0.2}s;"
                   ></div>
                 {/each}
@@ -346,19 +346,19 @@
     </div>
 
     <!-- Zone de saisie -->
-    <div class="border-t border-blue-200/50 bg-gradient-to-t from-blue-50/50 to-transparent p-3 sm:p-4 dark:border-blue-800/50 dark:from-blue-900/20 safe-area-pb">
+    <div class="border-t border-gray-300 bg-gradient-to-t from-gray-100/50 to-transparent p-3 sm:p-4 dark:border-gray-700 dark:from-gray-800/20 safe-area-pb">
       <form
         on:submit|preventDefault={sendMessage}
         class="flex items-center gap-2 sm:gap-3"
       >
         <!-- Champ de saisie -->
         <div class="flex-1 relative group/input">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl blur opacity-0 group-hover/input:opacity-30 transition-opacity duration-300"></div>
+          <div class="absolute -inset-0.5 bg-gray-600 rounded-xl blur opacity-0 group-hover/input:opacity-30 transition-opacity duration-300"></div>
           <input
             type="text"
             bind:value={userMessage}
             placeholder="Votre message..."
-            class="relative w-full rounded-xl border border-blue-200/50 bg-white/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 dark:border-blue-800/50 dark:bg-gray-800/90 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-400 transition-all duration-300"
+            class="relative w-full rounded-xl border border-gray-300 bg-white/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base placeholder-gray-400 focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 dark:border-gray-700 dark:bg-gray-800/90 dark:text-white dark:placeholder-gray-400 dark:focus:border-gray-500 transition-all duration-300"
             on:keydown={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()}
           />
         </div>
@@ -367,10 +367,10 @@
         <button
           type="submit"
           disabled={!userMessage.trim() || isTyping}
-          class="group relative rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 p-2 sm:p-3 text-white transition-all hover:shadow-lg hover:shadow-blue-500/40 disabled:cursor-not-allowed disabled:opacity-50 dark:from-blue-500 dark:to-blue-600 dark:hover:shadow-blue-400/40"
+          class="group relative rounded-xl bg-gray-800 p-2 sm:p-3 text-white transition-all hover:shadow-lg hover:shadow-gray-500/40 disabled:cursor-not-allowed disabled:opacity-50"
           aria-label="Envoyer le message"
         >
-          <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+          <div class="absolute -inset-1 bg-gray-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
           <Icon icon="material-symbols:send" class="h-5 sm:w-5 relative z-10 transform group-hover:scale-110 transition-transform duration-300" />
         </button>
       </form>
@@ -471,7 +471,7 @@
   /* Scrollbar personnalisée */
   .overflow-y-auto {
     scrollbar-width: thin;
-    scrollbar-color: rgba(59, 130, 246, 0.3) transparent;
+    scrollbar-color: rgba(107, 114, 128, 0.3) transparent;
   }
 
   .overflow-y-auto::-webkit-scrollbar {
@@ -489,13 +489,13 @@
   }
 
   .overflow-y-auto::-webkit-scrollbar-thumb {
-    background-color: rgba(59, 130, 246, 0.3);
+    background-color: rgba(107, 114, 128, 0.3);
     border-radius: 20px;
     transition: background-color 0.3s;
   }
 
   .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(59, 130, 246, 0.5);
+    background-color: rgba(107, 114, 128, 0.5);
   }
 
   /* Safe area pour les mobiles avec notch */
@@ -505,7 +505,7 @@
 
   /* Effet de brillance sur le bouton */
   .shadow-3xl {
-    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 25px 50px -12px rgba(107, 114, 128, 0.4);
   }
 
   /* Style pour les tailles d'écran spécifiques */
@@ -568,11 +568,11 @@
   @keyframes ai-pulse {
     0%, 100% {
       transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+      box-shadow: 0 0 0 0 rgba(107, 114, 128, 0.7);
     }
     50% {
       transform: scale(1.1);
-      box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+      box-shadow: 0 0 0 6px rgba(107, 114, 128, 0);
     }
   }
 
@@ -636,10 +636,10 @@
   /* Effets de brillance IA */
   .shadow-3xl {
     box-shadow: 
-      0 0 20px rgba(59, 130, 246, 0.5),
-      0 0 40px rgba(59, 130, 246, 0.3),
-      0 0 60px rgba(59, 130, 246, 0.1),
-      0 25px 50px -12px rgba(59, 130, 246, 0.4);
+      0 0 20px rgba(107, 114, 128, 0.5),
+      0 0 40px rgba(107, 114, 128, 0.3),
+      0 0 60px rgba(107, 114, 128, 0.1),
+      0 25px 50px -12px rgba(107, 114, 128, 0.4);
   }
 
   /* Hover state amélioré */

@@ -11,8 +11,8 @@
                 À propos de moi
             </h2>
             <div class="relative inline-block">
-                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto"></div>
-                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full animate-ping-slow"></div>
+                <div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
+                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
             </div>
         </div>
         
@@ -22,7 +22,7 @@
             <div class="lg:w-2/5 flex justify-center">
                 <div class="relative group" in:slide={{ delay: 200, duration: 600 }}>                    
                     <!-- Main Image Container -->
-                    <div class="relative bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-full">
+                    <div class="relative bg-gradient-to-br from-gray-600 to-gray-800 p-2 rounded-full">
                         <img 
                             src="/pdp.jpg" 
                             alt="Profil" 
@@ -30,8 +30,8 @@
                         />
                         
                         <!-- Floating Elements -->
-                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full animate-ping-fast"></div>
-                        <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-blue-400 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gray-600 rounded-full animate-ping-fast"></div>
+                        <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-gray-500 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
                     </div>
                 </div>
             </div>
@@ -46,18 +46,18 @@
                         </div>
                         Développeur Full-Stack
                     </h3>
-                    <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mt-2"></div>
+                    <div class="w-16 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mt-2"></div>
                 </div>
 
                 <!-- Introduction -->
                 <div class="space-y-6 text-gray-700 dark:text-gray-300 text-base leading-relaxed">
                     <p>
-                        Je suis <span class="font-bold text-blue-600 dark:text-blue-400">RAMBELOSON Kiady Nirina</span>, un jeune développeur web Full-Stack basé à <span class="font-semibold">Madagascar 🇲🇬</span>, passionné par la création de solutions digitales innovantes 💡.
+                        Je suis <span class="font-bold text-gray-800 dark:text-gray-200">RAMBELOSON Kiady Nirina</span>, un jeune développeur web Full-Stack basé à <span class="font-semibold">Madagascar 🇲🇬</span>, passionné par la création de solutions digitales innovantes 💡.
                     </p>
 
                     <p>
-                        Curieux, autonome et toujours prêt à apprendre, j’aime concevoir des interfaces modernes et fluides, créer des API robustes et construire des applications capables de résoudre de vrais problèmes.  
-                        J’accorde une grande importance à <span class="font-bold text-blue-600 dark:text-blue-400">l’expérience utilisateur</span>, à <span class="font-bold text-blue-600 dark:text-blue-400">la performance</span>, et à <span class="font-bold text-blue-600 dark:text-blue-400">la qualité du code</span> que j’écris.
+                        Curieux, autonome et toujours prêt à apprendre, j'aime concevoir des interfaces modernes et fluides, créer des API robustes et construire des applications capables de résoudre de vrais problèmes.  
+                        J'accorde une grande importance à <span class="font-bold text-gray-800 dark:text-gray-200">l'expérience utilisateur</span>, à <span class="font-bold text-gray-800 dark:text-gray-200">la performance</span>, et à <span class="font-bold text-gray-800 dark:text-gray-200">la qualité du code</span> que j'écris.
                     </p>
 
                     <!-- Technologies Stack -->
@@ -66,17 +66,17 @@
                         
                         <!-- Languages -->
                         <div>
-                            <h4 class="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-3 flex items-center">
+                            <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-300 mb-3 flex items-center">
                                 <Icon icon="mdi:code-braces" class="mr-2" />
                                 Langages de programmation
                             </h4>
                             <div class="flex flex-wrap gap-2">
                                 {#each ['PHP', 'JavaScript', 'Python'] as lang, i}
                                     <span 
-                                        class="skill-badge bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800"
+                                        class="skill-badge bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-700"
                                         style="animation-delay: {i * 0.1}s;"
                                     >
-                                        <Icon icon="mdi:code" class="mr-1 text-blue-500" />
+                                        <Icon icon="mdi:code" class="mr-1 text-gray-600 dark:text-gray-400" />
                                         {lang}
                                     </span>
                                 {/each}
@@ -85,17 +85,17 @@
 
                         <!-- Frameworks -->
                         <div>
-                            <h4 class="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-3 flex items-center">
+                            <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-300 mb-3 flex items-center">
                                 <Icon icon="mdi:package-variant" class="mr-2" />
                                 Frameworks & Librairies
                             </h4>
                             <div class="flex flex-wrap gap-2">
                                 {#each ['Laravel', 'Django', 'Vue.js', 'Svelte'] as framework, i}
                                     <span 
-                                        class="skill-badge bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800"
+                                        class="skill-badge bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-700"
                                         style="animation-delay: {(i + 3) * 0.1}s;"
                                     >
-                                        <Icon icon="mdi:framework" class="mr-1 text-blue-500" />
+                                        <Icon icon="mdi:framework" class="mr-1 text-gray-600 dark:text-gray-400" />
                                         {framework}
                                     </span>
                                 {/each}
@@ -105,15 +105,15 @@
 
                     <!-- Projects & Focus -->
                     <p>
-                        J'ai réalisé divers <span class="font-semibold text-blue-600 dark:text-blue-400">projets innovants 🎯</span>, en mettant l'accent sur l'expérience utilisateur et les performances 💻✨.
+                        J'ai réalisé divers <span class="font-semibold text-gray-800 dark:text-gray-200">projets innovants 🎯</span>, en mettant l'accent sur l'expérience utilisateur et les performances 💻✨.
                     </p>
                 </div>
             </div>
         </div>
 
         <!-- Floating Background Elements -->
-        <div class="absolute top-20 right-20 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl animate-float-slow"></div>
-        <div class="absolute bottom-20 left-20 w-40 h-40 bg-blue-600/10 rounded-full blur-3xl animate-float-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute top-20 right-20 w-32 h-32 bg-gray-400/10 rounded-full blur-3xl animate-float-slow"></div>
+        <div class="absolute bottom-20 left-20 w-40 h-40 bg-gray-600/10 rounded-full blur-3xl animate-float-slow" style="animation-delay: 2s;"></div>
     </div>
 </section>
 
@@ -210,6 +210,6 @@
 
     .skill-badge:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 </style>

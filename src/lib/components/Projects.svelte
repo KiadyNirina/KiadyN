@@ -19,8 +19,7 @@
                 "mireille5.png",
                 "mireille6.png",
             ],
-            link: "https://mireillerane.netlify.app",
-            gradient: "from-blue-500 to-blue-600"
+            link: "https://mireillerane.netlify.app"
         },
         {
             type: "Freelance",
@@ -35,8 +34,7 @@
                 "kleonix4.png",
                 "kleonix5.png",
             ],
-            link: "https://kleonix.netlify.app",
-            gradient: "from-blue-500 to-blue-600"
+            link: "https://kleonix.netlify.app"
         },
         {
             type: "Projet personnel",
@@ -62,8 +60,7 @@
                 "/5bookly.png",
                 "/6bookly.png",
                 "/7bookly.png"
-            ],
-            gradient: "from-blue-500 to-blue-600"
+            ]
         },
         {
             type: "Projet personnel",
@@ -86,8 +83,7 @@
                 "/Cookup2.png",
                 "/Cookup3.png",
                 "/Cookup4.png",
-            ],
-            gradient: "from-blue-500 to-blue-600"
+            ]
         },
         {
             type: "Projet personnel",
@@ -100,8 +96,7 @@
             gallery: [
                 "/real_talk.jpg",
                 "/real_talk 2.jpg",
-            ],
-            gradient: "from-blue-600 to-blue-700"
+            ]
         },
         {
             type: "Projet personnel",
@@ -121,8 +116,7 @@
                 "/Datalens2.png",
                 "/Datalens3.png",
                 "/Datalens4.png",
-            ],
-            gradient: "from-blue-700 to-blue-800"
+            ]
         },
         {
             type: "Projet personnel",
@@ -139,8 +133,7 @@
                 "/eboss 5.jpg",
                 "/eboss 6.jpg",
                 "/eboss 7.jpg",
-            ],
-            gradient: "from-blue-800 to-blue-900"
+            ]
         }
     ];
 
@@ -286,8 +279,8 @@
                 Mes Projets
             </h2>
             <div class="relative inline-block">
-                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto"></div>
-                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full animate-ping-slow"></div>
+                <div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
+                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
             </div>
         </div>
         
@@ -317,7 +310,7 @@
                             "
                         >
                             <div 
-                                class="group relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800/30 rounded-3xl overflow-hidden shadow-2xl border-2 border-blue-200/50 dark:border-blue-800/30 transition-all duration-500"
+                                class="group relative bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-gray-300 dark:border-gray-700 transition-all duration-500"
                                 style="height: 500px;"
                             >
                                 <!-- Background Image with Overlay -->
@@ -335,25 +328,25 @@
                                 <div class="relative h-full flex flex-col justify-end p-10" on:click={() => goToSlide(index)}>
                                     <!-- Type Badge -->
                                     <div class="mb-4">
-                                        <span class="inline-block px-4 py-2 bg-blue-500/10 backdrop-blur-sm text-blue-300 dark:text-blue-300 text-sm font-bold rounded-full border border-blue-500/30">
+                                        <span class="inline-block px-4 py-2 bg-gray-800 backdrop-blur-sm text-gray-200 text-sm font-bold rounded-full border border-gray-600">
                                             {project.type}
                                         </span>
                                     </div>
 
                                     <!-- Title -->
-                                    <h3 class="text-4xl md:text-5xl font-black text-blue-100 dark:text-blue-100 mb-4 tracking-tight">
+                                    <h3 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
                                         {project.title}
                                     </h3>
 
                                     <!-- Description -->
-                                    <p class="text-blue-200/80 dark:text-blue-200/80 text-base mb-6 max-w-2xl">
+                                    <p class="text-gray-200 text-base mb-6 max-w-2xl">
                                         {project.description}
                                     </p>
 
                                     <!-- Technologies -->
                                     <div class="flex flex-wrap gap-2 mb-6">
                                         {#each project.tech as tech}
-                                            <span class="px-3 py-1 bg-blue-500/10 backdrop-blur-sm text-blue-300 dark:text-blue-300 text-sm rounded-lg border border-blue-500/30">
+                                            <span class="px-3 py-1 bg-gray-800 backdrop-blur-sm text-gray-200 text-sm rounded-lg border border-gray-600">
                                                 {tech}
                                             </span>
                                         {/each}
@@ -363,7 +356,7 @@
                                     <div>
                                         <button
                                             on:click={() => openModal(project)} 
-                                            class="group/btn inline-flex items-center px-6 py-3 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/40"
+                                            class="group/btn inline-flex items-center px-6 py-3 bg-gray-800 text-white font-bold rounded-full hover:bg-gray-900 transition-all duration-300 transform hover:scale-105 shadow-lg"
                                         >
                                             <span class="mr-2">Voir les détails</span>
                                             <Icon icon="mdi:arrow-right" class="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -379,16 +372,16 @@
             <!-- Navigation Arrows -->
             <button
                 on:click={prevSlide}
-                class="absolute top-1/2 -left-6 -translate-y-1/2 p-4 bg-white dark:bg-blue-500/10 dark:backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500 dark:border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
+                class="absolute top-1/2 -left-6 -translate-y-1/2 p-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full border border-gray-300 dark:border-gray-600 transition-all duration-300 hover:scale-110 z-10"
             >
-                <Icon icon="mdi:chevron-left" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                <Icon icon="mdi:chevron-left" class="w-8 h-8 text-gray-700 dark:text-gray-300" />
             </button>
 
             <button
                 on:click={nextSlide}
-                class="absolute top-1/2 -right-6 -translate-y-1/2 p-4 bg-white dark:bg-blue-500/10 dark:backdrop-blur-md hover:bg-blue-500/20 rounded-full border border-blue-500 dark:border-blue-500/30 transition-all duration-300 hover:scale-110 z-10"
+                class="absolute top-1/2 -right-6 -translate-y-1/2 p-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full border border-gray-300 dark:border-gray-600 transition-all duration-300 hover:scale-110 z-10"
             >
-                <Icon icon="mdi:chevron-right" class="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                <Icon icon="mdi:chevron-right" class="w-8 h-8 text-gray-700 dark:text-gray-300" />
             </button>
 
             <!-- Navigation Dots -->
@@ -396,14 +389,14 @@
                 {#each projects as _, index}
                     <button 
                         on:click={() => goToSlide(index)}
-                        class="transition-all duration-300 {index === currentSlide ? 'w-12 h-3 bg-blue-500' : 'w-3 h-3 bg-blue-300 hover:bg-blue-400'} rounded-full"
+                        class="transition-all duration-300 {index === currentSlide ? 'w-12 h-3 bg-gray-700 dark:bg-gray-600' : 'w-3 h-3 bg-gray-400 hover:bg-gray-500 dark:bg-gray-700 dark:hover:bg-gray-600'} rounded-full"
                     />
                 {/each}
             </div>
 
             <!-- Counter -->
             <div class="text-center mt-4">
-                <p class="text-blue-600 dark:text-blue-400 font-bold text-lg">
+                <p class="text-gray-700 dark:text-gray-400 font-bold text-lg">
                     {currentSlide + 1} / {projects.length}
                 </p>
             </div>
@@ -420,7 +413,7 @@
         >
             <div 
                 transition:blur={{ amount: 10, duration: 300 }}
-                class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-900 dark:to-gray-800/30 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-y-auto shadow-2xl border-2 border-blue-200/50 dark:border-blue-800/30"
+                class="bg-white dark:bg-gray-900 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-y-auto shadow-2xl border-2 border-gray-300 dark:border-gray-700"
             >
                 <!-- Header -->
                 {#if selectedProject}
@@ -431,25 +424,25 @@
                                 <div class="flex-1">
                                     <!-- Type Badge -->
                                     <div class="mb-4">
-                                        <span class="inline-block px-4 py-2 bg-blue-500/10 backdrop-blur-sm text-blue-600 dark:text-blue-300 text-sm font-bold rounded-full border border-blue-500/30">
+                                        <span class="inline-block px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm font-bold rounded-full border border-gray-300 dark:border-gray-600">
                                             {selectedProject.type}
                                         </span>
                                     </div>
                                     
                                     <!-- Title -->
-                                    <h3 class="text-4xl md:text-5xl font-black text-gray-800 dark:text-blue-100 mb-4 tracking-tight">
+                                    <h3 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">
                                         {selectedProject.title}
                                     </h3>
 
                                     <!-- Description -->
-                                    <p class="text-gray-900/80 dark:text-blue-200/80 text-base mb-6 max-w-2xl">
+                                    <p class="text-gray-700 dark:text-gray-300 text-base mb-6 max-w-2xl">
                                         {selectedProject.description}
                                     </p>
 
                                     <!-- Technologies -->
                                     <div class="flex flex-wrap gap-2 mb-6">
                                         {#each selectedProject.tech as tech}
-                                            <span class="px-3 py-1 bg-blue-500/10 backdrop-blur-sm text-blue-600 dark:text-blue-300 text-sm rounded-lg border border-blue-500/30">
+                                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-lg border border-gray-300 dark:border-gray-600">
                                                 {tech}
                                             </span>
                                         {/each}
@@ -459,7 +452,7 @@
                                 <!-- Close Button -->
                                 <button 
                                     on:click={closeModal}
-                                    class="p-3 bg-blue-500/10 backdrop-blur-md hover:bg-blue-500/20 text-blue-600 dark:text-blue-300 hover:text-white rounded-xl border border-blue-500/30 transition-all duration-300 hover:scale-110 ml-4 flex-shrink-0"
+                                    class="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-xl border border-gray-300 dark:border-gray-600 transition-all duration-300 hover:scale-110 ml-4 flex-shrink-0"
                                     aria-label="Fermer"
                                 >
                                     <Icon icon="mdi:close" class="w-6 h-6" />
@@ -490,7 +483,7 @@
                                 {#if selectedProject.gallery && selectedProject.gallery.length > 0}
                                     <div>
                                         <h4 class="text-lg font-bold mb-4 flex items-center text-gray-900 dark:text-white">
-                                            <div class="w-8 h-8 bg-gradient-to-r {selectedProject.gradient} rounded-lg flex items-center justify-center mr-3">
+                                            <div class="w-8 h-8 bg-gray-700 dark:bg-gray-800 rounded-lg flex items-center justify-center mr-3">
                                                 <Icon icon="mdi:image-multiple" class="w-4 h-4 text-white" />
                                             </div>
                                             Galerie
@@ -501,7 +494,7 @@
                                                     <img 
                                                         src={img} 
                                                         alt={`Preview ${i+1}`}
-                                                        class="w-full h-20 object-cover rounded-xl transition-transform duration-300 group-hover/gallery:scale-110 border border-blue-200/50 dark:border-blue-800/30"
+                                                        class="w-full h-20 object-cover rounded-xl transition-transform duration-300 group-hover/gallery:scale-110 border border-gray-300 dark:border-gray-600"
                                                         on:error={(e) => e.target.src = defaultImage}
                                                     />
                                                 </div>
@@ -517,12 +510,12 @@
                                 {#if selectedProject.details}
                                     <div>
                                         <h4 class="text-lg font-bold mb-3 flex items-center text-gray-900 dark:text-white">
-                                            <div class="w-8 h-8 bg-gradient-to-r {selectedProject.gradient} rounded-lg flex items-center justify-center mr-3">
+                                            <div class="w-8 h-8 bg-gray-700 dark:bg-gray-800 rounded-lg flex items-center justify-center mr-3">
                                                 <Icon icon="mdi:code-tags" class="w-4 h-4 text-white" />
                                             </div>
                                             Détails techniques
                                         </h4>
-                                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-4 rounded-xl border border-blue-200/30 dark:border-blue-800/30">
+                                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-300 dark:border-gray-600">
                                             {selectedProject.details}
                                         </p>
                                     </div>
@@ -532,19 +525,19 @@
                                 {#if selectedProject.functionalities && selectedProject.functionalities.length > 0}
                                     <div>
                                         <h4 class="text-lg font-bold mb-3 flex items-center text-gray-900 dark:text-white">
-                                            <div class="w-8 h-8 bg-gradient-to-r {selectedProject.gradient} rounded-lg flex items-center justify-center mr-3">
+                                            <div class="w-8 h-8 bg-gray-700 dark:bg-gray-800 rounded-lg flex items-center justify-center mr-3">
                                                 <Icon icon="mdi:check-circle-outline" class="w-4 h-4 text-white" />
                                             </div>
                                             Fonctionnalités
                                         </h4>
-                                        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-blue-200/30 dark:border-blue-800/30 p-4">
+                                        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 p-4">
                                             <ul class="space-y-2">
                                                 {#each selectedProject.functionalities as feature, i}
                                                     <li 
                                                         in:slide={{ delay: i * 80, duration: 400 }}
                                                         class="flex items-start text-gray-700 dark:text-gray-300"
                                                     >
-                                                        <div class="w-2 h-2 bg-gradient-to-r {selectedProject.gradient} rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-gentle"></div>
+                                                        <div class="w-2 h-2 bg-gray-600 dark:bg-gray-500 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-gentle"></div>
                                                         <span>{feature}</span>
                                                     </li>
                                                 {/each}
@@ -558,20 +551,19 @@
                                     {#if selectedProject.link}
                                         <a 
                                             href={selectedProject.link} 
-                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 border border-blue-500/50"
+                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gray-800 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 border border-gray-700"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
-                                            <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-700 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                            <Icon icon="mdi:web" class="w-5 h-5 mr-3 relative z-10" />
-                                            <span class="relative z-10">Voir en ligne</span>
+                                            <Icon icon="mdi:web" class="w-5 h-5 mr-3" />
+                                            <span>Voir en ligne</span>
                                         </a>
                                     {/if}
 
                                     {#if selectedProject.github}
                                         <a 
                                             href={selectedProject.github} 
-                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 border border-gray-700/50"
+                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 border border-gray-700"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >

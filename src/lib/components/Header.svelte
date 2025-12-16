@@ -69,7 +69,7 @@
 </script>
 
 <header 
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-md {isScrolled ? 'bg-white/90 dark:bg-gray-900/90 shadow-lg border-b border-blue-200/50 dark:border-blue-800/50' : 'bg-white/70 dark:bg-gray-900/70'}"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-md {isScrolled ? 'bg-white/90 dark:bg-gray-900/90 shadow-lg border-b border-gray-300 dark:border-gray-700' : 'bg-white/70 dark:bg-gray-900/70'}"
 >
     <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         <!-- Logo avec animation -->
@@ -80,11 +80,11 @@
             <div class="relative">
                 <img 
                     src="/logo.png" 
-                    class="w-12 h-12 bg-gray-900/80 rounded-full border-2 border-white/20 group-hover:border-blue-500/30 transition-all duration-300 group-hover:scale-110" 
+                    class="w-12 h-12 bg-gray-900/80 rounded-full border-2 border-white/20 group-hover:border-gray-500 transition-all duration-300 group-hover:scale-110" 
                     alt="Logo"
                 />
                 <!-- Point animé -->
-                <div class="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full animate-ping-fast"></div>
+                <div class="absolute -top-1 -right-1 w-3 h-3 bg-gray-600 rounded-full animate-ping-fast"></div>
             </div>
         </a>
 
@@ -92,7 +92,7 @@
         <div class="md:hidden flex items-center space-x-3">
             <ThemeToggle/>
             <button 
-                class="p-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl transition-all duration-300"
+                class="p-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-300"
                 on:click={toggleMenu}
                 aria-label="Toggle menu"
             >
@@ -109,7 +109,7 @@
             {#each sections.slice(1) as section, i}
                 <a 
                     href={"#" + section} 
-                    class="group relative flex items-center px-4 py-2 rounded-xl font-medium transition-all duration-300 {activeSection === section ? 'text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'}"
+                    class="group relative flex items-center px-4 py-2 rounded-xl font-medium transition-all duration-300 {activeSection === section ? 'text-gray-900 dark:text-gray-100' : 'text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'}"
                 >
                     <!-- Icone pour chaque lien -->
                     <Icon 
@@ -133,7 +133,7 @@
 
                     <!-- Point actif -->
                     {#if activeSection === section}
-                        <div class="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full animate-ping-fast"></div>
+                        <div class="absolute -top-1 -right-1 w-2 h-2 bg-gray-600 rounded-full animate-ping-fast"></div>
                     {/if}
                 </a>
             {/each}
@@ -148,24 +148,24 @@
 
             <!-- Underline animé -->
             <div
-                class="absolute bottom-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-500 shadow-lg shadow-blue-500/30"
+                class="absolute bottom-0 h-1 bg-gray-900 dark:bg-white rounded-full transition-all duration-500 shadow-lg shadow-gray-500/30"
                 style="left: {underlineStyle.left}; width: {underlineStyle.width};"
             ></div>
 
             <!-- Effet de fond au survol -->
-            <div class="absolute inset-0 bg-blue-50 dark:bg-blue-900/20 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gray-100 dark:bg-gray-800/30 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10 pointer-events-none"></div>
         </div>
 
         <!-- Mobile Menu -->
         {#if isMenuOpen}
             <div 
-                class="absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl border-t border-blue-200/50 dark:border-blue-800/50 md:hidden"
+                class="absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl border-t border-gray-300 dark:border-gray-700 md:hidden"
             >
                 <div class="flex flex-col py-4 space-y-1 px-4">
                     {#each sections.slice(1) as section, i}
                         <a 
                             href={"#" + section} 
-                            class="group flex items-center px-4 py-3 rounded-xl transition-all duration-300 {activeSection === section ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' : 'text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20'}"
+                            class="group flex items-center px-4 py-3 rounded-xl transition-all duration-300 {activeSection === section ? 'bg-gray-100 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100' : 'text-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/30'}"
                             on:click={() => {
                                 toggleMenu();
                                 setTimeout(updateUnderline, 100);
@@ -194,7 +194,7 @@
 
                             <!-- Indicateur actif -->
                             {#if activeSection === section}
-                                <div class="ml-auto w-2 h-2 bg-blue-500 rounded-full animate-pulse-gentle"></div>
+                                <div class="ml-auto w-2 h-2 bg-gray-600 rounded-full animate-pulse-gentle"></div>
                             {/if}
                         </a>
                     {/each}
