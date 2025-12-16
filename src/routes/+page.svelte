@@ -86,18 +86,18 @@
 
 {#if isLoading}
 	<!-- Loading Screen -->
-	<div class="fixed inset-0 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20 z-50 flex flex-col items-center justify-center">
+	<div class="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex flex-col items-center justify-center">
 		<!-- Animated Background Elements -->
 		<div class="absolute inset-0 overflow-hidden">
-			<div class="absolute -top-20 -left-20 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
-			<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
-			<div class="absolute top-1/2 left-1/4 w-48 h-48 bg-blue-300/5 rounded-full blur-2xl animate-float"></div>
+			<div class="absolute -top-20 -left-20 w-72 h-72 bg-gray-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
+			<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-gray-600/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+			<div class="absolute top-1/2 left-1/4 w-48 h-48 bg-gray-300/5 rounded-full blur-2xl animate-float"></div>
 		</div>
 
 		<!-- Logo Container -->
 		<div class="relative mb-8 group animate-bounce-gentle">
 			<!-- Logo with Border -->
-			<div class="relative bg-gradient-to-r from-blue-500 to-blue-600 p-3 rounded-3xl shadow-2xl">
+			<div class="relative bg-gray-800 p-3 rounded-3xl shadow-2xl">
 				<img 
 					src="/logo.png" 
 					alt="Logo Kiady Nirina" 
@@ -105,14 +105,14 @@
 				/>
 				
 				<!-- Floating Dots -->
-				<div class="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full animate-ping-fast"></div>
-				<div class="absolute -bottom-2 -left-2 w-3 h-3 bg-blue-300 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
+				<div class="absolute -top-2 -right-2 w-4 h-4 bg-gray-400 rounded-full animate-ping-fast"></div>
+				<div class="absolute -bottom-2 -left-2 w-3 h-3 bg-gray-300 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
 			</div>
 		</div>
 
 		<!-- Loading Text -->
 		<div class="text-center mb-8 animate-fade-in">
-			<p class="text-gray-600 dark:text-gray-400 text-lg">
+			<p class="text-gray-600 dark:text-gray-200 text-lg">
 				Chargement ...
 			</p>
 		</div>
@@ -120,10 +120,10 @@
 		<!-- Progress Bar -->
 		<div class="w-80 max-w-full px-4">
 			<!-- Progress Container -->
-			<div class="relative h-3 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm rounded-full overflow-hidden border border-blue-200/50 dark:border-blue-800/50 shadow-inner">
+			<div class="relative h-3 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 shadow-inner">
 				<!-- Progress Fill -->
 				<div 
-					class="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all duration-300 ease-out shadow-lg"
+					class="absolute top-0 left-0 h-full bg-gray-800 dark:bg-gray-200 rounded-full transition-all duration-300 ease-out shadow-lg"
 					style="width: {progress}%"
 				>
 					<!-- Shimmer Effect -->
@@ -131,13 +131,13 @@
 				</div>
 				
 				<!-- Progress Dots -->
-				<div class="absolute -top-1 -left-1 w-4 h-4 bg-blue-500 rounded-full animate-ping-slow"></div>
-				<div class="absolute -top-1 -right-1 w-4 h-4 bg-blue-400 rounded-full animate-ping-slow" style="animation-delay: 1s;"></div>
+				<div class="absolute -top-1 -left-1 w-4 h-4 bg-gray-600 rounded-full animate-ping-slow"></div>
+				<div class="absolute -top-1 -right-1 w-4 h-4 bg-gray-500 rounded-full animate-ping-slow" style="animation-delay: 1s;"></div>
 			</div>
 			
 			<!-- Progress Percentage -->
 			<div class="text-center mt-4">
-				<span class="text-blue-600 dark:text-blue-400 font-bold text-lg">{Math.round(progress)}%</span>
+				<span class="text-gray-700 dark:text-gray-200 font-bold text-lg">{Math.round(progress)}%</span>
 			</div>
 		</div>
 
@@ -145,7 +145,7 @@
 		<div class="flex space-x-2 mt-8">
 			{#each [0, 1, 2] as i}
 				<div 
-					class="w-3 h-3 bg-blue-500 rounded-full animate-bounce"
+					class="w-3 h-3 bg-gray-600 rounded-full animate-bounce"
 					style="animation-delay: {i * 0.2}s;"
 				></div>
 			{/each}
@@ -195,10 +195,10 @@
 
 		<button
 			on:click={scrollToSection}
-			class="fixed bottom-6 right-6 p-3 bg-blue-600 dark:bg-blue-800 text-white rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-900 transition-all duration-300 z-50 group"
+			class="fixed bottom-6 right-6 p-3 bg-gray-800 dark:bg-gray-900 text-white rounded-full shadow-lg hover:bg-gray-900 dark:hover:bg-gray-800 transition-all duration-300 z-50 group"
 			aria-label={scrollToTop ? 'Retourner en haut' : 'Aller en bas'}
 		>
-			<div class="absolute -inset-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-300 animate-pulse-gentle"></div>
+			<div class="absolute -inset-1 bg-gray-600 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-300 animate-pulse-gentle"></div>
 			<Icon
 				icon={scrollToTop ? 'mdi:chevron-up' : 'mdi:chevron-down'}
 				width="24"

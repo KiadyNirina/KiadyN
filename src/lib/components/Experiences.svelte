@@ -17,7 +17,7 @@
         "Déploiement via SSH et collaboration avec l'équipe de développeurs pour assurer la cohérence des projets."
         ],
         technologies: ["Magento", "HTML / CSS", "Javascript", "PHP", "MySQL", "Git"],
-        gradient: "from-blue-500 to-blue-600"
+        gradient: "from-gray-600 to-gray-700"
       },
       {
         period: "Nov. 2024 - Fev. 2025",
@@ -33,7 +33,7 @@
         "Collaboration avec l'équipe de développeurs."
         ],
         technologies: ["HTML / CSS", "Javascript", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"],
-        gradient: "from-blue-600 to-blue-700"
+        gradient: "from-gray-700 to-gray-800"
       },
       {
         period: "2022 - Présent",
@@ -44,7 +44,7 @@
         localisation: "Divers Lieux",
         description: "Développement d'applications web pour divers clients.",
         technologies: ["Wordpress", "Sveltekit", "Vue", "Nuxt", "Tailwind", "Laravel", "Django"],
-        gradient: "from-blue-700 to-blue-800"
+        gradient: "from-gray-800 to-gray-900"
       }
     ];
 
@@ -107,15 +107,15 @@
                 Expériences Professionnelles
             </h2>
             <div class="relative inline-block">
-                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto"></div>
-                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-blue-500 rounded-full animate-ping-slow"></div>
+                <div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
+                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
             </div>
         </div>
 
         <!-- Timeline -->
         <div class="relative">
             <!-- Timeline Line -->
-            <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-blue-400 to-blue-500 transform md:-translate-x-1/2 shadow-lg"></div>
+            <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-600 via-gray-500 to-gray-600 transform md:-translate-x-1/2 shadow-lg"></div>
             
             <!-- Timeline Items -->
             <div class="space-y-12">
@@ -128,20 +128,20 @@
                         <div class="ml-12 md:ml-0 md:flex md:items-center md:justify-between md:space-x-8 {i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}">
                             <!-- Date Section -->
                             <div class="md:w-1/3 mb-4 md:mb-0 {i % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}">
-                                <div class="inline-flex items-center px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-200/50 dark:border-blue-800/50">
-                                    <div class="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-ping-fast"></div>
-                                    <span class="text-sm font-bold bg-gradient-to-r {exp.gradient} bg-clip-text text-transparent">
+                                <div class="inline-flex items-center px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-300 dark:border-gray-700">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-2 animate-ping-fast"></div>
+                                    <span class="text-sm font-bold bg-gray-700 dark:bg-gray-200 bg-clip-text text-transparent">
                                         {exp.period}
                                     </span>
                                 </div>
-                                <div class="mt-2 text-xs text-blue-600 dark:text-blue-400 font-medium">
+                                <div class="mt-2 text-xs text-gray-700 dark:text-gray-400 font-medium">
                                     {calculateDuration(exp.period)}
                                 </div>
                             </div>
 
                             <!-- Experience Card -->
                             <div class="md:w-2/3">
-                                <div class="group relative bg-white dark:bg-gray-800 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-blue-200/50 dark:border-blue-800/50 transition-all duration-500 hover:-translate-y-1">
+                                <div class="group relative bg-white dark:bg-gray-800 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-300 dark:border-gray-700 transition-all duration-500 hover:-translate-y-1">
                                     <!-- Animated Border -->
                                     <div class="absolute inset-0 rounded-2xl bg-gradient-to-r {exp.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
                                         <div class="absolute inset-[2px] rounded-2xl bg-white dark:bg-gray-800"></div>
@@ -155,14 +155,14 @@
                                                     <img src={exp.img} alt={exp.company} class="w-8 h-auto mr-3 rounded-lg shadow-sm" />
                                                 {:else}
                                                     <div class="w-8 h-8 flex items-center justify-center mr-3">
-                                                        <Icon icon="mdi:company" class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300" />
+                                                        <Icon icon="mdi:company" class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300" />
                                                     </div>
                                                 {/if}
                                                 <div>
-                                                    <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                                                    <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">
                                                         {exp.position}
                                                     </h3>
-                                                    <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                                                    <p class="text-sm font-semibold text-gray-700 dark:text-gray-400">
                                                         {exp.company}
                                                     </p>
                                                 </div>
@@ -176,11 +176,11 @@
                                     <!-- Details -->
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 text-sm">
                                         <div class="flex items-center text-gray-600 dark:text-gray-400">
-                                            <Icon icon="mdi:map-marker" class="w-4 h-4 mr-2 text-blue-500" />
+                                            <Icon icon="mdi:map-marker" class="w-4 h-4 mr-2 text-gray-600" />
                                             <span>{exp.localisation}</span>
                                         </div>
                                         <div class="flex items-center text-gray-600 dark:text-gray-400">
-                                            <Icon icon="mdi:calendar-clock" class="w-4 h-4 mr-2 text-blue-500" />
+                                            <Icon icon="mdi:calendar-clock" class="w-4 h-4 mr-2 text-gray-600" />
                                             <span>{exp.workSchedule}</span>
                                         </div>
                                     </div>
@@ -190,7 +190,7 @@
                                         <ul class="space-y-2">
                                             {#each Array.isArray(exp.description) ? exp.description : [exp.description] as desc, j}
                                                 <li class="flex items-start text-sm text-gray-700 dark:text-gray-300">
-                                                    <div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-gentle" style="animation-delay: {j * 0.3}s;"></div>
+                                                    <div class="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-gentle" style="animation-delay: {j * 0.3}s;"></div>
                                                     <span>{@html desc}</span>
                                                 </li>
                                             {/each}
@@ -201,7 +201,7 @@
                                     <div class="flex flex-wrap gap-2">
                                         {#each exp.technologies as tech, k}
                                             <span 
-                                                class="px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full border border-blue-200 dark:border-blue-800 transition-all duration-300 hover:scale-105 hover:bg-blue-100 dark:hover:bg-blue-900/50 hover:shadow-sm"
+                                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 text-xs font-medium rounded-full border border-gray-300 dark:border-gray-700 transition-all duration-300 hover:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700 hover:shadow-sm"
                                                 style="animation-delay: {k * 0.1}s;"
                                             >
                                                 {tech}
@@ -210,7 +210,7 @@
                                     </div>
 
                                     <!-- Hover Effect -->
-                                    <div class="absolute inset-0 rounded-2xl bg-blue-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
+                                    <div class="absolute inset-0 rounded-2xl bg-gray-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
                                 </div>
                             </div>
                         </div>

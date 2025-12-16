@@ -6,9 +6,9 @@
 <footer id="footer" class="bg-gray-800 text-white py-16 relative overflow-hidden">
     <!-- Background Elements -->
     <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute -top-20 -left-20 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-blue-400/5 rounded-full blur-2xl animate-float"></div>
+        <div class="absolute -top-20 -left-20 w-64 h-64 bg-gray-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-gray-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-gray-400/5 rounded-full blur-2xl animate-float"></div>
     </div>
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -18,7 +18,7 @@
             <!-- Navigation Links -->
             <div class="text-center lg:text-left animate-slide-up" style="animation-delay: 0.2s;">
                 <h4 class="text-lg font-bold mb-6 text-white flex items-center justify-center lg:justify-start">
-                    <Icon icon="mdi:navigation" class="mr-3 text-blue-400" />
+                    <Icon icon="mdi:navigation" class="mr-3 text-gray-400" />
                     Navigation
                 </h4>
                 <ul class="space-y-3">
@@ -32,9 +32,9 @@
                         <li in:fade={{ delay: 400 + (i * 100), duration: 400 }}>
                             <a 
                                 href={link.href} 
-                                class="group flex items-center justify-center lg:justify-start text-blue-200/80 hover:text-white transition-all duration-300 transform hover:translate-x-2"
+                                class="group flex items-center justify-center lg:justify-start text-gray-300 hover:text-white transition-all duration-300 transform hover:translate-x-2"
                             >
-                                <Icon icon={link.icon} class="w-4 h-4 mr-3 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
+                                <Icon icon={link.icon} class="w-4 h-4 mr-3 text-gray-400 group-hover:scale-110 transition-transform duration-300" />
                                 <span class="text-sm font-medium">{link.name}</span>
                             </a>
                         </li>
@@ -45,10 +45,10 @@
             <!-- Social Media -->
             <div class="text-center lg:text-left animate-slide-up" style="animation-delay: 0.4s;">
                 <h4 class="text-lg font-bold mb-6 text-white flex items-center justify-center lg:justify-start">
-                    <Icon icon="mdi:share-variant" class="mr-3 text-blue-400" />
+                    <Icon icon="mdi:share-variant" class="mr-3 text-gray-400" />
                     Connectons-nous
                 </h4>
-                <p class="text-blue-200/80 mb-6 text-sm">
+                <p class="text-gray-300 mb-6 text-sm">
                     Suivez-moi sur les réseaux sociaux pour rester connecté
                 </p>
                 <div class="flex justify-center lg:justify-start space-x-4">
@@ -56,44 +56,39 @@
                         { 
                             icon: 'mdi:facebook', 
                             href: 'https://www.facebook.com/kiady.rambeloson', 
-                            color: 'hover:bg-blue-600 hover:shadow-blue-500/40',
                             name: 'Facebook'
                         },
                         { 
                             icon: 'mdi:github', 
                             href: 'https://github.com/KiadyNirina', 
-                            color: 'hover:bg-gray-800 hover:shadow-gray-500/40',
                             name: 'GitHub'
                         },
                         { 
                             icon: 'mdi:linkedin', 
                             href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', 
-                            color: 'hover:bg-blue-700 hover:shadow-blue-500/40',
                             name: 'LinkedIn'
                         },
                         { 
                             icon: 'mdi:whatsapp', 
                             href: 'https://wa.me/+261335777152', 
-                            color: 'hover:bg-green-600 hover:shadow-green-500/40',
                             name: 'WhatsApp'
                         },
                         { 
                             icon: 'mdi:email', 
                             href: 'mailto:kiady142ram@gmail.com', 
-                            color: 'hover:bg-red-500 hover:shadow-red-500/40',
                             name: 'Email'
                         }
                     ] as social, i}
                         <a 
                             href={social.href} 
-                            class="group relative w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-blue-200 border border-blue-500/20 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:text-white {social.color}"
+                            class="group relative w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-300 border border-gray-500/20 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:text-white hover:bg-gray-700"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={social.name}
                             in:fade={{ delay: 600 + (i * 100), duration: 400 }}
                         >
                             <!-- Animated Dot -->
-                            <div class="absolute -top-1 -right-1 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping-fast"></div>
+                            <div class="absolute -top-1 -right-1 w-2 h-2 bg-gray-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping-fast"></div>
                             
                             <Icon icon={social.icon} class="w-6 h-6" />
                             
@@ -109,19 +104,19 @@
         </div>
 
         <!-- Bottom Bar -->
-        <div class="border-t border-blue-500/20 pt-8 text-center animate-fade-in" style="animation-delay: 1s;">
+        <div class="border-t border-gray-500/20 pt-8 text-center animate-fade-in" style="animation-delay: 1s;">
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <!-- Copyright -->
-                <p class="text-blue-200/70 text-sm">
+                <p class="text-gray-400 text-sm">
                     © {new Date().getFullYear()} 
-                    <span class="text-blue-400 font-semibold">KiadyN</span>. 
+                    <span class="text-gray-300 font-semibold">KiadyN</span>. 
                     Tous droits réservés.
                 </p>
                 
                 <!-- Additional Info -->
-                <div class="text-blue-200/70 text-sm">
+                <div class="text-gray-400 text-sm">
                     <span class="flex items-center">
-                        <Icon icon="mdi:heart" class="w-4 h-4 mr-1 text-red-400 animate-pulse-gentle" />
+                        <Icon icon="mdi:heart" class="w-4 h-4 mr-1 text-gray-300 animate-pulse-gentle" />
                         Fait avec passion
                     </span>
                 </div>

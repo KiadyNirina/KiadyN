@@ -6,48 +6,48 @@
         Mes Compétences
       </h2>
       <div class="relative inline-block">
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mx-auto"></div>
-        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-blue-500 rounded-full animate-ping-slow"></div>
+        <div class="w-24 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
+        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-600 rounded-full animate-ping-slow"></div>
       </div>
     </div>
 
     <!-- Grid des compétences -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {#each [
-        { title: 'Frontend', color: 'from-blue-500 to-blue-600', category: 'frontend', subsections: [
+        { title: 'Frontend', color: 'from-gray-600 to-gray-700', category: 'frontend', subsections: [
             { subtitle: 'Langages', items: ['HTML','CSS','Javascript'] },
             { subtitle: 'Frameworks / Libs', items: ['Vue','Nuxt','Svelte','Sveltekit','Tailwind'] },
           ]
         },
-        { title: 'Backend', color: 'from-blue-600 to-blue-700', category: 'backend', subsections: [
+        { title: 'Backend', color: 'from-gray-700 to-gray-800', category: 'backend', subsections: [
             { subtitle: 'Langages', items: ['PHP','Python'] },
             { subtitle: 'Frameworks / API', items: ['Laravel','Django','Django REST','API REST'] },
           ]
         },
-        { title: 'CMS', color: 'from-blue-700 to-blue-800', category: 'cms', subsections: [
+        { title: 'CMS', color: 'from-gray-800 to-gray-900', category: 'cms', subsections: [
             { subtitle: 'CMS', items: ['WordPress','Magento'] },
             { subtitle: 'Extensions / Plugins', items: ['WooCommerce'] },
           ]
         },
-        { title: 'Bases de données', color: 'from-blue-800 to-blue-900', category: 'bdd', subsections: [
+        { title: 'Bases de données', color: 'from-gray-900 to-gray-700', category: 'bdd', subsections: [
             { subtitle: 'SGBD', items: ['SQLite','MySQL','PostgreSQL','Supabase'] },
           ]
         },
-        { title: 'Outils', color: 'from-blue-900 to-blue-600', category: 'tools', subsections: [
+        { title: 'Outils', color: 'from-gray-700 to-gray-800', category: 'tools', subsections: [
             { subtitle: 'Versioning & Collaboration', items: ['Git','Trello'] },
             { subtitle: 'API & Conteneurs', items: ['Postman','Docker'] },
           ]
         },
       ] as section}
         <div
-          class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/50 rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+          class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
           use:fadeInOnScroll
         >
           <!-- Effet de fond au hover -->
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-blue-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-gray-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           
           <!-- Point animé -->
-          <div class="absolute -top-2 -right-2 w-4 h-4 bg-blue-500 rounded-full animate-pulse-gentle"></div>
+          <div class="absolute -top-2 -right-2 w-4 h-4 bg-gray-600 rounded-full animate-pulse-gentle"></div>
 
           <div class="relative z-10">
             <!-- Titre avec icône -->
@@ -60,24 +60,24 @@
 
             {#each section.subsections as sub, index}
               <div class="mb-6 last:mb-0">
-                <h4 class="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-3 flex items-center">
-                  <span class="w-1 h-4 bg-blue-500 rounded-full mr-2 animate-pulse-gentle" style="animation-delay: {index * 0.2}s;"></span>
+                <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-300 mb-3 flex items-center">
+                  <span class="w-1 h-4 bg-gray-600 rounded-full mr-2 animate-pulse-gentle" style="animation-delay: {index * 0.2}s;"></span>
                   {sub.subtitle}
                 </h4>
                 <div class="flex flex-wrap gap-2">
                   {#each sub.items as skillName, skillIndex}
                     {#each skills.filter(skill => skill.name === skillName) as skill}
                       <div
-                        class="skill-card bg-white dark:bg-gray-700 border border-blue-100 dark:border-blue-800/30 px-3 py-2 rounded-xl flex items-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-blue-300 dark:hover:border-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 group/card"
+                        class="skill-card bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-3 py-2 rounded-xl flex items-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800/50 group/card"
                         use:fadeInOnScroll
                         style="animation-delay: {skillIndex * 0.1}s;"
                       >
                         <!-- Flash au hover -->
-                        <div class="absolute inset-0 bg-blue-500 rounded-xl opacity-0 group-hover/card:opacity-10 transition-opacity duration-300"></div>
+                        <div class="absolute inset-0 bg-gray-500 rounded-xl opacity-0 group-hover/card:opacity-10 transition-opacity duration-300"></div>
                         
                         <Icon 
                           icon={skill.icon} 
-                          class="text-lg text-blue-600 dark:text-blue-400 relative z-10 transition-transform duration-300 group-hover/card:scale-110 group-hover/card:text-blue-700 dark:group-hover/card:text-blue-300" 
+                          class="text-lg text-gray-700 dark:text-gray-400 relative z-10 transition-transform duration-300 group-hover/card:scale-110 group-hover/card:text-gray-800 dark:group-hover/card:text-gray-300" 
                         />
                         <span class="text-sm font-medium text-gray-700 dark:text-gray-300 ml-2 relative z-10">
                           {skill.name}
@@ -91,7 +91,7 @@
           </div>
 
           <!-- Bordure animée au hover -->
-          <div class="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
+          <div class="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
             <div class="absolute inset-[2px] rounded-2xl bg-white dark:bg-gray-800"></div>
           </div>
         </div>
