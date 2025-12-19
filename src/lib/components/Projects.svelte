@@ -9,7 +9,7 @@
             type: "Freelance",
             title: "Mireille",
             description: "Portfolio professionnel d'une technicienne en génie civil, présentant son parcours, ses expériences et ses compétences techniques avec clarté.",
-            tech: ["Nuxt", "Tailwind CSS", "JavaScript"],
+            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
             image: "/mireille.png",
             details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
             gallery: [
@@ -25,7 +25,7 @@
             type: "Freelance",
             title: "Kleonix",
             description: "Site vitrine moderne pour Kleonix, mettant en valeur son expertise en développement web et son approche client sur mesure",
-            tech: ["Nuxt", "Tailwind CSS", "JavaScript"],
+            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
             image: "/kleonix.png",
             details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
             gallery: [
