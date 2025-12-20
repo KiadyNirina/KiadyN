@@ -1,134 +1,68 @@
-<section class="py-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header avec animation -->
-    <div class="text-center mb-16 animate-slide-up">
-      <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-        Mes Compétences
-      </h2>
-      <div class="relative inline-block">
-        <div class="w-24 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
-        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-gray-600 rounded-full animate-ping-slow"></div>
-      </div>
-    </div>
-
-    <!-- Grid des compétences -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {#each [
-        { title: 'Frontend', color: 'from-gray-600 to-gray-700', category: 'frontend', subsections: [
-            { subtitle: 'Langages', items: ['HTML','CSS','Javascript'] },
-            { subtitle: 'Frameworks / Libs', items: ['Vue','Nuxt','Svelte','Sveltekit','Tailwind'] },
-          ]
-        },
-        { title: 'Backend', color: 'from-gray-700 to-gray-800', category: 'backend', subsections: [
-            { subtitle: 'Langages', items: ['PHP','Python'] },
-            { subtitle: 'Frameworks / API', items: ['Laravel','Django','Django REST','API REST'] },
-          ]
-        },
-        { title: 'CMS', color: 'from-gray-800 to-gray-900', category: 'cms', subsections: [
-            { subtitle: 'CMS', items: ['WordPress','Magento'] },
-            { subtitle: 'Extensions / Plugins', items: ['WooCommerce'] },
-          ]
-        },
-        { title: 'Bases de données', color: 'from-gray-900 to-gray-700', category: 'bdd', subsections: [
-            { subtitle: 'SGBD', items: ['SQLite','MySQL','PostgreSQL','Supabase'] },
-          ]
-        },
-        { title: 'Outils', color: 'from-gray-700 to-gray-800', category: 'tools', subsections: [
-            { subtitle: 'Versioning & Collaboration', items: ['Git','Trello'] },
-            { subtitle: 'API & Conteneurs', items: ['Postman','Docker'] },
-          ]
-        },
-      ] as section}
-        <div
-          class="group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-          use:fadeInOnScroll
-        >
-          <!-- Effet de fond au hover -->
-          <div class="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-gray-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          
-          <!-- Point animé -->
-          <div class="absolute -top-2 -right-2 w-4 h-4 bg-gray-600 rounded-full animate-pulse-gentle"></div>
-
-          <div class="relative z-10">
-            <!-- Titre avec icône -->
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-              <span class={`flex items-center justify-center`}>
-                
-              </span>
-              {section.title}
-            </h3>
-
-            {#each section.subsections as sub, index}
-              <div class="mb-6 last:mb-0">
-                <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-300 mb-3 flex items-center">
-                  <span class="w-1 h-4 bg-gray-600 rounded-full mr-2 animate-pulse-gentle" style="animation-delay: {index * 0.2}s;"></span>
-                  {sub.subtitle}
-                </h4>
-                <div class="flex flex-wrap gap-2">
-                  {#each sub.items as skillName, skillIndex}
-                    {#each skills.filter(skill => skill.name === skillName) as skill}
-                      <div
-                        class="skill-card bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-3 py-2 rounded-xl flex items-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-gray-400 dark:hover:border-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800/50 group/card"
-                        use:fadeInOnScroll
-                        style="animation-delay: {skillIndex * 0.1}s;"
-                      >
-                        <!-- Flash au hover -->
-                        <div class="absolute inset-0 bg-gray-500 rounded-xl opacity-0 group-hover/card:opacity-10 transition-opacity duration-300"></div>
-                        
-                        <Icon 
-                          icon={skill.icon} 
-                          class="text-lg text-gray-700 dark:text-gray-400 relative z-10 transition-transform duration-300 group-hover/card:scale-110 group-hover/card:text-gray-800 dark:group-hover/card:text-gray-300" 
-                        />
-                        <span class="text-sm font-medium text-gray-700 dark:text-gray-300 ml-2 relative z-10">
-                          {skill.name}
-                        </span>
-                      </div>
-                    {/each}
-                  {/each}
-                </div>
-              </div>
-            {/each}
-          </div>
-
-          <!-- Bordure animée au hover -->
-          <div class="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
-            <div class="absolute inset-[2px] rounded-2xl bg-white dark:bg-gray-800"></div>
-          </div>
-        </div>
-      {/each}
-    </div>
-  </div>
-</section>
-
 <script>
   import Icon from '@iconify/svelte';
+    import { tick } from 'svelte';
 
   const skills = [
-    { name: 'HTML', icon: 'simple-icons:html5', category: 'frontend' },
-    { name: 'CSS', icon: 'simple-icons:css3', category: 'frontend' },
-    { name: 'Tailwind', icon: 'simple-icons:tailwindcss', category: 'frontend' },
-    { name: 'Javascript', icon: 'simple-icons:javascript', category: 'frontend' },
-    { name: 'Vue', icon: 'mdi:vuejs', category: 'frontend' },
-    { name: 'Nuxt', icon: 'mdi:nuxt', category: 'frontend' },
-    { name: 'Svelte', icon: 'simple-icons:svelte', category: 'frontend' },
-    { name: 'Sveltekit', icon: 'simple-icons:svelte', category: 'frontend' },
-    { name: 'PHP', icon: 'simple-icons:php', category: 'backend' },
-    { name: 'Laravel', icon: 'simple-icons:laravel', category: 'backend' },
-    { name: 'Python', icon: 'simple-icons:python', category: 'backend' },
-    { name: 'Django', icon: 'simple-icons:django', category: 'backend' },
-    { name: 'Django REST', icon: 'simple-icons:django', category: 'backend' },
-    { name: 'API REST', icon: 'akar-icons:api', category: 'backend' },
-    { name: 'WordPress', icon: 'simple-icons:wordpress', category: 'cms' },
-    { name: 'Magento', icon: 'simple-icons:magento', category: 'cms' },
-    { name: 'WooCommerce', icon: 'simple-icons:woocommerce', category: 'cms' },
-    { name: 'SQLite', icon: 'simple-icons:sqlite', category: 'bdd' },
-    { name: 'MySQL', icon: 'simple-icons:mysql', category: 'bdd' },
-    { name: 'PostgreSQL', icon: 'akar-icons:postgresql-fill', category: 'bdd' },
-    { name: 'Supabase', icon: 'simple-icons:supabase', category: 'bdd' },
-    { name: 'Git', icon: 'simple-icons:git', category: 'tools' },
-    { name: 'Trello', icon: 'simple-icons:trello', category: 'tools' },
-    { name: 'Postman', icon: 'simple-icons:postman', category: 'tools' },
-    { name: 'Docker', icon: 'simple-icons:docker', category: 'tools' },
+    { name: 'HTML', icon: 'simple-icons:html5' },
+    { name: 'CSS', icon: 'simple-icons:css3' },
+    { name: 'Tailwind', icon: 'simple-icons:tailwindcss' },
+    { name: 'Javascript', icon: 'simple-icons:javascript' },
+    { name: 'Vue', icon: 'simple-icons:vuedotjs' },
+    { name: 'Nuxt', icon: 'simple-icons:nuxtdotjs' },
+    { name: 'Svelte', icon: 'simple-icons:svelte' },
+    { name: 'Sveltekit', icon: 'simple-icons:svelte' },
+    { name: 'PHP', icon: 'simple-icons:php' },
+    { name: 'Laravel', icon: 'simple-icons:laravel' },
+    { name: 'Python', icon: 'simple-icons:python' },
+    { name: 'Django', icon: 'simple-icons:django' },
+    { name: 'Django REST', icon: 'simple-icons:django' },
+    { name: 'API REST', icon: 'ph:framer-logo-bold' },
+    { name: 'WordPress', icon: 'simple-icons:wordpress' },
+    { name: 'Magento', icon: 'simple-icons:magento' },
+    { name: 'WooCommerce', icon: 'simple-icons:woocommerce' },
+    { name: 'SQLite', icon: 'simple-icons:sqlite' },
+    { name: 'MySQL', icon: 'simple-icons:mysql' },
+    { name: 'PostgreSQL', icon: 'simple-icons:postgresql' },
+    { name: 'Supabase', icon: 'simple-icons:supabase' },
+    { name: 'Git', icon: 'simple-icons:git' },
+    { name: 'Trello', icon: 'simple-icons:trello' },
+    { name: 'Postman', icon: 'simple-icons:postman' },
+    { name: 'Docker', icon: 'simple-icons:docker' },
+  ];
+
+  const categories = [
+    { 
+        title: 'Frontend', 
+        subsections: [
+            { subtitle: 'Langages', items: ['HTML','CSS','Javascript'] },
+            { subtitle: 'Frameworks', items: ['Vue','Nuxt','Svelte','Sveltekit','Tailwind'] },
+        ]
+    },
+    { 
+        title: 'Backend', 
+        subsections: [
+            { subtitle: 'Langages', items: ['PHP','Python'] },
+            { subtitle: 'Frameworks & APIs', items: ['Laravel','Django','Django REST','API REST'] },
+        ]
+    },
+    {
+        title: 'CMS & E-commerce', 
+        subsections: [
+            { subtitle: 'Plateformes', items: ['WordPress','Magento','WooCommerce'] },
+        ]
+    },
+    {
+        title: 'Bases de Données',
+        subsections: [
+            { subtitle: 'SGBD', items: ['SQLite','MySQL','PostgreSQL','Supabase'] },
+        ]
+    },
+    { 
+        title: 'Outils', 
+        subsections: [
+            { subtitle: 'Dev & Prod', items: ['Git','Trello','Postman','Docker'] },
+        ]
+    }
   ];
 
   export function fadeInOnScroll(node) {
@@ -136,107 +70,90 @@
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            node.classList.remove('visible');
-            void node.offsetWidth;
-            node.classList.add('visible');
-          } else {
-            node.classList.remove('visible');
+            node.style.opacity = "1";
+            node.style.transform = "translateY(0)";
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
-
     observer.observe(node);
     return { destroy() { observer.unobserve(node); } };
   }
 </script>
 
+<section class="py-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Header Minimaliste -->
+    <div class="mb-24 flex flex-col md:flex-row items-baseline gap-6 border-b border-black/50 dark:border-white/50 pb-12">
+      <h2 class="text-7xl md:text-9xl font-black text-black dark:text-white tracking-tighter uppercase">
+        Stack
+      </h2>
+      <p class="text-xl font-light text-gray-900 dark:text-gray-400 uppercase tracking-[0.3em]">
+        Technique & Outils
+      </p>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-black/50 dark:border-white/50">
+      {#each categories as category, i}
+        <div 
+          class="group relative p-10 border-r border-b border-black/50 dark:border-white/50 transition-all duration-500 hover:bg-gray-50 dark:hover:bg-gray-900/40"
+          use:fadeInOnScroll
+          style="transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateY(40px); transition-delay: {i * 0.1}s"
+        >
+          <!-- Category Index -->
+          <div class="mb-12 flex justify-between items-center">
+            <h3 class="text-xs font-black uppercase tracking-[0.4em] text-black dark:text-white">
+                {category.title}
+            </h3>
+            <span class="text-xs font-mono text-gray-300 dark:text-gray-700">0{i+1}</span>
+          </div>
+
+          {#each category.subsections as sub}
+            <div class="mb-10 last:mb-0">
+              <p class="text-[10px] uppercase font-bold text-gray-900 dark:text-gray-400 tracking-widest mb-6 flex items-center gap-2">
+                <span class="w-2 h-2 bg-black dark:bg-white rounded-full"></span>
+                {sub.subtitle}
+              </p>
+              
+              <div class="flex flex-wrap gap-3">
+                {#each sub.items as skillName}
+                  {#each skills.filter(s => s.name === skillName) as skill}
+                    <div class="group/item flex items-center gap-3 px-4 py-2 border border-black/30 dark:border-white/5 bg-white dark:bg-gray-900 rounded-full hover:border-black dark:hover:border-white hover:invert transition-all duration-300">
+                      <Icon 
+                        icon={skill.icon} 
+                        class="text-xl text-black dark:text-gray-400 group-hover/item:text-white dark:group-hover/item:text-black" 
+                      />
+                      <span class="text-xs font-bold uppercase tracking-tighter text-black dark:text-gray-300">
+                        {skill.name}
+                      </span>
+                    </div>
+                  {/each}
+                {/each}
+              </div>
+            </div>
+          {/each}
+
+          <!-- Hover Decoration -->
+          <div class="absolute bottom-0 left-0 w-0 h-1 bg-black dark:bg-white group-hover:w-full transition-all duration-700"></div>
+        </div>
+      {/each}
+    </div>
+
+    <!-- Background Decoration (Brutalist Lines) -->
+    <div class="mt-24 grid grid-cols-4 h-px bg-black/5 dark:bg-white/5">
+        <div class="border-r border-black/5 dark:border-white/5"></div>
+        <div class="border-r border-black/5 dark:border-white/5"></div>
+        <div class="border-r border-black/5 dark:border-white/5"></div>
+    </div>
+  </div>
+</section>
+
 <style>
-  .skill-card {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out, all 0.3s ease;
-    will-change: opacity, transform;
-  }
-
-  .visible {
-    opacity: 1 !important;
-    transform: translateY(0) scale(1) !important;
-  }
-
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
+    /* Optionnel : forcer les icônes en noir ou blanc selon le thème */
+    :global(.group\/item:hover svg) {
+        filter: invert(1);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from { 
-      opacity: 0; 
-    }
-    to { 
-      opacity: 1; 
-    }
-  }
-
-  @keyframes pulse-gentle {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.05);
-    }
-  }
-
-  @keyframes ping-slow {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    75%, 100% {
-      transform: scale(2);
-      opacity: 0;
-    }
-  }
-
-  @keyframes ping-fast {
-    0% {
-      transform: scale(0.8);
-      opacity: 1;
-    }
-    75%, 100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    opacity: 0;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animate-pulse-gentle {
-    animation: pulse-gentle 3s ease-in-out infinite;
-  }
-
-  .animate-ping-slow {
-    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  .animate-ping-fast {
-    animation: ping-fast 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
 </style>
