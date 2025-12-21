@@ -19,7 +19,7 @@
 <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
     <!-- Fond Décoratif : Lignes de grille brutales -->
     <div class="absolute inset-0 z-0 opacity-[0.1] dark:opacity-[1] pointer-events-none">
-        <div class="absolute inset-0" style="background-image: linear-gradient(to right, #232323 1px, transparent 1px), linear-gradient(to bottom, #232323 1px, transparent 1px); background-size: 10vh 10vh;"></div>
+        <div class="absolute inset-0" style="background-image: linear-gradient(to right, #141414 1px, transparent 1px), linear-gradient(to bottom, #141414 1px, transparent 1px); background-size: 10vh 10vh;"></div>
     </div>
 
     <div class="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center">

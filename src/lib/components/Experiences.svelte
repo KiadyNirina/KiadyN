@@ -1,6 +1,5 @@
 <script>
     import Icon from "@iconify/svelte";
-    import { fade } from "svelte/transition";
 
     const experiences = [
       {
@@ -10,14 +9,13 @@
         type: "CDI",
         workSchedule: "Temps plein",
         img: "atout.png",
-        localisation: "Ambohimiandra, Antananarivo, Madagascar",
+        localisation: "Ambohimiandra, Antananarivo, MG",
         description: [
-        "Intégration de maquettes et développement de nouvelles fonctionnalités pour sites e-commerce Magento 2.",
-        "Maintenance, correction de bugs.",
-        "Déploiement via SSH et collaboration avec l'équipe de développeurs pour assurer la cohérence des projets."
+            "Intégration de maquettes et développement de nouvelles fonctionnalités pour sites e-commerce Magento 2.",
+            "Maintenance corrective et optimisation des performances.",
+            "Déploiement via SSH et collaboration technique agile."
         ],
-        technologies: ["Magento", "HTML / CSS", "Javascript", "PHP", "MySQL", "Git"],
-        gradient: "from-gray-600 to-gray-700"
+        technologies: ["Magento", "PHP", "MySQL", "Git"]
       },
       {
         period: "Nov. 2024 - Fev. 2025",
@@ -26,14 +24,13 @@
         type: "Stage",
         workSchedule: "Temps plein",
         img: "atout.png",
-        localisation: "Ambohimiandra, Antananarivo, Madagascar",
+        localisation: "Ambohimiandra, Antananarivo, MG",
         description: [
-        "Développement et intégration front-end/back-end d'une plateforme e-commerce et d'une application de gestion de stock.",
-        "Maintenance, correction de bugs des fonctionnalités existantes.",
-        "Collaboration avec l'équipe de développeurs."
+            "Développement front-end/back-end d'une plateforme e-commerce et gestion de stock.",
+            "Correction de bugs et maintenance des fonctionnalités existantes.",
+            "Collaboration avec l'équipe de développeurs."
         ],
-        technologies: ["HTML / CSS", "Javascript", "PHP", "Codeigniter", "Magento", "Wordpress", "MySQL", "Git"],
-        gradient: "from-gray-700 to-gray-800"
+        technologies: ["Codeigniter", "Magento", "Wordpress", "PHP"]
       },
       {
         period: "2022 - Présent",
@@ -41,10 +38,11 @@
         company: "Divers Clients",
         type: "Freelance",
         workSchedule: "Variable",
-        localisation: "Divers Lieux",
-        description: "Développement d'applications web pour divers clients.",
-        technologies: ["Wordpress", "Sveltekit", "Vue", "Nuxt", "Tailwind", "Laravel", "Django"],
-        gradient: "from-gray-800 to-gray-900"
+        localisation: "Remote",
+        description: [
+            "Conception d'applications web sur mesure pour divers clients.",
+        ],
+        technologies: ["Sveltekit", "Vue", "Nuxt", "Laravel", "Django", "Wordpress"]
       }
     ];
 
@@ -99,187 +97,103 @@
     }
 </script>
 
-<section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header Section -->
-        <div class="text-center mb-16 animate-slide-up">
-            <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-                Expériences Professionnelles
-            </h2>
-            <div class="relative inline-block">
-                <div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
-                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
+<section class="py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Header Brutaliste -->
+        <div class="mb-24 border-b border-black dark:border-white pb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-xs font-black uppercase tracking-[0.5em] text-gray-900 dark:text-gray-400 mb-6">Parcours</h2>
+                <h3 class="text-6xl md:text-8xl font-black text-black dark:text-white tracking-tighter leading-none uppercase">
+                    Expériences
+                </h3>
+            </div>
+            <div class="text-right">
+                <p class="text-[10px] font-mono text-gray-800 dark:text-gray-400 uppercase tracking-widest leading-relaxed">
+                    Logiciels • Systèmes • Architecture <br/>
+                    Professional Timeline / 001
+                </p>
             </div>
         </div>
 
-        <!-- Timeline -->
-        <div class="relative">
-            <!-- Timeline Line -->
-            <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-600 via-gray-500 to-gray-600 transform md:-translate-x-1/2 shadow-lg"></div>
-            
-            <!-- Timeline Items -->
-            <div class="space-y-12">
-                {#each experiences as exp, i}
-                    <div class="relative group" in:fade={{ duration: 600, delay: i * 200 }}>
-                        <!-- Timeline Dot -->
-                        <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-gradient-to-r {exp.gradient} rounded-full border-4 border-white dark:border-gray-800 shadow-lg transform md:-translate-x-1/2 -translate-y-2 z-20 animate-pulse-gentle"></div>
-                        
-                        <!-- Content Card -->
-                        <div class="ml-12 md:ml-0 md:flex md:items-center md:justify-between md:space-x-8 {i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}">
-                            <!-- Date Section -->
-                            <div class="md:w-1/3 mb-4 md:mb-0 {i % 2 === 0 ? 'md:text-right md:pr-8' : 'md:text-left md:pl-8'}">
-                                <div class="inline-flex items-center px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-300 dark:border-gray-700">
-                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-2 animate-ping-fast"></div>
-                                    <span class="text-sm font-bold bg-gray-700 dark:bg-gray-200 bg-clip-text text-transparent">
-                                        {exp.period}
-                                    </span>
-                                </div>
-                                <div class="mt-2 text-xs text-gray-700 dark:text-gray-400 font-medium">
-                                    {calculateDuration(exp.period)}
-                                </div>
-                            </div>
-
-                            <!-- Experience Card -->
-                            <div class="md:w-2/3">
-                                <div class="group relative bg-white dark:bg-gray-800 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl border border-gray-300 dark:border-gray-700 transition-all duration-500 hover:-translate-y-1">
-                                    <!-- Animated Border -->
-                                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r {exp.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
-                                        <div class="absolute inset-[2px] rounded-2xl bg-white dark:bg-gray-800"></div>
-                                    </div>
-
-                                    <!-- Header -->
-                                    <div class="flex items-start justify-between mb-4">
-                                        <div class="flex-1">
-                                            <div class="flex items-center mb-2">
-                                                {#if exp.img}
-                                                    <img src={exp.img} alt={exp.company} class="w-8 h-auto mr-3 rounded-lg shadow-sm" />
-                                                {:else}
-                                                    <div class="w-8 h-8 flex items-center justify-center mr-3">
-                                                        <Icon icon="mdi:company" class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300" />
-                                                    </div>
-                                                {/if}
-                                                <div>
-                                                    <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">
-                                                        {exp.position}
-                                                    </h3>
-                                                    <p class="text-sm font-semibold text-gray-700 dark:text-gray-400">
-                                                        {exp.company}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <span class="px-3 py-1 bg-gradient-to-r {exp.gradient} text-white text-xs font-bold rounded-full shadow-lg animate-pulse-gentle">
-                                            {exp.type}
-                                        </span>
-                                    </div>
-
-                                    <!-- Details -->
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 text-sm">
-                                        <div class="flex items-center text-gray-600 dark:text-gray-400">
-                                            <Icon icon="mdi:map-marker" class="w-4 h-4 mr-2 text-gray-600" />
-                                            <span>{exp.localisation}</span>
-                                        </div>
-                                        <div class="flex items-center text-gray-600 dark:text-gray-400">
-                                            <Icon icon="mdi:calendar-clock" class="w-4 h-4 mr-2 text-gray-600" />
-                                            <span>{exp.workSchedule}</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Description -->
-                                    <div class="mb-4">
-                                        <ul class="space-y-2">
-                                            {#each Array.isArray(exp.description) ? exp.description : [exp.description] as desc, j}
-                                                <li class="flex items-start text-sm text-gray-700 dark:text-gray-300">
-                                                    <div class="w-1.5 h-1.5 bg-gray-600 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-gentle" style="animation-delay: {j * 0.3}s;"></div>
-                                                    <span>{@html desc}</span>
-                                                </li>
-                                            {/each}
-                                        </ul>
-                                    </div>
-
-                                    <!-- Technologies -->
-                                    <div class="flex flex-wrap gap-2">
-                                        {#each exp.technologies as tech, k}
-                                            <span 
-                                                class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 text-xs font-medium rounded-full border border-gray-300 dark:border-gray-700 transition-all duration-300 hover:scale-105 hover:bg-gray-200 dark:hover:bg-gray-700 hover:shadow-sm"
-                                                style="animation-delay: {k * 0.1}s;"
-                                            >
-                                                {tech}
-                                            </span>
-                                        {/each}
-                                    </div>
-
-                                    <!-- Hover Effect -->
-                                    <div class="absolute inset-0 rounded-2xl bg-gray-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
-                                </div>
+        <!-- Experience List -->
+        <div class="space-y-0">
+            {#each experiences as exp, i}
+                <div class="group relative grid md:grid-cols-12 border-b border-black/50 dark:border-white/50 hover:bg-black dark:hover:bg-white transition-colors duration-500 ease-expo">
+                    
+                    <!-- Time Column -->
+                    <div class="md:col-span-3 p-10 border-r border-black/50 dark:border-white/50 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-black uppercase tracking-widest text-gray-900 dark:text-gray-200 group-hover:text-gray-200 dark:group-hover:text-gray-700 transition-colors">
+                                {exp.period}
+                            </span>
+                            <div class="mt-2 text-[10px] font-mono text-gray-800 dark:text-gray-300 group-hover:text-white/70 dark:group-hover:text-black/70">
+                                // {calculateDuration(exp.period)}
                             </div>
                         </div>
+                        <div class="hidden md:block">
+                            <span class="text-4xl font-thin text-gray-900 dark:text-gray-200 group-hover:text-white/70 dark:group-hover:text-black/70 italic">0{i+1}</span>
+                        </div>
                     </div>
-                {/each}
-            </div>
+
+                    <!-- Content Column -->
+                    <div class="md:col-span-6 p-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <h4 class="text-3xl font-bold text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors tracking-tighter">
+                                {exp.position}
+                            </h4>
+                            <span class="px-2 py-0.5 border border-black dark:border-white text-[10px] font-bold uppercase tracking-tighter text-black dark:text-white group-hover:bg-white group-hover:text-black dark:group-hover:bg-black dark:group-hover:text-white transition-all">
+                                {exp.type}
+                            </span>
+                        </div>
+
+                        <div class="mb-8">
+                            <p class="text-sm font-bold uppercase tracking-widest text-gray-800 dark:text-gray-300 group-hover:text-gray-300 dark:group-hover:text-gray-800 mb-4 flex items-center gap-2">
+                                <Icon icon="ph:buildings-bold" /> {exp.company} — {exp.localisation}
+                            </p>
+                            <ul class="space-y-4">
+                                {#each exp.description as desc}
+                                    <li class="text-lg font-light text-gray-900 dark:text-gray-200 group-hover:text-white dark:group-hover:text-black leading-relaxed flex gap-4">
+                                        <span class="text-black dark:text-white group-hover:text-white dark:group-hover:text-black">—</span>
+                                        {desc}
+                                    </li>
+                                {/each}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Tech Column -->
+                    <div class="md:col-span-3 p-10 flex flex-col justify-end">
+                        <div class="flex flex-wrap gap-2 justify-end">
+                            {#each exp.technologies as tech}
+                                <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 border border-black/50 dark:border-white/50 text-gray-800 dark:text-gray-300 group-hover:text-white dark:group-hover:text-black group-hover:border-white/20 dark:group-hover:border-black/50">
+                                    {tech}
+                                </span>
+                            {/each}
+                        </div>
+                    </div>
+
+                    <!-- Absolute Arrow (Mobile hide) -->
+                    <div class="absolute top-10 right-10 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500">
+                        <Icon icon="ph:arrow-up-right-thin" class="w-12 h-12 text-white dark:text-black" />
+                    </div>
+                </div>
+            {/each}
         </div>
     </div>
 </section>
 
 <style>
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .ease-expo {
+        transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
     }
 
-    @keyframes pulse-gentle {
-        0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
+    /* Suppression des barres de défilement pour la grille */
+    :global(body) {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
-
-    @keyframes ping-slow {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(2);
-            opacity: 0;
-        }
-    }
-
-    @keyframes ping-fast {
-        0% {
-            transform: scale(0.8);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-    }
-
-    .animate-slide-up {
-        animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        opacity: 0;
-    }
-
-    .animate-pulse-gentle {
-        animation: pulse-gentle 2s ease-in-out infinite;
-    }
-
-    .animate-ping-slow {
-        animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .animate-ping-fast {
-        animation: ping-fast 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    :global(body::-webkit-scrollbar) {
+        display: none;
     }
 </style>
