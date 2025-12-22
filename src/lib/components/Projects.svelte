@@ -1,14 +1,13 @@
 <script>
     import Icon from "@iconify/svelte";
-    import { fade, blur, slide } from 'svelte/transition';
-    import { quintOut } from 'svelte/easing';
+    import { fade, scale, slide } from 'svelte/transition';
     import { onMount } from 'svelte';
 
     const projects = [
         {
             type: "Freelance",
             title: "Mireille",
-            description: "Portfolio professionnel d'une technicienne en génie civil, présentant son parcours, ses expériences et ses compétences techniques avec clarté.",
+            description: "Portfolio professionnel d'une technicienne en génie civil. Focus sur la précision et l'élégance structurelle.",
             tech: ["Nuxt", "Tailwind CSS", "Typescript"],
             image: "/mireille.png",
             details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
@@ -24,8 +23,8 @@
         {
             type: "Freelance",
             title: "Kleonix",
-            description: "Site vitrine moderne pour Kleonix, mettant en valeur son expertise en développement web et son approche client sur mesure",
-            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+            description: "Identité digitale pour une agence moderne. Performance et esthétique minimaliste au cœur du projet.",
+            tech: ["Nuxt", "Tailwind", "TS"],
             image: "/kleonix.png",
             details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
             gallery: [
@@ -37,20 +36,16 @@
             link: "https://kleonix.netlify.app"
         },
         {
-            type: "Projet personnel",
+            type: "Personnel",
             title: "Bookly",
             description: "Une plateforme permettant aux utilisateurs de lire des livres en streaming, de partager leurs propres œuvres (romans, poèmes, nouvelles) et de découvrir les créations d'autres passionnés.",
             tech: ["Vue", "Tailwind CSS", "Laravel", "MySQL"],
             image:  "/1bookly.png",
             details: `La plateforme utilise une architecture SPA + API avec Vue.js pour le frontend et Laravel pour le backend. L’authentification se fait via Sanctum et les livres sont stockés localement ou sur le cloud, avec un système de lecture en streaming paginée. La base de données (MySQL) gère les œuvres, auteurs, interactions (notes, favoris, commentaires) et la plateforme intègre un moteur de recherche ainsi qu’un module de recommandation basé sur les catégories.`,
             functionalities: [
-                "Partage d’œuvres : upload de livres, poèmes, nouvelles, PDF ou textes.",
-                "Lecture de livres en streaming (chargement progressif, pagination dynamique).",
-                "Profil créateur : gestion des œuvres publiées, statistiques de lecture.",
-                "Classement par catégories : genres, tags, tendances, nouveautés.",
-                "Moteur de recherche : recherche par titre, auteur, catégorie, mots-clés.",
-                "Interaction utilisateur : notes, favoris, commentaires.",
-                "Sécurité & authentification : comptes utilisateurs, créateurs, login via Sanctum.",
+                "Lecture progressive haute performance",
+                "Gestion de profil créateur avancée",
+                "Moteur de recherche plein texte"
             ],
             github: "https://github.com/KiadyNirina/Bookly",
             gallery: [
@@ -63,9 +58,9 @@
             ]
         },
         {
-            type: "Projet personnel",
+            type: "Personnel",
             title: "CookUp",
-            description: "Application de suggestion de recettes de cuisine avec fonctionnalités de filtrage avancée",
+            description: "Intelligence culinaire : suggérez, filtrez et exportez vos recettes préférées en un clic.",
             tech: ["SvelteKit", "Tailwind CSS", "Spoonacular API"],
             image: "/Cookup1.png",
             link: "https://cookuup.netlify.app/",
@@ -137,115 +132,27 @@
         }
     ];
 
+    let currentSlide = 0;
     let selectedProject = null;
     let showModal = false;
 
-    let tilt = 0;
-    let isDragging = false;
-    
-    let currentPage = 1;
-    const projectsPerPage = 6;
-    
-    $: totalPages = Math.ceil(projects.length / projectsPerPage);
-    
-    $: paginatedProjects = projects.slice(
-        (currentPage - 1) * projectsPerPage, 
-        currentPage * projectsPerPage
-    );
-    
-    let isMobile = false;
-    let currentSlide = 0;
-    let touchStartX = 0;
-    let touchEndX = 0;
-    let sliderDirection = 0;
-    let cardsPerView = 3;
-
-    const defaultImage = '/pic.svg';
-    
-    onMount(() => {
-        updateCardsPerView();
-        window.addEventListener("resize", updateCardsPerView);
-
-        return () => window.removeEventListener("resize", updateCardsPerView);
-    });
-    
-    function nextPage() {
-        if (currentPage < totalPages) {
-            currentPage += 1;
-        }
-    }
-    
-    function prevPage() {
-        if (currentPage > 1) {
-            currentPage -= 1;
-        }
-    }
-    
-    function goToPage(page) {
-        if (page >= 1 && page <= totalPages) {
-            currentPage = page;
-        }
-    }
-    
     function nextSlide() {
-        sliderDirection = 1;
         currentSlide = (currentSlide + 1) % projects.length;
     }
-    
+
     function prevSlide() {
-        sliderDirection = -1;
         currentSlide = (currentSlide - 1 + projects.length) % projects.length;
-    }
-    
-    function goToSlide(index) {
-        sliderDirection = index > currentSlide ? 1 : -1;
-        currentSlide = index;
-    }
-    
-    function handleTouchStart(e) {
-        isDragging = true;
-        tilt = 0;
-        touchStartX = e.changedTouches[0].clientX;
-    }
-
-    function handleTouchMove(e) {
-        if (!isDragging) return;
-        const currentX = e.changedTouches[0].clientX;
-        const diff = currentX - touchStartX;
-
-        // Inclinaison max 12°
-        tilt = Math.max(-12, Math.min(12, diff / 10));
-    }
-    
-    function handleTouchEnd(e) {
-        isDragging = false;
-        touchEndX = e.changedTouches[0].clientX;
-        tilt = 0;
-        handleSwipe();
-    }
-    
-    function handleSwipe() {
-        const minSwipeDistance = 50;
-        
-        if (touchStartX - touchEndX > minSwipeDistance) {
-            nextSlide();
-        } 
-        
-        if (touchEndX - touchStartX > minSwipeDistance) {
-            prevSlide();
-        }
     }
 
     function openModal(project) {
         selectedProject = project;
         showModal = true;
-        document.body.classList.add('overflow-hidden');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
         showModal = false;
-        selectedProject = null;
-        document.body.classList.remove('overflow-hidden');
+        document.body.style.overflow = 'auto';
     }
 
     function portal(node, target = 'body') {
@@ -259,394 +166,173 @@
             }
         };
     }
-
-    function updateCardsPerView() {
-        if (window.innerWidth < 768) {
-            cardsPerView = 1;
-        } else if (window.innerWidth < 1024) {
-            cardsPerView = 2;
-        } else {
-            cardsPerView = 3;
-        }
-    }
 </script>
 
-<section class="py-20">
-    <!-- Header Section -->
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-slide-up">
-            <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-                Mes Projets
-            </h2>
-            <div class="relative inline-block">
-                <div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
-                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
-            </div>
+<section class="relative min-h-screen py-32 overflow-hidden">
+    <!-- Fond décoratif : Numéro de slide géant -->
+    <div class="absolute top-0 right-0 p-12 overflow-hidden pointer-events-none select-none">
+        <span class="text-[30vw] font-black text-gray-300 dark:text-gray-800 leading-none translate-x-1/4">
+            0{currentSlide + 1}
+        </span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <!-- Header -->
+        <div class="mb-20">
+            <h2 class="text-xs font-black uppercase tracking-[0.5em] text-gray-800 dark:text-gray-200 mb-4">Portfolio</h2>
+            <h3 class="text-6xl md:text-8xl font-black text-black dark:text-white tracking-tighter uppercase leading-none">
+                Selected <br/> <span class="text-gray-500" style="-webkit-text-stroke: 1px;">Works</span>
+            </h3>
         </div>
-        
-        <!-- Projects Grid -->
-        <div class="relative">
-            <!-- Main Slider -->
-            <div class="overflow-hidden">
-                <div 
-                    class="flex transition-transform duration-700 ease-out"
-                    style="
-                        transform: translateX(
-                            calc(
-                                -{(100 / cardsPerView) * currentSlide}% 
-                                + {(100 / cardsPerView) * ((cardsPerView - 1) / 2)}%
-                            )
-                        );
-                    "
-                >
-                    {#each projects as project, index}
-                        <div 
-                            class="px-1 flex-shrink-0 transition-all duration-500"
-                            style="
-                                width: {100 / cardsPerView}%;
-                                transform: scale({index === currentSlide ? 1 : 0.82});
-                                opacity: {index === currentSlide ? 1 : 0.45};
-                                filter: {index === currentSlide ? 'blur(0)' : 'blur(1.5px)'};
-                            "
-                        >
-                            <div 
-                                class="group relative bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-2xl border-2 border-gray-300 dark:border-gray-700 transition-all duration-500"
-                                style="height: 500px;"
-                            >
-                                <!-- Background Image with Overlay -->
-                                <div class="absolute inset-0">
-                                    <img 
-                                        src={project.image ? project.image : defaultImage } 
-                                        alt={project.title} 
-                                        class="w-full h-full object-cover transition-opacity duration-500"
-                                        on:error={(e) => e.target.src = defaultImage}
-                                    />
-                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 dark:from-gray-900 via-gray-900/90 to-transparent"></div>
-                                </div>
 
-                                <!-- Content -->
-                                <div class="relative h-full flex flex-col justify-end p-10" on:click={() => goToSlide(index)}>
-                                    <!-- Type Badge -->
-                                    <div class="mb-4">
-                                        <span class="inline-block px-4 py-2 bg-gray-800 backdrop-blur-sm text-gray-200 text-sm font-bold rounded-full border border-gray-600">
-                                            {project.type}
-                                        </span>
-                                    </div>
-
-                                    <!-- Title -->
-                                    <h3 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
-                                        {project.title}
-                                    </h3>
-
-                                    <!-- Description -->
-                                    <p class="text-gray-200 text-base mb-6 max-w-2xl">
-                                        {project.description}
-                                    </p>
-
-                                    <!-- Technologies -->
-                                    <div class="flex flex-wrap gap-2 mb-6">
-                                        {#each project.tech as tech}
-                                            <span class="px-3 py-1 bg-gray-800 backdrop-blur-sm text-gray-200 text-sm rounded-lg border border-gray-600">
-                                                {tech}
-                                            </span>
-                                        {/each}
-                                    </div>
-
-                                    <!-- CTA Button -->
-                                    <div>
-                                        <button
-                                            on:click={() => openModal(project)} 
-                                            class="group/btn inline-flex items-center px-6 py-3 bg-gray-800 text-white font-bold rounded-full hover:bg-gray-900 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                                        >
-                                            <span class="mr-2">Voir les détails</span>
-                                            <Icon icon="mdi:arrow-right" class="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform duration-300" />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {/each}
+        <!-- Slider Main View -->
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <!-- Image Showcase (8 cols) -->
+            <div class="lg:col-span-7 relative group cursor-pointer" on:click={() => openModal(projects[currentSlide])}>
+                <div class="absolute inset-0 bg-black translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
+                <div class="relative aspect-[16/10] overflow-hidden border border-black dark:border-white">
+                    {#key currentSlide}
+                        <img 
+                            src={projects[currentSlide].image} 
+                            alt={projects[currentSlide].title}
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                            in:fade={{ duration: 800 }}
+                        />
+                    {/key}
+                    
+                    <!-- Overlay interactif -->
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="px-8 py-4 bg-white text-black font-black uppercase text-xs tracking-widest">
+                            Explorer le projet
+                        </span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Navigation Arrows -->
-            <button
-                on:click={prevSlide}
-                class="absolute top-1/2 -left-6 -translate-y-1/2 p-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full border border-gray-300 dark:border-gray-600 transition-all duration-300 hover:scale-110 z-10"
-            >
-                <Icon icon="mdi:chevron-left" class="w-8 h-8 text-gray-700 dark:text-gray-300" />
-            </button>
+            <!-- Content Details (5 cols) -->
+            <div class="lg:col-span-5 space-y-8">
+                {#key currentSlide}
+                    <div in:slide={{ duration: 600 }}>
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-[10px] font-mono text-gray-500">/ 0{currentSlide + 1}</span>
+                            <span class="h-px w-12 bg-gray-400"></span>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">
+                                {projects[currentSlide].type}
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-5xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase mb-6">
+                            {projects[currentSlide].title}
+                        </h4>
+                        
+                        <p class="text-lg text-gray-500 dark:text-gray-400 leading-relaxed italic">
+                            "{projects[currentSlide].description}"
+                        </p>
 
-            <button
-                on:click={nextSlide}
-                class="absolute top-1/2 -right-6 -translate-y-1/2 p-4 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full border border-gray-300 dark:border-gray-600 transition-all duration-300 hover:scale-110 z-10"
-            >
-                <Icon icon="mdi:chevron-right" class="w-8 h-8 text-gray-700 dark:text-gray-300" />
-            </button>
+                        <div class="flex flex-wrap gap-3 mt-8">
+                            {#each projects[currentSlide].tech as tech}
+                                <span class="px-3 py-1 border border-black/50 dark:border-white/50 text-[10px] font-black text-black dark:text-white uppercase tracking-tighter">
+                                    {tech}
+                                </span>
+                            {/each}
+                        </div>
+                    </div>
+                {/key}
 
-            <!-- Navigation Dots -->
-            <div class="flex justify-center items-center mt-8 space-x-3">
-                {#each projects as _, index}
+                <!-- Navigation Controls -->
+                <div class="flex items-center gap-8 pt-12">
                     <button 
-                        on:click={() => goToSlide(index)}
-                        class="transition-all duration-300 {index === currentSlide ? 'w-12 h-3 bg-gray-700 dark:bg-gray-600' : 'w-3 h-3 bg-gray-400 hover:bg-gray-500 dark:bg-gray-700 dark:hover:bg-gray-600'} rounded-full"
-                    />
-                {/each}
-            </div>
-
-            <!-- Counter -->
-            <div class="text-center mt-4">
-                <p class="text-gray-700 dark:text-gray-400 font-bold text-lg">
-                    {currentSlide + 1} / {projects.length}
-                </p>
+                        on:click={prevSlide}
+                        class="p-4 border text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                    >
+                        <Icon icon="ph:arrow-left-thin" class="w-8 h-8" />
+                    </button>
+                    <button 
+                        on:click={nextSlide}
+                        class="p-4 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 transition-all"
+                    >
+                        <Icon icon="ph:arrow-right-thin" class="w-8 h-8" />
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Project Modal -->
-    {#if showModal}
+    <!-- Modal Moderne (Portal-like) -->
+    {#if showModal && selectedProject}
         <div 
             use:portal
-            transition:fade={{ duration: 250 }} 
-            class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            on:click|self={closeModal}
+            class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-white dark:bg-black"
+            transition:fade
         >
-            <div 
-                transition:blur={{ amount: 10, duration: 300 }}
-                class="bg-white dark:bg-gray-900 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-y-auto shadow-2xl border-2 border-gray-300 dark:border-gray-700"
-            >
-                <!-- Header -->
-                {#if selectedProject}
-                    <div class="relative rounded-t-3xl overflow-hidden">        
-                        <!-- Header Content -->
-                        <div class="relative p-8">
-                            <div class="flex justify-between items-start">
-                                <div class="flex-1">
-                                    <!-- Type Badge -->
-                                    <div class="mb-4">
-                                        <span class="inline-block px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm font-bold rounded-full border border-gray-300 dark:border-gray-600">
-                                            {selectedProject.type}
-                                        </span>
-                                    </div>
-                                    
-                                    <!-- Title -->
-                                    <h3 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 tracking-tight">
-                                        {selectedProject.title}
-                                    </h3>
+            <div class="w-full max-w-7xl h-full flex flex-col md:flex-row gap-12 overflow-y-auto pt-24 md:pt-0">
+                <!-- Close -->
+                <button 
+                    on:click={closeModal}
+                    class="absolute top-12 right-12 z-[110] text-black dark:text-white hover:rotate-90 transition-transform"
+                >
+                    <Icon icon="ph:x-thin" class="w-12 h-12" />
+                </button>
 
-                                    <!-- Description -->
-                                    <p class="text-gray-700 dark:text-gray-300 text-base mb-6 max-w-2xl">
-                                        {selectedProject.description}
-                                    </p>
+                <!-- Left: Big Images -->
+                <div class="flex-1 space-y-6">
+                    <img src={selectedProject.image} alt="" class="w-full border border-black/10 dark:border-white/10" />
+                    {#if selectedProject.gallery}
+                        {#each selectedProject.gallery as g}
+                            <img src={g} alt="" class="w-full grayscale hover:grayscale-0 transition-all" />
+                        {/each}
+                    {/if}
+                </div>
 
-                                    <!-- Technologies -->
-                                    <div class="flex flex-wrap gap-2 mb-6">
-                                        {#each selectedProject.tech as tech}
-                                            <span class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-lg border border-gray-300 dark:border-gray-600">
-                                                {tech}
-                                            </span>
-                                        {/each}
-                                    </div>
-                                </div>
-                                
-                                <!-- Close Button -->
-                                <button 
-                                    on:click={closeModal}
-                                    class="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-xl border border-gray-300 dark:border-gray-600 transition-all duration-300 hover:scale-110 ml-4 flex-shrink-0"
-                                    aria-label="Fermer"
-                                >
-                                    <Icon icon="mdi:close" class="w-6 h-6" />
-                                </button>
-                            </div>
+                <!-- Right: Detailed Info -->
+                <div class="flex-1 md:sticky md:top-0 h-fit py-12">
+                    <h2 class="text-6xl font-black text-black dark:text-white uppercase tracking-tighter mb-8">
+                        {selectedProject.title}
+                    </h2>
+                    
+                    <div class="space-y-12">
+                        <section>
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">// Aperçu</h5>
+                            <p class="text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+                                {selectedProject.details}
+                            </p>
+                        </section>
+
+                        {#if selectedProject.functionalities}
+                            <section>
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">// Fonctionnalités</h5>
+                                <ul class="space-y-4">
+                                    {#each selectedProject.functionalities as f}
+                                        <li class="flex items-center gap-4 text-black dark:text-white font-bold uppercase text-xs tracking-widest">
+                                            <div class="h-1 w-4 bg-black dark:bg-white"></div> {f}
+                                        </li>
+                                    {/each}
+                                </ul>
+                            </section>
+                        {/if}
+
+                        <div class="flex flex-wrap gap-4 pt-12">
+                            {#if selectedProject.link}
+                                <a href={selectedProject.link} target="_blank" class="px-12 py-6 bg-black dark:bg-white text-white dark:text-black font-black uppercase text-[10px] tracking-widest hover:invert transition-all">
+                                    Visiter le site
+                                </a>
+                            {/if}
+                            {#if selectedProject.github}
+                                <a href={selectedProject.github} target="_blank" class="px-12 py-6 border border-black dark:border-white text-black dark:text-white font-black uppercase text-[10px] tracking-widest hover:bg-black hover:text-white transition-all">
+                                    Source Code
+                                </a>
+                            {/if}
                         </div>
                     </div>
-                {/if}
-
-                <!-- Content -->
-                {#if selectedProject}
-                    <div class="p-8">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Images Section -->
-                            <div class="space-y-6">
-                                <!-- Main Image -->
-                                <div class="relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-video group">
-                                    <img 
-                                        src={selectedProject.image ? selectedProject.image : defaultImage} 
-                                        alt={selectedProject.title}
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        on:error={(e) => e.target.src = defaultImage}
-                                    />
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                </div>
-
-                                <!-- Gallery -->
-                                {#if selectedProject.gallery && selectedProject.gallery.length > 0}
-                                    <div>
-                                        <h4 class="text-lg font-bold mb-4 flex items-center text-gray-900 dark:text-white">
-                                            <div class="w-8 h-8 bg-gray-700 dark:bg-gray-800 rounded-lg flex items-center justify-center mr-3">
-                                                <Icon icon="mdi:image-multiple" class="w-4 h-4 text-white" />
-                                            </div>
-                                            Galerie
-                                        </h4>
-                                        <div class="grid grid-cols-3 gap-3">
-                                            {#each selectedProject.gallery as img, i}
-                                                <div class="cursor-pointer group/gallery hover:opacity-80 transition-all duration-300">
-                                                    <img 
-                                                        src={img} 
-                                                        alt={`Preview ${i+1}`}
-                                                        class="w-full h-20 object-cover rounded-xl transition-transform duration-300 group-hover/gallery:scale-110 border border-gray-300 dark:border-gray-600"
-                                                        on:error={(e) => e.target.src = defaultImage}
-                                                    />
-                                                </div>
-                                            {/each}
-                                        </div>
-                                    </div>
-                                {/if}
-                            </div>
-
-                            <!-- Details Section -->
-                            <div class="space-y-6">
-                                <!-- Technical Details -->
-                                {#if selectedProject.details}
-                                    <div>
-                                        <h4 class="text-lg font-bold mb-3 flex items-center text-gray-900 dark:text-white">
-                                            <div class="w-8 h-8 bg-gray-700 dark:bg-gray-800 rounded-lg flex items-center justify-center mr-3">
-                                                <Icon icon="mdi:code-tags" class="w-4 h-4 text-white" />
-                                            </div>
-                                            Détails techniques
-                                        </h4>
-                                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-300 dark:border-gray-600">
-                                            {selectedProject.details}
-                                        </p>
-                                    </div>
-                                {/if}
-
-                                <!-- Functionalities -->
-                                {#if selectedProject.functionalities && selectedProject.functionalities.length > 0}
-                                    <div>
-                                        <h4 class="text-lg font-bold mb-3 flex items-center text-gray-900 dark:text-white">
-                                            <div class="w-8 h-8 bg-gray-700 dark:bg-gray-800 rounded-lg flex items-center justify-center mr-3">
-                                                <Icon icon="mdi:check-circle-outline" class="w-4 h-4 text-white" />
-                                            </div>
-                                            Fonctionnalités
-                                        </h4>
-                                        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-300 dark:border-gray-600 p-4">
-                                            <ul class="space-y-2">
-                                                {#each selectedProject.functionalities as feature, i}
-                                                    <li 
-                                                        in:slide={{ delay: i * 80, duration: 400 }}
-                                                        class="flex items-start text-gray-700 dark:text-gray-300"
-                                                    >
-                                                        <div class="w-2 h-2 bg-gray-600 dark:bg-gray-500 rounded-full mt-2 mr-3 flex-shrink-0 animate-pulse-gentle"></div>
-                                                        <span>{feature}</span>
-                                                    </li>
-                                                {/each}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                {/if}
-
-                                <!-- Action Buttons -->
-                                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                                    {#if selectedProject.link}
-                                        <a 
-                                            href={selectedProject.link} 
-                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gray-800 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 border border-gray-700"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <Icon icon="mdi:web" class="w-5 h-5 mr-3" />
-                                            <span>Voir en ligne</span>
-                                        </a>
-                                    {/if}
-
-                                    {#if selectedProject.github}
-                                        <a 
-                                            href={selectedProject.github} 
-                                            class="group relative inline-flex items-center justify-center px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 border border-gray-700"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <Icon icon="mdi:github" class="w-5 h-5 mr-3" />
-                                            Code source
-                                        </a>
-                                    {/if}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {/if}
+                </div>
             </div>
         </div>
     {/if}
 </section>
 
 <style>
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes pulse-gentle {
-        0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
-    }
-
-    @keyframes ping-slow {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(2);
-            opacity: 0;
-        }
-    }
-
-    @keyframes ping-fast {
-        0% {
-            transform: scale(0.8);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-    }
-
-    .animate-slide-up {
-        animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        opacity: 0;
-    }
-
-    .animate-pulse-gentle {
-        animation: pulse-gentle 2s ease-in-out infinite;
-    }
-
-    .animate-ping-slow {
-        animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .animate-ping-fast {
-        animation: ping-fast 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .line-clamp-2 {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+    /* Typographies et lissages */
+    :global(body) {
+        font-family: 'Inter', sans-serif;
     }
 </style>
