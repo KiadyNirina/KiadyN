@@ -1,235 +1,71 @@
 <script>
     import Icon from "@iconify/svelte";
-    import { fade, slide } from 'svelte/transition';
+    import { fade } from 'svelte/transition';
+    
+    const currentYear = new Date().getFullYear();
 </script>
 
-<footer id="footer" class="bg-gray-800 text-white py-16 relative overflow-hidden">
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute -top-20 -left-20 w-64 h-64 bg-gray-600/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-gray-500/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
-        <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-gray-400/5 rounded-full blur-2xl animate-float"></div>
-    </div>
+<footer class="bg-gray-100 dark:bg-gray-950 p-12 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <!-- Main Footer Content -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
-
-            <!-- Navigation Links -->
-            <div class="text-center lg:text-left animate-slide-up" style="animation-delay: 0.2s;">
-                <h4 class="text-lg font-bold mb-6 text-white flex items-center justify-center lg:justify-start">
-                    <Icon icon="mdi:navigation" class="mr-3 text-gray-400" />
-                    Navigation
-                </h4>
-                <ul class="space-y-3">
-                    {#each [
-                        { name: 'À propos', href: '#about', icon: 'mdi:account' },
-                        { name: 'Projets', href: '#projects', icon: 'mdi:folder' },
-                        { name: 'Compétences', href: '#skills', icon: 'mdi:code-tags' },
-                        { name: 'Expériences', href: '#experiences', icon: 'mdi:briefcase' },
-                        { name: 'Contact', href: '#contact', icon: 'mdi:email' }
-                    ] as link, i}
-                        <li in:fade={{ delay: 400 + (i * 100), duration: 400 }}>
-                            <a 
-                                href={link.href} 
-                                class="group flex items-center justify-center lg:justify-start text-gray-300 hover:text-white transition-all duration-300 transform hover:translate-x-2"
-                            >
-                                <Icon icon={link.icon} class="w-4 h-4 mr-3 text-gray-400 group-hover:scale-110 transition-transform duration-300" />
-                                <span class="text-sm font-medium">{link.name}</span>
+        <!-- Grille d'informations -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-32">
+            <!-- Navigation -->
+            <div class="space-y-6">
+                <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400">Index</h4>
+                <ul class="space-y-4">
+                    {#each ['About', 'Projects', 'Skills', 'Experience'] as item}
+                        <li>
+                            <a href="#{item.toLowerCase()}" class="text-xs font-bold uppercase tracking-widest text-black dark:text-white hover:opacity-50 transition-opacity">
+                                {item}
                             </a>
                         </li>
                     {/each}
                 </ul>
             </div>
 
-            <!-- Social Media -->
-            <div class="text-center lg:text-left animate-slide-up" style="animation-delay: 0.4s;">
-                <h4 class="text-lg font-bold mb-6 text-white flex items-center justify-center lg:justify-start">
-                    <Icon icon="mdi:share-variant" class="mr-3 text-gray-400" />
-                    Connectons-nous
-                </h4>
-                <p class="text-gray-300 mb-6 text-sm">
-                    Suivez-moi sur les réseaux sociaux pour rester connecté
-                </p>
-                <div class="flex justify-center lg:justify-start space-x-4">
+            <!-- Socials -->
+            <div class="space-y-6">
+                <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400">Social</h4>
+                <ul class="space-y-4">
                     {#each [
-                        { 
-                            icon: 'mdi:facebook', 
-                            href: 'https://www.facebook.com/kiady.rambeloson', 
-                            name: 'Facebook'
-                        },
-                        { 
-                            icon: 'mdi:github', 
-                            href: 'https://github.com/KiadyNirina', 
-                            name: 'GitHub'
-                        },
-                        { 
-                            icon: 'mdi:linkedin', 
-                            href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/', 
-                            name: 'LinkedIn'
-                        },
-                        { 
-                            icon: 'mdi:whatsapp', 
-                            href: 'https://wa.me/+261335777152', 
-                            name: 'WhatsApp'
-                        },
-                        { 
-                            icon: 'mdi:email', 
-                            href: 'mailto:kiady142ram@gmail.com', 
-                            name: 'Email'
-                        }
-                    ] as social, i}
-                        <a 
-                            href={social.href} 
-                            class="group relative w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-300 border border-gray-500/20 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:text-white hover:bg-gray-700"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={social.name}
-                            in:fade={{ delay: 600 + (i * 100), duration: 400 }}
-                        >
-                            <!-- Animated Dot -->
-                            <div class="absolute -top-1 -right-1 w-2 h-2 bg-gray-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping-fast"></div>
-                            
-                            <Icon icon={social.icon} class="w-6 h-6" />
-                            
-                            <!-- Tooltip -->
-                            <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                                {social.name}
-                                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1 w-2 h-2 bg-gray-800 rotate-45"></div>
-                            </div>
-                        </a>
+                        { n: 'Github', h: 'https://github.com/KiadyNirina' },
+                        { n: 'LinkedIn', h: 'https://www.linkedin.com/in/kiady-ram-5216592a9/' },
+                        { n: 'Facebook', h: 'https://www.facebook.com/kiady.rambeloson' },
+                        { n: 'Whatsapp', h: 'https://wa.me/+261335777152' }
+                    ] as social}
+                        <li>
+                            <a href={social.h} target="_blank" class="text-xs font-bold uppercase tracking-widest text-black dark:text-white hover:opacity-50 transition-opacity">
+                                {social.n}
+                            </a>
+                        </li>
                     {/each}
+                </ul>
+            </div>
+
+            <!-- Contact Rapide -->
+            <div class="col-span-2 space-y-6 md:text-right">
+                <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400">Say Hello</h4>
+                <div class="space-y-2">
+                    <p class="text-xl font-bold text-black dark:text-white tracking-tight">kiady142ram@gmail.com</p>
+                    <p class="text-sm text-gray-400 font-mono tracking-tighter">+261 33 57 771 52</p>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom Bar -->
-        <div class="border-t border-gray-500/20 pt-8 text-center animate-fade-in" style="animation-delay: 1s;">
-            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <!-- Copyright -->
-                <p class="text-gray-400 text-sm">
-                    © {new Date().getFullYear()} 
-                    <span class="text-gray-300 font-semibold">KiadyN</span>. 
-                    Tous droits réservés.
-                </p>
-                
-                <!-- Additional Info -->
-                <div class="text-gray-400 text-sm">
-                    <span class="flex items-center">
-                        <Icon icon="mdi:heart" class="w-4 h-4 mr-1 text-gray-300 animate-pulse-gentle" />
-                        Fait avec passion
-                    </span>
-                </div>
+        <!-- Barre de copyright minimale -->
+        <div class="pt-12 border-t border-black/5 dark:border-white/5 flex flex-col md:flex-row justify-center items-center">
+            <div class="flex items-center justify-center gap-4">
+                <span class="text-[10px] font-mono text-gray-500 dark:text-gray-400 uppercase">© {currentYear} All Rights Reserved</span>
+                <span class="h-px w-8 bg-gray-400 dark:bg-gray-800"></span>
+                <span class="text-[10px] font-mono text-gray-500 dark:text-gray-400 uppercase">Designed & Built by Kiady</span>
             </div>
         </div>
     </div>
 </footer>
 
 <style>
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes fadeIn {
-        from { 
-            opacity: 0; 
-        }
-        to { 
-            opacity: 1; 
-        }
-    }
-
-    @keyframes pulse-slow {
-        0%, 100% {
-            opacity: 0.1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.2;
-            transform: scale(1.1);
-        }
-    }
-
-    @keyframes pulse-gentle {
-        0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
-    }
-
-    @keyframes ping-fast {
-        0% {
-            transform: scale(0.8);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-    }
-
-    @keyframes bounce-slow {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-3px);
-        }
-        60% {
-            transform: translateY(-2px);
-        }
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0) translateX(0);
-        }
-        33% {
-            transform: translateY(-10px) translateX(5px);
-        }
-        66% {
-            transform: translateY(5px) translateX(-5px);
-        }
-    }
-
-    .animate-slide-up {
-        animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        opacity: 0;
-    }
-
-    .animate-fade-in {
-        animation: fadeIn 1s ease-out forwards;
-        opacity: 0;
-    }
-
-    .animate-pulse-slow {
-        animation: pulse-slow 6s ease-in-out infinite;
-    }
-
-    .animate-pulse-gentle {
-        animation: pulse-gentle 2s ease-in-out infinite;
-    }
-
-    .animate-ping-fast {
-        animation: ping-fast 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .animate-bounce-slow {
-        animation: bounce-slow 3s infinite;
-    }
-
-    .animate-float {
-        animation: float 8s ease-in-out infinite;
+    a {
+        text-underline-offset: 8px;
     }
 </style>
