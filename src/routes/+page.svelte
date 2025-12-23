@@ -74,14 +74,6 @@
 			window.removeEventListener('scroll', handleScroll);
 		};
 	});
-
-	function scrollToSection() {
-		const target = scrollToTop ? 'hero' : 'footer';
-		const element = document.getElementById(target);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
-		}
-	}
 </script>
 
 {#if isLoading}
@@ -192,20 +184,6 @@
 				<Contact />
 			</div>
 		</main>
-
-		<button
-			on:click={scrollToSection}
-			class="fixed bottom-6 right-6 p-3 bg-gray-800 dark:bg-gray-900 text-white rounded-full shadow-lg hover:bg-gray-900 dark:hover:bg-gray-800 transition-all duration-300 z-50 group"
-			aria-label={scrollToTop ? 'Retourner en haut' : 'Aller en bas'}
-		>
-			<div class="absolute -inset-1 bg-gray-600 rounded-full opacity-0 group-hover:opacity-30 transition-opacity duration-300 animate-pulse-gentle"></div>
-			<Icon
-				icon={scrollToTop ? 'mdi:chevron-up' : 'mdi:chevron-down'}
-				width="24"
-				height="24"
-				class="transition-transform duration-300 relative z-10"
-			/>
-		</button>
 
 		<Footer />
 	</div>
