@@ -9,12 +9,12 @@
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Grille d'informations -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-32">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-10">
             <!-- Navigation -->
             <div class="space-y-6">
                 <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-400">Index</h4>
                 <ul class="space-y-4">
-                    {#each ['About', 'Projects', 'Skills', 'Experience'] as item}
+                    {#each ['About', 'Services', 'Projects', 'Skills', 'Experiences'] as item}
                         <li>
                             <a href="#{item.toLowerCase()}" class="text-xs font-bold uppercase tracking-widest text-black dark:text-white hover:opacity-50 transition-opacity">
                                 {item}
