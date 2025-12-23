@@ -46,261 +46,167 @@
         setTimeout(() => (error = ''), 3500);
       }
     } catch (err) {
-      console.error('Erreur réseau:', err);
-      error = 'Impossible de contacter le serveur.';
-      setTimeout(() => (error = ''), 3500);
+      error = 'Échec de la transmission. Veuillez réessayer.';
+      setTimeout(() => (error = ''), 5000);
     } finally {
       loading = false;
     }
   }
 </script>
 
-<section class="py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header Section -->
-        <div class="text-center mb-16 animate-slide-up">
-            <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-                Contactez-moi
-            </h2>
-            <div class="relative inline-block">
-                <div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
-                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
+<section class="py-32">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Header Brutaliste -->
+        <div class="mb-24 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-xs font-black uppercase tracking-[0.5em] text-gray-800 dark:text-gray-200 mb-6">Contact</h2>
+                <h3 class="text-6xl md:text-8xl font-black text-black dark:text-white tracking-tighter leading-none uppercase">
+                    Get in <span class="text-gray-400 dark:text-gray-600">Touch</span>
+                </h3>
+            </div>
+            <div class="text-right hidden md:block">
+                <p class="text-[10px] font-mono text-gray-800 dark:text-white uppercase tracking-widest leading-relaxed">
+                    Available for freelance & <br/> Full-time opportunities
+                </p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- Illustration Section -->
-            <div class="flex justify-center lg:justify-end">
-                <div class="relative group" in:slide={{ delay: 200, duration: 600 }}>
-                    <img 
-                        src="order.svg" 
-                        alt="Contact illustration" 
-                        class="relative max-w-md w-full h-auto transform group-hover:scale-105 transition-transform duration-500" 
-                    />
-                    <!-- Floating Elements -->
-                    <div class="absolute -top-4 -right-4 w-8 h-8 bg-gray-600 rounded-full animate-ping-fast"></div>
-                    <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-gray-500 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
+        <div class="grid lg:grid-cols-12 gap-16">
+            
+            <!-- Coordonnées Gauche (4 cols) -->
+            <div class="lg:col-span-4 space-y-12">
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-300 mb-6">// Canaux directs</h4>
+                    <div class="space-y-6">
+                        <a href="mailto:kiady142ram@gmail.com" class="group block">
+                            <span class="text-[10px] font-mono text-gray-600 dark:text-gray-300 block mb-1">Email</span>
+                            <span class="text-xl font-bold text-black dark:text-white group-hover:underline decoration-1 underline-offset-8 transition-all">
+                                kiady142ram@gmail.com
+                            </span>
+                        </a>
+                        <div class="group block">
+                            <span class="text-[10px] font-mono text-gray-600 dark:text-gray-300 block mb-1">Localisation</span>
+                            <span class="text-xl font-bold text-black dark:text-white">
+                                Antananarivo, Madagascar
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-300 mb-6">// Réseaux Sociaux</h4>
+                    <div class="flex flex-wrap gap-4">
+                        {#each [
+                            { name: 'Github', icon: 'ph:github-logo-thin', href: 'https://github.com/KiadyNirina' },
+                            { name: 'Linkedin', icon: 'ph:linkedin-logo-thin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/' },
+                            { name: 'Facebook', icon: 'ph:facebook-logo-thin', href: 'https://www.facebook.com/kiady.rambeloson/' },
+                        ] as social}
+                            <a 
+                                href={social.href} 
+                                class="p-4 text-black dark:dark:text-white border border-black/50 dark:border-white/50 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all group"
+                                aria-label={social.name}
+                                target="_blank"
+                            >
+                                <Icon icon={social.icon} class="w-6 h-6" />
+                            </a>
+                        {/each}
+                    </div>
+                </div>
+
+                <div class="p-8 bg-gray-200 dark:bg-gray-900 border border-black/5 dark:border-white/5">
+                    <p class="text-xs text-gray-800 dark:text-gray-200 leading-relaxed font-mono italic">
+                        "Toujours à la recherche de défis stimulants. Que vous ayez une idée précise ou juste l'envie de discuter d'une technologie, ma porte est ouverte."
+                    </p>
                 </div>
             </div>
 
-            <!-- Form Section -->
-            <div class="flex justify-center lg:justify-start">
-                <div class="w-full max-w-lg" in:slide={{ delay: 400, duration: 600, direction: 'right' }}>
-                    <!-- Introduction Text -->
-                    <div class="text-center lg:text-left mb-8">
-                        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                            Prêt à collaborer sur votre prochain projet ?
-                        </p>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            Remplissez le formulaire ou contactez-moi via mes réseaux sociaux !
-                        </p>
+            <!-- Formulaire Droite (8 cols) -->
+            <div class="lg:col-span-8">
+                {#if success}
+                    <div class="p-12 bg-black text-white dark:bg-white dark:text-black text-center mb-8" transition:fade>
+                        <Icon icon="ph:check-circle-thin" class="w-16 h-16 mx-auto mb-4" />
+                        <h4 class="text-2xl font-black uppercase tracking-tighter mb-2">{success}</h4>
+                        <p class="text-xs font-mono opacity-60">ID Transaction: {Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
                     </div>
-
-                    <!-- Status Messages -->
-                    {#if success}
-                        <div
-                            class="p-4 bg-gray-800 text-white rounded-2xl mb-6 shadow-lg border border-gray-700 flex items-center space-x-3"
-                            in:fade={{ duration: 300 }}
-                            out:slide={{ duration: 400 }}
-                        >
-                            <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                                <Icon icon="mdi:check" class="text-gray-800 text-sm font-bold" />
-                            </div>
-                            <span class="font-medium">{success}</span>
-                        </div>
-                    {:else if error}
-                        <div
-                            class="p-4 bg-gray-800 text-white rounded-2xl mb-6 shadow-lg border border-gray-700 flex items-center space-x-3"
-                            in:fade={{ duration: 300 }}
-                            out:slide={{ duration: 400 }}
-                        >
-                            <Icon icon="mdi:alert-circle" class="text-xl" />
-                            <span class="font-medium">{error}</span>
-                        </div>
-                    {/if}
-
-                    <!-- Contact Form -->
-                    <form on:submit={handleSubmit} class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Name Field -->
-                            <div class="group">
-                                <label for="name" class="block mb-3 font-semibold text-gray-900 dark:text-white flex items-center">
-                                    <Icon icon="mdi:account" class="mr-2 text-gray-600" />
-                                    Nom *
-                                </label>
+                {:else}
+                    <form on:submit={handleSubmit} class="space-y-0">
+                        <div class="grid md:grid-cols-2">
+                            <!-- Nom -->
+                            <div class="border-b border-t border-l border-black/40 dark:border-white/40 p-6 group focus-within:bg-gray-50 dark:focus-within:bg-white/5 transition-colors">
+                                <label for="name" class="block text-[10px] font-black uppercase tracking-widest text-gray-800 dark:text-gray-200 mb-2">01. Votre Nom</label>
                                 <input 
                                     type="text" 
                                     id="name" 
-                                    name="name" 
                                     bind:value={name}
-                                    class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
-                                    placeholder="Votre nom complet"
+                                    placeholder="John Doe"
+                                    class="w-full bg-transparent border-none p-0 text-xl font-bold text-black dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-800 focus:ring-0"
                                     required
                                 />
                             </div>
-
-                            <!-- Email Field -->
-                            <div class="group">
-                                <label for="email" class="block mb-3 font-semibold text-gray-900 dark:text-white flex items-center">
-                                    <Icon icon="mdi:email" class="mr-2 text-gray-600" />
-                                    Email *
-                                </label>
+                            <!-- Email -->
+                            <div class="border-b border-t border-l border-r border-black/40 dark:border-white/40 p-6 group focus-within:bg-gray-50 dark:focus-within:bg-white/5 transition-colors">
+                                <label for="email" class="block text-[10px] font-black uppercase tracking-widest text-gray-800 dark:text-gray-200 mb-2">02. Votre Email</label>
                                 <input 
                                     type="email" 
                                     id="email" 
-                                    class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
-                                    placeholder="votre@email.com"
-                                    name="email"
                                     bind:value={email}
+                                    placeholder="john@example.com"
+                                    class="w-full bg-transparent border-none p-0 text-xl font-bold text-black dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-800 focus:ring-0"
                                     required
                                 />
                             </div>
                         </div>
-                        
-                        <!-- Subject Field -->
-                        <div class="group">
-                            <label for="subject" class="block mb-3 font-semibold text-gray-900 dark:text-white flex items-center">
-                                <Icon icon="mdi:tag" class="mr-2 text-gray-600" />
-                                Sujet
-                            </label>
+
+                        <!-- Sujet -->
+                        <div class="border-b border-l border-r border-black/40 dark:border-white/40 p-6 group focus-within:bg-gray-50 dark:focus-within:bg-white/5 transition-colors">
+                            <label for="subject" class="block text-[10px] font-black uppercase tracking-widest text-gray-800 dark:text-gray-200 mb-2">03. Sujet du projet</label>
                             <input 
                                 type="text" 
                                 id="subject" 
-                                class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg"
-                                placeholder="Objet de votre message"
-                                name="subject"
                                 bind:value={subject}
+                                placeholder="Développement Web / Consultant..."
+                                class="w-full bg-transparent border-none p-0 text-xl font-bold text-black dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-800 focus:ring-0"
                             />
                         </div>
-                        
-                        <!-- Message Field -->
-                        <div class="group">
-                            <label for="message" class="block mb-3 font-semibold text-gray-900 dark:text-white flex items-center">
-                                <Icon icon="mdi:message-text" class="mr-2 text-gray-600" />
-                                Message *
-                            </label>
+
+                        <!-- Message -->
+                        <div class="border-b border-l border-r border-black/40 dark:border-white/40 p-6 group focus-within:bg-gray-50 dark:focus-within:bg-white/5 transition-colors">
+                            <label for="message" class="block text-[10px] font-black uppercase tracking-widest text-gray-800 dark:text-gray-200 mb-2">04. Votre Message</label>
                             <textarea 
                                 id="message" 
-                                rows="5"
-                                class="dark:text-white w-full px-4 py-3 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-gray-600 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm hover:shadow-md focus:shadow-lg resize-none"
-                                placeholder="Décrivez votre projet ou votre demande..."
-                                name="message"
+                                rows="6"
                                 bind:value={message}
+                                placeholder="Dites-m'en plus sur vos besoins..."
+                                class="w-full bg-transparent border-none p-0 text-xl font-bold text-black dark:text-white placeholder:text-gray-300 dark:placeholder:text-gray-800 focus:ring-0 resize-none"
                                 required
                             ></textarea>
                         </div>
 
-                        <!-- Submit Button -->
+                        <!-- Submit -->
                         <button
                             type="submit" 
-                            class="group relative w-full px-8 py-4 bg-gray-800 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-lg" 
                             disabled={loading}
+                            class="w-full p-10 bg-black dark:bg-white text-white dark:text-black font-black uppercase text-xs tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-gray-900 dark:hover:bg-gray-100 transition-all disabled:opacity-50 group"
                         >
-                            <!-- Animated Background -->
-                            <div class="absolute inset-0 rounded-2xl bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div class="absolute -inset-1 bg-gray-700 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-                            
-                            <!-- Button Content -->
-                            <span class="relative z-10 flex items-center justify-center">
-                                {#if loading}
-                                    <Icon icon="mdi:loading" class="animate-spin mr-3" />
-                                    Envoi en cours...
-                                {:else}
-                                    <Icon icon="mdi:send" class="mr-3 group-hover:scale-110 transition-transform duration-300" />
-                                    Envoyer le message
-                                {/if}
-                            </span>
+                            {#if loading}
+                                <Icon icon="ph:spinner-gap-bold" class="animate-spin w-6 h-6" />
+                                Cryptage en cours...
+                            {:else}
+                                Envoyer la demande
+                                <Icon icon="ph:arrow-right-thin" class="w-8 h-8 group-hover:translate-x-4 transition-transform" />
+                            {/if}
                         </button>
                     </form>
-
-                    <!-- Additional Contact Info -->
-                    <div class="mt-8 text-center lg:text-left">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            Ou contactez-moi directement via :
-                        </p>
-                        <div class="flex justify-center lg:justify-start space-x-4">
-                            {#each [
-                                { icon: 'mdi:email', href: 'mailto:kiady142ram@gmail.com' },
-                                { icon: 'mdi:github', href: 'https://github.com/KiadyNirina' },
-                                { icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/' },
-                                { icon: 'mdi:facebook', href: 'https://www.facebook.com/kiady.rambeloson' }
-                            ] as social}
-                                <a 
-                                    href={social.href} 
-                                    class="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl flex items-center justify-center text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-gray-700 shadow-sm transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-800 dark:hover:text-gray-200"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <Icon icon={social.icon} class="w-5 h-5" />
-                                </a>
-                            {/each}
-                        </div>
-                    </div>
-                </div>
+                {/if}
             </div>
         </div>
     </div>
 </section>
 
 <style>
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes pulse-gentle {
-        0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
-    }
-
-    @keyframes ping-slow {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(2);
-            opacity: 0;
-        }
-    }
-
-    @keyframes ping-fast {
-        0% {
-            transform: scale(0.8);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-    }
-
-    .animate-slide-up {
-        animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        opacity: 0;
-    }
-
-    .animate-pulse-gentle {
-        animation: pulse-gentle 3s ease-in-out infinite;
-    }
-
-    .animate-ping-slow {
-        animation: ping-slow 4s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .animate-ping-fast {
-        animation: ping-fast 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    /* Focus effects */
+    input:focus, textarea:focus {
+        outline: none;
     }
 </style>
