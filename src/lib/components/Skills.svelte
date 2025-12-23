@@ -152,7 +152,6 @@
 </section>
 
 <style>
-    /* Optionnel : forcer les icônes en noir ou blanc selon le thème */
     :global(.group\/item:hover svg) {
         filter: invert(1);
     }

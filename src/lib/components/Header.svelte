@@ -1,55 +1,44 @@
 <script>
     import { onMount } from "svelte";
-    import ThemeToggle from "$lib/ThemeToggle.svelte";
+    import { fade } from "svelte/transition";
+    import ThemeToggle from "../ThemeToggle.svelte";
     import Icon from "@iconify/svelte";
 
     let isMenuOpen = false;
     let activeSection = "hero";
+    let isScrolled = false;
 
     const sections = ["hero", "about", "services", "skills", "experiences", "projects", "contact"];
-    let animated = {};
-
-    let underlineStyle = { left: '0px', width: '0px' };
-    let isScrolled = false;
+    
+    const sectionLabels = {
+        about: "À Propos",
+        services: "Services",
+        skills: "Compétences",
+        experiences: "Expériences",
+        projects: "Projets",
+        contact: "Contact"
+    };
 
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
     }
 
-    function updateUnderline() {
-        const container = document.querySelector('.desktop-links');
-        const activeLink = container?.querySelector(`a[href="#${activeSection}"]`);
-        if (activeLink && container) {
-            const rect = activeLink.getBoundingClientRect();
-            const containerRect = container.getBoundingClientRect();
-            underlineStyle = {
-                left: rect.left - containerRect.left + "px",
-                width: rect.width + "px"
-            };
-        }
-    }
-
     onMount(() => {
-        // Scroll effect
         const handleScroll = () => {
             isScrolled = window.scrollY > 20;
         };
-        window.addEventListener('scroll', handleScroll);
 
-        // IntersectionObserver pour animation fade + section active
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        animated = { ...animated, [entry.target.id]: true };
                         activeSection = entry.target.id;
-                        updateUnderline();
-                    } else {
-                        animated = { ...animated, [entry.target.id]: false };
+                        console.log("Section active :", activeSection); 
+                        console.log("📊 Toutes les sections :", sections);
                     }
                 });
             },
-            { threshold: 0.4 }
+            { threshold: 0.3 }
         );
 
         sections.forEach((id) => {
@@ -57,181 +46,81 @@
             if (el) observer.observe(el);
         });
 
-        window.addEventListener('resize', updateUnderline);
-        updateUnderline();
-
+        window.addEventListener('scroll', handleScroll);
         return () => {
-            observer.disconnect();
-            window.removeEventListener('resize', updateUnderline);
             window.removeEventListener('scroll', handleScroll);
+            observer.disconnect();
         };
     });
 </script>
 
 <header 
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur-md {isScrolled ? 'bg-white/90 dark:bg-gray-900/90 shadow-lg border-b border-gray-300 dark:border-gray-700' : 'bg-white/70 dark:bg-gray-900/70'}"
+    class="fixed top-0 left-0 right-0 z-[100] transition-all duration-700 py-1"
 >
-    <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-        <!-- Logo avec animation -->
-        <a 
-            href="/" 
-            class="group relative flex items-center space-x-3"
+    <div class="max-w-7xl mx-auto px-6">
+        <div 
+            class="relative flex items-center justify-between px-6 py-3 transition-all duration-500 rounded-full border border-black/5 dark:border-white/5 {isScrolled ? 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl shadow-xl' : 'bg-transparent'}"
         >
-            <div class="relative">
-                <img 
-                    src="/logo.png" 
-                    class="w-12 h-12 bg-gray-900/80 rounded-full border-2 border-white/20 group-hover:border-gray-500 transition-all duration-300 group-hover:scale-110" 
-                    alt="Logo"
-                />
-                <!-- Point animé -->
-                <div class="absolute -top-1 -right-1 w-3 h-3 bg-gray-600 rounded-full animate-ping-fast"></div>
-            </div>
-        </a>
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-8 h-8 bg-black dark:bg-white rounded-full flex items-center justify-center transition-transform group-hover:rotate-[360deg] duration-700">
+                    <span class="text-white dark:text-black font-black text-xs">KN</span>
+                </div>
+            </a>
 
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden flex items-center space-x-3">
-            <ThemeToggle/>
-            <button 
-                class="p-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-300"
-                on:click={toggleMenu}
-                aria-label="Toggle menu"
-            >
-                <Icon 
-                    icon={isMenuOpen ? 'mdi:close' : 'mdi:menu'} 
-                    width="24" 
-                    class="transition-transform duration-300 {isMenuOpen ? 'rotate-90' : ''}"
-                />
-            </button>
-        </div>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-2">
+                {#each Object.entries(sectionLabels) as [id, label]}
+                    <a 
+                        href={`#${id}`}
+                        class="px-4 py-2 text-[10px] font-black uppercase tracking-widest transition-all duration-300 relative group {activeSection === id ? 'text-black dark:text-white' : 'text-gray-400 hover:text-black dark:hover:text-white'}"
+                    >
+                        {label}
+                        {#if activeSection === id}
+                            <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-black dark:bg-white rounded-full"></div>
+                        {/if}
+                    </a>
+                {/each}
+                
+                <div class="w-px h-4 bg-black/10 dark:white/10 mx-2"></div>
+                <ThemeToggle />
+            </nav>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center relative desktop-links space-x-1 overflow-hidden">
-            {#each sections.slice(1) as section, i}
-                <a 
-                    href={"#" + section} 
-                    class="group relative flex items-center px-4 py-2 rounded-xl font-medium transition-all duration-300 {activeSection === section ? 'text-gray-900 dark:text-gray-100' : 'text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'}"
+            <!-- Mobile Actions -->
+            <div class="flex md:hidden items-center gap-4">
+                <ThemeToggle />
+                <button 
+                    on:click={toggleMenu}
+                    class="p-2 text-black dark:text-white"
                 >
-                    <!-- Icone pour chaque lien -->
-                    <Icon 
-                        icon={
-                            section === "about" ? "mdi:user" :
-                            section === "services" ? "mdi:briefcase" :
-                            section === "skills" ? "mdi:cog" :
-                            section === "experiences" ? "mdi:timeline" :
-                            section === "projects" ? "mdi:folder" :
-                            "mdi:email"
-                        } 
-                        class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:scale-110"
-                    />
-                    
-                    {section === "about" ? "À propos" :
-                     section === "services" ? "Services" :
-                     section === "skills" ? "Compétences" :
-                     section === "experiences" ? "Expériences" :
-                     section === "projects" ? "Projets" :
-                     "Contact"}
+                    <Icon icon={isMenuOpen ? "ph:x-thin" : "ph:list-thin"} class="w-8 h-8" />
+                </button>
+            </div>
+        </div>
+    </div>
 
-                    <!-- Point actif -->
-                    {#if activeSection === section}
-                        <div class="absolute -top-1 -right-1 w-2 h-2 bg-gray-600 rounded-full animate-ping-fast"></div>
-                    {/if}
+    <!-- Mobile Menu Overlay -->
+    {#if isMenuOpen}
+        <div 
+            class="fixed inset-0 bg-white dark:bg-gray-950 z-[-1] flex flex-col items-center justify-center gap-8"
+            transition:fade={{ duration: 300 }}
+        >
+            {#each Object.entries(sectionLabels) as [id, label]}
+                <a 
+                    href="#{id}" 
+                    on:click={toggleMenu}
+                    class="text-4xl font-black uppercase tracking-tighter text-black dark:text-white hover:text-transparent transition-all"
+                    style="-webkit-text-stroke: 1px currentColor;"
+                >
+                    {label}
                 </a>
             {/each}
-
-            <!-- Séparateur -->
-            <div class="w-px h-6 bg-gray-300 dark:bg-gray-700 mx-2"></div>
-
-            <!-- Theme Toggle -->
-            <div class="pl-2">
-                <ThemeToggle/>
-            </div>
-
-            <!-- Underline animé -->
-            <div
-                class="absolute bottom-0 h-1 bg-gray-900 dark:bg-white rounded-full transition-all duration-500 shadow-lg shadow-gray-500/30"
-                style="left: {underlineStyle.left}; width: {underlineStyle.width};"
-            ></div>
-
-            <!-- Effet de fond au survol -->
-            <div class="absolute inset-0 bg-gray-100 dark:bg-gray-800/30 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10 pointer-events-none"></div>
         </div>
-
-        <!-- Mobile Menu -->
-        {#if isMenuOpen}
-            <div 
-                class="absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-2xl border-t border-gray-300 dark:border-gray-700 md:hidden"
-            >
-                <div class="flex flex-col py-4 space-y-1 px-4">
-                    {#each sections.slice(1) as section, i}
-                        <a 
-                            href={"#" + section} 
-                            class="group flex items-center px-4 py-3 rounded-xl transition-all duration-300 {activeSection === section ? 'bg-gray-100 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100' : 'text-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800/30'}"
-                            on:click={() => {
-                                toggleMenu();
-                                setTimeout(updateUnderline, 100);
-                            }}
-                        >
-                            <Icon 
-                                icon={
-                                    section === "about" ? "mdi:user" :
-                                    section === "services" ? "mdi:briefcase" :
-                                    section === "skills" ? "mdi:cog" :
-                                    section === "experiences" ? "mdi:timeline" :
-                                    section === "projects" ? "mdi:folder" :
-                                    "mdi:email"
-                                } 
-                                class="w-5 h-5 mr-3 transition-transform duration-300 group-hover:scale-110"
-                            />
-                            
-                            <span class="font-medium">
-                                {section === "about" ? "À propos" :
-                                section === "services" ? "Services" :
-                                section === "skills" ? "Compétences" :
-                                section === "experiences" ? "Expériences" :
-                                section === "projects" ? "Projets" :
-                                "Contact"}
-                            </span>
-
-                            <!-- Indicateur actif -->
-                            {#if activeSection === section}
-                                <div class="ml-auto w-2 h-2 bg-gray-600 rounded-full animate-pulse-gentle"></div>
-                            {/if}
-                        </a>
-                    {/each}
-                </div>
-            </div>
-        {/if}
-    </nav>
+    {/if}
 </header>
 
 <style>
-    @keyframes pulse-gentle {
-        0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
-    }
-
-    @keyframes ping-fast {
-        0% {
-            transform: scale(0.8);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-    }
-
-    .animate-pulse-gentle {
-        animation: pulse-gentle 2s ease-in-out infinite;
-    }
-
-    .animate-ping-fast {
-        animation: ping-fast 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    :global(html) {
+        scroll-behavior: smooth;
     }
 </style>
