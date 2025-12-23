@@ -86,7 +86,7 @@
 
 {#if isLoading}
 	<!-- Loading Screen -->
-	<div class="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex flex-col items-center justify-center">
+	<div class="fixed inset-0 z-50 flex flex-col items-center justify-center">
 		<!-- Animated Background Elements -->
 		<div class="absolute inset-0 overflow-hidden">
 			<div class="absolute -top-20 -left-20 w-72 h-72 bg-gray-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
