@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import Icon from '@iconify/svelte';
-  import { fade } from 'svelte/transition';
+  import { fade, fly, scale } from 'svelte/transition';
   
   // État pour le popup
   let showChat = false;
@@ -134,190 +134,88 @@
   });
 </script>
 
-<!-- Bouton flottant avec animation -->
-<div class="fixed bottom-6 left-4 sm:left-6 z-50 group">
-  <!-- Effet de halo AI -->
-  <div class="absolute -inset-3 bg-gray-600/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow"></div>
+<!-- Bouton Flottant "Noir Absolu" -->
+<div class="fixed bottom-8 left-8 z-50 group">
+  <!-- Rayonnement spectral -->
+  <div class="absolute -inset-4 bg-white/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
   
-  <!-- Effet de particules AI -->
-  <div class="absolute inset-0 overflow-hidden rounded-full">
-    {#each [0, 1, 2, 3] as i}
-      <div 
-        class="absolute w-1 h-1 bg-gray-400 rounded-full animate-ai-particle"
-        style="
-          left: ${30 + i * 15}%;
-          top: ${20 + i * 20}%;
-          animation-delay: ${i * 0.3}s;
-        "
-      ></div>
-    {/each}
-  </div>
-  
-  <!-- Bouton principal AI -->
   <button
-    class="relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gray-800 text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:shadow-gray-500/50 group-hover:animate-ai-spin"
+    class="relative h-16 w-16 flex items-center justify-center rounded-full bg-black dark:bg-white border border-white/20 text-white dark:text-black shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:scale-110 active:scale-95 overflow-hidden"
     on:click={() => showChat = !showChat}
-    aria-label={showChat ? 'Fermer le chat IA' : 'Parler avec Kiady AI'}
   >
-    <!-- Anneau AI animé -->
-    <div class="absolute -inset-3 border-2 border-gray-400/30 border-t-gray-600 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-ai-ring"></div>
+    <!-- Scanline effect -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-[200%] w-full animate-scanline pointer-events-none"></div>
     
-    <!-- Point de notification AI -->
-    <div class="absolute -top-1 -right-1 w-3 h-3 bg-gray-600 rounded-full border-2 border-white dark:border-gray-900 shadow-lg animate-ai-pulse">
-      <div class="absolute inset-0 bg-gray-400 rounded-full animate-ping-fast opacity-60"></div>
-    </div>
-    
-    <!-- Contenu du bouton AI -->
-    <div class="relative flex flex-col items-center justify-center">
-      {#if showChat}
-        <!-- État fermé - Logo AI -->
-        <div class="relative">
-          <Icon icon="material-symbols:close" class="h-6 w-6 sm:h-7 sm:w-7" />
-          <div class="absolute -inset-2 bg-gray-500 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-        </div>
-      {:else}
-        <!-- État ouvert - Logo AI avec animations -->
-        <div class="relative">
-          <!-- Brain effect -->
-          <div class="absolute -inset-1">
-            <Icon icon="mdi:brain" class="h-8 w-8 text-gray-400/20 group-hover:text-gray-400/40 transition-colors duration-300" />
-          </div>
-          
-          <!-- Main icon with glow -->
-          <Icon icon="material-symbols:robot-2" class="h-6 w-6 sm:h-7 sm:w-7 relative z-10" />
-          
-          <!-- Sparkle effects -->
-          <div class="absolute -top-1 -right-1">
-            <Icon icon="mdi:sparkles" class="h-3 w-3 text-gray-300 animate-spin-slow" />
-          </div>
-          <div class="absolute -bottom-1 -left-1">
-            <Icon icon="mdi:sparkles" class="h-2 w-2 text-gray-400 animate-spin-slow" style="animation-delay: 0.5s;" />
-          </div>
-        </div>
-        
-        <!-- Texte IA sur mobile -->
-        <span class="absolute -bottom-6 text-xs font-bold text-gray-600 sm:hidden">
-          AI
-        </span>
-      {/if}
-    </div>
+    {#if showChat}
+      <div in:scale={{duration: 400}}>
+        <Icon icon="ph:x-light" class="h-7 w-7" />
+      </div>
+    {:else}
+      <div class="relative flex items-center justify-center" in:scale={{duration: 400}}>
+        <Icon icon="ph:robot-light" class="h-8 w-8 z-10" />
+        <div class="absolute inset-0 blur-md bg-white/20 animate-pulse"></div>
+      </div>
+    {/if}
   </button>
-  
-  <!-- Label flottant -->
-  <div class="absolute bottom-full left-50 transform -translate-x-1/2 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none hidden sm:block">
-    <div class="bg-gray-800 text-white px-4 py-3 rounded-xl shadow-2xl border border-gray-600 flex items-center space-x-2 animate-ai-float">
-      <!-- AI Badge -->
-      <div class="flex items-center justify-center p-2 bg-gray-700 rounded-full">
-        <Icon icon="mdi:brain" class="h-5 w-5 text-white" />
-      </div>
-      
-      <!-- Texte avec animation -->
-      <div class="flex flex-col">
-        <span class="font-bold text-gray-200 text-[15px]">Kiady AI</span>
-        <span class="text-gray-300 text-[11px]">Assistant intelligent</span>
-      </div>
-      
-      <!-- Flèche -->
-      <div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-800"></div>
-    </div>
-  </div>
-  
-  <!-- Mini label mobile -->
-  <div class="absolute -right-2 top-1/2 transform -translate-y-1/2 translate-x-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none sm:hidden">
-    <div class="bg-gray-700 text-white text-[10px] px-2 py-1 rounded-lg whitespace-nowrap">
-      <div class="flex items-center space-x-1">
-        <Icon icon="mdi:brain" class="h-2 w-2" />
-        <span class="font-bold">Kiady AI</span>
-      </div>
-      <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 border-4 border-transparent border-r-gray-700"></div>
+
+  <!-- Label minimaliste -->
+  <div class="absolute left-20 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500 pointer-events-none hidden sm:block">
+    <div class="bg-black/80 dark:bg-white/80 backdrop-blur-md border border-white/10 text-white dark:text-black py-2 px-4 rounded-full text-xs tracking-[0.2em] uppercase font-light shadow-2xl">
+      Kiady AI
     </div>
   </div>
 </div>
 
-<!-- Popup chat -->
+<!-- Interface de Chat Époustouflante -->
 {#if showChat}
   <div
-    class="fixed sm:bottom-0 sm:left-6 z-60 flex flex-col overflow-hidden bg-white/95 backdrop-blur-md dark:bg-gray-900/95 sm:rounded-3xl sm:border sm:border-gray-300 dark:sm:border-gray-700 sm:shadow-2xl w-full sm:w-96 h-full sm:h-[500px] sm:max-h-[80vh] sm:mb-6"
-    transition:fade={{ duration: 300 }}
+    class="fixed inset-0 sm:inset-auto sm:bottom-28 sm:left-8 z-500 flex flex-col overflow-hidden bg-black/95 sm:bg-black/90 backdrop-blur-2xl sm:rounded-[2rem] sm:border sm:border-white/10 sm:shadow-[0_40px_100px_rgba(0,0,0,0.8)] w-full sm:w-[400px] h-full sm:h-[600px] sm:max-h-[80vh]"
+    transition:fly={{ y: 50, duration: 600, opacity: 0 }}
   >
-    <!-- En-tête avec animation -->
-    <div class="relative bg-gray-800 px-4 sm:px-6 py-4 sm:py-5 overflow-hidden">
-      <!-- Effet de vague animée -->
-      <div class="absolute -bottom-10 left-0 right-0 h-10 bg-gray-600/20 rounded-full blur-lg animate-wave"></div>
-      
-      <div class="flex items-center justify-between relative z-10">
-        <div class="flex items-center gap-3 sm:gap-4">
-          <!-- Avatar animé -->
-          <div class="relative group/avatar">
-            <div class="absolute -inset-1 sm:-inset-2 bg-white/20 rounded-full blur opacity-0 group-hover/avatar:opacity-100 transition-opacity duration-500"></div>
-            <div class="relative w-10 h-10 sm:w-12 sm:h-12 bg-gray-700 rounded-2xl flex items-center justify-center shadow-lg">
-              <Icon icon="material-symbols:robot-2" class="h-5 w-5 sm:h-7 sm:w-7 text-white" />
-              <!-- Point de statut -->
-              <div class="absolute -bottom-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full border-2 border-gray-600 animate-pulse-gentle"></div>
-            </div>
+    <!-- En-tête Monochrome -->
+    <div class="p-6 border-b border-white/5 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+            <Icon icon="ph:sparkle-fill" class="h-6 w-6 text-black" />
           </div>
-          
-          <div>
-            <h3 class="font-bold text-white text-base sm:text-lg">Kiady AI</h3>
-            <p class="text-gray-300 text-xs sm:text-sm flex items-center">
-              <span class="w-2 h-2 bg-gray-400 rounded-full mr-2 animate-pulse-gentle"></span>
-              Assistant intelligent
-            </p>      
-          </div>
+          <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-black"></span>
         </div>
-        
-        <div class="flex items-center gap-2">
-          <!-- Bouton plein écran (mobile) -->
-          <button
-            on:click={() => showChat = false}
-            class="sm:hidden rounded-lg p-2 hover:bg-white/20 transition-all duration-300 hover:scale-110"
-            aria-label="Fermer"
-          >
-            <Icon icon="material-symbols:close" class="h-5 w-5 text-white" />
-          </button>
-          
-          <!-- Bouton réduire (desktop) -->
-          <button
-            on:click={() => showChat = false}
-            class="hidden sm:block rounded-xl p-2 hover:bg-white/20 transition-all duration-300 hover:rotate-90 hover:scale-110"
-            aria-label="Fermer"
-          >
-            <Icon icon="material-symbols:close" class="h-5 w-5 text-white" />
-          </button>
+        <div>
+          <h3 class="text-white font-medium tracking-wide">Kiady AI</h3>
+          <p class="text-white/40 text-[10px] uppercase tracking-widest">Intelligence Artificielle</p>
         </div>
       </div>
+      
+      <button on:click={() => showChat = false} class="text-white/40 hover:text-white transition-colors">
+        <Icon icon="ph:minus-light" class="h-6 w-6" />
+      </button>
     </div>
 
-    <!-- Messages -->
+    <!-- Container des messages -->
     <div
       bind:this={messagesContainer}
-      class="flex-1 space-y-3 sm:space-y-4 overflow-y-auto p-3 sm:p-5 bg-gradient-to-b from-white/50 to-transparent dark:from-gray-800/50"
+      class="flex-1 overflow-y-auto p-6 space-y-6 scroll-smooth"
     >
       {#each $chatHistory as msg, i}
         <div
           class="flex {msg.from === 'user' ? 'justify-end' : 'justify-start'}"
-          in:fade={{ delay: i * 50, duration: 400 }}
+          in:fly={{ y: 20, duration: 500, delay: 100 }}
         >
-          <div class="group/message relative max-w-[90%] sm:max-w-[85%]">
-            <!-- Effet de bordure animée pour les messages AI -->
-            {#if msg.from === 'ai'}
-              <div class="absolute -inset-1 bg-gray-600 rounded-2xl blur opacity-0 group-hover/message:opacity-20 transition-opacity duration-300"></div>
-            {/if}
-            
+          <div class="max-w-[85%] group">
             <div
-              class="relative rounded-2xl px-3 py-2 sm:px-4 sm:py-3 {msg.from === 'user'
-                ? 'rounded-br-none bg-gray-800 dark:bg-white text-white/80 dark:text-black shadow-lg'
-                : 'rounded-bl-none bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 shadow-sm'}"
+              class="relative p-4 text-sm leading-relaxed
+              {msg.from === 'user'
+                ? 'bg-white text-black rounded-[1.5rem] rounded-tr-none shadow-xl'
+                : 'bg-white/5 border border-white/10 text-white/90 rounded-[1.5rem] rounded-tl-none'}"
             >
-              <p class="whitespace-pre-wrap text-sm sm:text-base leading-relaxed">{msg.text}</p>
-              <div class="flex items-center justify-between mt-1 sm:mt-2">
-                <p class="text-xs opacity-60">
-                  {msg.timestamp?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                </p>
+              {msg.text}
+              
+              <div class="mt-2 flex items-center gap-2 text-[10px] opacity-30">
+                {msg.timestamp?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 {#if msg.from === 'ai'}
-                  <Icon icon="material-symbols:robot-2-outline" class="w-3 h-3 sm:w-4 sm:h-4 opacity-40" />
-                {:else}
-                  <Icon icon="mdi:account" class="w-3 h-3 sm:w-4 sm:h-4 opacity-40" />
+                  <div class="h-px flex-1 bg-white/20"></div>
+                  <span>AI SYSTEM</span>
                 {/if}
               </div>
             </div>
@@ -325,325 +223,75 @@
         </div>
       {/each}
       
-      <!-- Indicateur de frappe -->
       {#if isTyping}
-        <div class="flex justify-start animate-fade-in">
-          <div class="group/message relative max-w-[90%] sm:max-w-[85%]">
-            <div class="absolute -inset-1 bg-gray-600 rounded-2xl blur opacity-0 group-hover/message:opacity-20 transition-opacity duration-300"></div>
-            <div class="relative rounded-2xl rounded-bl-none bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 px-3 py-2 sm:px-4 sm:py-3 shadow-sm">
-              <div class="flex items-center space-x-1 sm:space-x-2">
-                {#each [0, 1, 2] as i}
-                  <div 
-                    class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gray-600 rounded-full animate-bounce"
-                    style="animation-delay: {i * 0.2}s;"
-                  ></div>
-                {/each}
-              </div>
-            </div>
+        <div class="flex justify-start" in:fade>
+          <div class="bg-white/5 border border-white/10 p-4 rounded-2xl flex gap-1">
+            <span class="w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse"></span>
+            <span class="w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse [animation-delay:0.2s]"></span>
+            <span class="w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse [animation-delay:0.4s]"></span>
           </div>
         </div>
       {/if}
     </div>
 
-    <!-- Zone de saisie -->
-    <div class="border-t border-gray-300 bg-gradient-to-t from-gray-100/50 to-transparent p-3 sm:p-4 dark:border-gray-700 dark:from-gray-800/20 safe-area-pb">
+    <!-- Zone de Saisie Minimaliste -->
+    <div class="p-6">
       <form
         on:submit|preventDefault={sendMessage}
-        class="flex items-center gap-2 sm:gap-3"
+        class="relative flex items-center"
       >
-        <!-- Champ de saisie -->
-        <div class="flex-1 relative group/input">
-          <div class="absolute -inset-0.5 bg-gray-600 rounded-xl blur opacity-0 group-hover/input:opacity-30 transition-opacity duration-300"></div>
-          <input
-            type="text"
-            bind:value={userMessage}
-            placeholder="Votre message..."
-            class="relative w-full rounded-xl border border-gray-300 bg-white/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base placeholder-gray-400 focus:border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-600/20 dark:border-gray-700 dark:bg-gray-800/90 dark:text-white dark:placeholder-gray-400 dark:focus:border-gray-500 transition-all duration-300"
-            on:keydown={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()}
-          />
-        </div>
+        <input
+          type="text"
+          bind:value={userMessage}
+          placeholder="Écrivez quelque chose..."
+          class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-5 pr-14 text-white placeholder-white/20 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all"
+        />
         
-        <!-- Bouton d'envoi -->
         <button
           type="submit"
           disabled={!userMessage.trim() || isTyping}
-          class="group relative rounded-xl bg-gray-800 p-2 sm:p-3 text-white transition-all hover:shadow-lg hover:shadow-gray-500/40 disabled:cursor-not-allowed disabled:opacity-50"
-          aria-label="Envoyer le message"
+          class="absolute right-3 p-2 bg-white text-black rounded-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-20 disabled:grayscale"
         >
-          <div class="absolute -inset-1 bg-gray-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-          <Icon icon="material-symbols:send" class="h-5 sm:w-5 relative z-10 transform group-hover:scale-110 transition-transform duration-300" />
+          <Icon icon="ph:arrow-up-bold" class="h-5 w-5" />
         </button>
       </form>
+      <p class="text-center text-[9px] text-white/20 mt-4 tracking-widest uppercase">
+        Propulsé par Kiady Technologies
+      </p>
     </div>
   </div>
 {/if}
 
 <style>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Scanline animation */
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
   }
-
-  @keyframes pulse-gentle {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.05);
-    }
-  }
-
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.3;
-      transform: scale(1.2);
-    }
-  }
-
-  @keyframes ping-fast {
-    0% {
-      transform: scale(0.8);
-      opacity: 1;
-    }
-    75%, 100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
-  }
-
-  @keyframes bounce-slow {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-3px);
-    }
-    60% {
-      transform: translateY(-2px);
-    }
-  }
-
-  @keyframes wave {
-    0%, 100% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(20px);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.3s ease-out;
-  }
-
-  .animate-pulse-gentle {
-    animation: pulse-gentle 2s ease-in-out infinite;
-  }
-
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
-
-  .animate-ping-fast {
-    animation: ping-fast 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  .animate-bounce-slow {
-    animation: bounce-slow 3s infinite;
-  }
-
-  .animate-wave {
-    animation: wave 8s ease-in-out infinite;
-  }
-
-  /* Scrollbar personnalisée */
-  .overflow-y-auto {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(107, 114, 128, 0.3) transparent;
+  .animate-scanline {
+    animation: scanline 8s linear infinite;
   }
 
   .overflow-y-auto::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
   }
-
-  @media (min-width: 640px) {
-    .overflow-y-auto::-webkit-scrollbar {
-      width: 6px;
-    }
-  }
-
   .overflow-y-auto::-webkit-scrollbar-track {
     background: transparent;
   }
-
   .overflow-y-auto::-webkit-scrollbar-thumb {
-    background-color: rgba(107, 114, 128, 0.3);
-    border-radius: 20px;
-    transition: background-color 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
   }
-
   .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(107, 114, 128, 0.5);
+    background: rgba(255, 255, 255, 0.3);
   }
 
-  /* Safe area pour les mobiles avec notch */
-  .safe-area-pb {
-    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);
+  /* Smooth appearance */
+  @keyframes pulse {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.3; }
   }
-
-  /* Effet de brillance sur le bouton */
-  .shadow-3xl {
-    box-shadow: 0 25px 50px -12px rgba(107, 114, 128, 0.4);
-  }
-
-  /* Style pour les tailles d'écran spécifiques */
-  @media (max-height: 700px) {
-    .fixed.inset-0 {
-      height: calc(100dvh - 80px);
-      top: 80px;
-    }
-  }
-
-  @media (max-height: 600px) {
-    .fixed.inset-0 {
-      height: calc(100dvh - 60px);
-      top: 60px;
-    }
-  }
-
-  @media (max-width: 639px) {
-    .fixed.inset-0 {
-      /* Supprime les bordures arrondies et ombres sur mobile pour un look plein écran */
-      border-radius: 0 !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-  }
-
-  /* Pour les écrans très larges */
-  @media (min-width: 1536px) {
-    .sm\:w-96 {
-      width: 28rem;
-    }
-  }
-
-  @keyframes ai-particle {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-      opacity: 0;
-    }
-    50% {
-      transform: translate(var(--tx, 10px), var(--ty, -10px)) scale(1.5);
-      opacity: 0.8;
-    }
-  }
-
-  @keyframes ai-ring {
-    0% {
-      transform: rotate(0deg) scale(1);
-      opacity: 0.5;
-    }
-    50% {
-      transform: rotate(180deg) scale(1.1);
-      opacity: 0.8;
-    }
-    100% {
-      transform: rotate(360deg) scale(1);
-      opacity: 0.5;
-    }
-  }
-
-  @keyframes ai-pulse {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(107, 114, 128, 0.7);
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 0 0 6px rgba(107, 114, 128, 0);
-    }
-  }
-
-  @keyframes ai-spin {
-    0% {
-      transform: rotate(0deg) scale(1);
-    }
-    25% {
-      transform: rotate(5deg) scale(1.05);
-    }
-    75% {
-      transform: rotate(-5deg) scale(1.05);
-    }
-    100% {
-      transform: rotate(0deg) scale(1.1);
-    }
-  }
-
-  @keyframes ai-float {
-    0%, 100% {
-      transform: translateX(-50%) translateY(0);
-    }
-    50% {
-      transform: translateX(-50%) translateY(-3px);
-    }
-  }
-
-  @keyframes spin-slow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .animate-ai-particle {
-    animation: ai-particle 3s ease-in-out infinite;
-  }
-
-  .animate-ai-ring {
-    animation: ai-ring 4s linear infinite;
-  }
-
-  .animate-ai-pulse {
-    animation: ai-pulse 2s ease-in-out infinite;
-  }
-
-  .animate-ai-spin {
-    animation: ai-spin 0.6s ease-out forwards;
-  }
-
-  .animate-ai-float {
-    animation: ai-float 3s ease-in-out infinite;
-  }
-
-  .animate-spin-slow {
-    animation: spin-slow 8s linear infinite;
-  }
-
-  /* Effets de brillance IA */
-  .shadow-3xl {
-    box-shadow: 
-      0 0 20px rgba(107, 114, 128, 0.5),
-      0 0 40px rgba(107, 114, 128, 0.3),
-      0 0 60px rgba(107, 114, 128, 0.1),
-      0 25px 50px -12px rgba(107, 114, 128, 0.4);
-  }
-
-  /* Hover state amélioré */
-  .group:hover .group-hover\:animate-ai-spin {
-    animation: ai-spin 0.6s ease-out forwards;
+  .animate-pulse {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 </style>
