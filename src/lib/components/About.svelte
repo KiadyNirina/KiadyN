@@ -1,215 +1,130 @@
 <script>
-  import Icon from "@iconify/svelte";
-  import { fade, slide } from 'svelte/transition';
+	import Icon from "@iconify/svelte";
+	import { fade, slide } from 'svelte/transition';
+
+	const skills = {
+		languages: [
+			{ name: 'PHP', icon: 'ph:code-bold' },
+			{ name: 'JavaScript', icon: 'ph:scroll-bold' },
+			{ name: 'Python', icon: 'ph:terminal-window-bold' }
+		],
+		frameworks: [
+			{ name: 'Laravel', icon: 'ph:diamond-bold' },
+			{ name: 'Django', icon: 'ph:cube-bold' },
+			{ name: 'Vue.js', icon: 'ph:browsers-bold' },
+			{ name: 'Svelte', icon: 'ph:lightning-bold' }
+		]
+	};
 </script>
 
-<section class="py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header Section -->
-        <div class="text-center mb-16 animate-slide-up">
-            <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-                À propos de moi
-            </h2>
-            <div class="relative inline-block">
-                <div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
-                <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
-            </div>
-        </div>
-        
-        <!-- Content -->
-        <div class="flex flex-col lg:flex-row gap-12 items-center">
-            <!-- Profile Image -->
-            <div class="lg:w-2/5 flex justify-center">
-                <div class="relative group" in:slide={{ delay: 200, duration: 600 }}>                    
-                    <!-- Main Image Container -->
-                    <div class="relative bg-gradient-to-br from-gray-600 to-gray-800 p-2 rounded-full">
-                        <img 
-                            src="/pdp.jpg" 
-                            alt="Profil" 
-                            class="rounded-full w-72 h-72 object-cover border-4 border-white dark:border-gray-800 transition-transform duration-500 group-hover:scale-105" 
-                        />
-                        
-                        <!-- Floating Elements -->
-                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gray-600 rounded-full animate-ping-fast"></div>
-                        <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-gray-500 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Text Content -->
-            <div class="lg:w-3/5 space-y-8" in:slide={{ delay: 400, duration: 600, direction: 'right' }}>
-                <!-- Main Title -->
-                <div>
-                    <h3 class="text-3xl font-black text-gray-900 dark:text-white mb-4 flex items-center">
-                        <div class="flex items-center justify-center mr-4">
-                            <Icon icon="mdi:laptop" />
-                        </div>
-                        Développeur Full-Stack
-                    </h3>
-                    <div class="w-16 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mt-2"></div>
-                </div>
+<section class="relative py-32 overflow-hidden">
 
-                <!-- Introduction -->
-                <div class="space-y-6 text-gray-700 dark:text-gray-300 text-base leading-relaxed">
-                    <p>
-                        Je suis <span class="font-bold text-gray-800 dark:text-gray-200">RAMBELOSON Kiady Nirina</span>, un jeune développeur web Full-Stack basé à <span class="font-semibold">Madagascar 🇲🇬</span>, passionné par la création de solutions digitales innovantes 💡.
-                    </p>
+	<div class="max-w-7xl mx-auto px-6 relative z-10">
+		<div class="grid lg:grid-cols-12 gap-20 items-stretch">
+			
+			<!-- Left: Image & Identity -->
+			<div class="lg:col-span-5 relative">
+				<div class="sticky top-12">
+					<div class="relative group">
+						<!-- Brutalist Frame -->
+						<div class="absolute inset-0 border-[1px] border-black dark:border-white translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+						
+						<!-- Image Container -->
+						<div class="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-900 border-[1px] border-black dark:border-white">
+							<img 
+								src="/pdp.jpg" 
+								alt="Kiady Nirina" 
+								class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" 
+							/>
+							
+							<!-- Vertical Label -->
+							<div class="absolute bottom-10 -left-2 origin-bottom-left -rotate-90">
+								<span class="text-[10px] uppercase tracking-[0.5em] font-black text-white mix-blend-difference">
+									Madagascar — 2024
+								</span>
+							</div>
+						</div>
+					</div>
 
-                    <p>
-                        Curieux, autonome et toujours prêt à apprendre, j'aime concevoir des interfaces modernes et fluides, créer des API robustes et construire des applications capables de résoudre de vrais problèmes.  
-                        J'accorde une grande importance à <span class="font-bold text-gray-800 dark:text-gray-200">l'expérience utilisateur</span>, à <span class="font-bold text-gray-800 dark:text-gray-200">la performance</span>, et à <span class="font-bold text-gray-800 dark:text-gray-200">la qualité du code</span> que j'écris.
-                    </p>
+					<div class="mt-12 space-y-2">
+						<h2 class="text-xs font-black uppercase tracking-[0.4em] text-gray-600 dark:text-gray-400">Fondateur & Dev</h2>
+						<p class="text-2xl font-bold text-black dark:text-white uppercase tracking-tighter italic">Kiady Nirina</p>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Right: Story & Skills -->
+			<div class="lg:col-span-7 flex flex-col">
+				<div class="mb-16">
+					<h3 class="text-5xl md:text-7xl font-black text-black dark:text-white leading-[0.9] tracking-tighter mb-10">
+						L'ART DE LA <br/> <span class="text-gray-900 dark:text-gray-200 italic font-thin border-b-2 border-black dark:border-white pb-2">STRUCTURE</span>
+					</h3>
+					
+					<div class="space-y-8 text-xl text-gray-800 dark:text-gray-200 font-light leading-relaxed max-w-2xl">
+						<p>
+							Je ne construis pas seulement des sites ; je forge des <span class="text-black dark:text-white font-bold">systèmes numériques</span> capables de supporter l'ambition de mes clients.
+						</p>
+						<p>
+							Basé sur une rigueur technique absolue, mon approche du développement Full-Stack privilégie la <span class="italic">performance brute</span> et l'élégance du code. Chaque ligne est pensée pour l'évolutivité.
+						</p>
+					</div>
+				</div>
 
-                    <!-- Technologies Stack -->
-                    <div class="space-y-4">
-                        <p>Je travaille avec des technologies telles que :</p>
-                        
-                        <!-- Languages -->
-                        <div>
-                            <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-300 mb-3 flex items-center">
-                                <Icon icon="mdi:code-braces" class="mr-2" />
-                                Langages de programmation
-                            </h4>
-                            <div class="flex flex-wrap gap-2">
-                                {#each ['PHP', 'JavaScript', 'Python'] as lang, i}
-                                    <span 
-                                        class="skill-badge bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-700"
-                                        style="animation-delay: {i * 0.1}s;"
-                                    >
-                                        <Icon icon="mdi:code" class="mr-1 text-gray-600 dark:text-gray-400" />
-                                        {lang}
-                                    </span>
-                                {/each}
-                            </div>
-                        </div>
+				<!-- Skills Section -->
+				<div class="grid md:grid-cols-2 gap-12 mb-16">
+					{#each Object.entries(skills) as [category, list]}
+						<div class="space-y-6">
+							<h4 class="text-xs font-black uppercase tracking-[0.3em] text-gray-700 dark:text-gray-400 flex items-center gap-4">
+								{category} <span class="h-px flex-1 bg-gray-400 dark:bg-gray-800"></span>
+							</h4>
+							<ul class="space-y-3">
+								{#each list as skill}
+									<li class="group flex items-center justify-between py-2 border-b border-gray-100 dark:border-gray-900 hover:border-black dark:hover:border-white transition-colors duration-300">
+										<div class="flex items-center gap-4">
+											<Icon icon={skill.icon} class="w-5 h-5 text-gray-600 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors" />
+											<span class="text-lg font-medium text-gray-600 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white group-hover:pl-2 transition-all">{skill.name}</span>
+										</div>
+										<Icon icon="ph:arrow-up-right-thin" class="opacity-0 group-hover:opacity-100 transition-opacity text-black dark:text-white" />
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/each}
+				</div>
 
-                        <!-- Frameworks -->
-                        <div>
-                            <h4 class="text-sm font-semibold text-gray-800 dark:text-gray-300 mb-3 flex items-center">
-                                <Icon icon="mdi:package-variant" class="mr-2" />
-                                Frameworks & Librairies
-                            </h4>
-                            <div class="flex flex-wrap gap-2">
-                                {#each ['Laravel', 'Django', 'Vue.js', 'Svelte'] as framework, i}
-                                    <span 
-                                        class="skill-badge bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-300 border-gray-300 dark:border-gray-700"
-                                        style="animation-delay: {(i + 3) * 0.1}s;"
-                                    >
-                                        <Icon icon="mdi:framework" class="mr-1 text-gray-600 dark:text-gray-400" />
-                                        {framework}
-                                    </span>
-                                {/each}
-                            </div>
-                        </div>
-                    </div>
+				<!-- CTA Box -->
+				<div class="mt-auto group relative p-10 bg-black dark:bg-white overflow-hidden">
+					<!-- Moving Background Text -->
+					<div class="absolute inset-0 flex items-center opacity-5 pointer-events-none overflow-hidden whitespace-nowrap">
+						<span class="text-8xl font-black text-white dark:text-black animate-marquee">COLLABORONS • COLLABORONS • </span>
+					</div>
 
-                    <!-- Projects & Focus -->
-                    <p>
-                        J'ai réalisé divers <span class="font-semibold text-gray-800 dark:text-gray-200">projets innovants 🎯</span>, en mettant l'accent sur l'expérience utilisateur et les performances 💻✨.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Floating Background Elements -->
-        <div class="absolute top-20 right-20 w-32 h-32 bg-gray-400/10 rounded-full blur-3xl animate-float-slow"></div>
-        <div class="absolute bottom-20 left-20 w-40 h-40 bg-gray-600/10 rounded-full blur-3xl animate-float-slow" style="animation-delay: 2s;"></div>
-    </div>
+					<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+						<p class="text-2xl font-bold text-white dark:text-black tracking-tight text-center md:text-left">
+							Besoin d'une architecture <br/> sans compromis ?
+						</p>
+						<button class="px-10 py-4 bg-white dark:bg-black text-black dark:text-white font-black uppercase text-xs tracking-widest hover:invert transition-all duration-300 shadow-2xl">
+							Démarrer un projet
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <style>
-    @keyframes slideUp {
-        from {
-            opacity: 0;
-            transform: translateY(40px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
+	@keyframes marquee {
+		0% { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
+	}
 
-    @keyframes pulse-gentle {
-        0%, 100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-        50% {
-            opacity: 0.8;
-            transform: scale(1.05);
-        }
-    }
+	.animate-marquee {
+		display: inline-block;
+		animation: marquee 10s linear infinite;
+	}
 
-    @keyframes ping-slow {
-        0% {
-            transform: scale(1);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(2);
-            opacity: 0;
-        }
-    }
-
-    @keyframes ping-fast {
-        0% {
-            transform: scale(0.8);
-            opacity: 1;
-        }
-        75%, 100% {
-            transform: scale(1.5);
-            opacity: 0;
-        }
-    }
-
-    @keyframes float-slow {
-        0%, 100% {
-            transform: translateY(0) translateX(0);
-        }
-        33% {
-            transform: translateY(-20px) translateX(10px);
-        }
-        66% {
-            transform: translateY(10px) translateX(-10px);
-        }
-    }
-
-    .animate-slide-up {
-        animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        opacity: 0;
-    }
-
-    .animate-pulse-gentle {
-        animation: pulse-gentle 3s ease-in-out infinite;
-    }
-
-    .animate-ping-slow {
-        animation: ping-slow 4s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .animate-ping-fast {
-        animation: ping-fast 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-
-    .animate-float-slow {
-        animation: float-slow 8s ease-in-out infinite;
-    }
-
-    .skill-badge {
-        opacity: 0;
-        animation: slideUp 0.6s ease-out forwards;
-        padding: 0.5rem 1rem;
-        border-radius: 3rem;
-        border-width: 1px;
-        font-size: 0.875rem;
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        transition: all 0.3s ease;
-    }
-
-    .skill-badge:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+	:global(.dark) .grayscale {
+		filter: grayscale(1) contrast(1.2);
+	}
 </style>

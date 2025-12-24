@@ -1,174 +1,140 @@
 <script>
 	import Icon from "@iconify/svelte";
-	import { fade, fly } from "svelte/transition";
+	import { fly } from "svelte/transition";
 	import { onMount } from "svelte";
 
 	let sliderContainer;
 	let autoSlideInterval;
 	let servicesSection;
-	let isVisible = false;
 	let cardRef;
 
 	const services = [
 		{ 
-			icon: "mdi:web", 
+			icon: "ph:browser-bold", 
 			title: "Site Vitrine", 
-			description: "Création de sites modernes et élégants pour présenter votre activité.", 
-			features: ["Design responsive", "Optimisation SEO", "Performance optimale"],
-			gradient: "from-gray-600 to-gray-700"
+			description: "Architectures numériques minimalistes axées sur l'impact visuel et la clarté.", 
+			features: ["Design Intemporel", "SEO Technique", "Performance"]
 		},
 		{ 
-			icon: "mdi:cloud-outline", 
+			icon: "ph:cpu-bold", 
 			title: "Application Web", 
-			description: "Développement d'applications web performantes et évolutives.", 
-			features: ["Interface intuitive", "Base de données", "Sécurité renforcée"],
-			gradient: "from-gray-700 to-gray-800"
+			description: "Solutions SaaS sur mesure alliant robustesse et fluidité front-end.", 
+			features: ["Logiciel évolutif", "Sécurité", "Interface Intuitive"]
 		},
 		{ 
-			icon: "mdi:shopping-outline", 
+			icon: "ph:shopping-bag-bold", 
 			title: "E-commerce", 
-			description: "Boutiques en ligne sécurisées et optimisées pour la conversion.", 
-			features: ["Paiements sécurisés", "Gestion produits", "Analytics intégrés"],
-			gradient: "from-gray-800 to-gray-900"
+			description: "Expériences d'achat immersives conçues pour maximiser la conversion.", 
+			features: ["Stripe Ready", "Gestion Stocks", "Mobile First"]
 		},
 		{ 
-			icon: "mdi:layers-outline", 
+			icon: "ph:intersect-bold", 
 			title: "Automatisation", 
-			description: "Automatisation de processus et développement d'API sur mesure.", 
-			features: ["API RESTful", "Workflows automatisés", "Gain de temps"],
-			gradient: "from-gray-900 to-gray-700"
+			description: "Synchronisation de vos flux de travail pour libérer votre potentiel.", 
+			features: ["Webhooks / APIs", "Workflows", "Productivité"]
 		},
 		{ 
-			icon: "mdi:brush-outline", 
+			icon: "ph:framer-logo-bold", 
 			title: "UI/UX Design", 
-			description: "Conception d'expériences utilisateur intuitives et engageantes.", 
-			features: ["Wireframes", "Prototypes interactifs", "Design system"],
-			gradient: "from-gray-700 to-gray-800"
+			description: "Direction artistique pointue et prototypage haute fidélité.", 
+			features: ["Design System", "Accessibilité", "Identité Visuelle"]
 		},
 		{ 
-			icon: "mdi:tools", 
+			icon: "ph:hard-drives-bold", 
 			title: "Maintenance", 
-			description: "Support technique et maintenance proactive de vos solutions.", 
-			features: ["Support réactif", "Mises à jour", "Sécurité continue"],
-			gradient: "from-gray-600 to-gray-700"
+			description: "Surveillance proactive et optimisation continue de vos actifs.", 
+			features: ["Garantie uptime", "Backups", "Support Prioritaire"]
 		},
 	];
 
 	function setCardRef(el) {
-		if (!cardRef) {
-			cardRef = el;
-		}
-	}
-
-	function startAutoSlide() {
-		if (!autoSlideInterval) {
-			autoSlideInterval = setInterval(() => {
-				scrollRight();
-			}, 4000);
-		}
-	}
-
-	function stopAutoSlide() {
-		if (autoSlideInterval) {
-			clearInterval(autoSlideInterval);
-			autoSlideInterval = null;
-		}
+		if (!cardRef) cardRef = el;
 	}
 
 	function scrollRight() {
 		if (sliderContainer && cardRef) {
-			const cardWidth = cardRef.offsetWidth + 24;
-			sliderContainer.scrollBy({ left: cardWidth, behavior: "smooth" });
+			const cardWidth = cardRef.offsetWidth;
+			if (sliderContainer.scrollLeft + sliderContainer.offsetWidth >= sliderContainer.scrollWidth - 10) {
+				sliderContainer.scrollTo({ left: 0, behavior: "smooth" });
+			} else {
+				sliderContainer.scrollBy({ left: cardWidth, behavior: "smooth" });
+			}
 		}
 	}
 
 	onMount(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				const entry = entries[0];
-				if (entry.isIntersecting) {
-					isVisible = true;
-					startAutoSlide();
-				} else {
-					isVisible = false;
-					stopAutoSlide();
-				}
-			},
-			{ threshold: 0.3 }
-		);
-
-		observer.observe(servicesSection);
-
-		return () => {
-			stopAutoSlide();
-			observer.disconnect();
-		};
+		const interval = setInterval(scrollRight, 4000);
+		return () => clearInterval(interval);
 	});
 </script>
 
-<section class="py-20" bind:this={servicesSection}>
-	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<!-- Section Header -->
-		<div class="text-center mb-16 animate-slide-up">
-			<h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-				Mes Services
-			</h2>
-			<div class="relative inline-block mb-4">
-				<div class="w-20 h-1 bg-gradient-to-r from-gray-700 to-gray-900 rounded-full mx-auto"></div>
-				<div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-600 rounded-full animate-ping-slow"></div>
+<section class="py-24 overflow-hidden" bind:this={servicesSection}>
+	<div class="max-w-7xl mx-auto px-6">
+		
+		<!-- Header Section -->
+		<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 border-b border-black/50 dark:border-white/50 pb-12">
+			<div class="max-w-3xl">
+				<h2 class="text-xs font-bold uppercase tracking-[0.4em] text-gray-900 dark:text-white mb-6">Expertises</h2>
+				<h3 class="text-6xl md:text-9xl font-black text-black dark:text-white tracking-tighter leading-[0.85]">
+					MES <br/> <span class="text-gray-900 dark:text-gray-200 italic font-thin">SERVICES</span>
+				</h3>
+			</div>
+			<div class="mt-8 md:mt-0">
+				<p class="text-lg font-medium text-black dark:text-gray-400 max-w-xs leading-tight">
+					Solutions digitales haut de gamme alliant performance et minimalisme.
+				</p>
 			</div>
 		</div>
 
-		<!-- Services Grid -->
+		<!-- Services Grid & Slider -->
 		<div
 			bind:this={sliderContainer}
-			class="overflow-x-auto md:overflow-visible hide-scrollbar pb-6"
+			class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-black/30 dark:border-white/50 overflow-x-auto md:overflow-visible hide-scrollbar snap-x"
 		>
-			<div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 min-w-max md:min-w-0">
-				{#each services as service, i}
-					<div
-						use:setCardRef
-						class="group relative flex-shrink-0 md:flex-shrink bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-300 dark:border-gray-700 rounded-2xl p-8 w-80 md:w-auto shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-						in:fly={{ y: 40, duration: 600, delay: i * 100 }}
-					>
-						<!-- Animated Border -->
-						<div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-gray-600 to-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10">
-							<div class="absolute inset-[2px] rounded-2xl bg-white dark:bg-gray-800"></div>
-						</div>
+			{#each services as service, i}
+				<div
+					use:setCardRef
+					class="group relative flex-shrink-0 w-[85vw] md:w-auto p-12 border-r border-b border-black/30 dark:border-white/50 transition-all duration-700 ease-expo hover:z-20 snap-center"
+				>
+					<!-- Reveal Hover Background -->
+					<div class="absolute inset-0 bg-black dark:bg-white scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-expo"></div>
 
-						<!-- Floating Icon -->
-						<div class="relative mb-6">
-							<div class="absolute -top-2 -right-2 w-3 h-3 bg-gray-600 rounded-full animate-pulse-gentle"></div>
-							<div class={`w-14 h-14 flex items-center group-hover:scale-110 transition-transform  transition-colors`}>
-								<Icon icon={service.icon} class="w-10 h-10 text-gray-800 dark:text-gray-200 group-hover:text-gray-700 dark:group-hover:text-gray-300 duration-300" />
+					<div class="relative z-10 flex flex-col h-full">
+						<!-- Icon & Index -->
+						<div class="flex items-start justify-between mb-16">
+							<div class="text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-500">
+								<Icon icon={service.icon} class="w-14 h-14" />
 							</div>
+							<span class="text-5xl font-thin text-gray-100 dark:text-gray-900 group-hover:text-white/10 dark:group-hover:text-black/10 transition-colors duration-500 italic">
+								{i + 1}
+							</span>
 						</div>
 
-						<!-- Content -->
-						<div class="relative z-10">
-							<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">
-								{service.title}
-							</h3>
-							<p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-								{service.description}
-							</p>
-							<ul class="space-y-3">
-								{#each service.features as feature, j}
-									<li class="flex items-center text-gray-700 dark:text-gray-300 text-sm group-hover/item:translate-x-1 transition-transform duration-300" 
-											style="animation-delay: {j * 0.1}s;">
-										<div class="w-2 h-2 bg-gray-600 rounded-full mr-3 animate-pulse-gentle" 
-													style="animation-delay: {j * 0.2}s;"></div>
-										{feature}
-									</li>
-								{/each}
-							</ul>
-						</div>
+						<!-- Textual Content -->
+						<h4 class="text-3xl font-bold text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-500 mb-6 tracking-tight">
+							{service.title}
+						</h4>
+						
+						<p class="text-gray-900 dark:text-gray-200 group-hover:text-gray-300 dark:group-hover:text-gray-900 transition-colors duration-500 mb-10 text-lg leading-relaxed font-light">
+							{service.description}
+						</p>
 
-						<!-- Hover Flash Effect -->
-						<div class="absolute inset-0 rounded-2xl bg-gray-500 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"></div>
+						<!-- Feature Pills -->
+						<div class="mt-auto flex flex-wrap gap-2">
+							{#each service.features as feature}
+								<span class="px-3 py-1 border border-black/30 dark:border-white/50 text-[10px] uppercase tracking-widest font-bold text-gray-600 dark:text-gray-200 group-hover:text-white dark:group-hover:text-black group-hover:border-white/20 dark:group-hover:border-black/20 transition-all">
+									{feature}
+								</span>
+							{/each}
+						</div>
 					</div>
-				{/each}
-			</div>
+
+					<!-- Bottom Arrow Reveal -->
+					<div class="absolute bottom-12 right-12 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500 delay-100">
+						<Icon icon="ph:arrow-right-thin" class="w-10 h-10 text-white dark:text-black" />
+					</div>
+				</div>
+			{/each}
 		</div>
 	</div>
 </section>
@@ -182,63 +148,7 @@
 		scrollbar-width: none;
 	}
 
-	@keyframes slideUp {
-		from {
-			opacity: 0;
-			transform: translateY(40px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	@keyframes fadeIn {
-		from { 
-			opacity: 0; 
-		}
-		to { 
-			opacity: 1; 
-		}
-	}
-
-	@keyframes pulse-gentle {
-		0%, 100% {
-			opacity: 1;
-			transform: scale(1);
-		}
-		50% {
-			opacity: 0.7;
-			transform: scale(1.1);
-		}
-	}
-
-	@keyframes ping-slow {
-		0% {
-			transform: scale(1);
-			opacity: 1;
-		}
-		75%, 100% {
-			transform: scale(2);
-			opacity: 0;
-		}
-	}
-
-	.animate-slide-up {
-		animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-		opacity: 0;
-	}
-
-	.animate-fade-in {
-		animation: fadeIn 1s ease-out forwards;
-		opacity: 0;
-	}
-
-	.animate-pulse-gentle {
-		animation: pulse-gentle 2s ease-in-out infinite;
-	}
-
-	.animate-ping-slow {
-		animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+	.ease-expo {
+		transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
 	}
 </style>
