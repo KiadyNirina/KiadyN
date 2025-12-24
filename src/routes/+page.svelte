@@ -79,69 +79,31 @@
 {#if isLoading}
 	<!-- Loading Screen -->
 	<div class="fixed inset-0 z-50 flex flex-col items-center justify-center">
-		<!-- Animated Background Elements -->
-		<div class="absolute inset-0 overflow-hidden">
-			<div class="absolute -top-20 -left-20 w-72 h-72 bg-gray-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
-			<div class="absolute -bottom-20 -right-20 w-96 h-96 bg-gray-600/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
-			<div class="absolute top-1/2 left-1/4 w-48 h-48 bg-gray-300/5 rounded-full blur-2xl animate-float"></div>
-		</div>
+		
+		<!-- Logo Central -->
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="relative mb-12" in:scale={{ duration: 1000, start: 0.9 }}>
+                <div class="w-24 h-24 sm:w-32 sm:h-32 dark:bg-white bg-black flex items-center justify-center rounded-2xl shadow-[0_0_50px_rgba(255,255,255,0.15)] overflow-hidden">
+                     <img src="/logo.png" alt="Logo" class="w-2/3 h-2/3 object-contain dark:invert" />
+                </div>
+                <!-- Orbiting Ring -->
+                <div class="absolute -inset-4 border border-black/30 dark:border-white/30 rounded-2xl animate-pulse-gentle"></div>
+            </div>
 
-		<!-- Logo Container -->
-		<div class="relative mb-8 group animate-bounce-gentle">
-			<!-- Logo with Border -->
-			<div class="relative bg-gray-800 p-3 rounded-3xl shadow-2xl">
-				<img 
-					src="/logo.png" 
-					alt="Logo Kiady Nirina" 
-					class="w-16 rounded-2xl border-4 border-white dark:border-gray-800 shadow-inner"
-				/>
-				
-				<!-- Floating Dots -->
-				<div class="absolute -top-2 -right-2 w-4 h-4 bg-gray-400 rounded-full animate-ping-fast"></div>
-				<div class="absolute -bottom-2 -left-2 w-3 h-3 bg-gray-300 rounded-full animate-pulse-gentle" style="animation-delay: 1s;"></div>
-			</div>
-		</div>
-
-		<!-- Loading Text -->
-		<div class="text-center mb-8 animate-fade-in">
-			<p class="text-gray-600 dark:text-gray-200 text-lg">
-				Chargement ...
-			</p>
-		</div>
-
-		<!-- Progress Bar -->
-		<div class="w-80 max-w-full px-4">
-			<!-- Progress Container -->
-			<div class="relative h-3 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm rounded-full overflow-hidden border border-gray-300 dark:border-gray-600 shadow-inner">
-				<!-- Progress Fill -->
-				<div 
-					class="absolute top-0 left-0 h-full bg-gray-800 dark:bg-gray-200 rounded-full transition-all duration-300 ease-out shadow-lg"
-					style="width: {progress}%"
-				>
-					<!-- Shimmer Effect -->
-					<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
-				</div>
-				
-				<!-- Progress Dots -->
-				<div class="absolute -top-1 -left-1 w-4 h-4 bg-gray-600 rounded-full animate-ping-slow"></div>
-				<div class="absolute -top-1 -right-1 w-4 h-4 bg-gray-500 rounded-full animate-ping-slow" style="animation-delay: 1s;"></div>
-			</div>
-			
-			<!-- Progress Percentage -->
-			<div class="text-center mt-4">
-				<span class="text-gray-700 dark:text-gray-200 font-bold text-lg">{Math.round(progress)}%</span>
-			</div>
-		</div>
-
-		<!-- Loading Animation -->
-		<div class="flex space-x-2 mt-8">
-			{#each [0, 1, 2] as i}
-				<div 
-					class="w-3 h-3 bg-gray-600 rounded-full animate-bounce"
-					style="animation-delay: {i * 0.2}s;"
-				></div>
-			{/each}
-		</div>
+            <!-- Minimalist Progress -->
+            <div class="w-64 space-y-4">
+                <div class="flex justify-between items-end">
+                    <span class="dark:text-white/30 text-black/70 text-[10px] uppercase tracking-[0.3em] font-light">Initialisation</span>
+                    <span class="dark:text-white text-black font-light text-sm tabular-nums">{Math.round(progress)}%</span>
+                </div>
+                <div class="h-[1px] w-full dark:bg-white/10 bg-black/10  relative overflow-hidden">
+                    <div 
+                        class="absolute inset-y-0 left-0 dark:bg-white bg-black transition-all duration-500 ease-out"
+                        style="width: {progress}%"
+                    ></div>
+                </div>
+            </div>
+        </div>
 	</div>
 {/if}
 
