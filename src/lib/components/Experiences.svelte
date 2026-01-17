@@ -10,6 +10,7 @@
         workSchedule: "Temps plein",
         img: "atout.png",
         localisation: "Ambohimiandra, Antananarivo, MG",
+        type_work: "Présentiel",
         description: [
             "Intégration de maquettes et développement de nouvelles fonctionnalités pour sites e-commerce Magento 2.",
             "Maintenance corrective et optimisation des performances.",
@@ -25,6 +26,7 @@
         workSchedule: "Temps plein",
         img: "atout.png",
         localisation: "Ambohimiandra, Antananarivo, MG",
+        type_work: "Présentiel",
         description: [
             "Développement front-end/back-end d'une plateforme e-commerce et gestion de stock.",
             "Correction de bugs et maintenance des fonctionnalités existantes.",
@@ -33,12 +35,13 @@
         technologies: ["Codeigniter", "Magento", "Wordpress", "PHP"]
       },
       {
-        period: "2022 - Présent",
+        period: "2024 - Présent",
         position: "Freelance Développeur Web",
         company: "Divers Clients",
         type: "Freelance",
         workSchedule: "Variable",
-        localisation: "Remote",
+        localisation: "Divers Lieux",
+        type_work: "Télétravail",
         description: [
             "Conception d'applications web sur mesure pour divers clients.",
         ],
@@ -148,9 +151,14 @@
                         </div>
 
                         <div class="mb-8">
-                            <p class="text-sm font-bold uppercase tracking-widest text-gray-800 dark:text-gray-300 group-hover:text-gray-300 dark:group-hover:text-gray-800 mb-4 flex items-center gap-2">
-                                <Icon icon="ph:buildings-bold" /> {exp.company} — {exp.localisation}
-                            </p>
+                            <div class="py-2 border-t border-b border-black/20 dark:border-white/20 mb-6">
+                                <p class="text-xs font-bold uppercase tracking-widest text-gray-800 dark:text-gray-300 group-hover:text-gray-300 dark:group-hover:text-gray-800 mb-4 flex items-center gap-2">
+                                    <Icon icon="ph:buildings-bold" /> {exp.company} — {exp.localisation}
+                                </p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-gray-800 dark:text-gray-300 group-hover:text-gray-300 dark:group-hover:text-gray-800 mb-4 flex items-center gap-2">
+                                    <Icon icon="ph:clock-bold" /> {exp.workSchedule} — {exp.type_work}
+                                </p>
+                            </div>
                             <ul class="space-y-4">
                                 {#each exp.description as desc}
                                     <li class="text-lg font-light text-gray-900 dark:text-gray-200 group-hover:text-white dark:group-hover:text-black leading-relaxed flex gap-4">

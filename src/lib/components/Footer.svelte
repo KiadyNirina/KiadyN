@@ -56,9 +56,7 @@
         <!-- Barre de copyright minimale -->
         <div class="pt-12 border-t border-black/5 dark:border-white/5 flex flex-col md:flex-row justify-center items-center">
             <div class="flex items-center justify-center gap-4">
-                <span class="text-[10px] font-mono text-gray-500 dark:text-gray-400 uppercase">© {currentYear} All Rights Reserved</span>
-                <span class="h-px w-8 bg-gray-400 dark:bg-gray-800"></span>
-                <span class="text-[10px] font-mono text-gray-500 dark:text-gray-400 uppercase">Designed & Built by Kiady</span>
+                <span class="text-[10px] font-mono text-gray-500 dark:text-gray-400 uppercase">© {currentYear} Tous droits réservés</span>
             </div>
         </div>
     </div>

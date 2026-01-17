@@ -135,6 +135,7 @@
     let currentSlide = 0;
     let selectedProject = null;
     let showModal = false;
+    let totalProject = projects.length;
 
     function nextSlide() {
         currentSlide = (currentSlide + 1) % projects.length;
@@ -214,7 +215,7 @@
                 {#key currentSlide}
                     <div in:slide={{ duration: 600 }}>
                         <div class="flex items-center gap-4 mb-4">
-                            <span class="text-[10px] font-mono text-gray-500">/ 0{currentSlide + 1}</span>
+                            <span class="text-[12px] font-mono text-gray-500"> 0{currentSlide + 1} / 0{totalProject}</span>
                             <span class="h-px w-12 bg-gray-400"></span>
                             <span class="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">
                                 {projects[currentSlide].type}
@@ -297,6 +298,14 @@
                                 {selectedProject.details}
                             </p>
                         </section>
+
+                        <div class="flex flex-wrap gap-3 mt-8">
+                            {#each projects[currentSlide].tech as tech}
+                                <span class="px-3 py-1 border border-black/50 dark:border-white/50 text-[10px] font-black text-black dark:text-white uppercase tracking-tighter">
+                                    {tech}
+                                </span>
+                            {/each}
+                        </div>
 
                         {#if selectedProject.functionalities}
                             <section>
