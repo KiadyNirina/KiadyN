@@ -95,7 +95,7 @@
         </div>
 
         <!-- Social Footer -->
-        <div class="absolute bottom-12 left-6 md:left-12 flex flex-col gap-6">
+        <div class="lg:absolute mt-10 bottom-12 lg:left-12 flex lg:flex-col gap-6">
             {#each socials as social}
                 <a href={social.href} target="_blank" class="text-gray-900 dark:text-gray-300 hover:text-black dark:hover:text-white  hover:scale-120 transition-all">
                     <Icon icon={social.icon} class="w-6 h-6" />
