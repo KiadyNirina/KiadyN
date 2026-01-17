@@ -298,6 +298,14 @@
                             </p>
                         </section>
 
+                        <div class="flex flex-wrap gap-3 mt-8">
+                            {#each projects[currentSlide].tech as tech}
+                                <span class="px-3 py-1 border border-black/50 dark:border-white/50 text-[10px] font-black text-black dark:text-white uppercase tracking-tighter">
+                                    {tech}
+                                </span>
+                            {/each}
+                        </div>
+
                         {#if selectedProject.functionalities}
                             <section>
                                 <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">// Fonctionnalités</h5>
