@@ -33,7 +33,7 @@
         technologies: ["Codeigniter", "Magento", "Wordpress", "PHP"]
       },
       {
-        period: "2022 - Présent",
+        period: "2024 - Présent",
         position: "Freelance Développeur Web",
         company: "Divers Clients",
         type: "Freelance",
