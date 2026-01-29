@@ -23,7 +23,7 @@
         {
             type: "Freelance",
             title: "Mireille",
-            description: "Portfolio professionnel d'une technicienne en génie civil. Focus sur la précision et l'élégance structurelle.",
+            description: "Portfolio professionnel d'une technicienne en génie civil.",
             tech: ["Nuxt", "Tailwind CSS", "Typescript"],
             image: "/mireille.png",
             details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
@@ -39,7 +39,7 @@
         {
             type: "Freelance",
             title: "Kleonix",
-            description: "Identité digitale pour une agence moderne. Performance et esthétique minimaliste au cœur du projet.",
+            description: "Identité digitale pour une entreprise de solutions informatiques.",
             tech: ["Nuxt", "Tailwind", "TS"],
             image: "/kleonix.png",
             details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
@@ -132,10 +132,10 @@
         {
             type: "Projet personnel",
             title: "eBoss",
-            description: "Application de gestion de projet avec suivi des tâches et collaboration en équipe",
+            description: "Application de gestion d'établissement scolaire avec suivi des étudiants et des cours",
             tech: ["Svelte", "Django", "PostgreSQL"],
             image: "/eboss.jpg",
-            details: "Application de gestion de projet avec suivi des tâches et collaboration en équipe. Utilise Svelte pour le front-end et Django pour le back-end.",
+            details: "Application de gestion d'établissement scolaire avec suivi des étudiants et des cours. Utilise Svelte pour le front-end et Django pour le back-end.",
             github: "https://github.com/KiadyNirina/eBoss",
             gallery: [
                 "/eboss 2.jpg",
