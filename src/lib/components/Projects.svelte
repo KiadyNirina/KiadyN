@@ -52,7 +52,7 @@
             link: "https://kleonix.netlify.app"
         },
         {
-            type: "Personnel",
+            type: "Projet personnel",
             title: "Bookly",
             description: "Une plateforme permettant aux utilisateurs de lire des livres en streaming, de partager leurs propres œuvres (romans, poèmes, nouvelles) et de découvrir les créations d'autres passionnés.",
             tech: ["Vue", "Tailwind CSS", "Laravel", "MySQL"],
@@ -74,7 +74,7 @@
             ]
         },
         {
-            type: "Personnel",
+            type: "Projet personnel",
             title: "CookUp",
             description: "Intelligence culinaire : suggérez, filtrez et exportez vos recettes préférées en un clic.",
             tech: ["SvelteKit", "Tailwind CSS", "Spoonacular API"],
@@ -148,17 +148,35 @@
         }
     ];
 
-    let currentSlide = 0;
+    // État du filtre
+    let filterType = 'All';
+    
+    // Obtenir les types uniques
+    $: uniqueTypes = ['All', ...new Set(projects.map(p => p.type))];
+    
+    // Projets filtrés
+    $: filteredProjects = filterType === 'All' 
+        ? projects 
+        : projects.filter(p => p.type === filterType);
+    
+    // Slider
+    $: currentSlide = 0;
+    $: totalProject = filteredProjects.length;
+    
     let selectedProject = null;
     let showModal = false;
-    let totalProject = projects.length;
+
+    // Réinitialiser le slider quand le filtre change
+    $: {
+        currentSlide = 0;
+    }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % projects.length;
+        currentSlide = (currentSlide + 1) % filteredProjects.length;
     }
 
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + projects.length) % projects.length;
+        currentSlide = (currentSlide - 1 + filteredProjects.length) % filteredProjects.length;
     }
 
     function openModal(project) {
@@ -170,6 +188,10 @@
     function closeModal() {
         showModal = false;
         document.body.style.overflow = 'auto';
+    }
+
+    function setFilter(type) {
+        filterType = type;
     }
 
     function portal(node, target = 'body') {
@@ -202,77 +224,98 @@
             </h3>
         </div>
 
-        <!-- Slider Main View -->
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-            <!-- Image Showcase (8 cols) -->
-            <div class="lg:col-span-7 relative group cursor-pointer" on:click={() => openModal(projects[currentSlide])}>
-                <div class="absolute inset-0 bg-black translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
-                <div class="relative aspect-[16/10] overflow-hidden border border-black dark:border-white">
-                    {#key currentSlide}
-                        <img 
-                            src={projects[currentSlide].image} 
-                            alt={projects[currentSlide].title}
-                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
-                            in:fade={{ duration: 800 }}
-                        />
-                    {/key}
-                    
-                    <!-- Overlay interactif -->
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="px-8 py-4 bg-white text-black font-black uppercase text-xs tracking-widest">
-                            Explorer le projet
-                        </span>
-                    </div>
-                </div>
-            </div>
+        <!-- Filtres -->
+        <div class="flex flex-wrap gap-3 mb-16">
+            {#each uniqueTypes as type}
+                <button 
+                    on:click={() => setFilter(type)}
+                    class="px-6 py-3 text-[11px] font-black uppercase tracking-widest transition-all duration-300
+                        {filterType === type 
+                            ? 'bg-black text-white dark:bg-white dark:text-black' 
+                            : 'bg-white text-black border border-black hover:bg-black hover:text-white dark:bg-black dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'}"
+                >
+                    {type}
+                </button>
+            {/each}
+        </div>
 
-            <!-- Content Details (5 cols) -->
-            <div class="lg:col-span-5 space-y-8">
-                {#key currentSlide}
-                    <div in:slide={{ duration: 600 }}>
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="text-[12px] font-mono text-gray-500"> 0{currentSlide + 1} / 0{totalProject}</span>
-                            <span class="h-px w-12 bg-gray-400"></span>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">
-                                {projects[currentSlide].type}
+        <!-- Slider Main View -->
+        {#if filteredProjects.length > 0}
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Image Showcase (8 cols) -->
+                <div class="lg:col-span-7 relative group cursor-pointer" on:click={() => openModal(filteredProjects[currentSlide])}>
+                    <div class="absolute inset-0 bg-black translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
+                    <div class="relative aspect-[16/10] overflow-hidden border border-black dark:border-white">
+                        {#key currentSlide}
+                            <img 
+                                src={filteredProjects[currentSlide].image} 
+                                alt={filteredProjects[currentSlide].title}
+                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                                in:fade={{ duration: 800 }}
+                            />
+                        {/key}
+                        
+                        <!-- Overlay interactif -->
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-8 py-4 bg-white text-black font-black uppercase text-xs tracking-widest">
+                                Explorer le projet
                             </span>
                         </div>
-                        
-                        <h4 class="text-5xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase mb-6">
-                            {projects[currentSlide].title}
-                        </h4>
-                        
-                        <p class="text-lg text-gray-500 dark:text-gray-400 leading-relaxed italic">
-                            "{projects[currentSlide].description}"
-                        </p>
-
-                        <div class="flex flex-wrap gap-3 mt-8">
-                            {#each projects[currentSlide].tech as tech}
-                                <span class="px-3 py-1 border border-black/50 dark:border-white/50 text-[10px] font-black text-black dark:text-white uppercase tracking-tighter">
-                                    {tech}
-                                </span>
-                            {/each}
-                        </div>
                     </div>
-                {/key}
+                </div>
 
-                <!-- Navigation Controls -->
-                <div class="flex items-center gap-8 pt-12">
-                    <button 
-                        on:click={prevSlide}
-                        class="p-4 border text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-                    >
-                        <Icon icon="ph:arrow-left-thin" class="w-8 h-8" />
-                    </button>
-                    <button 
-                        on:click={nextSlide}
-                        class="p-4 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 transition-all"
-                    >
-                        <Icon icon="ph:arrow-right-thin" class="w-8 h-8" />
-                    </button>
+                <!-- Content Details (5 cols) -->
+                <div class="lg:col-span-5 space-y-8">
+                    {#key currentSlide}
+                        <div in:slide={{ duration: 600 }}>
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="text-[12px] font-mono text-gray-500"> 0{currentSlide + 1} / 0{totalProject}</span>
+                                <span class="h-px w-12 bg-gray-400"></span>
+                                <span class="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">
+                                    {filteredProjects[currentSlide].type}
+                                </span>
+                            </div>
+                            
+                            <h4 class="text-5xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase mb-6">
+                                {filteredProjects[currentSlide].title}
+                            </h4>
+                            
+                            <p class="text-lg text-gray-500 dark:text-gray-400 leading-relaxed italic">
+                                "{filteredProjects[currentSlide].description}"
+                            </p>
+
+                            <div class="flex flex-wrap gap-3 mt-8">
+                                {#each filteredProjects[currentSlide].tech as tech}
+                                    <span class="px-3 py-1 border border-black/50 dark:border-white/50 text-[10px] font-black text-black dark:text-white uppercase tracking-tighter">
+                                        {tech}
+                                    </span>
+                                {/each}
+                            </div>
+                        </div>
+                    {/key}
+
+                    <!-- Navigation Controls -->
+                    <div class="flex items-center gap-8 pt-12">
+                        <button 
+                            on:click={prevSlide}
+                            class="p-4 border text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+                        >
+                            <Icon icon="ph:arrow-left-thin" class="w-8 h-8" />
+                        </button>
+                        <button 
+                            on:click={nextSlide}
+                            class="p-4 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 transition-all"
+                        >
+                            <Icon icon="ph:arrow-right-thin" class="w-8 h-8" />
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        {:else}
+            <div class="text-center py-24">
+                <p class="text-2xl font-black text-gray-500">Aucun projet pour ce filtre</p>
+            </div>
+        {/if}
     </div>
 
     <!-- Modal Moderne (Portal-like) -->
@@ -316,7 +359,7 @@
                         </section>
 
                         <div class="flex flex-wrap gap-3 mt-8">
-                            {#each projects[currentSlide].tech as tech}
+                            {#each selectedProject.tech as tech}
                                 <span class="px-3 py-1 border border-black/50 dark:border-white/50 text-[10px] font-black text-black dark:text-white uppercase tracking-tighter">
                                     {tech}
                                 </span>
