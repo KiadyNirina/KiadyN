@@ -6,6 +6,22 @@
     const projects = [
         {
             type: "Freelance",
+            title: "Zavamix",
+            description: "Zavamix – Site web de sourcing et d’importation Dubaï → Madagascar",
+            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+            image: "/zavamix.png",
+            details: "Zavamix est un site vitrine développé avec Nuxt.js pour le rendu statique et Tailwind CSS pour le design utilitaire. Il présente une entreprise spécialisée dans l’importation de produits neufs et d’occasion depuis Dubaï vers Madagascar, en mettant l’accent sur un parcours client structuré et une expérience utilisateur claire.",
+            gallery: [
+                "zavamix1.png",
+                "zavamix2.png",
+                "zavamix3.png",
+                "zavamix4.png",
+                "zavamix5.png",
+            ],
+            link: "https://zavamix.netlify.app"
+        },
+        {
+            type: "Freelance",
             title: "Mireille",
             description: "Portfolio professionnel d'une technicienne en génie civil. Focus sur la précision et l'élégance structurelle.",
             tech: ["Nuxt", "Tailwind CSS", "Typescript"],
