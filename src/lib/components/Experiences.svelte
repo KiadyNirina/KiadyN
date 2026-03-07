@@ -16,7 +16,7 @@
             "Maintenance corrective et optimisation des performances.",
             "Déploiement via SSH et collaboration technique agile."
         ],
-        technologies: ["Magento", "PHP", "MySQL", "Git"]
+        technologies: ["Alpine.js", "Magento", "PHP", "MySQL", "Git", "Docker"]
       },
       {
         period: "Nov. 2024 - Fev. 2025",
