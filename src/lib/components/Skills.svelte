@@ -7,6 +7,8 @@
     { name: 'CSS', icon: 'simple-icons:css3' },
     { name: 'Tailwind', icon: 'simple-icons:tailwindcss' },
     { name: 'Javascript', icon: 'simple-icons:javascript' },
+    { name: 'TypeScript', icon: 'simple-icons:typescript' },
+    { name: 'Alpine.js', icon: 'lineicons:alpinejs' },
     { name: 'Vue', icon: 'simple-icons:vuedotjs' },
     { name: 'Nuxt', icon: 'simple-icons:nuxtdotjs' },
     { name: 'Svelte', icon: 'simple-icons:svelte' },
@@ -20,6 +22,7 @@
     { name: 'WordPress', icon: 'simple-icons:wordpress' },
     { name: 'Magento', icon: 'simple-icons:magento' },
     { name: 'WooCommerce', icon: 'simple-icons:woocommerce' },
+    { name: 'Odoo', icon: 'simple-icons:odoo' },
     { name: 'SQLite', icon: 'simple-icons:sqlite' },
     { name: 'MySQL', icon: 'simple-icons:mysql' },
     { name: 'PostgreSQL', icon: 'simple-icons:postgresql' },
@@ -34,8 +37,8 @@
     { 
         title: 'Frontend', 
         subsections: [
-            { subtitle: 'Langages', items: ['HTML','CSS','Javascript'] },
-            { subtitle: 'Frameworks', items: ['Vue','Nuxt','Svelte','Sveltekit','Tailwind'] },
+            { subtitle: 'Langages', items: ['HTML','CSS','Javascript', 'TypeScript'] },
+            { subtitle: 'Frameworks', items: ['Alpine.js','Vue','Nuxt','Svelte','Sveltekit','Tailwind'] },
         ]
     },
     { 
@@ -48,7 +51,7 @@
     {
         title: 'CMS & E-commerce', 
         subsections: [
-            { subtitle: 'Plateformes', items: ['WordPress','Magento','WooCommerce'] },
+            { subtitle: 'Plateformes', items: ['WordPress','Magento','WooCommerce', 'Odoo'] },
         ]
     },
     {
