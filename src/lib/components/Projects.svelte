@@ -1,8 +1,8 @@
 <script>
     import Icon from "@iconify/svelte";
-    import { fade, scale, slide } from 'svelte/transition';
-    import { onMount } from 'svelte';
+    import { fade } from 'svelte/transition';
 
+    // Données projets avec flag "featured" pour les meilleurs projets
     const projects = [
         {
             type: "Freelance",
@@ -65,13 +65,9 @@
             ],
             github: "https://github.com/KiadyNirina/Bookly",
             gallery: [
-                "/2bookly.png",
-                "/3bookly.png",
-                "/4bookly.png",
-                "/5bookly.png",
-                "/6bookly.png",
-                "/7bookly.png"
-            ]
+                "/2bookly.png", "/3bookly.png", "/4bookly.png", "/5bookly.png", "/6bookly.png", "/7bookly.png"
+            ],
+            featured: true // ⭐ Meilleur projet
         },
         {
             type: "Projet personnel",
@@ -94,7 +90,8 @@
                 "/Cookup2.png",
                 "/Cookup3.png",
                 "/Cookup4.png",
-            ]
+            ],
+            featured: true // ⭐ Meilleur projet
         },
         {
             type: "Projet personnel",
@@ -105,8 +102,7 @@
             details: "Application de chat en temps réel avec notifications instantanées et gestion des utilisateurs. Utilise Svelte pour le front-end et Laravel pour le back-end.",
             github: "https://github.com/KiadyNirina/Real_talk",
             gallery: [
-                "/real_talk.jpg",
-                "/real_talk 2.jpg",
+                "/real_talk.jpg", "/real_talk 2.jpg",
             ]
         },
         {
@@ -124,9 +120,7 @@
             ],
             github: "https://github.com/KiadyNirina/Datalens",
             gallery: [
-                "/Datalens2.png",
-                "/Datalens3.png",
-                "/Datalens4.png",
+                "/Datalens2.png", "/Datalens3.png", "/Datalens4.png",
             ]
         },
         {
@@ -148,36 +142,24 @@
         }
     ];
 
-    // État du filtre
+    // 🎯 Filtres pour la section 2
     let filterType = 'All';
+    $: filterOptions = [
+        { key: 'All', label: 'Tous' },
+        { key: 'Freelance', label: 'Freelance' },
+        { key: 'Perso', label: 'Perso' }
+    ];
     
-    // Obtenir les types uniques
-    $: uniqueTypes = ['All', ...new Set(projects.map(p => p.type))];
-    
-    // Projets filtrés
     $: filteredProjects = filterType === 'All' 
         ? projects 
-        : projects.filter(p => p.type === filterType);
+        : projects.filter(p => filterType === 'Freelance' ? p.type === 'Freelance' : p.type === 'Projet personnel');
     
-    // Slider
-    $: currentSlide = 0;
-    $: totalProject = filteredProjects.length;
+    // 🌟 Section 1 : Meilleurs projets (featured)
+    $: featuredProjects = projects.filter(p => p.featured);
     
+    let currentFeaturedIdx = 0;
     let selectedProject = null;
     let showModal = false;
-
-    // Réinitialiser le slider quand le filtre change
-    $: {
-        currentSlide = 0;
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % filteredProjects.length;
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + filteredProjects.length) % filteredProjects.length;
-    }
 
     function openModal(project) {
         selectedProject = project;
@@ -190,177 +172,250 @@
         document.body.style.overflow = 'auto';
     }
 
-    function setFilter(type) {
-        filterType = type;
-    }
-
     function portal(node, target = 'body') {
         const targetNode = document.querySelector(target);
-        targetNode.appendChild(node);
-        return {
-            destroy() {
-                if (node.parentNode) {
-                    node.parentNode.removeChild(node);
-                }
-            }
+        if (targetNode) targetNode.appendChild(node);
+        return { 
+            destroy() { 
+                if (node.parentNode) node.parentNode.removeChild(node); 
+            } 
         };
+    }
+    
+    // 🏷️ Helper pour le badge type court
+    function getTypeBadge(type) {
+        return type === 'Projet personnel' ? 'Perso' : 'Freelance';
+    }
+    
+    // 🎨 Helper pour couleur du badge selon le type
+    function getBadgeClasses(type) {
+        return type === 'Freelance' 
+            ? 'bg-emerald-100 text-emerald-800 border-emerald-200'
+            : 'bg-violet-100 text-violet-800 border-violet-200';
     }
 </script>
 
-<section class="relative min-h-screen py-32 overflow-hidden">
-    <!-- Fond décoratif : Numéro de slide géant -->
-    <div class="absolute top-0 right-0 p-12 overflow-hidden pointer-events-none select-none">
-        <span class="text-[30vw] font-black text-gray-300 dark:text-gray-800 leading-none translate-x-1/4">
-            0{currentSlide + 1}
-        </span>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <!-- Header -->
-        <div class="mb-20">
-            <h2 class="text-xs font-black uppercase tracking-[0.5em] text-gray-800 dark:text-gray-200 mb-4">Portfolio</h2>
-            <h3 class="text-6xl md:text-8xl font-black text-black dark:text-white tracking-tighter uppercase leading-none">
-                Selected <br/> <span class="text-gray-500" style="-webkit-text-stroke: 1px;">Works</span>
-            </h3>
+<section class="min-h-screen py-24 px-6 overflow-hidden transition-colors duration-500">
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- HEADER -->
+        <div class="mb-24 flex justify-between items-end">
+            <div>
+                <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400 mb-2">Portfolio</h2>
+                <h3 class="text-6xl md:text-8xl font-black text-black dark:text-white tracking-tighter uppercase leading-[0.8]">
+                    Selected <br/> <span class="text-zinc-200 dark:text-zinc-800" style="-webkit-text-stroke: 1px;">Works</span>
+                </h3>
+            </div>
+            <div class="hidden md:block text-right">
+                <span class="text-5xl font-black text-zinc-300 dark:text-zinc-700">{projects.length}</span>
+                <p class="text-[10px] font-bold dark:text-white uppercase tracking-widest">Total Projets</p>
+            </div>
         </div>
 
-        <!-- Filtres -->
-        <div class="flex flex-wrap gap-3 mb-16">
-            {#each uniqueTypes as type}
+        <!-- 🔥 SECTION 1: MEILLEURS PROJETS (STACKED SLIDER) -->
+        {#if featuredProjects.length > 0}
+        <div class="mb-40">
+            <div class="flex items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6">
+                <h4 class="text-2xl font-black uppercase tracking-tighter dark:text-white flex items-center gap-3">
+                    <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
+                    Meilleurs Projets
+                </h4>
+                <span class="font-mono text-zinc-400">({featuredProjects.length})</span>
+            </div>
+
+            <div class="relative h-[500px] flex items-center justify-center">
+                <!-- Navigation Gauche -->
                 <button 
-                    on:click={() => setFilter(type)}
-                    class="px-6 py-3 text-[11px] font-black uppercase tracking-widest transition-all duration-300
-                        {filterType === type 
-                            ? 'bg-black text-white dark:bg-white dark:text-black' 
-                            : 'bg-white text-black border border-black hover:bg-black hover:text-white dark:bg-black dark:text-white dark:border-white dark:hover:bg-white dark:hover:text-black'}"
+                    on:click={() => currentFeaturedIdx = (currentFeaturedIdx - 1 + featuredProjects.length) % featuredProjects.length}
+                    class="absolute left-0 md:left-10 z-30 p-4 bg-white dark:bg-zinc-800 border border-black dark:border-white shadow-xl hover:scale-110 transition-transform"
+                    aria-label="Projet précédent"
                 >
-                    {type}
+                    <Icon icon="ph:arrow-left-bold" class="w-6 h-6 dark:text-white" />
                 </button>
-            {/each}
-        </div>
 
-        <!-- Slider Main View -->
-        {#if filteredProjects.length > 0}
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <!-- Image Showcase (8 cols) -->
-                <div class="lg:col-span-7 relative group cursor-pointer" on:click={() => openModal(filteredProjects[currentSlide])}>
-                    <div class="absolute inset-0 bg-black translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
-                    <div class="relative aspect-[16/10] overflow-hidden border border-black dark:border-white">
-                        {#key currentSlide}
-                            <img 
-                                src={filteredProjects[currentSlide].image} 
-                                alt={filteredProjects[currentSlide].title}
-                                class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
-                                in:fade={{ duration: 800 }}
-                            />
-                        {/key}
-                        
-                        <!-- Overlay interactif -->
-                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="px-8 py-4 bg-white text-black font-black uppercase text-xs tracking-widest">
-                                Explorer le projet
-                            </span>
-                        </div>
-                    </div>
+                <!-- Stacked Cards Container -->
+                <div class="relative w-full max-w-2xl h-full flex items-center justify-center">
+                    {#each featuredProjects as project, i}
+                        {@const offset = i - currentFeaturedIdx}
+                        {@const absOffset = Math.abs(offset)}
+                        {#if absOffset <= 2}
+                            <div 
+                                class="absolute w-full h-[400px] transition-all duration-700 ease-out cursor-pointer"
+                                style="
+                                    transform: translateX({offset * 40}px) scale({1 - absOffset * 0.1}) translateZ({-absOffset * 50}px);
+                                    z-index: {10 - absOffset};
+                                    opacity: {absOffset === 0 ? 1 : 0.3};
+                                    pointer-events: {absOffset === 0 ? 'auto' : 'none'};
+                                "
+                                on:click={() => openModal(project)}
+                                on:keydown={(e) => e.key === 'Enter' && openModal(project)}
+                                tabindex="0"
+                            >
+                                <div class="w-full h-full relative group bg-black border border-black dark:border-zinc-700 shadow-2xl overflow-hidden">
+                                    <!-- Badge Type -->
+                                    <div class="absolute top-4 left-4 z-20">
+                                        <span class="px-3 py-1 text-[9px] font-black uppercase tracking-widest border {getBadgeClasses(project.type)}">
+                                            {getTypeBadge(project.type)}
+                                        </span>
+                                    </div>
+                                    
+                                    <img src={project.image} alt={project.title} class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 flex flex-col justify-end">
+                                        <h5 class="text-3xl font-black text-white uppercase tracking-tighter">{project.title}</h5>
+                                        <p class="text-zinc-300 text-xs mt-2 font-medium line-clamp-2">{project.description}</p>
+                                        <div class="flex gap-2 mt-3">
+                                            {#each project.tech.slice(0, 3) as t}
+                                                <span class="text-[8px] font-bold uppercase px-2 py-0.5 bg-white/20 backdrop-blur-sm text-white rounded">{t}</span>
+                                            {/each}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {/if}
+                    {/each}
                 </div>
 
-                <!-- Content Details (5 cols) -->
-                <div class="lg:col-span-5 space-y-8">
-                    {#key currentSlide}
-                        <div in:slide={{ duration: 600 }}>
-                            <div class="flex items-center gap-4 mb-4">
-                                <span class="text-[12px] font-mono text-gray-500"> 0{currentSlide + 1} / 0{totalProject}</span>
-                                <span class="h-px w-12 bg-gray-400"></span>
-                                <span class="text-[10px] font-black uppercase tracking-widest text-black dark:text-white">
-                                    {filteredProjects[currentSlide].type}
+                <!-- Navigation Droite -->
+                <button 
+                    on:click={() => currentFeaturedIdx = (currentFeaturedIdx + 1) % featuredProjects.length}
+                    class="absolute right-0 md:right-10 z-30 p-4 bg-black dark:bg-white border border-black dark:border-white shadow-xl hover:scale-110 transition-transform"
+                    aria-label="Projet suivant"
+                >
+                    <Icon icon="ph:arrow-right-bold" class="w-6 h-6 text-white dark:text-black" />
+                </button>
+            </div>
+        </div>
+        {/if}
+
+        <!-- 📁 SECTION 2: TOUS LES PROJETS AVEC FILTRES -->
+        <div>
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6 gap-6">
+                <h4 class="text-2xl font-black uppercase tracking-tighter dark:text-white">Tous les Projets</h4>
+                
+                <!-- Filtres -->
+                <div class="flex flex-wrap gap-2">
+                    {#each filterOptions as option}
+                        <button
+                            on:click={() => filterType = option.key}
+                            class="px-4 py-2 text-[10px] font-black uppercase tracking-widest border transition-all
+                                {filterType === option.key 
+                                    ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white' 
+                                    : 'bg-transparent text-zinc-500 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 hover:border-black dark:hover:border-white'}"
+                        >
+                            {option.label}
+                        </button>
+                    {/each}
+                </div>
+            </div>
+
+            <!-- Grid des projets filtrés -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {#each filteredProjects as project}
+                    <div 
+                        class="group cursor-pointer border border-zinc-200 dark:border-zinc-800 p-4 hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-300"
+                        on:click={() => openModal(project)}
+                        on:keydown={(e) => e.key === 'Enter' && openModal(project)}
+                        tabindex="0"
+                    >
+                        <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden mb-6 relative">
+                            <img src={project.image} alt={project.title} class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
+                            
+                            <!-- Badge Type (Freelance / Perso) -->
+                            <div class="absolute top-4 right-4">
+                                <span class="px-3 py-1 text-[9px] font-black uppercase tracking-widest border {getBadgeClasses(project.type)}">
+                                    {getTypeBadge(project.type)}
                                 </span>
                             </div>
                             
-                            <h4 class="text-5xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase mb-6">
-                                {filteredProjects[currentSlide].title}
-                            </h4>
-                            
-                            <p class="text-lg text-gray-500 dark:text-gray-400 leading-relaxed italic">
-                                "{filteredProjects[currentSlide].description}"
-                            </p>
-
-                            <div class="flex flex-wrap gap-3 mt-8">
-                                {#each filteredProjects[currentSlide].tech as tech}
-                                    <span class="px-3 py-1 border border-black/50 dark:border-white/50 text-[10px] font-black text-black dark:text-white uppercase tracking-tighter">
-                                        {tech}
+                            <!-- Badge Featured si applicable -->
+                            {#if project.featured}
+                                <div class="absolute top-4 left-4">
+                                    <span class="px-2 py-1 text-[8px] font-black uppercase tracking-wider bg-amber-500 text-white rounded-sm flex items-center gap-1">
+                                        <Icon icon="ph:star-fill" class="w-3 h-3" /> Top
                                     </span>
-                                {/each}
-                            </div>
+                                </div>
+                            {/if}
                         </div>
-                    {/key}
-
-                    <!-- Navigation Controls -->
-                    <div class="flex items-center gap-8 pt-12">
-                        <button 
-                            on:click={prevSlide}
-                            class="p-4 border text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-                        >
-                            <Icon icon="ph:arrow-left-thin" class="w-8 h-8" />
-                        </button>
-                        <button 
-                            on:click={nextSlide}
-                            class="p-4 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 transition-all"
-                        >
-                            <Icon icon="ph:arrow-right-thin" class="w-8 h-8" />
-                        </button>
+                        
+                        <h5 class="text-lg font-black uppercase tracking-tighter mb-2 dark:text-white">{project.title}</h5>
+                        <p class="text-zinc-500 dark:text-zinc-400 text-sm line-clamp-2 italic leading-relaxed">"{project.description}"</p>
+                        
+                        <div class="mt-6 flex flex-wrap gap-2">
+                            {#each project.tech.slice(0, 3) as t}
+                                <span class="text-[9px] font-bold uppercase px-2 py-1 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-400 rounded-sm">{t}</span>
+                            {/each}
+                        </div>
                     </div>
+                {/each}
+            </div>
+            
+            <!-- Message si aucun résultat -->
+            {#if filteredProjects.length === 0}
+                <div class="text-center py-20">
+                    <p class="text-zinc-400 text-lg">Aucun projet ne correspond à ce filtre.</p>
+                    <button on:click={() => filterType = 'All'} class="mt-4 text-sm font-bold underline hover:text-black dark:hover:text-white transition-colors">
+                        Voir tous les projets
+                    </button>
                 </div>
-            </div>
-        {:else}
-            <div class="text-center py-24">
-                <p class="text-2xl font-black text-gray-500">Aucun projet pour ce filtre</p>
-            </div>
-        {/if}
+            {/if}
+        </div>
     </div>
 
-    <!-- Modal Moderne (Portal-like) -->
+    <!-- 🪟 MODAL -->
     {#if showModal && selectedProject}
         <div 
             use:portal
-            class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-white dark:bg-black"
-            transition:fade
+            class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-white/95 dark:bg-black/95 backdrop-blur-sm"
+            transition:fade={{ duration: 200 }}
+            on:click={closeModal}
         >
-            <div class="w-full max-w-7xl h-full flex flex-col md:flex-row gap-12 overflow-y-auto pt-24 md:pt-0">
+            <div 
+                class="w-full max-w-7xl h-full flex flex-col md:flex-row gap-12 overflow-y-auto pt-24 md:pt-0 max-h-[90vh]"
+                on:click|stopPropagation
+            >
                 <!-- Close -->
                 <button 
                     on:click={closeModal}
-                    class="absolute top-12 right-12 z-[110] text-black dark:text-white hover:rotate-90 transition-transform"
+                    class="absolute top-6 right-6 md:top-12 md:right-12 z-[110] text-black dark:text-white hover:rotate-90 transition-transform p-2 hover:bg-zinc-100 dark:hover:bg-zinc-900 rounded-full"
+                    aria-label="Fermer"
                 >
-                    <Icon icon="ph:x-thin" class="w-12 h-12" />
+                    <Icon icon="ph:x-thin" class="w-8 h-8 md:w-12 md:h-12" />
                 </button>
 
-                <!-- Left: Big Images -->
+                <!-- Left: Images -->
                 <div class="flex-1 space-y-6">
-                    <img src={selectedProject.image} alt="" class="w-full border border-black/10 dark:border-white/10" />
+                    <img src={selectedProject.image} alt="" class="w-full border border-black/10 dark:border-white/10 rounded-lg" />
                     {#if selectedProject.gallery}
                         {#each selectedProject.gallery as g}
-                            <img src={g} alt="" class="w-full grayscale hover:grayscale-0 transition-all" />
+                            <img src={g} alt="" class="w-full grayscale hover:grayscale-0 transition-all rounded-lg cursor-zoom-in" />
                         {/each}
                     {/if}
                 </div>
 
                 <!-- Right: Detailed Info -->
-                <div class="flex-1 md:sticky md:top-0 h-fit py-12">
-                    <h2 class="text-6xl font-black text-black dark:text-white uppercase tracking-tighter mb-8">
+                <div class="flex-1 md:sticky md:top-6 h-fit py-6 md:py-12">
+                    <!-- Badge Type dans le modal -->
+                    <div class="mb-6">
+                        <span class="px-4 py-2 text-[10px] font-black uppercase tracking-widest border {getBadgeClasses(selectedProject.type)}">
+                            {getTypeBadge(selectedProject.type)}
+                        </span>
+                    </div>
+                    
+                    <h2 class="text-5xl md:text-6xl font-black text-black dark:text-white uppercase tracking-tighter mb-8">
                         {selectedProject.title}
                     </h2>
                     
-                    <div class="space-y-12">
+                    <div class="space-y-10">
                         <section>
-                            <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">// Aperçu</h5>
-                            <p class="text-base text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+                            <h5 class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">// Aperçu</h5>
+                            <p class="text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
                                 {selectedProject.details}
                             </p>
                         </section>
 
-                        <div class="flex flex-wrap gap-3 mt-8">
+                        <div class="flex flex-wrap gap-3">
                             {#each selectedProject.tech as tech}
-                                <span class="px-3 py-1 border border-black/50 dark:border-white/50 text-[10px] font-black text-black dark:text-white uppercase tracking-tighter">
+                                <span class="px-4 py-2 border border-zinc-200 dark:border-zinc-700 text-[10px] font-black text-zinc-700 dark:text-zinc-300 uppercase tracking-tighter rounded-sm">
                                     {tech}
                                 </span>
                             {/each}
@@ -368,18 +423,18 @@
 
                         {#if selectedProject.functionalities}
                             <section>
-                                <h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">// Fonctionnalités</h5>
-                                <ul class="space-y-4">
+                                <h5 class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">// Fonctionnalités</h5>
+                                <ul class="space-y-3">
                                     {#each selectedProject.functionalities as f}
-                                        <li class="flex items-center gap-4 text-black dark:text-white font-bold uppercase text-xs tracking-widest">
-                                            <div class="h-1 w-4 bg-black dark:bg-white"></div> {f}
+                                        <li class="flex items-center gap-3 text-zinc-700 dark:text-zinc-300 font-medium text-sm">
+                                            <Icon icon="ph:check-bold" class="w-4 h-4 text-emerald-500 flex-shrink-0" /> {f}
                                         </li>
                                     {/each}
                                 </ul>
                             </section>
                         {/if}
 
-                        <div class="flex flex-wrap gap-4 pt-12">
+                        <div class="flex flex-wrap gap-4 pt-8 border-t border-zinc-200 dark:border-zinc-800">
                             {#if selectedProject.link}
                                 <a href={selectedProject.link} target="_blank" class="px-12 py-6 bg-black dark:bg-white text-white dark:text-black font-black uppercase text-[10px] tracking-widest hover:invert transition-all">
                                     Visiter le site
@@ -399,8 +454,27 @@
 </section>
 
 <style>
-    /* Typographies et lissages */
     :global(body) {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    
+    .absolute {
+        will-change: transform, opacity;
+    }
+    
+    /* Smooth scroll pour le modal */
+    :global(.modal-scroll) {
+        scrollbar-width: thin;
+        scrollbar-color: #71717a transparent;
+    }
+    :global(.modal-scroll::-webkit-scrollbar) {
+        width: 6px;
+    }
+    :global(.modal-scroll::-webkit-scrollbar-track) {
+        background: transparent;
+    }
+    :global(.modal-scroll::-webkit-scrollbar-thumb) {
+        background-color: #71717a;
+        border-radius: 3px;
     }
 </style>
