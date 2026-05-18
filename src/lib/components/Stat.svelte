@@ -14,14 +14,14 @@
     },
     { 
       label: "Clients satisfaits", 
-      value: "98", 
+      value: "100", 
       suffix: "%", 
       icon: "ph:smiley-thin",
       description: "Engagement et qualité garantis"
     },
     { 
       label: "Années d'expérience", 
-      value: "2", 
+      value: "3", 
       suffix: " ans", 
       icon: "ph:clock-thin",
       description: "Expertise technique continue"

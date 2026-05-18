@@ -6,6 +6,21 @@
     const projects = [
         {
             type: "Freelance",
+            title: "Santatra",
+            description: "Portfolio professionnel d'un technicien supérieur en construction civile et infrastructur.",
+            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+            image: "/santatra1.PNG",
+            details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
+            gallery: [
+                "santatra2.PNG",
+                "santatra3.PNG",
+                "santatra4.PNG",
+                "santatra5.PNG",
+            ],
+            link: "https://santatra.netlify.app"
+        },
+        {
+            type: "Freelance",
             title: "Zavamix",
             description: "Zavamix – Site web de sourcing et d’importation Dubaï → Madagascar",
             tech: ["Nuxt", "Tailwind CSS", "Typescript"],
