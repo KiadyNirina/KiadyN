@@ -99,7 +99,7 @@
                     <div class="flex flex-wrap gap-4">
                         {#each [
                             { name: 'Github', icon: 'ph:github-logo-thin', href: 'https://github.com/KiadyNirina' },
-                            { name: 'Linkedin', icon: 'ph:linkedin-logo-thin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/' },
+                            { name: 'Linkedin', icon: 'ph:linkedin-logo-thin', href: 'https://www.linkedin.com/in/kiady-nirina-rambeloson-5216592a9/' },
                             { name: 'Facebook', icon: 'ph:facebook-logo-thin', href: 'https://www.facebook.com/kiady.rambeloson/' },
                         ] as social}
                             <a 
