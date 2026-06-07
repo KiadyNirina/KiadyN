@@ -30,7 +30,7 @@
                 <ul class="space-y-4">
                     {#each [
                         { n: 'Github', h: 'https://github.com/KiadyNirina' },
-                        { n: 'LinkedIn', h: 'https://www.linkedin.com/in/kiady-ram-5216592a9/' },
+                        { n: 'LinkedIn', h: 'https://www.linkedin.com/in/kiady-nirina-rambeloson-5216592a9/' },
                         { n: 'Facebook', h: 'https://www.facebook.com/kiady.rambeloson' },
                         { n: 'Whatsapp', h: 'https://wa.me/+261335777152' }
                     ] as social}

@@ -10,7 +10,7 @@
     const techStack = ['Svelte', 'Vue.js', 'Laravel', 'Django'];
     const socials = [
         { icon: 'ph:github-logo-thin', href: 'https://github.com/KiadyNirina' },
-        { icon: 'ph:linkedin-logo-thin', href: 'https://www.linkedin.com/in/kiady-ram-5216592a9/' },
+        { icon: 'ph:linkedin-logo-thin', href: 'https://www.linkedin.com/in/kiady-nirina-rambeloson-5216592a9/' },
         { icon: 'ph:facebook-logo-thin', href: 'https://www.facebook.com/kiady.rambeloson' },
         { icon: 'ph:envelope-simple-thin', href: 'mailto:kiady142ram@gmail.com' }
     ];
