@@ -1,24 +1,5 @@
 <script>
 	import { PUBLIC_SITE_URL } from '$env/static/public';
-
-	const schema = {
-		"@context": "https://schema.org",
-		"@type": "Person",
-		"name": "KiadyNirina",
-		"jobTitle": "Développeur Full-Stack",
-		"url": PUBLIC_SITE_URL,
-		"knowsAbout": [
-			"Svelte",
-			"Vue.js",
-			"PHP",
-			"Python",
-			"Laravel",
-			"Django",
-			"PostgreSQL"
-		]
-	};
-
-	const jsonLd = JSON.stringify(schema);
 </script>
 
 <svelte:head>
@@ -30,7 +11,22 @@
 	<meta property="og:site_name" content="KiadyNirina" />
 
 	<script type="application/ld+json">
-		{@html jsonLd}
+		{
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "KiadyNirina",
+            "jobTitle": "Développeur Full-Stack",
+            "url": "https://kiadynirina.netlify.app/",
+            "knowsAbout": [
+                "Svelte",
+                "Vue.js",
+                "PHP",
+                "Python",
+                "Laravel",
+                "Django",
+                "PostgreSQL"
+            ]
+        }
 	</script>
 </svelte:head>
 
