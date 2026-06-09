@@ -15,6 +15,7 @@
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "KiadyNirina",
+            "alternateName": "KiadyNirina",
             "jobTitle": "Développeur Full-Stack",
             "url": "https://kiadynirina.netlify.app/",
             "knowsAbout": [
@@ -25,7 +26,24 @@
                 "Laravel",
                 "Django",
                 "PostgreSQL"
+            ],
+            "sameAs": [
+                "https://github.com/KiadyNirina"
             ]
+        }
+	</script>
+
+    <script type="application/ld+json">
+		{
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "KiadyNirina",
+            "alternateName": "KiadyNirina",
+            "url": "https://kiadynirina.netlify.app/",
+            "publisher": {
+                "@type": "Person",
+                "name": "KiadyNirina"
+            }
         }
 	</script>
 </svelte:head>
