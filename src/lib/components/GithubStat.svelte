@@ -3,8 +3,14 @@
     import Icon from '@iconify/svelte';
 
     let isDark = false;
+    let githubProfile = null;
+    let githubRepos = [];
+    let isLoading = true;
 
-    onMount(() => {
+    const githubUser = 'KiadyNirina';
+    const githubUrl = `https://github.com/${githubUser}`;
+
+    onMount(async () => {
         isDark = document.documentElement.classList.contains('dark');
 
         const observer = new MutationObserver(() => {
@@ -16,8 +22,36 @@
             attributeFilter: ['class']
         });
 
+        try {
+            const profileRes = await fetch(
+                `https://api.github.com/users/${githubUser}`
+            );
+
+            githubProfile = await profileRes.json();
+
+            const reposRes = await fetch(
+                `https://api.github.com/users/${githubUser}/repos?per_page=100`
+            );
+
+            githubRepos = await reposRes.json();
+        } catch (err) {
+            console.error(err);
+        } finally {
+            isLoading = false;
+        }
+
         return () => observer.disconnect();
     });
+
+    $: totalStars = githubRepos.reduce(
+        (sum, repo) => sum + repo.stargazers_count,
+        0
+    );
+
+    $: totalForks = githubRepos.reduce(
+        (sum, repo) => sum + repo.forks_count,
+        0
+    );
 </script>
 
 <section class="py-32 bg-white dark:bg-gray-950 border-t border-black/5 dark:border-white/5 overflow-hidden" id="githubStat">
@@ -28,16 +62,75 @@
             <div>
                 <div class="flex items-center gap-3 mb-4">
                     <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-black dark:text-white">Open Source Telemetry</span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 dark:text-gray-500">Open Source Telemetry</span>
                 </div>
                 <h2 class="text-4xl md:text-6xl font-black text-black dark:text-white tracking-tighter uppercase">
                     Engine <span class="text-transparent" style="-webkit-text-stroke: 1px currentColor;">Activity</span>
                 </h2>
             </div>
-            <div class="flex items-center gap-2 text-[10px] font-mono uppercase text-black dark:text-white border border-black/5 dark:border-white/5 px-4 py-2 rounded-xl">
-                <Icon icon="ph:github-logo-thin" class="w-4 h-4 text-black dark:text-white" />
-                <span>Sync: Live Data</span>
+            
+            <!-- Actions & Badges -->
+            <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                <div class="flex items-center gap-2 text-[10px] font-mono uppercase text-black dark:text-white border border-black/5 dark:border-white/5 px-4 py-2 rounded-xl bg-gray-50/50 dark:bg-gray-900/20 balance-center">
+                    <Icon icon="ph:github-logo-thin" class="w-4 h-4 text-black dark:text-white" />
+                    <span>Sync: Live Data</span>
+                </div>
+
+                <!-- Bouton de Redirection GitHub Extérieur -->
+                <a 
+                    href={githubUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="flex items-center gap-2 text-[10px] font-mono uppercase text-black dark:text-white border border-black dark:border-white px-5 py-2.5 rounded-xl transition-all duration-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black group active:scale-95"
+                >
+                    <span>View Profile</span>
+                    <Icon icon="ph:arrow-up-right" class="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
             </div>
+        </div>
+
+        <!-- Section des compteurs numériques (Profil) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+            {#if isLoading}
+                <!-- Squelettes de chargement épurés -->
+                {#each Array(6) as _}
+                    <div class="border border-black/5 dark:border-white/5 rounded-2xl p-6 bg-gray-50/30 dark:bg-gray-900/10 animate-pulse">
+                        <div class="h-8 w-12 bg-black/10 dark:bg-white/10 rounded mb-2"></div>
+                        <div class="h-3 w-16 bg-black/5 dark:bg-white/5 rounded"></div>
+                    </div>
+                {/each}
+            {:else if githubProfile}
+                <!-- Métriques Réelles -->
+                <div class="border border-black/30 dark:border-white/50 p-6 bg-gray-50/30 dark:bg-gray-900/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300 group">
+                    <div class="text-3xl font-black text-black dark:text-white tracking-tight group-hover:scale-105 transition-transform origin-left duration-300">{githubProfile.followers}</div>
+                    <div class="text-[9px] font-mono uppercase tracking-widest text-gray-400 mt-1">Followers</div>
+                </div>
+
+                <div class="border border-black/30 dark:border-white/50 p-6 bg-gray-50/30 dark:bg-gray-900/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300 group">
+                    <div class="text-3xl font-black text-black dark:text-white tracking-tight group-hover:scale-105 transition-transform origin-left duration-300">{githubProfile.following}</div>
+                    <div class="text-[9px] font-mono uppercase tracking-widest text-gray-400 mt-1">Following</div>
+                </div>
+
+                <div class="border border-black/30 dark:border-white/50 p-6 bg-gray-50/30 dark:bg-gray-900/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300 group">
+                    <div class="text-3xl font-black text-black dark:text-white tracking-tight group-hover:scale-105 transition-transform origin-left duration-300">{githubProfile.public_repos}</div>
+                    <div class="text-[9px] font-mono uppercase tracking-widest text-gray-400 mt-1">Repositories</div>
+                </div>
+
+                <div class="border border-black/30 dark:border-white/50 p-6 bg-gray-50/30 dark:bg-gray-900/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300 group">
+                    <div class="text-3xl font-black text-black dark:text-white tracking-tight group-hover:scale-105 transition-transform origin-left duration-300">{totalStars}</div>
+                    <div class="text-[9px] font-mono uppercase tracking-widest text-gray-400 mt-1">Stars earned</div>
+                </div>
+
+                <!-- <div class="border border-black/30 dark:border-white/50 p-6 bg-gray-50/30 dark:bg-gray-900/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300 group">
+                    <div class="text-3xl font-black text-black dark:text-white tracking-tight group-hover:scale-105 transition-transform origin-left duration-300">{totalForks}</div>
+                    <div class="text-[9px] font-mono uppercase tracking-widest text-gray-400 mt-1">Forks count</div>
+                </div> -->
+
+                <div class="border border-black/30 dark:border-white/50 p-6 bg-black text-white dark:bg-white dark:text-black flex flex-col justify-between hover:scale-[1.02] transition-transform duration-300">
+                    <div class="text-xl font-black tracking-widest uppercase">PRO</div>
+                    <div class="text-[9px] font-mono uppercase tracking-widest opacity-60">Developer</div>
+                </div>
+            {/if}
         </div>
 
         <!-- Grille Principale Brutaliste -->
