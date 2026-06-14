@@ -15,11 +15,13 @@
 	import Contact from '$lib/components/Contact.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Chat from '$lib/components/Chat.svelte';
+	import GithubStat from '$lib/components/GithubStat.svelte';
 
     let animated = {
         hero: false,
         about: false,
 		stat: false,
+		githubStat: false,
 		services: false,
         projects: false,
         skills: false,
@@ -126,6 +128,10 @@
 
 			<div id="stat" class:animate-fade-in={animated.stat}>
 				<Stat />
+			</div>
+
+			<div id="githubStat" class:animate-fade-in={animated.githubStat}>
+				<GithubStat />
 			</div>
 
 			<div id="services" class:animate-fade-in={animated.services}>
