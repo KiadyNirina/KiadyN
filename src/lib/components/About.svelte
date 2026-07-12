@@ -30,11 +30,11 @@
 						<div class="absolute inset-0 border-[1px] border-black dark:border-white translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
 						
 						<!-- Image Container -->
-						<div class="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-900 border-[1px] border-black dark:border-white">
+						<div class="relative overflow-hidden bg-gray-100 dark:bg-gray-900 border-[1px] border-black dark:border-white">
 							<img 
 								src="/pdp.jpg" 
 								alt="Kiady Nirina" 
-								class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100" 
+								class="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-100" 
 							/>
 							
 							<!-- Vertical Label -->

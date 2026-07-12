@@ -153,7 +153,8 @@
                 "/eboss 5.jpg",
                 "/eboss 6.jpg",
                 "/eboss 7.jpg",
-            ]
+            ],
+            featured: true 
         }
     ];
 
