@@ -47,12 +47,12 @@
             <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
                 <!-- Profile Image: Brutalist Style -->
                 <div class="relative group h-48 w-48 md:h-64 md:w-64">
-                    <div class="absolute inset-0 border border-black dark:border-white translate-x-3 translate-y-3 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
+                    <div class="absolute inset-0 border-[1px] border-black dark:border-white translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
                     <div class="relative h-full w-full bg-gray-100 dark:bg-gray-900 border border-black dark:border-white overflow-hidden">
                         <img 
                             src="/pdp2.png" 
                             alt="Kiady"
-                            class="w-full h-full object-cover grayscale brightness-110 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                            class="w-full h-full object-cover group-hover:scale-100 scale-105 transition-all duration-700"
                         />
                     </div>
                 </div>
