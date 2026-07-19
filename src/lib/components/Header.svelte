@@ -33,8 +33,6 @@
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         activeSection = entry.target.id;
-                        console.log("Section active :", activeSection); 
-                        console.log("📊 Toutes les sections :", sections);
                     }
                 });
             },
