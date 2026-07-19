@@ -63,6 +63,7 @@
                 "kleonix3.png",
                 "kleonix4.png",
                 "kleonix5.png",
+                "kleonix6.png",
             ],
             link: "https://kleonix.netlify.app"
         },
@@ -334,7 +335,7 @@
                         tabindex="0"
                     >
                         <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden mb-6 relative">
-                            <img src={project.image} alt={project.title} class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" />
+                            <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
                             
                             <!-- Badge Type (Freelance / Perso) -->
                             <div class="absolute top-4 right-4">
