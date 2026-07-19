@@ -38,6 +38,6 @@ back/Back/db.sqlite3
 
 back/Back/*/migrations/*
 
-/private/ai-system-prompt.txt
+# /private/ai-system-prompt.txt
 # Local Netlify folder
 .netlify
