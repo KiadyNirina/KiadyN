@@ -1,25 +1,11 @@
-import { getStore } from "@netlify/blobs";
 import fs from "fs";
 
 export default async function handler() {
   try {
-    let systemPrompt;
-
-    if (process.env.NETLIFY_DEV) {
-      // Local : lire le fichier directement
-      systemPrompt = fs.readFileSync("private/ai-system-prompt.txt", "utf-8");
-    } else {
-      // Prod : utiliser Netlify Blobs
-      const store = getStore("system");
-      systemPrompt = await store.get("system_prompt");
-    }
-
-    if (!systemPrompt) {
-      return new Response(
-        JSON.stringify({ error: "System prompt not found" }),
-        { status: 404 }
-      );
-    }
+    const systemPrompt = fs.readFileSync(
+      "private/ai-system-prompt.txt",
+      "utf-8"
+    );
 
     return new Response(
       JSON.stringify({ systemPrompt }),
@@ -35,7 +21,12 @@ export default async function handler() {
   } catch (err) {
     return new Response(
       JSON.stringify({ error: err.message }),
-      { status: 500 }
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
     );
   }
 }
