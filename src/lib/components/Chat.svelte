@@ -204,7 +204,7 @@
         >
           <div class="max-w-[85%] group">
             <div
-              class="relative p-4 text-sm leading-relaxed
+              class="relative p-4 text-sm leading-relaxed whitespace-pre-wrap
               {msg.from === 'user'
                 ? 'bg-white text-black rounded-[1.5rem] rounded-tr-none shadow-xl'
                 : 'bg-white/5 border border-white/10 text-white/90 rounded-[1.5rem] rounded-tl-none'}"
