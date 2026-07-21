@@ -326,7 +326,6 @@
 
   :global(.chat-link) {
     color: #60a5fa;
-    text-decoration: underline;
     font-weight: 600;
     transition: color 0.2s ease;
   }
