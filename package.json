@@ -23,6 +23,7 @@
 		"@supabase/supabase-js": "^2.51.0",
 		"@tailwindcss/vite": "^4.1.11",
 		"lucide-svelte": "^0.525.0",
+		"marked": "^18.0.6",
 		"nodemailer": "^7.0.7",
 		"tailwindcss": "^4.1.11"
 	}
