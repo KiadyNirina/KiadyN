@@ -129,7 +129,7 @@
       if (initialLoad && $chatHistory.length === 0) {
         chatHistory.set([{ 
           from: 'ai', 
-          text: 'Bonjour ! Je suis Kiady AI, votre assistant virtuel. 🤖\n\nComment puis-je vous aider aujourd\'hui ?',
+          text: 'Bonjour ! Je suis Kleo, votre assistant virtuel. 🤖\n\nComment puis-je vous aider aujourd\'hui ?',
           timestamp: new Date()
         }]);
         initialLoad = false;
@@ -167,41 +167,41 @@
     {:else}
       <div class="relative flex items-center justify-center" in:scale={{duration: 400}}>
         <Icon icon="ph:robot-light" class="h-8 w-8 z-10" />
-        <div class="absolute inset-0 blur-md bg-white/20 animate-pulse"></div>
+        <div class="absolute inset-0 blur-md bg-black/20 animate-pulse"></div>
       </div>
     {/if}
   </button>
 
   <!-- Label minimaliste -->
   <div class="absolute left-20 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500 pointer-events-none hidden sm:block">
-    <div class="bg-black/80 dark:bg-white/80 backdrop-blur-md border border-white/10 text-white dark:text-black py-2 px-4 rounded-full text-xs tracking-[0.2em] uppercase font-light shadow-2xl">
-      Kiady AI
+    <div class="bg-black/80 dark:bg-white/80 backdrop-blur-md border border-white/10 text-white dark:text-black py-2 px-4 rounded-lg text-xs tracking-[0.2em] uppercase font-light shadow-2xl">
+      Assistant IA
     </div>
   </div>
 </div>
 
-<!-- Interface de Chat Époustouflante -->
+<!-- Interface de Chat Époustouflante (mode jour) -->
 {#if showChat}
   <div
-    class="fixed inset-0 sm:inset-auto sm:bottom-28 sm:left-8 z-500 flex flex-col overflow-hidden bg-black/95 sm:bg-black/90 backdrop-blur-2xl sm:rounded-[2rem] sm:border sm:border-white/10 sm:shadow-[0_40px_100px_rgba(0,0,0,0.8)] w-full sm:w-[400px] h-full sm:h-[600px] sm:max-h-[80vh]"
+    class="fixed inset-0 sm:inset-auto sm:bottom-28 sm:left-8 z-500 flex flex-col overflow-hidden bg-white sm:bg-white dark:bg-black dark:sm:bg-black backdrop-blur-2xl sm:rounded-[2rem] sm:border sm:border-black/20 dark:sm:border-white/20 sm:shadow-[0_40px_100px_rgba(0,0,0,0.15)] dark:sm:shadow-[0_40px_100px_rgba(0,0,0,0.8)] w-full sm:w-[400px] h-full sm:h-[600px] sm:max-h-[80vh]"
     transition:fly={{ y: 50, duration: 600, opacity: 0 }}
   >
     <!-- En-tête Monochrome -->
-    <div class="p-6 border-b border-white/5 flex items-center justify-between">
+    <div class="p-6 border-b border-black/5 dark:border-white/5 flex items-center justify-between">
       <div class="flex items-center gap-4">
         <div class="relative">
-          <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-            <Icon icon="ph:sparkle-fill" class="h-6 w-6 text-black" />
+          <div class="w-12 h-12 rounded-full bg-black dark:bg-white flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.15)] dark:shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+            <Icon icon="ph:sparkle-fill" class="h-6 w-6 text-white dark:text-black" />
           </div>
-          <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-black"></span>
+          <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-black"></span>
         </div>
         <div>
-          <h3 class="text-white font-medium tracking-wide">Kiady AI</h3>
-          <p class="text-white/40 text-[10px] uppercase tracking-widest">Intelligence Artificielle</p>
+          <h3 class="text-black dark:text-white font-medium tracking-wide">Kleo</h3>
+          <p class="text-black/40 dark:text-white/40 text-[10px] uppercase tracking-widest">Intelligence Artificielle</p>
         </div>
       </div>
       
-      <button on:click={() => showChat = false} class="text-white/40 hover:text-white transition-colors">
+      <button on:click={() => showChat = false} class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors">
         <Icon icon="ph:minus-light" class="h-6 w-6" />
       </button>
     </div>
@@ -218,17 +218,17 @@
         >
           <div class="max-w-[85%] group">
             <div
-              class="relative p-4 text-sm leading-relaxed prose prose-invert max-w-none
+              class="relative p-4 text-sm leading-relaxed prose max-w-none
               {msg.from === 'user'
-                ? 'bg-white text-black rounded-[1.5rem] rounded-tr-none shadow-xl'
-                : 'bg-white/5 border border-white/10 text-white/90 rounded-[1.5rem] rounded-tl-none'}"
+                ? 'bg-black dark:bg-white text-white dark:text-black rounded-[1.5rem] rounded-tr-none shadow-xl'
+                : 'bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-black/90 dark:text-white/90 rounded-[1.5rem] rounded-tl-none'}"
             >
               {@html renderMarkdown(msg.text)}
               
               <div class="mt-2 flex items-center gap-2 text-[10px] opacity-30">
                 {msg.timestamp?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 {#if msg.from === 'ai'}
-                  <div class="h-px flex-1 bg-white/20"></div>
+                  <div class="h-px flex-1 bg-black/20 dark:bg-white/20"></div>
                   <span>AI SYSTEM</span>
                 {/if}
               </div>
@@ -239,10 +239,10 @@
       
       {#if isTyping}
         <div class="flex justify-start" in:fade>
-          <div class="bg-white/5 border border-white/10 p-4 rounded-2xl flex gap-1">
-            <span class="w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse"></span>
-            <span class="w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse [animation-delay:0.2s]"></span>
-            <span class="w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse [animation-delay:0.4s]"></span>
+          <div class="bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 p-4 rounded-2xl flex gap-1">
+            <span class="w-1.5 h-1.5 bg-black/40 dark:bg-white/40 rounded-full animate-pulse"></span>
+            <span class="w-1.5 h-1.5 bg-black/40 dark:bg-white/40 rounded-full animate-pulse [animation-delay:0.2s]"></span>
+            <span class="w-1.5 h-1.5 bg-black/40 dark:bg-white/40 rounded-full animate-pulse [animation-delay:0.4s]"></span>
           </div>
         </div>
       {/if}
@@ -258,20 +258,17 @@
           type="text"
           bind:value={userMessage}
           placeholder="Écrivez quelque chose..."
-          class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-5 pr-14 text-white placeholder-white/20 focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all"
+          class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl py-4 pl-5 pr-14 text-black dark:text-white placeholder-black/20 dark:placeholder-white/20 focus:outline-none focus:border-black/30 dark:focus:border-white/30 focus:bg-black/10 dark:focus:bg-white/10 transition-all"
         />
         
         <button
           type="submit"
           disabled={!userMessage.trim() || isTyping}
-          class="absolute right-3 p-2 bg-white text-black rounded-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-20 disabled:grayscale"
+          class="absolute right-3 p-2 bg-black dark:bg-white text-white dark:text-black rounded-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-20 disabled:grayscale"
         >
           <Icon icon="ph:arrow-up-bold" class="h-5 w-5" />
         </button>
       </form>
-      <p class="text-center text-[9px] text-white/20 mt-4 tracking-widest uppercase">
-        Propulsé par Kiady Technologies
-      </p>
     </div>
   </div>
 {/if}
@@ -297,6 +294,12 @@
     border-radius: 10px;
   }
   .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .dark .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .dark .overflow-y-auto::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3);
   }
 
