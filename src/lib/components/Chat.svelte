@@ -3,6 +3,7 @@
   import { writable } from 'svelte/store';
   import Icon from '@iconify/svelte';
   import { fade, fly, scale } from 'svelte/transition';
+  import { marked } from 'marked';
   
   // État pour le popup
   let showChat = false;
@@ -73,11 +74,14 @@
     };
     
     try {
-      const res = await fetch('https://router.huggingface.co/v1/chat/completions', {
+
+      const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
+
+      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${HF_API_KEY}`
+        headers: {
+          'Authorization': `Bearer ${GROQ_API_KEY}`,
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(body)
       });
@@ -132,6 +136,16 @@
       }
     }, 1000);
   });
+
+  const renderer = new marked.Renderer();
+
+  renderer.link = ({ href, text }) => {
+    return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="chat-link">${text}</a>`;
+  };
+
+  function renderMarkdown(text) {
+    return marked.parse(text, { renderer });
+  }
 </script>
 
 <!-- Bouton Flottant "Noir Absolu" -->
@@ -204,12 +218,12 @@
         >
           <div class="max-w-[85%] group">
             <div
-              class="relative p-4 text-sm leading-relaxed whitespace-pre-wrap
+              class="relative p-4 text-sm leading-relaxed prose prose-invert max-w-none
               {msg.from === 'user'
                 ? 'bg-white text-black rounded-[1.5rem] rounded-tr-none shadow-xl'
                 : 'bg-white/5 border border-white/10 text-white/90 rounded-[1.5rem] rounded-tl-none'}"
             >
-              {msg.text}
+              {@html renderMarkdown(msg.text)}
               
               <div class="mt-2 flex items-center gap-2 text-[10px] opacity-30">
                 {msg.timestamp?.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -293,5 +307,31 @@
   }
   .animate-pulse {
     animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 0.75em;
+  }
+  .prose :global(strong) {
+    font-weight: 600;
+  }
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: 1.5em;
+    margin: 0.5em 0;
+  }
+  .prose :global(li) {
+    margin-bottom: 0.25em;
+  }
+
+  :global(.chat-link) {
+    color: #60a5fa;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  :global(.chat-link):hover {
+    color: #93c5fd;
   }
 </style>
