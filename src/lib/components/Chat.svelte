@@ -17,6 +17,14 @@
   
   // Message à envoyer
   let userMessage = '';
+
+  // Messages prédéfinis
+  const predefinedMessages = [
+    "Qui est Kiady ?",
+    "Quel est son parcours professionnel et académique ?",
+    "Quelles sont ses compétences ?",
+    "Quels services propose Kleonix ?"
+  ];
   
   // Historique du chat
   const chatHistory = writable([]);
@@ -47,10 +55,15 @@
   }
   
   // Fonction pour envoyer le message
-  async function sendMessage() {
-    if (!userMessage.trim()) return;
+  async function sendMessage(predefinedText = null) {
+
+    const messageToSend = predefinedText || userMessage;
+
+    if (!messageToSend.trim()) return;
+
+    if (predefinedText) userMessage = '';
     
-    const currentMessage = userMessage;
+    const currentMessage = messageToSend;
     userMessage = '';
     isTyping = true;
     
@@ -274,12 +287,33 @@
           </div>
         </div>
       {/if}
+
+      <!-- Suggestions prédéfinies (toujours visibles) -->
+      <div class="px-2 space-y-2" in:fade={{ delay: 600, duration: 400 }}>
+        <p class="text-[11px] uppercase tracking-widest text-black/30 dark:text-white/30 mb-3">
+          Suggestions
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {#each predefinedMessages as msg}
+            <button
+              on:click={() => sendMessage(msg)}
+              class="px-4 py-2 text-xs rounded-full border border-black/10 dark:border-white/10 
+                    bg-black/5 dark:bg-white/5 text-black/70 dark:text-white/70 
+                    hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black 
+                    transition-all duration-300 hover:scale-105 active:scale-95 
+                    whitespace-nowrap"
+            >
+              {msg}
+            </button>
+          {/each}
+        </div>
+      </div>
     </div>
 
     <!-- Zone de Saisie Minimaliste -->
     <div class="p-6">
       <form
-        on:submit|preventDefault={sendMessage}
+        on:submit|preventDefault={sendMessage(userMessage)}
         class="relative flex items-center"
       >
         <input
