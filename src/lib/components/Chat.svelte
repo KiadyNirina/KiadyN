@@ -4,7 +4,12 @@
   import Icon from '@iconify/svelte';
   import { fade, fly, scale } from 'svelte/transition';
   import { marked } from 'marked';
-  
+
+  let entranceDone = false;
+  onMount(() => {
+    setTimeout(() => entranceDone = true, 300);
+  });
+
   // État pour le popup
   let showChat = false;
   let isTyping = false;
@@ -148,34 +153,57 @@
   }
 </script>
 
-<!-- Bouton Flottant "Noir Absolu" -->
-<div class="fixed bottom-8 left-8 z-50 group">
-  <!-- Rayonnement spectral -->
-  <div class="absolute -inset-4 bg-white/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-  
-  <button
-    class="relative h-16 w-16 flex items-center justify-center rounded-full bg-black dark:bg-white border border-white/20 text-white dark:text-black shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:scale-110 active:scale-95 overflow-hidden"
-    on:click={() => showChat = !showChat}
-  >
-    <!-- Scanline effect -->
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-[200%] w-full animate-scanline pointer-events-none"></div>
+<!-- Bouton Flottant Noir & Blanc Époustouflant -->
+<div class="fixed bottom-8 left-8 z-50" class:entrance-done={entranceDone}>
+  <!-- Animation d'entrée saisissante -->
+  <div class="btn-entrance-wrapper">
+    <!-- Pulsations "sonar" en nuances de gris -->
+    <div class="sonar-ring"></div>
+    <div class="sonar-ring delay-1"></div>
+    <div class="sonar-ring delay-2"></div>
     
-    {#if showChat}
-      <div in:scale={{duration: 400}}>
-        <Icon icon="ph:x-light" class="h-7 w-7" />
+    <!-- Halo lumineux tournoyant (noir/blanc) -->
+    <div class="absolute -inset-4 bg-gradient-to-r from-black/10 via-gray-400/20 to-white/10 dark:from-white/10 dark:via-gray-400/20 dark:to-black/10 blur-2xl rounded-full animate-spin-slow"></div>
+    
+    <button
+      class="relative h-16 w-16 flex items-center justify-center rounded-full 
+             bg-black dark:bg-white border-2 border-transparent
+             text-white dark:text-black 
+             shadow-[0_0_30px_rgba(0,0,0,0.4)] dark:shadow-[0_0_30px_rgba(255,255,255,0.3)]
+             transition-all duration-500 hover:scale-125 active:scale-90
+             overflow-visible"
+      on:click={() => showChat = !showChat}
+    >
+      <!-- Bordure tournoyante en dégradé noir/blanc -->
+      <span class="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-black via-gray-400 to-white dark:from-white dark:via-gray-500 dark:to-black animate-spin-slow">
+        <span class="block h-full w-full rounded-full bg-black dark:bg-white"></span>
+      </span>
+      
+      <!-- Scanline effet conservé -->
+      <div class="absolute inset-0 rounded-full overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-[200%] w-full animate-scanline pointer-events-none"></div>
       </div>
-    {:else}
-      <div class="relative flex items-center justify-center" in:scale={{duration: 400}}>
-        <Icon icon="ph:robot-light" class="h-8 w-8 z-10" />
-        <div class="absolute inset-0 blur-md bg-black/20 animate-pulse"></div>
-      </div>
-    {/if}
-  </button>
+      
+      {#if showChat}
+        <div in:scale={{duration: 400}}>
+          <Icon icon="ph:x-bold" class="h-7 w-7 relative z-10" />
+        </div>
+      {:else}
+        <div class="relative flex items-center justify-center" in:scale={{duration: 400}}>
+          <Icon icon="ph:robot-light" class="h-8 w-8 relative z-10" />
+          <!-- Badge de notification monochrome -->
+          <span class="absolute -top-1 -right-5 flex p-1 items-center justify-center rounded-full bg-white dark:bg-black text-black dark:text-white text-[10px] font-bold ring-2 ring-black dark:ring-white z-20 animate-bounce-slow">
+            new
+          </span>
+        </div>
+      {/if}
+    </button>
 
-  <!-- Label minimaliste -->
-  <div class="absolute left-20 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500 pointer-events-none hidden sm:block">
-    <div class="bg-black/80 dark:bg-white/80 backdrop-blur-md border border-white/10 text-white dark:text-black py-2 px-4 rounded-lg text-xs tracking-[0.2em] uppercase font-light shadow-2xl">
-      Assistant IA
+    <!-- Label élégant -->
+    <div class="absolute left-20 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-hover:translate-x-3 transition-all duration-500 pointer-events-none hidden sm:block">
+      <div class="bg-white/90 dark:bg-black/90 backdrop-blur-md border border-black/10 dark:border-white/10 text-black dark:text-white py-2 px-5 rounded-full text-xs tracking-[0.15em] uppercase font-medium shadow-2xl animate-label-bounce">
+        ✨ Parlez à Kleo
+      </div>
     </div>
   </div>
 </div>
@@ -335,5 +363,67 @@
 
   :global(.chat-link):hover {
     color: #93c5fd;
+  }
+
+  /* Entrée spectaculaire */
+  .btn-entrance-wrapper {
+    opacity: 0;
+    transform: scale(0) rotate(-15deg);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .entrance-done .btn-entrance-wrapper {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  /* Sonar noir et blanc */
+  .sonar-ring {
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.15); /* noir transparent */
+    animation: sonar-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    pointer-events: none;
+  }
+  .dark .sonar-ring,
+  :global(.dark) .sonar-ring {
+    border: 2px solid rgba(255, 255, 255, 0.356);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* halo subtil pour plus de brillance */
+  }
+  .sonar-ring.delay-1 { animation-delay: 1s; }
+  .sonar-ring.delay-2 { animation-delay: 2s; }
+
+  @keyframes sonar-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  /* Rotation lente du halo */
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Badge rebondissant */
+  .animate-bounce-slow {
+    animation: bounce-slow 2s infinite;
+  }
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  /* Label rebondissant */
+  .animate-label-bounce {
+    animation: label-bounce 0.8s ease-out both;
+  }
+  @keyframes label-bounce {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.05); }
+    80% { transform: scale(0.95); }
+    100% { transform: scale(1); opacity: 1; }
   }
 </style>
