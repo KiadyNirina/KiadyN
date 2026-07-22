@@ -7,7 +7,7 @@
   const stats = [
     { 
       label: "Projets livrés", 
-      value: "4", 
+      value: "10", 
       suffix: "+", 
       icon: "ph:check-circle-thin",
       description: "Solutions déployées avec succès"
