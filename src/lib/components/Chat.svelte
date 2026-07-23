@@ -35,12 +35,33 @@
   const HF_API_KEY = import.meta.env.VITE_HF_API_KEY;
 
   let systemPrompt = ""
+  let promptReady = false;
   
   onMount(async () => {
     const res = await fetch("/.netlify/functions/getPrompt")
     const data = await res.json()
     systemPrompt = data.systemPrompt
+    promptReady = true;
   })
+
+  onMount(async () => {
+    try {
+      const res = await fetch("/.netlify/functions/getPrompt");
+      const data = await res.json();
+      systemPrompt = data.systemPrompt;
+    } catch (err) {
+      console.error("Impossible de charger le prompt système:", err);
+      systemPrompt = "Tu es Kleo, l'assistant de Kiady...";
+    } finally {
+      promptReady = true;
+      chatHistory.set([{ 
+        from: 'ai', 
+        text: 'Bonjour ! Je suis Kleo, votre assistant virtuel. 🤖\n\nComment puis-je vous aider aujourd\'hui ?',
+        timestamp: new Date()
+      }]);
+      initialLoad = false; 
+    }
+  });
 
   //const SYSTEM_PROMPT = import.meta.env.VITE_AI_SYSTEM_PROMPT;
   const AI_MODEL = import.meta.env.VITE_AI_MODEL;
@@ -56,6 +77,15 @@
   
   // Fonction pour envoyer le message
   async function sendMessage(predefinedText = null) {
+
+    if (!promptReady) {
+      chatHistory.update(history => [...history, { 
+        from: 'ai', 
+        text: 'Je suis encore en train de me préparer... un instant !',
+        timestamp: new Date()
+      }]);
+      return;
+    }
 
     const messageToSend = predefinedText || userMessage;
 
@@ -140,20 +170,6 @@
   $: if (showChat) {
     scrollToBottom();
   }
-  
-  // Message de bienvenue initial
-  onMount(() => {
-    setTimeout(() => {
-      if (initialLoad && $chatHistory.length === 0) {
-        chatHistory.set([{ 
-          from: 'ai', 
-          text: 'Bonjour ! Je suis Kleo, votre assistant virtuel. 🤖\n\nComment puis-je vous aider aujourd\'hui ?',
-          timestamp: new Date()
-        }]);
-        initialLoad = false;
-      }
-    }, 1000);
-  });
 
   const renderer = new marked.Renderer();
 
@@ -297,11 +313,12 @@
           {#each predefinedMessages as msg}
             <button
               on:click={() => sendMessage(msg)}
+              disabled={!promptReady}
               class="px-4 py-2 text-xs rounded-full border border-black/10 dark:border-white/10 
                     bg-black/5 dark:bg-white/5 text-black/70 dark:text-white/70 
                     hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black 
                     transition-all duration-300 hover:scale-105 active:scale-95 
-                    whitespace-nowrap"
+                    whitespace-nowrap {!promptReady ? 'opacity-50 cursor-not-allowed' : ''}"
             >
               {msg}
             </button>
@@ -319,13 +336,14 @@
         <input
           type="text"
           bind:value={userMessage}
-          placeholder="Écrivez quelque chose..."
+          placeholder={promptReady ? "Écrivez quelque chose..." : "Chargement du contexte..."}
+          disabled={!promptReady}
           class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl py-4 pl-5 pr-14 text-black dark:text-white placeholder-black/20 dark:placeholder-white/20 focus:outline-none focus:border-black/30 dark:focus:border-white/30 focus:bg-black/10 dark:focus:bg-white/10 transition-all"
         />
         
         <button
           type="submit"
-          disabled={!userMessage.trim() || isTyping}
+          disabled={!userMessage.trim() || isTyping || !promptReady}
           class="absolute right-3 p-2 bg-black dark:bg-white text-white dark:text-black rounded-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-20 disabled:grayscale"
         >
           <Icon icon="ph:arrow-up-bold" class="h-5 w-5" />
