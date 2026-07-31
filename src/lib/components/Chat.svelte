@@ -34,32 +34,31 @@
   
   const HF_API_KEY = import.meta.env.VITE_HF_API_KEY;
 
-  let systemPrompt = ""
+  let systemPrompt = "";
   let promptReady = false;
   
-  onMount(async () => {
-    const res = await fetch("/.netlify/functions/getPrompt")
-    const data = await res.json()
-    systemPrompt = data.systemPrompt
-    promptReady = true;
-  })
-
   onMount(async () => {
     try {
       const res = await fetch("/.netlify/functions/getPrompt");
       const data = await res.json();
       systemPrompt = data.systemPrompt;
-    } catch (err) {
-      console.error("Impossible de charger le prompt système:", err);
-      systemPrompt = "Tu es Kleo, l'assistant de Kiady...";
-    } finally {
       promptReady = true;
       chatHistory.set([{ 
         from: 'ai', 
         text: 'Bonjour ! Je suis Kleo, votre assistant virtuel. 🤖\n\nComment puis-je vous aider aujourd\'hui ?',
         timestamp: new Date()
       }]);
-      initialLoad = false; 
+    } catch (err) {
+      console.error("Impossible de charger le prompt système:", err);
+      systemPrompt = "";
+      promptReady = false;
+      chatHistory.set([{ 
+        from: 'ai', 
+        text: '⚠️ Erreur de chargement du système. Veuillez actualiser la page.',
+        timestamp: new Date()
+      }]);
+    } finally {
+      initialLoad = false;
     }
   });
 
@@ -80,7 +79,7 @@
     if (!promptReady) {
       chatHistory.update(history => [...history, { 
         from: 'ai', 
-        text: 'Je suis encore en train de me préparer... un instant !',
+        text: '⚠️ Le système n\'est pas prêt. Veuillez actualiser la page.',
         timestamp: new Date()
       }]);
       return;
@@ -157,7 +156,7 @@
       console.error('Erreur:', err);
       chatHistory.update(history => [...history, { 
         from: 'ai', 
-        text: 'Oups 😅 problème de connexion avec l\'IA. Veuillez réessayer.',
+        text: '⚠️ Erreur de connexion. Veuillez actualiser la page.',
         timestamp: new Date()
       }]);
       isTyping = false;
