@@ -1,5 +1,6 @@
 <script>
 	import { PUBLIC_SITE_URL } from '$env/static/public';
+    import '$lib/posthog';
 </script>
 
 <svelte:head>
