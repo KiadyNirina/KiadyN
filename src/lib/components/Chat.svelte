@@ -4,6 +4,7 @@
   import Icon from '@iconify/svelte';
   import { fade, fly, scale } from 'svelte/transition';
   import { marked } from 'marked';
+  import posthog from '$lib/posthog';
 
   let entranceDone = false;
   onMount(() => {
@@ -61,6 +62,17 @@
       initialLoad = false;
     }
   });
+
+  function toggleChat() {
+    const willOpen = !showChat;
+
+    posthog.capture('chat_toggled', {
+      action: willOpen ? 'opened' : 'closed',
+      component: 'kleo_chat'
+    });
+
+    showChat = willOpen;
+  }
 
   const AI_MODEL = import.meta.env.VITE_AI_MODEL;
   
@@ -199,7 +211,7 @@
              shadow-[0_0_30px_rgba(0,0,0,0.4)] dark:shadow-[0_0_30px_rgba(255,255,255,0.3)]
              transition-all duration-500 hover:scale-125 active:scale-90
              overflow-visible"
-      on:click={() => showChat = !showChat}
+      on:click={toggleChat}
     >
       <!-- Bordure tournoyante en dégradé noir/blanc -->
       <span class="absolute inset-0 rounded-full p-[2px] bg-gradient-to-r from-black via-gray-400 to-white dark:from-white dark:via-gray-500 dark:to-black animate-spin-slow">
