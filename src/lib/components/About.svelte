@@ -57,15 +57,38 @@
 			<div class="lg:col-span-7 flex flex-col">
 				<div class="mb-16">
 					<h3 class="text-5xl md:text-7xl font-black text-black dark:text-white leading-[0.9] tracking-tighter mb-10">
-						L'ART DE LA <br/> <span class="text-gray-900 dark:text-gray-200 italic font-thin border-b-2 border-black dark:border-white pb-2">STRUCTURE</span>
+						BUILDING <br/>
+						<span class="text-gray-900 dark:text-gray-200 italic font-thin border-b-2 border-black dark:border-white pb-2">
+							DIGITAL FUTURES
+						</span>
 					</h3>
 					
 					<div class="space-y-8 text-xl text-gray-800 dark:text-gray-200 font-light leading-relaxed max-w-2xl">
 						<p>
-							Je ne construis pas seulement des sites ; je forge des <span class="text-black dark:text-white font-bold">systèmes numériques</span> capables de supporter l'ambition de mes clients.
+							Jeune développeur <span class="text-black dark:text-white font-bold">Full-Stack malgache</span>,
+							fondateur de
+							<a 
+								href="https://kleonix.netlify.app/" 
+								target="_blank" 
+								rel="noopener noreferrer"
+								class="text-black dark:text-white font-bold hover:opacity-70 transition-opacity"
+							>
+								Kleonix
+							</a>,
+							une agence digitale spécialisée dans la conception de plateformes web, d'applications métiers et de solutions numériques sur mesure.
 						</p>
+
 						<p>
-							Basé sur une rigueur technique absolue, mon approche du développement Full-Stack privilégie la <span class="italic">performance brute</span> et l'élégance du code. Chaque ligne est pensée pour l'évolutivité.
+							Spécialisé dans le développement de produits numériques et d'<span class="italic">applications SaaS</span>,
+							l'approche repose sur la conception d'architectures scalables, l'optimisation des performances,
+							l'expérience utilisateur et l'intégration de technologies modernes du web.
+						</p>
+
+						<p>
+							Avec <span class="text-black dark:text-white font-bold">3 ans d'expérience</span> en développement web
+							et actuellement en <span class="text-black dark:text-white italic font-bold">Master 2 Informatique — parcours BDGL</span>,
+							les solutions développées s'appuient sur des pratiques
+							des architectures maintenables et une vision orientée produit.
 						</p>
 					</div>
 				</div>

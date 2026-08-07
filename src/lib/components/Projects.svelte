@@ -54,7 +54,7 @@
         {
             type: "Freelance",
             title: "Kleonix",
-            description: "Identité digitale pour une entreprise de solutions informatiques.",
+            description: "Identité digitale pour une entreprise spécialisée dans la création de sites web, d’applications et de solutions informatiques sur mesure.",
             tech: ["Nuxt", "Tailwind", "TS"],
             image: "/kleonix.png",
             details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
