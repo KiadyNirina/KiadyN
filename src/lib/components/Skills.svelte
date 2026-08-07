@@ -5,32 +5,64 @@
   const skills = [
     { name: 'HTML', icon: 'simple-icons:html5' },
     { name: 'CSS', icon: 'simple-icons:css3' },
-    { name: 'Tailwind', icon: 'simple-icons:tailwindcss' },
     { name: 'Javascript', icon: 'simple-icons:javascript' },
     { name: 'TypeScript', icon: 'simple-icons:typescript' },
-    { name: 'Alpine.js', icon: 'lineicons:alpinejs' },
+    { name: 'Tailwind', icon: 'simple-icons:tailwindcss' },
+    { name: 'Alpine.js', icon: 'simple-icons:alpinedotjs' },
     { name: 'Vue', icon: 'simple-icons:vuedotjs' },
     { name: 'Nuxt', icon: 'simple-icons:nuxtdotjs' },
     { name: 'Svelte', icon: 'simple-icons:svelte' },
     { name: 'Sveltekit', icon: 'simple-icons:svelte' },
+
     { name: 'PHP', icon: 'simple-icons:php' },
     { name: 'Laravel', icon: 'simple-icons:laravel' },
     { name: 'Python', icon: 'simple-icons:python' },
     { name: 'Django', icon: 'simple-icons:django' },
     { name: 'Django REST', icon: 'simple-icons:django' },
-    { name: 'API REST', icon: 'ph:framer-logo-bold' },
+    { name: 'Flask', icon: 'simple-icons:flask' },
+    { name: 'API REST', icon: 'material-symbols:api' },
+
     { name: 'WordPress', icon: 'simple-icons:wordpress' },
     { name: 'Magento', icon: 'simple-icons:magento' },
     { name: 'WooCommerce', icon: 'simple-icons:woocommerce' },
     { name: 'Odoo', icon: 'simple-icons:odoo' },
+
     { name: 'SQLite', icon: 'simple-icons:sqlite' },
     { name: 'MySQL', icon: 'simple-icons:mysql' },
     { name: 'PostgreSQL', icon: 'simple-icons:postgresql' },
     { name: 'Supabase', icon: 'simple-icons:supabase' },
+
     { name: 'Git', icon: 'simple-icons:git' },
+    { name: 'GitHub', icon: 'simple-icons:github' },
+    { name: 'GitLab', icon: 'simple-icons:gitlab' },
+    { name: 'Docker', icon: 'simple-icons:docker' },
+    { name: 'Linux', icon: 'simple-icons:linux' },
+    { name: 'Windows', icon: 'simple-icons:windows' },
+    { name: 'Apache', icon: 'simple-icons:apache' },
+    { name: 'Nginx', icon: 'simple-icons:nginx' },
+    { name: 'Netlify', icon: 'simple-icons:netlify' },
+    { name: 'Render', icon: 'simple-icons:render' },
+    { name: 'Vercel', icon: 'simple-icons:vercel' },
+
     { name: 'Trello', icon: 'simple-icons:trello' },
     { name: 'Postman', icon: 'simple-icons:postman' },
-    { name: 'Docker', icon: 'simple-icons:docker' },
+    { name: 'VS Code', icon: 'mdi:microsoft-visual-studio-code' },
+
+    { name: 'Figma', icon: 'simple-icons:figma' },
+    { name: 'Photoshop', icon: 'simple-icons:adobephotoshop' },
+
+    { name: 'PostHog', icon: 'simple-icons:posthog' },
+    { name: 'Plotly', icon: 'simple-icons:plotly' },
+    { name: 'Technical SEO', icon: 'material-symbols:manage-search' },
+    { name: 'Google Analytics', icon: 'simple-icons:googleanalytics' },
+    { name: 'Google Tag Manager', icon: 'simple-icons:googletagmanager' },
+    { name: 'Google Search Console', icon: 'simple-icons:googlesearchconsole' },
+    { name: 'Core Web Vitals', icon: 'material-symbols:speed' },
+
+    { name: 'Elasticsearch', icon: 'simple-icons:elasticsearch' },
+    { name: 'Agile', icon: 'mdi:sync-circle' },
+    { name: 'Scrum', icon: 'mdi:account-group' },
+    { name: 'Git Flow', icon: 'mdi:source-branch' },
   ];
 
   const categories = [
@@ -45,7 +77,7 @@
         title: 'Backend', 
         subsections: [
             { subtitle: 'Langages', items: ['PHP','Python'] },
-            { subtitle: 'Frameworks & APIs', items: ['Laravel','Django','Django REST','API REST'] },
+            { subtitle: 'Frameworks & APIs', items: ['Laravel','Django','Django REST','Flask','Plotly','API REST'] },
         ]
     },
     {
@@ -58,14 +90,34 @@
         title: 'Bases de Données',
         subsections: [
             { subtitle: 'SGBD', items: ['SQLite','MySQL','PostgreSQL','Supabase'] },
+            { subtitle: 'Recherche', items: ['Elasticsearch'] },
+        ]
+    },
+    { 
+        title: 'DevOps & Cloud',
+        subsections: [
+            { subtitle: 'Déploiement', items: ['Git','GitHub','Docker','Linux','Windows','Apache','Nginx','Netlify','Render'] },
         ]
     },
     { 
         title: 'Outils', 
         subsections: [
-            { subtitle: 'Dev & Prod', items: ['Git','Trello','Postman','Docker'] },
+            { subtitle: 'Dev & Productivité', items: ['VS Code','Postman','Trello'] },
+            { subtitle: 'Design', items: ['Photoshop','Figma'] },
         ]
-    }
+    },
+    {
+        title: 'Analytics',
+        subsections: [
+            { subtitle: 'Analytics', items: ['PostHog','Google Analytics','Google Tag Manager'] },
+            { subtitle: 'SEO & Performance', items: ['Google Search Console','Technical SEO','Core Web Vitals'] },
+        ]
+    },
+    {
+        title: 'Méthodologies',
+        subsections: [
+            { subtitle: 'Méthodologies', items: ['Agile','Scrum','Git Flow'] },]
+    },
   ];
 
   export function fadeInOnScroll(node) {
