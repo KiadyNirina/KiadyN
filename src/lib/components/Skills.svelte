@@ -159,16 +159,16 @@
           style="transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; transform: translateY(40px); transition-delay: {i * 0.1}s"
         >
           <!-- Category Index -->
-          <div class="mb-12 flex justify-between items-center">
-            <h3 class="text-xs font-black uppercase tracking-[0.4em] text-black dark:text-white">
+          <div class="mb-6 flex justify-between items-center">
+            <h3 class="text-xs font-bold uppercase tracking-[0.4em] text-black dark:text-white">
                 {category.title}
             </h3>
             <span class="text-xs font-mono text-gray-300 dark:text-gray-700">0{i+1}</span>
           </div>
 
           {#each category.subsections as sub}
-            <div class="mb-10 last:mb-0">
-              <p class="text-[10px] uppercase font-bold text-gray-900 dark:text-gray-400 tracking-widest mb-6 flex items-center gap-2">
+            <div class="mb-6 last:mb-0">
+              <p class="text-[9px] uppercase font-bold text-gray-900 dark:text-gray-400 tracking-widest mb-6 flex items-center gap-2">
                 <span class="w-2 h-2 bg-black dark:bg-white rounded-full"></span>
                 {sub.subtitle}
               </p>
@@ -176,12 +176,12 @@
               <div class="flex flex-wrap gap-3">
                 {#each sub.items as skillName}
                   {#each skills.filter(s => s.name === skillName) as skill}
-                    <div class="group/item flex items-center gap-3 px-4 py-2 border border-black/30 dark:border-white/5 bg-white dark:bg-gray-900 rounded-full hover:border-black dark:hover:border-white hover:invert transition-all duration-300">
+                    <div class="group/item flex items-center gap-3 px-2 py-1 border border-black/10 dark:border-white/5 bg-white dark:bg-gray-900 rounded-full hover:border-black dark:hover:border-white hover:invert transition-all duration-300">
                       <Icon 
                         icon={skill.icon} 
-                        class="text-xl text-black dark:text-gray-400 group-hover/item:text-white dark:group-hover/item:text-black" 
+                        class="text-sm text-black dark:text-gray-200 group-hover/item:text-white dark:group-hover/item:text-black" 
                       />
-                      <span class="text-xs font-bold uppercase tracking-tighter text-black dark:text-gray-300">
+                      <span class="text-xs tracking-tighter text-black dark:text-gray-200">
                         {skill.name}
                       </span>
                     </div>
