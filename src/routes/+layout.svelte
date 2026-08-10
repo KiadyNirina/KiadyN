@@ -1,4 +1,5 @@
 <script>
+    import '../app.css';
 	import { PUBLIC_SITE_URL } from '$env/static/public';
     import '$lib/posthog';
     import Header from '$lib/components/Header.svelte';
