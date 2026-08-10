@@ -4,69 +4,69 @@
 
     // Données projets avec flag "featured" pour les meilleurs projets
     const projects = [
-        {
-            type: "Freelance",
-            title: "Santatra",
-            description: "Portfolio professionnel d'un technicien supérieur en construction civile et infrastructur.",
-            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-            image: "/santatra1.PNG",
-            details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
-            gallery: [
-                "santatra2.PNG",
-                "santatra3.PNG",
-                "santatra4.PNG",
-                "santatra5.PNG",
-            ],
-            link: "https://santatra.netlify.app"
-        },
-        {
-            type: "Freelance",
-            title: "Zavamix",
-            description: "Zavamix – Site web de sourcing et d’importation Dubaï → Madagascar",
-            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-            image: "/zavamix.png",
-            details: "Zavamix est un site vitrine développé avec Nuxt.js pour le rendu statique et Tailwind CSS pour le design utilitaire. Il présente une entreprise spécialisée dans l’importation de produits neufs et d’occasion depuis Dubaï vers Madagascar, en mettant l’accent sur un parcours client structuré et une expérience utilisateur claire.",
-            gallery: [
-                "zavamix1.png",
-                "zavamix2.png",
-                "zavamix3.png",
-                "zavamix4.png",
-                "zavamix5.png",
-            ],
-            link: "https://zavamix.netlify.app"
-        },
-        {
-            type: "Freelance",
-            title: "Mireille",
-            description: "Portfolio professionnel d'une technicienne en génie civil.",
-            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-            image: "/mireille.png",
-            details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
-            gallery: [
-                "mireille2.png",
-                "mireille3.png",
-                "mireille4.png",
-                "mireille5.png",
-                "mireille6.png",
-            ],
-            link: "https://mireillerane.netlify.app"
-        },
-        {
-            type: "Freelance",
-            title: "Kleonix",
-            description: "Identité digitale pour une entreprise spécialisée dans la création de sites web, d’applications et de solutions informatiques sur mesure.",
-            tech: ["Nuxt", "Tailwind", "TS"],
-            image: "/kleonix.png",
-            details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
-            gallery: [
-                "kleonix2.png",
-                "kleonix3.png",
-                "kleonix4.png",
-                "kleonix5.png",
-                "kleonix6.png",
-            ],
-            link: "https://kleonix.netlify.app"
-        },
+        // {
+        //     type: "Freelance",
+        //     title: "Santatra",
+        //     description: "Portfolio professionnel d'un technicien supérieur en construction civile et infrastructur.",
+        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+        //     image: "/santatra1.PNG",
+        //     details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
+        //     gallery: [
+        //         "santatra2.PNG",
+        //         "santatra3.PNG",
+        //         "santatra4.PNG",
+        //         "santatra5.PNG",
+        //     ],
+        //     link: "https://santatra.netlify.app"
+        // },
+        // {
+        //     type: "Freelance",
+        //     title: "Zavamix",
+        //     description: "Zavamix – Site web de sourcing et d’importation Dubaï → Madagascar",
+        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+        //     image: "/zavamix.png",
+        //     details: "Zavamix est un site vitrine développé avec Nuxt.js pour le rendu statique et Tailwind CSS pour le design utilitaire. Il présente une entreprise spécialisée dans l’importation de produits neufs et d’occasion depuis Dubaï vers Madagascar, en mettant l’accent sur un parcours client structuré et une expérience utilisateur claire.",
+        //     gallery: [
+        //         "zavamix1.png",
+        //         "zavamix2.png",
+        //         "zavamix3.png",
+        //         "zavamix4.png",
+        //         "zavamix5.png",
+        //     ],
+        //     link: "https://zavamix.netlify.app"
+        // },
+        // {
+        //     type: "Freelance",
+        //     title: "Mireille",
+        //     description: "Portfolio professionnel d'une technicienne en génie civil.",
+        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+        //     image: "/mireille.png",
+        //     details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
+        //     gallery: [
+        //         "mireille2.png",
+        //         "mireille3.png",
+        //         "mireille4.png",
+        //         "mireille5.png",
+        //         "mireille6.png",
+        //     ],
+        //     link: "https://mireillerane.netlify.app"
+        // },
+        // {
+        //     type: "Freelance",
+        //     title: "Kleonix",
+        //     description: "Identité digitale pour une entreprise spécialisée dans la création de sites web, d’applications et de solutions informatiques sur mesure.",
+        //     tech: ["Nuxt", "Tailwind", "TS"],
+        //     image: "/kleonix.png",
+        //     details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
+        //     gallery: [
+        //         "kleonix2.png",
+        //         "kleonix3.png",
+        //         "kleonix4.png",
+        //         "kleonix5.png",
+        //         "kleonix6.png",
+        //     ],
+        //     link: "https://kleonix.netlify.app"
+        // },
         {
             type: "Projet personnel",
             title: "Bookly",
@@ -109,36 +109,36 @@
             ],
             featured: true // ⭐ Meilleur projet
         },
-        {
-            type: "Projet personnel",
-            title: "Real-Talk",
-            description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
-            tech: ["Svelte", "Laravel", "MySQL"],
-            image: "/real_talk.jpg",
-            details: "Application de chat en temps réel avec notifications instantanées et gestion des utilisateurs. Utilise Svelte pour le front-end et Laravel pour le back-end.",
-            github: "https://github.com/KiadyNirina/Real_talk",
-            gallery: [
-                "/real_talk.jpg", "/real_talk 2.jpg",
-            ]
-        },
-        {
-            type: "Projet personnel",
-            title: "Datalens",
-            description: "Application de visualisation et d'analyse de données",
-            tech: ["Python", "Flask", "Plotly", "Tailwind CSS"],
-            image: "/Datalens1.png",
-            details: "Application de visualisation et d'analyse de données. Utilise Python pour le traitement des données et la génération de graphiques interactifs.",
-            functionalities: [
-                "Chargement de données depuis des fichiers CSV ou JSON",
-                "Graphiques interactifs avec Plotly",
-                "Export de graphiques en images",
-                "Tableaux de données avec pagination et tri",
-            ],
-            github: "https://github.com/KiadyNirina/Datalens",
-            gallery: [
-                "/Datalens2.png", "/Datalens3.png", "/Datalens4.png",
-            ]
-        },
+        // {
+        //     type: "Projet personnel",
+        //     title: "Real-Talk",
+        //     description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
+        //     tech: ["Svelte", "Laravel", "MySQL"],
+        //     image: "/real_talk.jpg",
+        //     details: "Application de chat en temps réel avec notifications instantanées et gestion des utilisateurs. Utilise Svelte pour le front-end et Laravel pour le back-end.",
+        //     github: "https://github.com/KiadyNirina/Real_talk",
+        //     gallery: [
+        //         "/real_talk.jpg", "/real_talk 2.jpg",
+        //     ]
+        // },
+        // {
+        //     type: "Projet personnel",
+        //     title: "Datalens",
+        //     description: "Application de visualisation et d'analyse de données",
+        //     tech: ["Python", "Flask", "Plotly", "Tailwind CSS"],
+        //     image: "/Datalens1.png",
+        //     details: "Application de visualisation et d'analyse de données. Utilise Python pour le traitement des données et la génération de graphiques interactifs.",
+        //     functionalities: [
+        //         "Chargement de données depuis des fichiers CSV ou JSON",
+        //         "Graphiques interactifs avec Plotly",
+        //         "Export de graphiques en images",
+        //         "Tableaux de données avec pagination et tri",
+        //     ],
+        //     github: "https://github.com/KiadyNirina/Datalens",
+        //     gallery: [
+        //         "/Datalens2.png", "/Datalens3.png", "/Datalens4.png",
+        //     ]
+        // },
         {
             type: "Projet personnel",
             title: "eBoss",
@@ -224,92 +224,20 @@
                 </h3>
             </div>
             <div class="hidden md:block text-right">
-                <span class="text-5xl font-black text-zinc-300 dark:text-zinc-700">{projects.length}</span>
-                <p class="text-[10px] font-bold dark:text-white uppercase tracking-widest">Total Projets</p>
+                <a href="/projects" class="group inline-flex items-center gap-2 text-black dark:text-white font-bold uppercase text-[10px] tracking-widest">
+                    <span class="relative">
+                        Voir tous les projets
+                        <span class="absolute left-0 -bottom-1 h-[1px] w-0 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </span>
+                    <Icon icon="ph:arrow-right-bold" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
             </div>
         </div>
-
-        <!-- 🔥 SECTION 1: MEILLEURS PROJETS (STACKED SLIDER) -->
-        {#if featuredProjects.length > 0}
-        <div class="mb-40">
-            <div class="flex items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6">
-                <h4 class="text-2xl font-black uppercase tracking-tighter dark:text-white flex items-center gap-3">
-                    <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
-                    Meilleurs Projets
-                </h4>
-                <span class="font-mono text-zinc-400">({featuredProjects.length})</span>
-            </div>
-
-            <div class="relative h-[500px] flex items-center justify-center">
-                <!-- Navigation Gauche -->
-                <button 
-                    on:click={() => currentFeaturedIdx = (currentFeaturedIdx - 1 + featuredProjects.length) % featuredProjects.length}
-                    class="absolute left-0 md:left-10 z-30 p-4 bg-white dark:bg-zinc-800 border border-black dark:border-white shadow-xl hover:scale-110 transition-transform"
-                    aria-label="Projet précédent"
-                >
-                    <Icon icon="ph:arrow-left-bold" class="w-6 h-6 dark:text-white" />
-                </button>
-
-                <!-- Stacked Cards Container -->
-                <div class="relative w-full max-w-2xl h-full flex items-center justify-center">
-                    {#each featuredProjects as project, i}
-                        {@const offset = i - currentFeaturedIdx}
-                        {@const absOffset = Math.abs(offset)}
-                        {#if absOffset <= 2}
-                            <div 
-                                class="absolute w-full h-[400px] transition-all duration-700 ease-out cursor-pointer"
-                                style="
-                                    transform: translateX({offset * 40}px) scale({1 - absOffset * 0.1}) translateZ({-absOffset * 50}px);
-                                    z-index: {10 - absOffset};
-                                    opacity: {absOffset === 0 ? 1 : 0.3};
-                                    pointer-events: {absOffset === 0 ? 'auto' : 'none'};
-                                "
-                                on:click={() => openModal(project)}
-                                on:keydown={(e) => e.key === 'Enter' && openModal(project)}
-                                tabindex="0"
-                            >
-                                <div class="w-full h-full relative group bg-black border border-black dark:border-zinc-700 shadow-2xl overflow-hidden">
-                                    <!-- Badge Type -->
-                                    <div class="absolute top-4 left-4 z-20">
-                                        <span class="px-3 py-1 text-[9px] font-black uppercase tracking-widest border {getBadgeClasses(project.type)}">
-                                            {getTypeBadge(project.type)}
-                                        </span>
-                                    </div>
-                                    
-                                    <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-8 flex flex-col justify-end">
-                                        <h5 class="text-3xl font-black text-white uppercase tracking-tighter">{project.title}</h5>
-                                        <p class="text-zinc-300 text-xs mt-2 font-medium line-clamp-2">{project.description}</p>
-                                        <div class="flex gap-2 mt-3">
-                                            {#each project.tech.slice(0, 3) as t}
-                                                <span class="text-[8px] font-bold uppercase px-2 py-0.5 bg-white/20 backdrop-blur-sm text-white rounded">{t}</span>
-                                            {/each}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {/if}
-                    {/each}
-                </div>
-
-                <!-- Navigation Droite -->
-                <button 
-                    on:click={() => currentFeaturedIdx = (currentFeaturedIdx + 1) % featuredProjects.length}
-                    class="absolute right-0 md:right-10 z-30 p-4 bg-black dark:bg-white border border-black dark:border-white shadow-xl hover:scale-110 transition-transform"
-                    aria-label="Projet suivant"
-                >
-                    <Icon icon="ph:arrow-right-bold" class="w-6 h-6 text-white dark:text-black" />
-                </button>
-            </div>
-        </div>
-        {/if}
-
-        <!-- 📁 SECTION 2: TOUS LES PROJETS AVEC FILTRES -->
+        
         <div>
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6 gap-6">
+            <!-- <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6 gap-6">
                 <h4 class="text-2xl font-black uppercase tracking-tighter dark:text-white">Tous les Projets</h4>
                 
-                <!-- Filtres -->
                 <div class="flex flex-wrap gap-2">
                     {#each filterOptions as option}
                         <button
@@ -323,18 +251,18 @@
                         </button>
                     {/each}
                 </div>
-            </div>
+            </div> -->
 
             <!-- Grid des projets filtrés -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {#each filteredProjects as project}
                     <div 
-                        class="group cursor-pointer border border-zinc-200 dark:border-zinc-800 p-4 hover:border-black dark:hover:border-white hover:shadow-lg transition-all duration-300"
+                        class="group cursor-pointer transition-all duration-300 mb-4"
                         on:click={() => openModal(project)}
                         on:keydown={(e) => e.key === 'Enter' && openModal(project)}
                         tabindex="0"
                     >
-                        <div class="aspect-video bg-zinc-100 dark:bg-zinc-900 overflow-hidden mb-6 relative">
+                        <div class="aspect-4/3 bg-zinc-100 dark:bg-zinc-900 overflow-hidden mb-2 relative rounded-xl">
                             <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
                             
                             <!-- Badge Type (Freelance / Perso) -->
@@ -345,19 +273,19 @@
                             </div>
                             
                             <!-- Badge Featured si applicable -->
-                            {#if project.featured}
+                            <!-- {#if project.featured}
                                 <div class="absolute top-4 left-4">
                                     <span class="px-2 py-1 text-[8px] font-black uppercase tracking-wider bg-amber-500 text-white rounded-sm flex items-center gap-1">
                                         <Icon icon="ph:star-fill" class="w-3 h-3" /> Top
                                     </span>
                                 </div>
-                            {/if}
+                            {/if} -->
                         </div>
                         
                         <h5 class="text-lg font-black uppercase tracking-tighter mb-2 dark:text-white">{project.title}</h5>
-                        <p class="text-zinc-500 dark:text-zinc-400 text-sm line-clamp-2 italic leading-relaxed">"{project.description}"</p>
+                        <p class="text-black dark:text-white text-xs line-clamp-2 leading-relaxed">{project.description}</p>
                         
-                        <div class="mt-6 flex flex-wrap gap-2">
+                        <div class="mt-2 flex flex-wrap gap-2">
                             {#each project.tech.slice(0, 3) as t}
                                 <span class="text-[9px] font-bold uppercase px-2 py-1 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-400 rounded-sm">{t}</span>
                             {/each}
@@ -382,7 +310,7 @@
     {#if showModal && selectedProject}
         <div 
             use:portal
-            class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-white/95 dark:bg-black/95 backdrop-blur-sm"
+            class="font-[Montserrat] fixed inset-0 z-[100] flex items-center justify-center p-6 bg-white/95 dark:bg-black/95 backdrop-blur-sm"
             transition:fade={{ duration: 200 }}
             on:click={closeModal}
         >
@@ -425,14 +353,14 @@
                     <div class="space-y-10">
                         <section>
                             <h5 class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">// Aperçu</h5>
-                            <p class="text-base text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                            <p class="text-xs text-black dark:text-white font-light leading-relaxed">
                                 {selectedProject.details}
                             </p>
                         </section>
 
                         <div class="flex flex-wrap gap-3">
                             {#each selectedProject.tech as tech}
-                                <span class="px-4 py-2 border border-zinc-200 dark:border-zinc-700 text-[10px] font-black text-zinc-700 dark:text-zinc-300 uppercase tracking-tighter rounded-sm">
+                                <span class="px-4 py-2 border border-zinc-200 dark:border-zinc-700 text-[9px] font-semibold text-black dark:text-white uppercase tracking-tighter rounded-sm">
                                     {tech}
                                 </span>
                             {/each}
@@ -441,9 +369,9 @@
                         {#if selectedProject.functionalities}
                             <section>
                                 <h5 class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-4">// Fonctionnalités</h5>
-                                <ul class="space-y-3">
+                                <ul class="space-y-2">
                                     {#each selectedProject.functionalities as f}
-                                        <li class="flex items-center gap-3 text-zinc-700 dark:text-zinc-300 font-medium text-sm">
+                                        <li class="flex items-center gap-2 text-black dark:text-white text-xs">
                                             <Icon icon="ph:check-bold" class="w-4 h-4 text-emerald-500 flex-shrink-0" /> {f}
                                         </li>
                                     {/each}
@@ -453,13 +381,13 @@
 
                         <div class="flex flex-wrap gap-4 pt-8 border-t border-zinc-200 dark:border-zinc-800">
                             {#if selectedProject.link}
-                                <a href={selectedProject.link} target="_blank" class="px-12 py-6 bg-black dark:bg-white text-white dark:text-black font-black uppercase text-[10px] tracking-widest hover:invert transition-all">
+                                <a href={selectedProject.link} target="_blank" class="px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-black uppercase text-[10px] tracking-widest hover:invert transition-all">
                                     Visiter le site
                                 </a>
                             {/if}
                             {#if selectedProject.github}
-                                <a href={selectedProject.github} target="_blank" class="px-12 py-6 border border-black dark:border-white text-black dark:text-white font-black uppercase text-[10px] tracking-widest hover:bg-black hover:text-white transition-all">
-                                    Source Code
+                                <a href={selectedProject.github} target="_blank" class="px-6 py-3 border border-black dark:border-white text-black dark:text-white font-black uppercase text-[10px] tracking-widest hover:bg-black hover:text-white transition-all">
+                                    Lien
                                 </a>
                             {/if}
                         </div>
@@ -471,10 +399,6 @@
 </section>
 
 <style>
-    :global(body) {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    }
-    
     .absolute {
         will-change: transform, opacity;
     }
