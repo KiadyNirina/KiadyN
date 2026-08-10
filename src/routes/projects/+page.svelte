@@ -4,69 +4,69 @@
 
     // Données projets avec flag "featured" pour les meilleurs projets
     const projects = [
-        // {
-        //     type: "Freelance",
-        //     title: "Santatra",
-        //     description: "Portfolio professionnel d'un technicien supérieur en construction civile et infrastructur.",
-        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-        //     image: "/santatra1.PNG",
-        //     details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
-        //     gallery: [
-        //         "santatra2.PNG",
-        //         "santatra3.PNG",
-        //         "santatra4.PNG",
-        //         "santatra5.PNG",
-        //     ],
-        //     link: "https://santatra.netlify.app"
-        // },
-        // {
-        //     type: "Freelance",
-        //     title: "Zavamix",
-        //     description: "Zavamix – Site web de sourcing et d’importation Dubaï → Madagascar",
-        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-        //     image: "/zavamix.png",
-        //     details: "Zavamix est un site vitrine développé avec Nuxt.js pour le rendu statique et Tailwind CSS pour le design utilitaire. Il présente une entreprise spécialisée dans l’importation de produits neufs et d’occasion depuis Dubaï vers Madagascar, en mettant l’accent sur un parcours client structuré et une expérience utilisateur claire.",
-        //     gallery: [
-        //         "zavamix1.png",
-        //         "zavamix2.png",
-        //         "zavamix3.png",
-        //         "zavamix4.png",
-        //         "zavamix5.png",
-        //     ],
-        //     link: "https://zavamix.netlify.app"
-        // },
-        // {
-        //     type: "Freelance",
-        //     title: "Mireille",
-        //     description: "Portfolio professionnel d'une technicienne en génie civil.",
-        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-        //     image: "/mireille.png",
-        //     details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
-        //     gallery: [
-        //         "mireille2.png",
-        //         "mireille3.png",
-        //         "mireille4.png",
-        //         "mireille5.png",
-        //         "mireille6.png",
-        //     ],
-        //     link: "https://mireillerane.netlify.app"
-        // },
-        // {
-        //     type: "Freelance",
-        //     title: "Kleonix",
-        //     description: "Identité digitale pour une entreprise spécialisée dans la création de sites web, d’applications et de solutions informatiques sur mesure.",
-        //     tech: ["Nuxt", "Tailwind", "TS"],
-        //     image: "/kleonix.png",
-        //     details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
-        //     gallery: [
-        //         "kleonix2.png",
-        //         "kleonix3.png",
-        //         "kleonix4.png",
-        //         "kleonix5.png",
-        //         "kleonix6.png",
-        //     ],
-        //     link: "https://kleonix.netlify.app"
-        // },
+        {
+            type: "Freelance",
+            title: "Santatra",
+            description: "Portfolio professionnel d'un technicien supérieur en construction civile et infrastructur.",
+            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+            image: "/santatra1.PNG",
+            details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
+            gallery: [
+                "santatra2.PNG",
+                "santatra3.PNG",
+                "santatra4.PNG",
+                "santatra5.PNG",
+            ],
+            link: "https://santatra.netlify.app"
+        },
+        {
+            type: "Freelance",
+            title: "Zavamix",
+            description: "Zavamix – Site web de sourcing et d’importation Dubaï → Madagascar",
+            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+            image: "/zavamix.png",
+            details: "Zavamix est un site vitrine développé avec Nuxt.js pour le rendu statique et Tailwind CSS pour le design utilitaire. Il présente une entreprise spécialisée dans l’importation de produits neufs et d’occasion depuis Dubaï vers Madagascar, en mettant l’accent sur un parcours client structuré et une expérience utilisateur claire.",
+            gallery: [
+                "zavamix1.png",
+                "zavamix2.png",
+                "zavamix3.png",
+                "zavamix4.png",
+                "zavamix5.png",
+            ],
+            link: "https://zavamix.netlify.app"
+        },
+        {
+            type: "Freelance",
+            title: "Mireille",
+            description: "Portfolio professionnel d'une technicienne en génie civil.",
+            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+            image: "/mireille.png",
+            details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
+            gallery: [
+                "mireille2.png",
+                "mireille3.png",
+                "mireille4.png",
+                "mireille5.png",
+                "mireille6.png",
+            ],
+            link: "https://mireillerane.netlify.app"
+        },
+        {
+            type: "Freelance",
+            title: "Kleonix",
+            description: "Identité digitale pour une entreprise spécialisée dans la création de sites web, d’applications et de solutions informatiques sur mesure.",
+            tech: ["Nuxt", "Tailwind", "TS"],
+            image: "/kleonix.png",
+            details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
+            gallery: [
+                "kleonix2.png",
+                "kleonix3.png",
+                "kleonix4.png",
+                "kleonix5.png",
+                "kleonix6.png",
+            ],
+            link: "https://kleonix.netlify.app"
+        },
         {
             type: "Projet personnel",
             title: "Bookly",
@@ -109,36 +109,36 @@
             ],
             featured: true // ⭐ Meilleur projet
         },
-        // {
-        //     type: "Projet personnel",
-        //     title: "Real-Talk",
-        //     description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
-        //     tech: ["Svelte", "Laravel", "MySQL"],
-        //     image: "/real_talk.jpg",
-        //     details: "Application de chat en temps réel avec notifications instantanées et gestion des utilisateurs. Utilise Svelte pour le front-end et Laravel pour le back-end.",
-        //     github: "https://github.com/KiadyNirina/Real_talk",
-        //     gallery: [
-        //         "/real_talk.jpg", "/real_talk 2.jpg",
-        //     ]
-        // },
-        // {
-        //     type: "Projet personnel",
-        //     title: "Datalens",
-        //     description: "Application de visualisation et d'analyse de données",
-        //     tech: ["Python", "Flask", "Plotly", "Tailwind CSS"],
-        //     image: "/Datalens1.png",
-        //     details: "Application de visualisation et d'analyse de données. Utilise Python pour le traitement des données et la génération de graphiques interactifs.",
-        //     functionalities: [
-        //         "Chargement de données depuis des fichiers CSV ou JSON",
-        //         "Graphiques interactifs avec Plotly",
-        //         "Export de graphiques en images",
-        //         "Tableaux de données avec pagination et tri",
-        //     ],
-        //     github: "https://github.com/KiadyNirina/Datalens",
-        //     gallery: [
-        //         "/Datalens2.png", "/Datalens3.png", "/Datalens4.png",
-        //     ]
-        // },
+        {
+            type: "Projet personnel",
+            title: "Real-Talk",
+            description: "Plateforme de chat en temps réel avec notifications et gestion des utilisateurs",
+            tech: ["Svelte", "Laravel", "MySQL"],
+            image: "/real_talk.jpg",
+            details: "Application de chat en temps réel avec notifications instantanées et gestion des utilisateurs. Utilise Svelte pour le front-end et Laravel pour le back-end.",
+            github: "https://github.com/KiadyNirina/Real_talk",
+            gallery: [
+                "/real_talk.jpg", "/real_talk 2.jpg",
+            ]
+        },
+        {
+            type: "Projet personnel",
+            title: "Datalens",
+            description: "Application de visualisation et d'analyse de données",
+            tech: ["Python", "Flask", "Plotly", "Tailwind CSS"],
+            image: "/Datalens1.png",
+            details: "Application de visualisation et d'analyse de données. Utilise Python pour le traitement des données et la génération de graphiques interactifs.",
+            functionalities: [
+                "Chargement de données depuis des fichiers CSV ou JSON",
+                "Graphiques interactifs avec Plotly",
+                "Export de graphiques en images",
+                "Tableaux de données avec pagination et tri",
+            ],
+            github: "https://github.com/KiadyNirina/Datalens",
+            gallery: [
+                "/Datalens2.png", "/Datalens3.png", "/Datalens4.png",
+            ]
+        },
         {
             type: "Projet personnel",
             title: "eBoss",
@@ -222,15 +222,6 @@
                 <h3 class="text-6xl md:text-8xl font-black text-black dark:text-white tracking-tighter uppercase leading-[0.8]">
                     Selected <br/> <span class="text-zinc-200 dark:text-zinc-800" style="-webkit-text-stroke: 1px;">Works</span>
                 </h3>
-            </div>
-            <div class="hidden md:block text-right">
-                <a href="/projects" class="group inline-flex items-center gap-2 text-black dark:text-white font-bold uppercase text-[10px] tracking-widest">
-                    <span class="relative">
-                        Voir tous les projets
-                        <span class="absolute left-0 -bottom-1 h-[1px] w-0 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
-                    </span>
-                    <Icon icon="ph:arrow-right-bold" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
             </div>
         </div>
         

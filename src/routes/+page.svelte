@@ -80,43 +80,9 @@
 	});
 </script>
 
-{#if isLoading}
-	<!-- Loading Screen -->
-	<div class="fixed inset-0 z-50 flex flex-col items-center justify-center">
-		
-		<!-- Logo Central -->
-        <div class="relative z-10 flex flex-col items-center">
-            <div class="relative mb-12" in:scale={{ duration: 1000, start: 0.9 }}>
-                <div class="w-24 h-24 sm:w-32 sm:h-32 dark:bg-white bg-black flex items-center justify-center rounded-2xl shadow-[0_0_50px_rgba(255,255,255,0.15)] overflow-hidden">
-                     <img src="/logo.png" alt="Logo" class="w-2/3 h-2/3 object-contain dark:invert" />
-                </div>
-                <!-- Orbiting Ring -->
-                <div class="absolute -inset-4 border border-black/30 dark:border-white/30 rounded-2xl animate-pulse-gentle"></div>
-            </div>
-
-            <!-- Minimalist Progress -->
-            <div class="w-64 space-y-4">
-                <div class="flex justify-between items-end">
-                    <span class="dark:text-white/30 text-black/70 text-[10px] uppercase tracking-[0.3em] font-light">Initialisation</span>
-                    <span class="dark:text-white text-black font-light text-sm tabular-nums">{Math.round(progress)}%</span>
-                </div>
-                <div class="h-[1px] w-full dark:bg-white/10 bg-black/10  relative overflow-hidden">
-                    <div 
-                        class="absolute inset-y-0 left-0 dark:bg-white bg-black transition-all duration-500 ease-out"
-                        style="width: {progress}%"
-                    ></div>
-                </div>
-            </div>
-        </div>
-	</div>
-{/if}
-
 	<!-- Main Content -->
-	<div class="min-h-screen transition-colors duration-300 animate-fade-in-content" class:hidden={isLoading}>
-		<Header />
+	<!-- <div class="min-h-screen transition-colors duration-300 animate-fade-in-content"> -->
 
-		<Chat />
-		
 		<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div id="hero" class:animate-fade-in={animated.hero}>
 				<Hero />
@@ -130,9 +96,9 @@
 				<Stat />
 			</div>
 
-			<div id="githubStat" class:animate-fade-in={animated.githubStat}>
+			<!-- <div id="githubStat" class:animate-fade-in={animated.githubStat}>
 				<GithubStat />
-			</div>
+			</div> -->
 
 			<div id="services" class:animate-fade-in={animated.services}>
 				<Services />
@@ -158,12 +124,12 @@
 				<Contact />
 			</div>
 		</main>
-
-		<Footer />
-	</div>
+		
+	<!-- </div> -->
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 	@import "tailwindcss";
 	@custom-variant dark (&:where(.dark, .dark *));
 	@font-face {
@@ -174,8 +140,7 @@
     }
 
 	*{
-		font-family: "Lato", sans-serif;
-		font-weight: 500;
+		font-family: "Montserrat", sans-serif;
 		font-style: normal;
 	}
     

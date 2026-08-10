@@ -1,6 +1,9 @@
 <script>
 	import { PUBLIC_SITE_URL } from '$env/static/public';
     import '$lib/posthog';
+    import Header from '$lib/components/Header.svelte';
+    import Footer from '$lib/components/Footer.svelte';
+    import Chat from '$lib/components/Chat.svelte';
 </script>
 
 <svelte:head>
@@ -49,4 +52,14 @@
 	</script>
 </svelte:head>
 
-<slot />
+<div class="min-h-screen transition-colors duration-300 animate-fade-in-content">
+    <Header />
+
+    <Chat />
+
+    <main>
+        <slot />
+    </main>
+
+    <Footer />
+</div>

@@ -112,7 +112,7 @@
                 </h3>
             </div>
             <div class="text-right">
-                <p class="text-[10px] font-mono text-gray-800 dark:text-gray-400 uppercase tracking-widest leading-relaxed">
+                <p class="text-[10px] font-mono text-gray-800 dark:text-white uppercase tracking-widest leading-relaxed">
                     Logiciels • Systèmes • Architecture <br/>
                     Professional Timeline / 001
                 </p>
@@ -127,7 +127,7 @@
                     <!-- Time Column -->
                     <div class="md:col-span-3 p-10 border-r border-black/50 dark:border-white/50 flex flex-col justify-between">
                         <div>
-                            <span class="text-xs font-black uppercase tracking-widest text-gray-900 dark:text-gray-200 group-hover:text-gray-200 dark:group-hover:text-gray-700 transition-colors">
+                            <span class="text-xs font-semibold uppercase tracking-widest text-gray-900 dark:text-gray-200 group-hover:text-gray-200 dark:group-hover:text-gray-700 transition-colors">
                                 {exp.period}
                             </span>
                             <div class="mt-2 text-[10px] font-mono text-gray-800 dark:text-gray-300 group-hover:text-white/70 dark:group-hover:text-black/70">
@@ -152,16 +152,16 @@
 
                         <div class="mb-8">
                             <div class="py-2 border-t border-b border-black/20 dark:border-white/20 mb-6">
-                                <p class="text-xs font-bold uppercase tracking-widest text-gray-800 dark:text-gray-300 group-hover:text-gray-300 dark:group-hover:text-gray-800 mb-4 flex items-center gap-2">
+                                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-800 dark:text-gray-300 group-hover:text-gray-300 dark:group-hover:text-gray-800 mb-4 flex items-center gap-2">
                                     <Icon icon="ph:buildings-bold" /> {exp.company} — {exp.localisation}
                                 </p>
-                                <p class="text-xs font-bold uppercase tracking-widest text-gray-800 dark:text-gray-300 group-hover:text-gray-300 dark:group-hover:text-gray-800 mb-4 flex items-center gap-2">
+                                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-800 dark:text-gray-300 group-hover:text-gray-300 dark:group-hover:text-gray-800 mb-4 flex items-center gap-2">
                                     <Icon icon="ph:clock-bold" /> {exp.workSchedule} — {exp.type_work}
                                 </p>
                             </div>
-                            <ul class="space-y-4">
+                            <ul class="space-y-2">
                                 {#each exp.description as desc}
-                                    <li class="text-lg font-light text-gray-900 dark:text-gray-200 group-hover:text-white dark:group-hover:text-black leading-relaxed flex gap-4">
+                                    <li class="text-xs text-black dark:text-white group-hover:text-white dark:group-hover:text-black leading-relaxed flex gap-4">
                                         <span class="text-black dark:text-white group-hover:text-white dark:group-hover:text-black">—</span>
                                         {desc}
                                     </li>
@@ -174,7 +174,7 @@
                     <div class="md:col-span-3 p-10 flex flex-col justify-end">
                         <div class="flex flex-wrap gap-2 justify-end">
                             {#each exp.technologies as tech}
-                                <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 border border-black/50 dark:border-white/50 text-gray-800 dark:text-gray-300 group-hover:text-white dark:group-hover:text-black group-hover:border-white/20 dark:group-hover:border-black/50">
+                                <span class="text-xs px-3 py-1 rounded-full border border-black/10 dark:border-white/50 text-black dark:text-white group-hover:text-white dark:group-hover:text-black group-hover:border-white/20 dark:group-hover:border-black/50">
                                     {tech}
                                 </span>
                             {/each}
