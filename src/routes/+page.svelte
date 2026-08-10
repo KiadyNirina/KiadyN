@@ -130,9 +130,9 @@
 				<Stat />
 			</div>
 
-			<div id="githubStat" class:animate-fade-in={animated.githubStat}>
+			<!-- <div id="githubStat" class:animate-fade-in={animated.githubStat}>
 				<GithubStat />
-			</div>
+			</div> -->
 
 			<div id="services" class:animate-fade-in={animated.services}>
 				<Services />
