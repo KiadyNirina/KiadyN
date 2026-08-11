@@ -57,12 +57,12 @@
 >
     <div class="max-w-7xl mx-auto px-6">
         <div 
-            class="relative flex items-center justify-between px-6 py-3 transition-all duration-500 rounded-full border border-black/5 dark:border-white/5 {isScrolled ? 'bg-white/80 dark:bg-gray-950/80 backdrop-blur-xl shadow-xl' : 'bg-transparent'}"
+            class="relative flex items-center justify-between px-6 py-3 transition-all duration-500 rounded-full border border-black/5 dark:border-white/5 {isScrolled ? 'bg-white dark:bg-gray-950 shadow-sm' : 'bg-transparent'}"
         >
             <!-- Logo -->
-            <a href="#hero" class="flex items-center gap-3 group">
-                <div class="w-8 h-8 bg-black dark:bg-white rounded-full flex items-center justify-center transition-transform group-hover:rotate-[360deg] duration-700">
-                    <span class="text-white dark:text-black font-black text-xs">KN</span>
+            <a href="/#hero" class="flex items-center gap-3 group">
+                <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center transition-transform group-hover:rotate-[360deg] duration-700">
+                    <img src="logo.png" alt="Logo" />
                 </div>
             </a>
 
@@ -70,13 +70,10 @@
             <nav class="hidden md:flex items-center gap-2">
                 {#each Object.entries(sectionLabels) as [id, label]}
                     <a 
-                        href={`#${id}`}
-                        class="px-4 py-2 text-[10px] font-black uppercase tracking-widest transition-all duration-300 relative group {activeSection === id ? 'text-black dark:text-white' : 'text-gray-400 hover:text-black dark:hover:text-white'}"
+                        href={`/#${id}`}
+                        class="px-4 py-2 text-xs font-semibold transition-all duration-300 relative group {activeSection === id ? 'text-black dark:text-white' : 'text-gray-400 hover:text-black dark:hover:text-white'}"
                     >
                         {label}
-                        {#if activeSection === id}
-                            <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-black dark:bg-white rounded-full"></div>
-                        {/if}
                     </a>
                 {/each}
                 
@@ -105,7 +102,7 @@
         >
             {#each Object.entries(sectionLabels) as [id, label]}
                 <a 
-                    href="#{id}" 
+                    href="/#{id}" 
                     on:click={toggleMenu}
                     class="text-4xl font-black uppercase tracking-tighter text-black dark:text-white hover:text-transparent transition-all"
                     style="-webkit-text-stroke: 1px currentColor;"
