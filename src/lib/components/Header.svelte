@@ -52,13 +52,10 @@
     });
 </script>
 
-<header 
-    class="fixed top-0 left-0 right-0 z-[100] transition-all duration-700 py-1"
->
+<header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-700 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
+    <!-- Conteneur centré avec largeur maximale -->
     <div class="max-w-7xl mx-auto px-6">
-        <div 
-            class="relative flex items-center justify-between px-6 py-3 transition-all duration-500 rounded-full border border-black/5 dark:border-white/5 {isScrolled ? 'bg-white dark:bg-gray-950 shadow-sm' : 'bg-transparent'}"
-        >
+        <div class="relative flex items-center justify-between w-full py-3 transition-all duration-500">
             <!-- Logo -->
             <a href="/#hero" class="flex items-center gap-3 group">
                 <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center transition-transform group-hover:rotate-[360deg] duration-700">
