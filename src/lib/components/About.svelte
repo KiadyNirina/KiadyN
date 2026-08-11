@@ -63,7 +63,7 @@
 						</span>
 					</h3>
 					
-					<div class="space-y-8 text-sm text-gray-800 dark:text-gray-200 font-light leading-relaxed max-w-2xl">
+					<div class="space-y-8 text-sm text-black dark:text-white font-light leading-relaxed max-w-2xl">
 						<p>
 							Jeune développeur <span class="text-black dark:text-white font-bold">Full-Stack malgache</span>,
 							fondateur de
