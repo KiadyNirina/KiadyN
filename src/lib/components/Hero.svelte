@@ -7,7 +7,7 @@
         mounted = true;
     });
 
-    const techStack = ['Svelte', 'Vue.js', 'Laravel', 'Django'];
+    const techStack = ['Web Apps', 'SaaS', 'Platforms', 'Digital Products'];
     const socials = [
         { icon: 'ph:github-logo-thin', href: 'https://github.com/KiadyNirina' },
         { icon: 'ph:linkedin-logo-thin', href: 'https://www.linkedin.com/in/kiady-nirina-rambeloson-5216592a9/' },
@@ -77,8 +77,8 @@
             <div class="flex flex-wrap justify-between items-center gap-8 px-4">
                 {#each techStack as tech}
                     <div class="group flex items-center gap-4 cursor-default">
-                        <span class="text-[10px] font-mono text-gray-900 dark:text-gray-200">/</span>
-                        <span class="text-sm font-black uppercase tracking-widest text-gray-900 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors">{tech}</span>
+                        <span class="text-[10px] font-mono text-gray-900 dark:text-gray-200">✦</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors">{tech}</span>
                     </div>
                 {/each}
             </div>
