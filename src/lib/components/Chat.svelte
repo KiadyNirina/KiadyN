@@ -285,7 +285,7 @@
         >
           <div class="max-w-[85%] group">
             <div
-              class="relative p-4 text-sm leading-relaxed prose max-w-none
+              class="relative p-4 text-xs leading-relaxed prose max-w-none
               {msg.from === 'user'
                 ? 'bg-black dark:bg-white text-white dark:text-black rounded-[1.5rem] rounded-tr-none shadow-xl'
                 : 'bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-black/90 dark:text-white/90 rounded-[1.5rem] rounded-tl-none'}"
@@ -348,7 +348,7 @@
           bind:value={userMessage}
           placeholder={promptReady ? "Écrivez quelque chose..." : "Chargement du contexte..."}
           disabled={!promptReady}
-          class="w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl py-4 pl-5 pr-14 text-black dark:text-white placeholder-black/20 dark:placeholder-white/20 focus:outline-none focus:border-black/30 dark:focus:border-white/30 focus:bg-black/10 dark:focus:bg-white/10 transition-all"
+          class="text-xs w-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl py-4 pl-5 pr-14 text-black dark:text-white placeholder-black/20 dark:placeholder-white/20 focus:outline-none focus:border-black/30 dark:focus:border-white/30 focus:bg-black/10 dark:focus:bg-white/10 transition-all"
         />
         
         <button
