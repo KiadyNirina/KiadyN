@@ -63,7 +63,7 @@
 						</span>
 					</h3>
 					
-					<div class="space-y-8 text-base text-gray-800 dark:text-gray-200 font-light leading-relaxed max-w-2xl">
+					<div class="space-y-8 text-sm text-gray-800 dark:text-gray-200 font-light leading-relaxed max-w-2xl">
 						<p>
 							Jeune développeur <span class="text-black dark:text-white font-bold">Full-Stack malgache</span>,
 							fondateur de
@@ -105,7 +105,7 @@
 									<li class="group flex items-center justify-between py-2 border-b border-gray-100 dark:border-gray-900 hover:border-black dark:hover:border-white transition-colors duration-300">
 										<div class="flex items-center gap-4">
 											<Icon icon={skill.icon} class="w-5 h-5 text-gray-600 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white transition-colors" />
-											<span class="text-lg font-medium text-gray-600 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white group-hover:pl-2 transition-all">{skill.name}</span>
+											<span class="text-sm font-medium text-gray-600 dark:text-gray-500 group-hover:text-black dark:group-hover:text-white group-hover:pl-2 transition-all">{skill.name}</span>
 										</div>
 										<Icon icon="ph:arrow-up-right-thin" class="opacity-0 group-hover:opacity-100 transition-opacity text-black dark:text-white" />
 									</li>
@@ -123,7 +123,7 @@
 					</div>
 
 					<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-						<p class="text-2xl font-bold text-white dark:text-black tracking-tight text-center md:text-left">
+						<p class="text-lg font-bold text-white dark:text-black tracking-tight text-center md:text-left">
 							Besoin d'une architecture <br/> sans compromis ?
 						</p>
 						<button class="px-10 py-4 bg-white dark:bg-black text-black dark:text-white font-black uppercase text-xs tracking-widest hover:invert transition-all duration-300 shadow-2xl">
