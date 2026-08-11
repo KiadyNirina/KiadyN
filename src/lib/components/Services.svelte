@@ -1,12 +1,5 @@
 <script>
 	import Icon from "@iconify/svelte";
-	import { fly } from "svelte/transition";
-	import { onMount } from "svelte";
-
-	let sliderContainer;
-	let autoSlideInterval;
-	let servicesSection;
-	let cardRef;
 
 	const services = [
 		{ 
@@ -46,32 +39,11 @@
 			features: ["Garantie uptime", "Backups", "Support Prioritaire"]
 		},
 	];
-
-	function setCardRef(el) {
-		if (!cardRef) cardRef = el;
-	}
-
-	function scrollRight() {
-		if (sliderContainer && cardRef) {
-			const cardWidth = cardRef.offsetWidth;
-			if (sliderContainer.scrollLeft + sliderContainer.offsetWidth >= sliderContainer.scrollWidth - 10) {
-				sliderContainer.scrollTo({ left: 0, behavior: "smooth" });
-			} else {
-				sliderContainer.scrollBy({ left: cardWidth, behavior: "smooth" });
-			}
-		}
-	}
-
-	onMount(() => {
-		const interval = setInterval(scrollRight, 4000);
-		return () => clearInterval(interval);
-	});
 </script>
 
-<section class="py-24 overflow-hidden" bind:this={servicesSection}>
+<section class="py-24 overflow-hidden">
 	<div class="max-w-7xl mx-auto px-6">
-		
-		<!-- Header Section -->
+		<!-- Header inchangé -->
 		<div class="flex flex-col md:flex-row md:items-end justify-between mb-20 border-b border-black/50 dark:border-white/50 pb-12">
 			<div class="max-w-3xl">
 				<h2 class="text-xs font-bold uppercase tracking-[0.4em] text-gray-900 dark:text-white mb-6">Expertises</h2>
@@ -80,75 +52,86 @@
 				</h3>
 			</div>
 			<div class="mt-8 md:mt-0">
-				<p class="text-lg font-medium text-black dark:text-gray-400 max-w-xs leading-tight">
+				<p class="text-xs text-black dark:text-gray-400 max-w-xs leading-tight">
 					Solutions digitales haut de gamme alliant performance et minimalisme.
 				</p>
 			</div>
 		</div>
 
-		<!-- Services Grid & Slider -->
-		<div
-			bind:this={sliderContainer}
-			class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-black/30 dark:border-white/50 overflow-x-auto md:overflow-visible hide-scrollbar snap-x"
-		>
+		<ul class="flex flex-col">
 			{#each services as service, i}
-				<div
-					use:setCardRef
-					class="group relative flex-shrink-0 w-[85vw] md:w-auto p-12 border-r border-b border-black/30 dark:border-white/50 transition-all duration-700 ease-expo hover:z-20 snap-center"
+				<li 
+					class="group grid grid-cols-[2.5rem_1fr] items-center border-b border-black/20 dark:border-white/30 py-8 
+					       transition-colors duration-300 hover:bg-black dark:hover:bg-white
+					       sm:grid-cols-[3rem_1fr]"
 				>
-					<!-- Reveal Hover Background -->
-					<div class="absolute inset-0 bg-black dark:bg-white scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-500 ease-expo"></div>
+					<!-- Numéro fixe -->
+					<span class="font-mono text-2xl text-gray-900 dark:text-gray-400 group-hover:text-white dark:group-hover:text-black transition-colors duration-300">
+						<Icon icon={service.icon} />
+					</span>
 
-					<div class="relative z-10 flex flex-col h-full">
-						<!-- Icon & Index -->
-						<div class="flex items-start justify-between mb-16">
-							<div class="text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-500">
-								<Icon icon={service.icon} class="w-14 h-14" />
-							</div>
-							<span class="text-5xl font-thin text-gray-100 dark:text-gray-900 group-hover:text-white/10 dark:group-hover:text-black/10 transition-colors duration-500 italic">
-								{i + 1}
-							</span>
-						</div>
-
-						<!-- Textual Content -->
-						<h4 class="text-3xl font-bold text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-500 mb-6 tracking-tight">
-							{service.title}
-						</h4>
-						
-						<p class="text-gray-900 dark:text-gray-200 group-hover:text-gray-300 dark:group-hover:text-gray-900 transition-colors duration-500 mb-10 text-lg leading-relaxed font-light">
-							{service.description}
-						</p>
-
-						<!-- Feature Pills -->
-						<div class="mt-auto flex flex-wrap gap-2">
-							{#each service.features as feature}
-								<span class="px-3 py-1 border border-black/30 dark:border-white/50 text-[10px] uppercase tracking-widest font-bold text-gray-600 dark:text-gray-200 group-hover:text-white dark:group-hover:text-black group-hover:border-white/20 dark:group-hover:border-black/20 transition-all">
-									{feature}
+					<!-- Conteneur du marquee (occupe 1fr) -->
+					<div class="marquee-container overflow-hidden w-full">
+						<div class="marquee-track group-hover:animate-marquee">
+							<!-- Première copie : prend 50% de la piste -->
+							<div class="w-1/2 flex items-center gap-x-5 sm:gap-x-8 whitespace-nowrap overflow-hidden">
+								<span class="text-2xl font-bold tracking-tight text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-300">
+									{service.title}
 								</span>
-							{/each}
+								<span class="text-xs text-gray-700 dark:text-gray-300 group-hover:text-white dark:group-hover:text-black transition-colors duration-300">
+									{service.description}
+								</span>
+								<div class="flex gap-1.5">
+									{#each service.features as feature}
+										<span class="px-2 py-0.5 text-[9px] uppercase tracking-widest font-bold border border-black/30 dark:border-white/50 text-gray-600 dark:text-gray-300 rounded 
+										             group-hover:border-white/50 dark:group-hover:border-black/50 group-hover:text-white dark:group-hover:text-black transition-colors duration-300">
+											{feature}
+										</span>
+									{/each}
+								</div>
+							</div>
+							<!-- Deuxième copie : prend 50% de la piste -->
+							<div class="w-1/2 flex items-center gap-x-5 sm:gap-x-8 whitespace-nowrap overflow-hidden" aria-hidden="true">
+								<span class="text-xl font-bold tracking-tight text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors duration-300">
+									{service.title}
+								</span>
+								<span class="text-xs text-gray-700 dark:text-gray-300 group-hover:text-white dark:group-hover:text-black transition-colors duration-300">
+									{service.description}
+								</span>
+								<div class="flex gap-1.5">
+									{#each service.features as feature}
+										<span class="px-2 py-0.5 text-[9px] uppercase tracking-widest font-bold border border-black/30 dark:border-white/50 text-gray-600 dark:text-gray-300 rounded 
+										             group-hover:border-white/50 dark:group-hover:border-black/50 group-hover:text-white dark:group-hover:text-black transition-colors duration-300">
+											{feature}
+										</span>
+									{/each}
+								</div>
+							</div>
 						</div>
 					</div>
-
-					<!-- Bottom Arrow Reveal -->
-					<div class="absolute bottom-12 right-12 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500 delay-100">
-						<Icon icon="ph:arrow-right-thin" class="w-10 h-10 text-white dark:text-black" />
-					</div>
-				</div>
+				</li>
 			{/each}
-		</div>
+		</ul>
 	</div>
 </section>
 
 <style>
-	.hide-scrollbar::-webkit-scrollbar {
-		display: none;
-	}
-	.hide-scrollbar {
-		-ms-overflow-style: none;
-		scrollbar-width: none;
+	.marquee-track {
+		display: flex;
+		width: 200%; 
+		will-change: transform;
 	}
 
-	.ease-expo {
-		transition-timing-function: cubic-bezier(0.87, 0, 0.13, 1);
+	.group:hover .marquee-track {
+		animation: marquee-scroll 20s linear infinite;
+	}
+
+	@keyframes marquee-scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
 	}
 </style>
