@@ -216,14 +216,14 @@
     <div class="max-w-7xl mx-auto">
         
         <!-- HEADER -->
-        <div class="mb-24 flex justify-between items-end">
+        <div class="mb-24 md:flex justify-between items-end">
             <div>
                 <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-zinc-400 mb-2">Portfolio</h2>
                 <h3 class="text-6xl md:text-8xl font-black text-black dark:text-white tracking-tighter uppercase leading-[0.8]">
                     Selected <br/> <span class="text-zinc-200 dark:text-zinc-800" style="-webkit-text-stroke: 1px;">Works</span>
                 </h3>
             </div>
-            <div class="hidden md:block text-right">
+            <div class="block text-right">
                 <a href="/projects" class="group inline-flex items-center gap-2 text-black dark:text-white font-bold uppercase text-[10px] tracking-widest">
                     <span class="relative">
                         Voir tous les projets
@@ -282,7 +282,7 @@
                             {/if} -->
                         </div>
                         
-                        <h5 class="text-lg font-black uppercase tracking-tighter mb-2 dark:text-white">{project.title}</h5>
+                        <h5 class="text-lg font-bold uppercase tracking-tighter mb-2 dark:text-white">{project.title}</h5>
                         <p class="text-black dark:text-white text-xs line-clamp-2 leading-relaxed">{project.description}</p>
                         
                         <div class="mt-2 flex flex-wrap gap-2">
