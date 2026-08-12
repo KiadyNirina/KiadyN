@@ -50,7 +50,7 @@
                     <div class="absolute inset-0 border-[1px] border-black dark:border-white translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
                     <div class="relative h-full w-full bg-gray-100 dark:bg-gray-900 border border-black dark:border-white overflow-hidden">
                         <img 
-                            src="/pdp2.png" 
+                            src="/pdp-old.jpg" 
                             alt="Kiady"
                             class="w-full h-full object-cover group-hover:scale-100 scale-105 transition-all duration-700"
                         />
