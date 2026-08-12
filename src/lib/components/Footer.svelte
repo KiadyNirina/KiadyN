@@ -16,7 +16,7 @@
                 <ul class="space-y-4">
                     {#each ['About', 'Services', 'Projects', 'Skills', 'Experiences'] as item}
                         <li>
-                            <a href="#{item.toLowerCase()}" class="text-xs font-bold uppercase tracking-widest text-black dark:text-white hover:opacity-50 transition-opacity">
+                            <a href="/#{item.toLowerCase()}" class="text-xs font-bold uppercase tracking-widest text-black dark:text-white hover:opacity-50 transition-opacity">
                                 {item}
                             </a>
                         </li>
