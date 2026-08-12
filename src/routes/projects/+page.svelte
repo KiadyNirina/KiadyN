@@ -226,8 +226,8 @@
         </div>
         
         <div>
-            <!-- <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6 gap-6">
-                <h4 class="text-2xl font-black uppercase tracking-tighter dark:text-white">Tous les Projets</h4>
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6 gap-6">
+                <h4 class="text-xl font-black uppercase tracking-tighter dark:text-white">Tous les Projets</h4>
                 
                 <div class="flex flex-wrap gap-2">
                     {#each filterOptions as option}
@@ -242,7 +242,7 @@
                         </button>
                     {/each}
                 </div>
-            </div> -->
+            </div>
 
             <!-- Grid des projets filtrés -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

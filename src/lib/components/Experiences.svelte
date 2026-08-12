@@ -107,7 +107,7 @@
         <div class="mb-24 border-b border-black dark:border-white pb-12 flex flex-col md:flex-row justify-between items-end gap-6">
             <div class="max-w-2xl">
                 <h2 class="text-xs font-black uppercase tracking-[0.5em] text-gray-900 dark:text-gray-400 mb-6">Parcours</h2>
-                <h3 class="text-6xl md:text-8xl font-black text-black dark:text-white tracking-tighter leading-none uppercase">
+                <h3 class="text-4xl md:text-8xl sm:text-6xl font-black text-black dark:text-white tracking-tighter leading-none uppercase">
                     Expériences
                 </h3>
             </div>
@@ -125,7 +125,7 @@
                 <div class="group relative grid md:grid-cols-12 border-b border-black/50 dark:border-white/50 hover:bg-black dark:hover:bg-white transition-colors duration-500 ease-expo">
                     
                     <!-- Time Column -->
-                    <div class="md:col-span-3 p-10 border-r border-black/50 dark:border-white/50 flex flex-col justify-between">
+                    <div class="md:col-span-3 py-2 md:p-10 md:border-r border-black/50 dark:border-white/50 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-semibold uppercase tracking-widest text-gray-900 dark:text-gray-200 group-hover:text-gray-200 dark:group-hover:text-gray-700 transition-colors">
                                 {exp.period}
@@ -140,7 +140,7 @@
                     </div>
 
                     <!-- Content Column -->
-                    <div class="md:col-span-6 p-10">
+                    <div class="md:col-span-6 md:p-10">
                         <div class="flex items-center gap-4 mb-6">
                             <h4 class="text-3xl font-bold text-black dark:text-white group-hover:text-white dark:group-hover:text-black transition-colors tracking-tighter">
                                 {exp.position}
@@ -171,7 +171,7 @@
                     </div>
 
                     <!-- Tech Column -->
-                    <div class="md:col-span-3 p-10 flex flex-col justify-end">
+                    <div class="md:col-span-3 py-2 md:p-10 flex flex-col justify-end">
                         <div class="flex flex-wrap gap-2 justify-end">
                             {#each exp.technologies as tech}
                                 <span class="text-xs px-3 py-1 rounded-full border border-black/10 dark:border-white/50 text-black dark:text-white group-hover:text-white dark:group-hover:text-black group-hover:border-white/20 dark:group-hover:border-black/50">
