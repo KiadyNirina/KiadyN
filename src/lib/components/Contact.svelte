@@ -77,8 +77,8 @@
             <!-- Coordonnées Gauche (4 cols) -->
             <div class="lg:col-span-4 space-y-12">
                 <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-300 mb-6">// Canaux directs</h4>
-                    <div class="space-y-6">
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-300 mb-6">Canaux directs</h4>
+                    <div class="space-y-2">
                         <a href="mailto:kiady142ram@gmail.com" class="group block">
                             <span class="text-[10px] font-mono text-gray-600 dark:text-gray-300 block mb-1">Email</span>
                             <span class="text-xl font-bold text-black dark:text-white group-hover:underline decoration-1 underline-offset-8 transition-all">
@@ -95,7 +95,7 @@
                 </div>
 
                 <div>
-                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-300 mb-6">// Réseaux Sociaux</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-gray-600 dark:text-gray-300 mb-6">Réseaux Sociaux</h4>
                     <div class="flex flex-wrap gap-4">
                         {#each [
                             { name: 'Github', icon: 'ph:github-logo-thin', href: 'https://github.com/KiadyNirina' },
@@ -104,7 +104,7 @@
                         ] as social}
                             <a 
                                 href={social.href} 
-                                class="p-4 text-black dark:dark:text-white border border-black/50 dark:border-white/50 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all group"
+                                class="text-black dark:dark:text-white hover:scale-120 transition-all group"
                                 aria-label={social.name}
                                 target="_blank"
                             >
@@ -115,8 +115,8 @@
                 </div>
 
                 <div class="p-8 bg-gray-200 dark:bg-gray-900 border border-black/5 dark:border-white/5">
-                    <p class="text-xs text-gray-800 dark:text-gray-200 leading-relaxed font-mono italic">
-                        "Toujours à la recherche de défis stimulants. Que vous ayez une idée précise ou juste l'envie de discuter d'une technologie, ma porte est ouverte."
+                    <p class="text-xs text-gray-800 dark:text-gray-200 leading-relaxed font-mono">
+                        "Ouvert à toute nouvelle collaboration, opportunité ou idée autour de la tech. Si vous pensez qu'on pourrait construire quelque chose ensemble, ma porte est ouverte."
                     </p>
                 </div>
             </div>
