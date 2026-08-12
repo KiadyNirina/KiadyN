@@ -32,7 +32,7 @@
 
       <!-- Description type éditorial -->
       <p 
-        class="text-sm md:text-lg font-mono text-gray-500 dark:text-gray-400 max-w-xl mb-16 leading-relaxed uppercase tracking-tight"
+        class="text-xs font-mono text-black dark:text-white max-w-xl mb-16 leading-relaxed"
         in:fly={{ y: 30, duration: 1000, delay: 200 }}
       >
         Discutons de vos objectifs et transformons-les en une infrastructure digitale solide, évolutive et esthétique.
