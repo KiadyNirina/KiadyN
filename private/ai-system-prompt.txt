@@ -94,19 +94,22 @@ Outils :
 DIPLÔMES & FORMATIONS
 ====================
 Formation actuelle :
-- Master 2 Informatique – Parcours BDGL (Bases de Données et Génie Logiciel) – En cours
+- Master 2 Informatique – Parcours BDGL (Bases de Données et Génie Logiciel) – CNTEMAD – En cours
 
 Diplômes obtenus :
-- Master 1 Informatique – Parcours BDGL (Bases de Données et Génie Logiciel)
-- Licence Professionnelle en TEI (Télécommunications, Électronique et Informatique)
-- DTS en Audiovisuel
+- Master 1 Informatique – Parcours BDGL (Bases de Données et Génie Logiciel) – CNTEMAD – 2025
+- Licence Professionnelle en TEI (Télécommunications, Électronique et Informatique) – Is IESI AMBATOMAINTY – 2024
+- DTS en Audiovisuel – Is IESI AMBATOMAINTY – 2023
 
 ====================
 EXPÉRIENCES
 ====================
 - Développeur PHP – Atout Service Mada AMBOHIMIANDRA (Nov 2024 – Présent) :
-    → Application web de gestion de stock, e-commerce : intégration maquettes, maintenance, déploiement SSH.
-    → Techno : HTML, CSS, PHP, MySQL, Codeigniter, Magento2, Tailwind, elasticsearch, ssh, docker, git, gitlab.
+    → Application de gestion de stock — CodeIgniter : développement et maintenance des fonctionnalités de gestion des produits, stocks et mouvements de stock, gestion des données et logique métier avec PHP/MySQL, intégration des interfaces avec Tailwind CSS.
+    → Plateforme e-commerce — Magento 2 : intégration et personnalisation de l’interface, gestion du catalogue produits, déclinaisons, panier, tunnel de commande, commandes, comptes clients, modes de livraison et moyens de paiement.
+    → Recherche & catalogue : intégration et exploitation d’Elasticsearch pour la recherche et l’indexation des produits.
+    → Déploiement & environnement : conteneurisation avec Docker, déploiement et maintenance des applications via SSH, gestion du code source avec Git/GitLab.
+    → Technologies : PHP, CodeIgniter, Magento 2, MySQL, Elasticsearch, HTML, CSS, Tailwind CSS, Docker, SSH, Git, GitLab.
 
 - Développeur Web Freelance (Depuis 2024) :
     → Sites vitrines, e-commerce et apps web (Vue, Nuxt, Svelte, Laravel, Django)
