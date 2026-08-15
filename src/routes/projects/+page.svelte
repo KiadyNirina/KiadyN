@@ -210,6 +210,16 @@
             ? 'bg-emerald-100 text-emerald-800 border-emerald-200'
             : 'bg-violet-100 text-violet-800 border-violet-200';
     }
+
+    function getProjectStatus(project) {
+        return project.link ? 'En ligne' : 'En cours';
+    }
+
+    function getStatusClasses(status) {
+        return status === 'En ligne' 
+            ? 'bg-emerald-500/10 text-emerald-300 border-emerald-300'
+            : 'bg-amber-500/10 text-amber-300 border-amber-300';
+    }
 </script>
 
 <section class="min-h-screen py-24 px-6 overflow-hidden transition-colors duration-500">
@@ -258,19 +268,21 @@
                             
                             <!-- Badge Type (Freelance / Perso) -->
                             <div class="absolute top-4 right-4">
-                                <span class="px-3 py-1 text-[9px] font-black uppercase tracking-widest border {getBadgeClasses(project.type)}">
+                                <span class="px-3 py-1 text-[9px] font-black uppercase rounded-full tracking-widest border {getBadgeClasses(project.type)}">
                                     {getTypeBadge(project.type)}
                                 </span>
                             </div>
                             
-                            <!-- Badge Featured si applicable -->
-                            <!-- {#if project.featured}
-                                <div class="absolute top-4 left-4">
-                                    <span class="px-2 py-1 text-[8px] font-black uppercase tracking-wider bg-amber-500 text-white rounded-sm flex items-center gap-1">
-                                        <Icon icon="ph:star-fill" class="w-3 h-3" /> Top
+                            <!-- Badge statut avec point animé -->
+                            <div class="absolute top-4 left-4">
+                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border {getStatusClasses(getProjectStatus(project))}">
+                                    <span class="relative flex h-2 w-2">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 {getProjectStatus(project) === 'En ligne' ? 'bg-emerald-400' : 'bg-amber-400'}"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 {getProjectStatus(project) === 'En ligne' ? 'bg-emerald-500' : 'bg-amber-500'}"></span>
                                     </span>
-                                </div>
-                            {/if} -->
+                                    {getProjectStatus(project)}
+                                </span>
+                            </div>
                         </div>
                         
                         <h5 class="text-lg font-black uppercase tracking-tighter mb-2 dark:text-white">{project.title}</h5>

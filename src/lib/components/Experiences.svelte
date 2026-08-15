@@ -12,14 +12,14 @@
         localisation: "Ambohimiandra, Antananarivo, MG",
         type_work: "Présentiel",
         description: [
-            "Intégration de maquettes et développement de nouvelles fonctionnalités pour sites e-commerce Magento 2.",
-            "Maintenance corrective et optimisation des performances.",
-            "Déploiement via SSH et collaboration technique agile."
+            "Développement et personnalisation de fonctionnalités e-commerce sur Magento 2.",
+            "Intégration de maquettes, gestion du catalogue, panier, commandes, modes de livraison et moyens de paiement.",
+            "Maintenance corrective, optimisation des performances et déploiement des applications via SSH."
         ],
-        technologies: ["Alpine.js", "Magento", "PHP", "MySQL", "Git", "Docker"]
+        technologies: ["PHP", "Magento 2", "MySQL", "Elasticsearch", "Alpine.js", "Tailwind CSS", "Docker", "Git", "GitLab", "SSH"]
       },
       {
-        period: "Nov. 2024 - Fev. 2025",
+        period: "Nov. 2024 - Fév. 2025",
         position: "Stagiaire Développeur Web",
         company: "Atout Service Mada",
         type: "Stage",
@@ -28,11 +28,12 @@
         localisation: "Ambohimiandra, Antananarivo, MG",
         type_work: "Présentiel",
         description: [
-            "Développement front-end/back-end d'une plateforme e-commerce et gestion de stock.",
-            "Correction de bugs et maintenance des fonctionnalités existantes.",
-            "Collaboration avec l'équipe de développeurs."
+            "Développement d'une application de gestion de stock avec CodeIgniter.",
+            "Implémentation de la gestion des produits, des niveaux de stock et des mouvements d'entrée/sortie.",
+            "Maintenance corrective, optimisation des requêtes et intégration des interfaces front-end.",
+            "Participation au développement et à la maintenance d'une plateforme e-commerce Magento 2."
         ],
-        technologies: ["Codeigniter", "Magento", "Wordpress", "PHP"]
+        technologies: ["PHP", "CodeIgniter", "Magento 2", "MySQL", "WordPress", "HTML", "CSS", "Git"]
       },
       {
         period: "2024 - Présent",
@@ -43,9 +44,10 @@
         localisation: "Divers Lieux",
         type_work: "Télétravail",
         description: [
-            "Conception d'applications web sur mesure pour divers clients.",
+            "Conception et développement d'applications web et de sites sur mesure pour différents clients.",
+            "Développement front-end et back-end, intégration d'interfaces et déploiement des projets."
         ],
-        technologies: ["Sveltekit", "Vue", "Nuxt", "Laravel", "Django", "Wordpress"]
+        technologies: ["SvelteKit", "Vue.js", "Nuxt", "Laravel", "Django", "WordPress"]
       }
     ];
 
