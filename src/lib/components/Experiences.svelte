@@ -4,7 +4,7 @@
     const experiences = [
       {
         period: "Mars 2025 - Présent",
-        position: "Développeur PHP",
+        position: "Développeur Magento",
         company: "Atout Service Mada",
         type: "CDI",
         workSchedule: "Temps plein",
@@ -20,7 +20,7 @@
       },
       {
         period: "Nov. 2024 - Fév. 2025",
-        position: "Stagiaire Développeur Web",
+        position: "Stagiaire Développeur PHP",
         company: "Atout Service Mada",
         type: "Stage",
         workSchedule: "Temps plein",
@@ -72,16 +72,27 @@
         }
         
         const months = {
-            "Jan.": 0, "Fev.": 1, "Mars": 2, "Avr.": 3, "Mai": 4, "Juin": 5,
-            "Juil.": 6, "Août": 7, "Sept.": 8, "Oct.": 9, "Nov.": 10, "Déc.": 11
+            "Jan.": 0, "Janv.": 0,
+            "Fév.": 1, "Fev.": 1, "Févr.": 1,
+            "Mars": 2,
+            "Avr.": 3, "Avril": 3,
+            "Mai": 4,
+            "Juin": 5,
+            "Juil.": 6, "Juillet": 6,
+            "Août": 7, "Aout": 7,
+            "Sept.": 8, "Sep.": 8,
+            "Oct.": 9,
+            "Nov.": 10,
+            "Déc.": 11, "Dec.": 11
         };
         
-        const parts = dateStr.split(" ");
+        const parts = dateStr.trim().split(" ");
         if (parts.length === 2 && months[parts[0]] !== undefined) {
             return new Date(parseInt(parts[1]), months[parts[0]], 1);
         }
         
-        return new Date();
+        console.warn(`Format de date non reconnu : "${dateStr}"`);
+        return null;
     }
 
     function getDuration(startDate, endDate) {
