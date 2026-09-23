@@ -52,7 +52,7 @@
     });
 </script>
 
-<header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-700 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
+<header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-700 bg-white dark:bg-zinc-950 border-b border-gray-200 dark:border-gray-800">
     <!-- Conteneur centré avec largeur maximale -->
     <div class="max-w-7xl mx-auto px-6">
         <div class="relative flex items-center justify-between w-full py-3 transition-all duration-500">
