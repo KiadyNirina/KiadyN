@@ -313,11 +313,11 @@
                             <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
                             
                             <!-- Badge Type (Freelance / Perso) -->
-                            <div class="absolute top-4 right-4">
+                            <!-- <div class="absolute top-4 right-4">
                                 <span class="px-3 py-1 text-[9px] font-black uppercase rounded-full tracking-widest border {getBadgeClasses(project.type)}">
                                     {getTypeBadge(project.type)}
                                 </span>
-                            </div>
+                            </div> -->
                             
                             <!-- Badge statut avec point animé -->
                             <div class="absolute top-4 left-4">
