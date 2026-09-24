@@ -3,6 +3,21 @@
 
     const experiences = [
       {
+        period:"Nov. 2025 - Présent",
+        position:"Fondateur & Lead Developer",
+        company:"Kleonix",
+        type:"Entrepreneuriat",
+        workSchedule:"Variable",
+        localisation:"Antananarivo, MG",
+        type_work:"Hybride",
+        description:[
+            "Direction d’une équipe et pilotage de projets web.",
+            "Développement de solutions Full-Stack : sites web, e-commerce et SaaS.",
+            "Coordination technique, gestion de projet et relation client."
+        ],
+        technologies:["SvelteKit","Vue.js","Nuxt","Laravel","Symfony","Django","WordPress","Docker","Git"]
+        },
+      {
         period: "Mars 2025 - Présent",
         position: "Développeur Magento",
         company: "Atout Service Mada",

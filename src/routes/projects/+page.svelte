@@ -4,6 +4,34 @@
 
     // Données projets avec flag "featured" pour les meilleurs projets
     const projects = [
+        {
+            type: "Projet personnel",
+            title: "CVita",
+            description: "Créateur de CV gratuit, ATS-friendly et sans inscription, permettant de concevoir, personnaliser et exporter son CV directement depuis le navigateur.",
+            tech: ["SvelteKit", "Svelte", "Tailwind CSS", "TypeScript"],
+            image: "/cvita.jpg",
+            link: "https://cvvita.netlify.app/",
+            details: "CVita est une application web de création de CV conçue pour permettre aux utilisateurs de créer gratuitement un CV professionnel sans inscription. Les données sont stockées localement dans le navigateur afin de préserver la simplicité et la confidentialité du parcours utilisateur. L'application propose plusieurs templates, un éditeur de CV, un aperçu en temps réel, un score ATS, l'export PDF au format A4 ainsi que l'import et l'export des données au format JSON. L'interface est développée avec SvelteKit, Svelte, Tailwind CSS et TypeScript.",
+            functionalities: [
+                "Création de CV sans inscription",
+                "Plusieurs templates professionnels",
+                "Score ATS en temps réel",
+                "Prévisualisation du CV en temps réel",
+                "Export PDF au format A4",
+                "Import et export des données en JSON",
+                "Sauvegarde locale avec LocalStorage",
+                "Application installable en PWA"
+            ],
+            github: "https://github.com/KiadyNirina/CVita",
+            gallery: [
+                "/cvita1.jpg",
+                "/cvita2.jpg",
+                "/cvita3.jpg",
+                "/cvita4.jpg",
+                "/cvita5.jpg"
+            ],
+            featured: true
+        },
         // {
         //     type: "Freelance",
         //     title: "Santatra",
@@ -313,11 +341,11 @@
                             <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
                             
                             <!-- Badge Type (Freelance / Perso) -->
-                            <div class="absolute top-4 right-4">
+                            <!-- <div class="absolute top-4 right-4">
                                 <span class="px-3 py-1 text-[9px] font-black uppercase rounded-full tracking-widest border {getBadgeClasses(project.type)}">
                                     {getTypeBadge(project.type)}
                                 </span>
-                            </div>
+                            </div> -->
                             
                             <!-- Badge statut avec point animé -->
                             <div class="absolute top-4 left-4">
@@ -338,6 +366,14 @@
                             {#each project.tech.slice(0, 3) as t}
                                 <span class="text-[9px] font-bold uppercase px-2 py-1 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-400 rounded-sm">{t}</span>
                             {/each}
+                        </div>
+
+                        <div class="mt-4 inline-flex items-center gap-2 text-black dark:text-white font-bold uppercase text-[9px] tracking-widest">
+                            <span class="relative">
+                                Voir plus
+                                <span class="absolute left-0 -bottom-1 h-[1px] w-0 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                            <Icon icon="ph:arrow-right-bold" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </div>
                     </div>
                 {/each}
