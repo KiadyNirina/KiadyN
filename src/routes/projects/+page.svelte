@@ -4,6 +4,34 @@
 
     // Données projets avec flag "featured" pour les meilleurs projets
     const projects = [
+        {
+            type: "Projet personnel",
+            title: "CVita",
+            description: "Créateur de CV gratuit, ATS-friendly et sans inscription, permettant de concevoir, personnaliser et exporter son CV directement depuis le navigateur.",
+            tech: ["SvelteKit", "Svelte", "Tailwind CSS", "TypeScript"],
+            image: "/cvita.jpg",
+            link: "https://cvvita.netlify.app/",
+            details: "CVita est une application web de création de CV conçue pour permettre aux utilisateurs de créer gratuitement un CV professionnel sans inscription. Les données sont stockées localement dans le navigateur afin de préserver la simplicité et la confidentialité du parcours utilisateur. L'application propose plusieurs templates, un éditeur de CV, un aperçu en temps réel, un score ATS, l'export PDF au format A4 ainsi que l'import et l'export des données au format JSON. L'interface est développée avec SvelteKit, Svelte, Tailwind CSS et TypeScript.",
+            functionalities: [
+                "Création de CV sans inscription",
+                "Plusieurs templates professionnels",
+                "Score ATS en temps réel",
+                "Prévisualisation du CV en temps réel",
+                "Export PDF au format A4",
+                "Import et export des données en JSON",
+                "Sauvegarde locale avec LocalStorage",
+                "Application installable en PWA"
+            ],
+            github: "https://github.com/KiadyNirina/CVita",
+            gallery: [
+                "/cvita1.jpg",
+                "/cvita2.jpg",
+                "/cvita3.jpg",
+                "/cvita4.jpg",
+                "/cvita5.jpg"
+            ],
+            featured: true
+        },
         // {
         //     type: "Freelance",
         //     title: "Santatra",
