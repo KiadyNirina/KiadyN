@@ -4,69 +4,69 @@
 
     // Données projets avec flag "featured" pour les meilleurs projets
     const projects = [
-        {
-            type: "Freelance",
-            title: "Santatra",
-            description: "Portfolio professionnel d'un technicien supérieur en construction civile et infrastructur.",
-            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-            image: "/santatra1.PNG",
-            details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
-            gallery: [
-                "santatra2.PNG",
-                "santatra3.PNG",
-                "santatra4.PNG",
-                "santatra5.PNG",
-            ],
-            link: "https://santatra.netlify.app"
-        },
-        {
-            type: "Freelance",
-            title: "Zavamix",
-            description: "Zavamix – Site web de sourcing et d’importation Dubaï → Madagascar",
-            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-            image: "/zavamix.png",
-            details: "Zavamix est un site vitrine développé avec Nuxt.js pour le rendu statique et Tailwind CSS pour le design utilitaire. Il présente une entreprise spécialisée dans l’importation de produits neufs et d’occasion depuis Dubaï vers Madagascar, en mettant l’accent sur un parcours client structuré et une expérience utilisateur claire.",
-            gallery: [
-                "zavamix1.png",
-                "zavamix2.png",
-                "zavamix3.png",
-                "zavamix4.png",
-                "zavamix5.png",
-            ],
-            link: "https://zavamix.netlify.app"
-        },
-        {
-            type: "Freelance",
-            title: "Mireille",
-            description: "Portfolio professionnel d'une technicienne en génie civil.",
-            tech: ["Nuxt", "Tailwind CSS", "Typescript"],
-            image: "/mireille.png",
-            details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
-            gallery: [
-                "mireille2.png",
-                "mireille3.png",
-                "mireille4.png",
-                "mireille5.png",
-                "mireille6.png",
-            ],
-            link: "https://mireillerane.netlify.app"
-        },
-        {
-            type: "Freelance",
-            title: "Kleonix",
-            description: "Identité digitale pour une entreprise spécialisée dans la création de sites web, d’applications et de solutions informatiques sur mesure.",
-            tech: ["Nuxt", "Tailwind", "TS"],
-            image: "/kleonix.png",
-            details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
-            gallery: [
-                "kleonix2.png",
-                "kleonix3.png",
-                "kleonix4.png",
-                "kleonix5.png",
-                "kleonix6.png",
-            ],
-            link: "https://kleonix.netlify.app"
-        },
+        // {
+        //     type: "Freelance",
+        //     title: "Santatra",
+        //     description: "Portfolio professionnel d'un technicien supérieur en construction civile et infrastructur.",
+        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+        //     image: "/santatra1.PNG",
+        //     details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
+        //     gallery: [
+        //         "santatra2.PNG",
+        //         "santatra3.PNG",
+        //         "santatra4.PNG",
+        //         "santatra5.PNG",
+        //     ],
+        //     link: "https://santatra.netlify.app"
+        // },
+        // {
+        //     type: "Freelance",
+        //     title: "Zavamix",
+        //     description: "Zavamix – Site web de sourcing et d’importation Dubaï → Madagascar",
+        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+        //     image: "/zavamix.png",
+        //     details: "Zavamix est un site vitrine développé avec Nuxt.js pour le rendu statique et Tailwind CSS pour le design utilitaire. Il présente une entreprise spécialisée dans l’importation de produits neufs et d’occasion depuis Dubaï vers Madagascar, en mettant l’accent sur un parcours client structuré et une expérience utilisateur claire.",
+        //     gallery: [
+        //         "zavamix1.png",
+        //         "zavamix2.png",
+        //         "zavamix3.png",
+        //         "zavamix4.png",
+        //         "zavamix5.png",
+        //     ],
+        //     link: "https://zavamix.netlify.app"
+        // },
+        // {
+        //     type: "Freelance",
+        //     title: "Mireille",
+        //     description: "Portfolio professionnel d'une technicienne en génie civil.",
+        //     tech: ["Nuxt", "Tailwind CSS", "Typescript"],
+        //     image: "/mireille.png",
+        //     details: "Le site est construit comme une application web statique, optimisée pour la performance et le référencement. Il est développé avec Nuxt 3, utilisant son rendu côté serveur (SSR) pour un chargement rapide et une bonne indexation. Le style est géré avec Tailwind CSS, permettant un design responsive et épuré sans fichiers CSS externes. Le site est déployé sur Netlify, bénéficiant d’un déploiement continu et d’une diffusion via un CDN mondial pour une grande rapidité d’accès.",
+        //     gallery: [
+        //         "mireille2.png",
+        //         "mireille3.png",
+        //         "mireille4.png",
+        //         "mireille5.png",
+        //         "mireille6.png",
+        //     ],
+        //     link: "https://mireillerane.netlify.app"
+        // },
+        // {
+        //     type: "Freelance",
+        //     title: "Kleonix",
+        //     description: "Identité digitale pour une entreprise spécialisée dans la création de sites web, d’applications et de solutions informatiques sur mesure.",
+        //     tech: ["Nuxt", "Tailwind", "TS"],
+        //     image: "/kleonix.png",
+        //     details: "Développé avec Nuxt pour un rendu performant côté serveur (SSR) et une génération de sites statiques optimisés, stylisé avec Tailwind CSS pour une interface moderne, réactive et hautement personnalisable. L'objectif était de créer une vitrine rapide, SEO-friendly et facile à maintenir, reflétant l'expertise technique de l'agence.",
+        //     gallery: [
+        //         "kleonix2.png",
+        //         "kleonix3.png",
+        //         "kleonix4.png",
+        //         "kleonix5.png",
+        //         "kleonix6.png",
+        //     ],
+        //     link: "https://kleonix.netlify.app"
+        // },
         {
             type: "Projet personnel",
             title: "Bookly",
@@ -83,7 +83,7 @@
             gallery: [
                 "/2bookly.png", "/3bookly.png", "/4bookly.png", "/5bookly.png", "/6bookly.png", "/7bookly.png"
             ],
-            featured: true // ⭐ Meilleur projet
+            featured: true
         },
         {
             type: "Projet personnel",
@@ -107,7 +107,7 @@
                 "/Cookup3.png",
                 "/Cookup4.png",
             ],
-            featured: true // ⭐ Meilleur projet
+            featured: true
         },
         {
             type: "Projet personnel",
@@ -161,16 +161,41 @@
 
     // 🎯 Filtres pour la section 2
     let filterType = 'All';
+    let filterStatus = 'All'; // 🆕 Nouveau filtre statut
+
     $: filterOptions = [
         { key: 'All', label: 'Tous' },
         { key: 'Freelance', label: 'Freelance' },
         { key: 'Perso', label: 'Perso' }
     ];
-    
-    $: filteredProjects = filterType === 'All' 
-        ? projects 
-        : projects.filter(p => filterType === 'Freelance' ? p.type === 'Freelance' : p.type === 'Projet personnel');
-    
+
+    // 🆕 Options de filtre statut
+    $: statusFilterOptions = [
+        { key: 'All', label: 'Tous' },
+        { key: 'En ligne', label: 'En ligne' },
+        { key: 'En cours', label: 'En cours' }
+    ];
+
+    // 🆕 Helper statut
+    function getProjectStatus(project) {
+        return project.link ? 'En ligne' : 'En cours';
+    }
+
+    // 🎯 Filtrage combiné (type + statut)
+    $: filteredProjects = projects.filter(p => {
+        const matchType = filterType === 'All' 
+            ? true 
+            : filterType === 'Freelance' 
+                ? p.type === 'Freelance' 
+                : p.type === 'Projet personnel';
+        
+        const matchStatus = filterStatus === 'All' 
+            ? true 
+            : getProjectStatus(p) === filterStatus;
+        
+        return matchType && matchStatus;
+    });
+
     // 🌟 Section 1 : Meilleurs projets (featured)
     $: featuredProjects = projects.filter(p => p.featured);
     
@@ -211,10 +236,6 @@
             : 'bg-violet-100 text-violet-800 border-violet-200';
     }
 
-    function getProjectStatus(project) {
-        return project.link ? 'En ligne' : 'En cours';
-    }
-
     function getStatusClasses(status) {
         return status === 'En ligne' 
             ? 'bg-emerald-500/10 text-emerald-300 border-emerald-300'
@@ -236,21 +257,46 @@
         </div>
         
         <div>
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6 gap-6">
+            <!-- 🆕 Barre de filtres avec les deux groupes -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between mb-12 border-b border-zinc-100 dark:border-zinc-900 pb-6 gap-6">
                 <h4 class="text-xl font-black uppercase tracking-tighter dark:text-white">Tous les Projets</h4>
                 
-                <div class="flex flex-wrap gap-2">
-                    {#each filterOptions as option}
-                        <button
-                            on:click={() => filterType = option.key}
-                            class="px-4 py-2 text-[10px] font-black uppercase tracking-widest border transition-all
-                                {filterType === option.key 
-                                    ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white' 
-                                    : 'bg-transparent text-zinc-500 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 hover:border-black dark:hover:border-white'}"
-                        >
-                            {option.label}
-                        </button>
-                    {/each}
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- Filtres Type -->
+                    <!-- <div class="flex flex-col gap-2">
+                        <span class="text-[9px] font-black uppercase tracking-widest text-zinc-400">Type</span>
+                        <div class="flex flex-wrap gap-2">
+                            {#each filterOptions as option}
+                                <button
+                                    on:click={() => filterType = option.key}
+                                    class="px-4 py-2 text-[10px] font-black uppercase tracking-widest border transition-all
+                                        {filterType === option.key 
+                                            ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white' 
+                                            : 'bg-transparent text-zinc-500 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 hover:border-black dark:hover:border-white'}"
+                                >
+                                    {option.label}
+                                </button>
+                            {/each}
+                        </div>
+                    </div> -->
+
+                    <!-- 🆕 Filtres Statut -->
+                    <div class="flex flex-col gap-2">
+                        <span class="text-[9px] font-black uppercase tracking-widest text-zinc-400">Statut</span>
+                        <div class="flex flex-wrap gap-2">
+                            {#each statusFilterOptions as option}
+                                <button
+                                    on:click={() => filterStatus = option.key}
+                                    class="px-4 py-2 text-[10px] font-black uppercase tracking-widest border transition-all
+                                        {filterStatus === option.key 
+                                            ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white' 
+                                            : 'bg-transparent text-zinc-500 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 hover:border-black dark:hover:border-white'}"
+                                >
+                                    {option.label}
+                                </button>
+                            {/each}
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -300,9 +346,12 @@
             <!-- Message si aucun résultat -->
             {#if filteredProjects.length === 0}
                 <div class="text-center py-20">
-                    <p class="text-zinc-400 text-lg">Aucun projet ne correspond à ce filtre.</p>
-                    <button on:click={() => filterType = 'All'} class="mt-4 text-sm font-bold underline hover:text-black dark:hover:text-white transition-colors">
-                        Voir tous les projets
+                    <p class="text-zinc-400 text-lg">Aucun projet ne correspond à ces filtres.</p>
+                    <button 
+                        on:click={() => { filterType = 'All'; filterStatus = 'All'; }} 
+                        class="mt-4 text-sm font-bold underline hover:text-black dark:hover:text-white transition-colors"
+                    >
+                        Réinitialiser les filtres
                     </button>
                 </div>
             {/if}

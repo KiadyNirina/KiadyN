@@ -5,7 +5,7 @@
     const currentYear = new Date().getFullYear();
 </script>
 
-<footer class="bg-gray-100 dark:bg-gray-950 p-12 overflow-hidden">
+<footer class="bg-gray-100 dark:bg-zinc-950 p-12 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
 
         <!-- Grille d'informations -->
