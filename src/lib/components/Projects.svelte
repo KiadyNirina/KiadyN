@@ -311,6 +311,14 @@
                                 <span class="text-[9px] font-bold uppercase px-2 py-1 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-400 rounded-sm">{t}</span>
                             {/each}
                         </div>
+
+                        <div class="mt-4 inline-flex items-center gap-2 text-black dark:text-white font-bold uppercase text-[9px] tracking-widest">
+                            <span class="relative">
+                                Voir plus
+                                <span class="absolute left-0 -bottom-1 h-[1px] w-0 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+                            </span>
+                            <Icon icon="ph:arrow-right-bold" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </div>
                     </div>
                 {/each}
             </div>
