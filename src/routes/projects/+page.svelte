@@ -187,7 +187,7 @@
                 "Multi-langue (français, anglais)",
                 "Mode sombre et clair",
             ],
-            github: "https://github.com/KiadyNirina/CookUp",
+            // github: "https://github.com/KiadyNirina/CookUp",
             gallery: [
                 "/Cookup2.png",
                 "/Cookup3.png",
