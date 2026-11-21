@@ -339,53 +339,105 @@
             </div>
 
             <!-- Grid des projets filtrés -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {#each filteredProjects as project}
-                    <div 
-                        class="group cursor-pointer transition-all duration-300 mb-4"
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                {#each filteredProjects as project, index}
+                    {@const status = getProjectStatus(project)}
+                    <article 
+                        class="group relative flex flex-col justify-between cursor-pointer rounded-2xl p-3 -m-3 transition-all duration-500 hover:bg-zinc-50/80 dark:hover:bg-zinc-900/40"
                         on:click={() => openModal(project)}
                         on:keydown={(e) => e.key === 'Enter' && openModal(project)}
                         tabindex="0"
+                        role="button"
+                        aria-label="Voir les détails du projet {project.title}"
                     >
-                        <div class="aspect-4/3 bg-zinc-100 dark:bg-zinc-900 overflow-hidden mb-2 relative rounded-xl">
-                            <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500" />
-                            
-                            <!-- Badge Type (Freelance / Perso) -->
-                            <!-- <div class="absolute top-4 right-4">
-                                <span class="px-3 py-1 text-[9px] font-black uppercase rounded-full tracking-widest border {getBadgeClasses(project.type)}">
-                                    {getTypeBadge(project.type)}
-                                </span>
-                            </div> -->
-                            
-                            <!-- Badge statut avec point animé -->
-                            <div class="absolute top-4 left-4">
-                                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider border {getStatusClasses(getProjectStatus(project))}">
-                                    <span class="relative flex h-2 w-2">
-                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 {getProjectStatus(project) === 'En ligne' ? 'bg-emerald-400' : 'bg-amber-400'}"></span>
-                                        <span class="relative inline-flex rounded-full h-2 w-2 {getProjectStatus(project) === 'En ligne' ? 'bg-emerald-500' : 'bg-amber-500'}"></span>
+                        <div>
+                            <!-- Conteneur Image -->
+                            <div class="aspect-4/3 bg-zinc-100 dark:bg-zinc-900 overflow-hidden mb-5 relative rounded-xl border border-black/5 dark:border-white/10">
+                                <img 
+                                    src={project.image} 
+                                    alt={project.title} 
+                                    class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105" 
+                                />
+                                
+                                <!-- Dégradé subtil au survol pour faire ressortir les actions -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                                <!-- Badge statut Glassmorphism (Lisible sur fond clair et sombre) -->
+                                <div class="absolute top-3.5 left-3.5">
+                                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest backdrop-blur-md bg-black/70 text-white border border-white/15 shadow-sm">
+                                        <span class="relative flex h-1.5 w-1.5">
+                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 {status === 'En ligne' ? 'bg-emerald-400' : 'bg-amber-400'}"></span>
+                                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 {status === 'En ligne' ? 'bg-emerald-400' : 'bg-amber-400'}"></span>
+                                        </span>
+                                        {status}
                                     </span>
-                                    {getProjectStatus(project)}
+                                </div>
+
+                                <!-- Badge Type (Discret en haut à droite) -->
+                                <div class="absolute top-3.5 right-3.5">
+                                    <span class="px-2.5 py-1 rounded-full text-[8px] font-black uppercase tracking-widest backdrop-blur-md bg-white/85 dark:bg-black/70 text-black dark:text-zinc-200 border border-black/5 dark:border-white/10">
+                                        {getTypeBadge(project.type)}
+                                    </span>
+                                </div>
+
+                                <!-- Bouton d'accès rapide au site Live (apparaît au hover) -->
+                                {#if project.link}
+                                    <a 
+                                        href={project.link} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        on:click|stopPropagation
+                                        title="Ouvrir le site en direct"
+                                        class="absolute bottom-3.5 right-3.5 flex items-center gap-1.5 px-3 py-2 rounded-full bg-white text-black text-[9px] font-black uppercase tracking-widest shadow-lg translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-black hover:text-white"
+                                    >
+                                        <span>Live</span>
+                                        <Icon icon="ph:arrow-up-right-bold" class="w-3.5 h-3.5" />
+                                    </a>
+                                {/if}
+                            </div>
+
+                            <!-- En-tête éditorial : Index + Titre -->
+                            <div class="flex items-baseline justify-between gap-4 mb-2">
+                                <h5 class="text-xl font-black uppercase tracking-tight text-black dark:text-white group-hover:translate-x-1 transition-transform duration-300">
+                                    {project.title}
+                                </h5>
+                                <span class="font-mono text-[10px] font-bold text-zinc-400 dark:text-zinc-600">
+                                    {String(index + 1).padStart(2, '0')}
                                 </span>
                             </div>
-                        </div>
-                        
-                        <h5 class="text-lg font-black uppercase tracking-tighter mb-2 dark:text-white">{project.title}</h5>
-                        <p class="text-black dark:text-white text-xs line-clamp-2 leading-relaxed">{project.description}</p>
-                        
-                        <div class="mt-2 flex flex-wrap gap-2">
-                            {#each project.tech.slice(0, 3) as t}
-                                <span class="text-[9px] font-bold uppercase px-2 py-1 bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-400 rounded-sm">{t}</span>
-                            {/each}
+
+                            <!-- Description -->
+                            <p class="text-zinc-600 dark:text-zinc-400 text-xs line-clamp-2 leading-relaxed mb-5">
+                                {project.description}
+                            </p>
                         </div>
 
-                        <div class="mt-4 inline-flex items-center gap-2 text-black dark:text-white font-bold uppercase text-[9px] tracking-widest">
-                            <span class="relative">
-                                Voir plus
-                                <span class="absolute left-0 -bottom-1 h-[1px] w-0 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
-                            </span>
-                            <Icon icon="ph:arrow-right-bold" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        <!-- Pied de carte toujours aligné en bas -->
+                        <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 flex items-center justify-between gap-2">
+                            <!-- Stack technique compacte -->
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                {#each project.tech.slice(0, 3) as t}
+                                    <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-200/60 dark:border-zinc-800 rounded-md">
+                                        {t}
+                                    </span>
+                                {/each}
+                                {#if project.tech.length > 3}
+                                    <span class="text-[9px] font-bold px-1.5 py-0.5 text-zinc-400 dark:text-zinc-500">
+                                        +{project.tech.length - 3}
+                                    </span>
+                                {/if}
+                            </div>
+
+                            <!-- CTA Étude de cas -->
+                            <div class="inline-flex items-center gap-1.5 text-black dark:text-white font-black uppercase text-[9px] tracking-widest shrink-0">
+                                <span class="relative">
+                                    Détails
+                                    <span class="absolute left-0 -bottom-0.5 h-[1.5px] w-0 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+                                </span>
+                                <Icon icon="ph:arrow-right-bold" class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                            </div>
                         </div>
-                    </div>
+                    </article>
                 {/each}
             </div>
             
