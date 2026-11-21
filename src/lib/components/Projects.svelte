@@ -6,6 +6,35 @@
     const projects = [
         {
             type: "Projet personnel",
+            title: "KleoQuote",
+            description: "Application web de création de devis et de factures professionnels avec aperçu en temps réel, calculs automatiques et export PDF.",
+            tech: ["Nuxt 4", "Vue 3", "TypeScript", "Pinia", "Tailwind CSS", "shadcn-vue"],
+            image: "/kleoquote1.jpg",
+            link: "https://kleoquote.netlify.app/",
+            details: "KleoQuote est une application web développée avec Nuxt 4 permettant de créer, modifier et gérer des devis et des factures professionnels. Elle propose un éditeur de documents avec gestion des lignes de prestation, calcul automatique des montants, des remises, des taxes et des acomptes, ainsi qu'un aperçu en temps réel. L'application intègre également la personnalisation des informations de l'entreprise, l'export PDF au format A4 et un système d'historique avec sauvegarde locale des documents et des paramètres.",
+            functionalities: [
+                "Création et modification de devis et de factures",
+                "Gestion des lignes de prestations avec réorganisation par glisser-déposer",
+                "Calcul automatique des sous-totaux, remises, taxes et acomptes",
+                "Prise en charge de six devises",
+                "Aperçu des documents en temps réel",
+                "Export PDF au format A4",
+                "Personnalisation des informations de l'entreprise, du logo et du cachet",
+                "Historique des documents avec sauvegarde, ouverture, duplication et suppression",
+                "Persistance locale des documents et des paramètres"
+            ],
+            gallery: [
+                "/kleoquote1.jpg",
+                "/kleoquote2.jpg",
+                "/kleoquote3.jpg",
+                "/kleoquote4.jpg",
+                "/kleoquote5.jpg",
+                "/kleoquote6.jpg",
+            ],
+            featured: true
+        },
+        {
+            type: "Projet personnel",
             title: "CVita",
             description: "Créateur de CV gratuit, ATS-friendly et sans inscription, permettant de concevoir, personnaliser et exporter son CV directement depuis le navigateur.",
             tech: ["SvelteKit", "Svelte", "Tailwind CSS", "TypeScript"],
@@ -113,30 +142,30 @@
         //     ],
         //     featured: true // ⭐ Meilleur projet
         // },
-        {
-            type: "Projet personnel",
-            title: "CookUp",
-            description: "Intelligence culinaire : suggérez, filtrez et exportez vos recettes préférées en un clic.",
-            tech: ["SvelteKit", "Tailwind CSS", "Spoonacular API"],
-            image: "/Cookup1.png",
-            link: "https://cookuup.netlify.app/",
-            details: "Application de suggestion de recettes de cuisine avec fonctionnalités de filtrage avancée. Utilise SvelteKit pour le front-end et l'API Spoonacular pour les données.",
-            functionalities: [
-                "Suggestions de recettes basées sur les préférences",
-                "Affichage des recettes avec détails et images",
-                "Export de recettes en PDF",
-                "Partage de recettes via un lien et vers les réseaux sociaux",
-                "Multi-langue (français, anglais)",
-                "Mode sombre et clair",
-            ],
-            github: "https://github.com/KiadyNirina/CookUp",
-            gallery: [
-                "/Cookup2.png",
-                "/Cookup3.png",
-                "/Cookup4.png",
-            ],
-            featured: true // ⭐ Meilleur projet
-        },
+        // {
+        //     type: "Projet personnel",
+        //     title: "CookUp",
+        //     description: "Intelligence culinaire : suggérez, filtrez et exportez vos recettes préférées en un clic.",
+        //     tech: ["SvelteKit", "Tailwind CSS", "Spoonacular API"],
+        //     image: "/Cookup1.png",
+        //     link: "https://cookuup.netlify.app/",
+        //     details: "Application de suggestion de recettes de cuisine avec fonctionnalités de filtrage avancée. Utilise SvelteKit pour le front-end et l'API Spoonacular pour les données.",
+        //     functionalities: [
+        //         "Suggestions de recettes basées sur les préférences",
+        //         "Affichage des recettes avec détails et images",
+        //         "Export de recettes en PDF",
+        //         "Partage de recettes via un lien et vers les réseaux sociaux",
+        //         "Multi-langue (français, anglais)",
+        //         "Mode sombre et clair",
+        //     ],
+        //     github: "https://github.com/KiadyNirina/CookUp",
+        //     gallery: [
+        //         "/Cookup2.png",
+        //         "/Cookup3.png",
+        //         "/Cookup4.png",
+        //     ],
+        //     featured: true // ⭐ Meilleur projet
+        // },
         // {
         //     type: "Projet personnel",
         //     title: "Real-Talk",
