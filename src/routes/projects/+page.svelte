@@ -61,6 +61,35 @@
             ],
             featured: true
         },
+
+        {
+            type: "Projet personnel",
+            title: "SekOra",
+            description: "Plateforme de gestion scolaire qui facilite le suivi des élèves, l'organisation des cours et la gestion des établissements, avec une carte interactive pour localiser les écoles.",
+            tech: ["Svelte","Tailwind CSS", "Django", "MySQL", "Redis", "Docker"],
+            image: "/eboss.jpg",
+            link: "https://sekoraa.netlify.app/",
+            details: "SekOra est une plateforme conçue pour simplifier la gestion des établissements scolaires et faciliter le suivi de la vie scolaire. Elle permet de centraliser les informations des élèves, des professeurs et des parents, tout en facilitant l'organisation des cours et des évaluations. Grâce à sa carte interactive, les utilisateurs peuvent également découvrir et localiser les établissements scolaires. La plateforme propose ainsi un espace numérique destiné à mieux organiser les informations et à faciliter les échanges entre les différents acteurs de la communauté éducative.",
+            functionalities: [
+                "Gestion des établissements scolaires",
+                "Suivi des élèves, des professeurs et des parents",
+                "Organisation des cours et des évaluations",
+                "Carte interactive pour localiser les établissements scolaires",
+                "Affichage des établissements sur une carte",
+                "Recherche et découverte des établissements scolaires",
+                "Accès adapté aux différents profils d'utilisateurs",
+                "Gestion sécurisée des comptes et des accès"
+            ],
+            gallery: [
+                "/eboss 2.jpg",
+                "/eboss 3.jpg",
+                "/eboss 4.jpg",
+                "/eboss 5.jpg",
+                "/eboss 6.jpg",
+                "/eboss 7.jpg",
+            ],
+            featured: true 
+        },
         // {
         //     type: "Freelance",
         //     title: "Santatra",
@@ -196,34 +225,6 @@
                 "/Datalens2.png", "/Datalens3.png", "/Datalens4.png",
             ]
         },
-        {
-            type: "Projet personnel",
-            title: "SekOra",
-            description: "Plateforme de gestion scolaire qui facilite le suivi des élèves, l'organisation des cours et la gestion des établissements, avec une carte interactive pour localiser les écoles.",
-            tech: ["Svelte","Tailwind CSS", "Django", "MySQL", "Redis", "Docker"],
-            image: "/eboss.jpg",
-            link: "https://sekoraa.netlify.app/",
-            details: "SekOra est une plateforme conçue pour simplifier la gestion des établissements scolaires et faciliter le suivi de la vie scolaire. Elle permet de centraliser les informations des élèves, des professeurs et des parents, tout en facilitant l'organisation des cours et des évaluations. Grâce à sa carte interactive, les utilisateurs peuvent également découvrir et localiser les établissements scolaires. La plateforme propose ainsi un espace numérique destiné à mieux organiser les informations et à faciliter les échanges entre les différents acteurs de la communauté éducative.",
-            functionalities: [
-                "Gestion des établissements scolaires",
-                "Suivi des élèves, des professeurs et des parents",
-                "Organisation des cours et des évaluations",
-                "Carte interactive pour localiser les établissements scolaires",
-                "Affichage des établissements sur une carte",
-                "Recherche et découverte des établissements scolaires",
-                "Accès adapté aux différents profils d'utilisateurs",
-                "Gestion sécurisée des comptes et des accès"
-            ],
-            gallery: [
-                "/eboss 2.jpg",
-                "/eboss 3.jpg",
-                "/eboss 4.jpg",
-                "/eboss 5.jpg",
-                "/eboss 6.jpg",
-                "/eboss 7.jpg",
-            ],
-            featured: true 
-        }
     ];
 
     // 🎯 Filtres pour la section 2
