@@ -51,7 +51,7 @@
                 "Sauvegarde locale avec LocalStorage",
                 "Application installable en PWA"
             ],
-            github: "https://github.com/KiadyNirina/CVita",
+            // github: "https://github.com/KiadyNirina/CVita",
             gallery: [
                 "/cvita1.jpg",
                 "/cvita2.jpg",
